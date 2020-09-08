@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            点击超链接换一张图片
+         */
+
+        window.onload = function () {
+
+            let img = document.getElementById("checkCode");
+            img.onclick = function () {
+                // 加上时间戳
+                let date = new Date().getTime();
+                img.src = "/ServletLearning_war_exploded/check?" + date;
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <img id="checkCode" src="/ServletLearning_war_exploded/check">
+    <a id="change" href="">看不清？换一张</a>
+</body>
+</html>

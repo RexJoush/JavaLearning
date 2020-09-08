@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ServletAnnotation">
+    <output-path>$PROJECT_DIR$</output-path>
+    <root id="root" />
+  </artifact>
+</component>
