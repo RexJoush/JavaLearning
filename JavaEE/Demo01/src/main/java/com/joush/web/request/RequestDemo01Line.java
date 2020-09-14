@@ -43,7 +43,7 @@ import java.io.IOException;
         2.其他功能
  */
 @WebServlet("/request/demo01")
-public class RequestDemo01 extends HttpServlet {
+public class RequestDemo01Line extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 1.获取请求方式： GET

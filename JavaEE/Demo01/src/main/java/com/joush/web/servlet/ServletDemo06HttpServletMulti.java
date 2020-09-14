@@ -19,8 +19,8 @@ import java.io.IOException;
 @WebServlet({"/demo06_01","/demo06_02","/demo06_03"})
 //@WebServlet("/demo06/01")
 //@WebServlet("/demo06/*")
-//@WebServlet("*.do") 不要加 / 
-public class ServletDemo06HttpServletMuti extends HttpServlet {
+//@WebServlet("*.do") 不要加 /
+public class ServletDemo06HttpServletMulti extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Demo06 doGet...");

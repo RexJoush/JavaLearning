@@ -1,7 +1,7 @@
-package com.joush.dao;
+package com.loginTest.dao;
 
-import com.joush.domain.User;
-import com.joush.util.JDBCUtils;
+import com.loginTest.domain.User;
+import com.loginTest.util.JDBCUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -26,7 +26,15 @@ public class UserDao {
         String sql = "select * from user where username = ? and password = ?";
 
         // 2.调用query方法
-        User user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), loginUser.getUsername(), loginUser.getPassword());
-        return user;
+        List<User> users = template.query(sql,
+                new BeanPropertyRowMapper<>(User.class),
+                loginUser.getUsername(), loginUser.getPassword());
+        System.out.println(users);
+        if (users.size() == 0){
+            return null;
+        } else {
+            return users.get(0);
+        }
+
     }
 }

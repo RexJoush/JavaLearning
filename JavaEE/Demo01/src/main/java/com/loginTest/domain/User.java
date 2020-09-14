@@ -1,4 +1,4 @@
-package com.joush.domain;
+package com.loginTest.domain;
 
 /**
  * 用户的实体类

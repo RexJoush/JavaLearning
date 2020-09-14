@@ -1,7 +1,7 @@
-package com.joush.test;
+package com.loginTest.test;
 
-import com.joush.dao.UserDao;
-import com.joush.domain.User;
+import com.loginTest.dao.UserDao;
+import com.loginTest.domain.User;
 import org.junit.Test;
 
 public class UserDaoTest {
