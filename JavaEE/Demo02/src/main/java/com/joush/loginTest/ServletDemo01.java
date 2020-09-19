@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Calendar;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet("/login/demo01")
 public class ServletDemo01 extends HttpServlet {
@@ -49,7 +52,6 @@ public class ServletDemo01 extends HttpServlet {
 
             Cookie cookie = new Cookie("isLogin", time);
             cookie.setMaxAge(60*60*24*30); // 一个月
-            Cookie cookie = new Cookie("isLogin", Calendar.getInstance().getTime().toString());
             response.addCookie(cookie);
 
             // 写回信息
