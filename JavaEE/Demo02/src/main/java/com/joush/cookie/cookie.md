@@ -64,4 +64,20 @@
 * 访问一个Servlet，如果是第一次访问，则提示你好
 * 如果不是第一次，则提示上次访问时间
 
-####分析
+##JSP简单入门
+####概念
+* Java Servlet Page, Java服务端页面
+    - 可以理解为一个特殊的页面，可以写java 也可以写html
+####原理
+* JSP本质上是一个 Servlet
+####JSP脚本
+* <% 代码 %> 定义的java代码，在service中，service可定义什么，此处就可以定义什么
+* <%! 代码 %> 定义的java代码在java类的成员位置，成员变量，成员方法等
+* <%= 代码 %> 相当于输出语句，将变量的值输出到页面，定义在service
+####JSP内置对象
+* 在JSP页面中不需要获取和创建，可以直接使用
+* JSP一共有9个内置对象。
+    - request
+    - response
+    - out: 字符输出流，可以将数据输出到页面，和 response.getWriter()类似
+        - response.getWriter()和out的区别，out定义在哪就在哪输出，但getWriter总先于out输出
