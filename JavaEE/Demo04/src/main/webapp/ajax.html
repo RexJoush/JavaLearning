@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <button type="button" onclick="fun()">提交1</button>
+    <button type="button" onclick="fun2()">提交2</button>
+    <button type="button" onclick="fun3()">提交3</button>
+
+</body>
+
+    <script>
+
+        // $.ajax() 方式
+        fun = function () {
+            $.ajax({
+                url: '/Demo04/jqueryServlet', // 请求参数
+                type: 'GET', // 请求方式
+                data: { // 发送的数据
+                    "username": 'aaa',
+                    "password": 'bbb'
+                },
+                dataType: 'json', // 响应的数据格式
+                success: res => { // 成功结果
+                    console.log(res);
+                },
+                error: err => { // 错误结果
+                    console.log(err);
+                }
+            });
+        }
+
+        // $.get() 方式
+        fun2 = function () {
+            $.get('/Demo04/jqueryServlet',{ // 发送的数据
+                    "username": 'aaa',
+                    "password": 'bbb'
+                },(res) => {
+
+                console.log(res);
+
+            },'json');
+        }
+
+        // $.post() 方式
+        fun3 = function () {
+            $.post('/Demo04/jqueryServlet',{ // 发送的数据
+                "username": 'aaa',
+                "password": 'bbb'
+            },(res) => {
+                console.log(res);
+            },'json');
+        }
+
+
+    </script>
+
+
+</html>
