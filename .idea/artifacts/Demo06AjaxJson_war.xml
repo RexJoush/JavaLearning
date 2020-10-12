@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Demo06AjaxJson:war">
+    <output-path>$PROJECT_DIR$/Demo06AjaxJson/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Demo06AjaxJson</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Demo06AjaxJson-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Demo06AjaxJson:war exploded" />
+    </root>
+  </artifact>
+</component>

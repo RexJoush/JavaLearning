@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04AjaxJson" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04JsonAjax" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo05Redis" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo06AjaxJson" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/JavaEE/Demo04/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/Demo05Redis/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/Demo04AjaxJson/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo06AjaxJson/pom.xml" />
       </list>
     </option>
   </component>

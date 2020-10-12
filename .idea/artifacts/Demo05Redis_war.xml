@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Demo05Redis:war">
+    <output-path>$PROJECT_DIR$/JavaEE/Demo05Redis/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Demo05Redis</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Demo05Redis-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Demo05Redis:war exploded" />
+    </root>
+  </artifact>
+</component>

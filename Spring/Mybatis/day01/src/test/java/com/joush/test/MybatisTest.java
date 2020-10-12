@@ -1,4 +1,4 @@
-package com.joush.test;
+package test;
 
 
 import com.joush.dao.IUserDao;

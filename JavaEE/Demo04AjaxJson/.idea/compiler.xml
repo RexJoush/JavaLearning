@@ -6,15 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Demo05Redis" />
         <module name="Demo04AjaxJson" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Demo04AjaxJson" target="1.8" />
-      <module name="Demo04JsonAjax" target="1.8" />
-      <module name="Demo05Redis" target="1.8" />
-      <module name="Demo06AjaxJson" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

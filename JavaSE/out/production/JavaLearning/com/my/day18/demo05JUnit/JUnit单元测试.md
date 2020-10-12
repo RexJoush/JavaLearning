@@ -13,7 +13,7 @@
                     1.方法名，test测试的方法名 testAdd()
                     2.返回值，void
                     3.参数列表，空参
-            3.给方法加注解 @Test
+            3.给方法加注解 @ExperimentSecure
             4.导入 Junit 的依赖环境
         判定结果：
             红色，失败
