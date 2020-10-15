@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+</head>
+<body>
+
+    <select id="province">
+        <option>请选择省份</option>
+
+    </select>
+
+    <script>
+        $(function (){
+            $.get('/Demo05Redis/provinceServlet',{},(res)=>{
+                // 1.获取select
+                let province = $("#province");
+                // 2.遍历json数组
+                for (let i = 0; i < res.length; i++){
+                    let option = "<option name="+ res[i].id +">" + res[i].name + "</option>"
+                    province.append(option);
+                }
+            });
+        })
+    </script>
+
+</body>
+</html>
