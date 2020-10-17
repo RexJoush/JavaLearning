@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JavaEE/Demo04AjaxJson/Demo04AjaxJson.iml" filepath="$PROJECT_DIR$/JavaEE/Demo04AjaxJson/Demo04AjaxJson.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaEE/Demo05Redis/Demo05Redis.iml" filepath="$PROJECT_DIR$/JavaEE/Demo05Redis/Demo05Redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaEE/Demo06MavenNginx/Demo06MavenNginx.iml" filepath="$PROJECT_DIR$/JavaEE/Demo06MavenNginx/Demo06MavenNginx.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaLearning.iml" filepath="$PROJECT_DIR$/.idea/JavaLearning.iml" />
     </modules>
   </component>

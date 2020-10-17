@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Demo06MavenNginx:war">
+    <output-path>$PROJECT_DIR$/JavaEE/Demo06MavenNginx/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Demo06MavenNginx</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Demo06MavenNginx-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Demo06MavenNginx:war exploded" />
+    </root>
+  </artifact>
+</component>

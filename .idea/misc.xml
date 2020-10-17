@@ -5,6 +5,9 @@
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04JsonAjax" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo05Redis" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo06AjaxJson" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo06Maven" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo06MavenNginx" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo07Nginx" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -13,6 +16,7 @@
         <option value="$PROJECT_DIR$/JavaEE/Demo05Redis/pom.xml" />
         <option value="$PROJECT_DIR$/JavaEE/Demo04AjaxJson/pom.xml" />
         <option value="$PROJECT_DIR$/Demo06AjaxJson/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/Demo06MavenNginx/pom.xml" />
       </list>
     </option>
   </component>
