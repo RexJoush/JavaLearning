@@ -66,3 +66,5 @@ conf\server.xml
             - 在 web.xml中加入配置
                 `<distributable/>`
         - 使用 redis 服务器的方式实现，即所有 tomcat 服务器将所有 session 都存储到一个 redis 服务器中（推荐）
+
+## Linux 下安装 Nginx
