@@ -17,7 +17,7 @@
         - 集合类型 set: 不允许重复
         - 有序集合类型 sortedset
 * 字符串类型 string
-```
+``` java
 // 存储
 set key value
 // 获取
@@ -26,7 +26,7 @@ get key
 del key
 ```
 * 哈希类型 hash
-```
+``` java
 // 存储
 hset key field value
 // 获取
@@ -37,20 +37,20 @@ hgetall key
 hdel key field
 ```
 * 列表类型 list, 可以添加一个元素到列表的头部或尾部
-```
+``` java
 // 存储 
-lpush key value 将元素添加到列表的左边
-rpush key value 将元素添加到列表的右边
+lpush key value // 将元素添加到列表的左边
+rpush key value // 将元素添加到列表的右边
 // 获取
-lrange key start end 范围获取
+lrange key start end // 范围获取
 // 获取所有
 lrange listA 0 -1
 // 删除
-lpop key 从列表左边弹出元素
-rpop key 从列表右边弹出元素
+lpop key // 从列表左边弹出元素
+rpop key // 从列表右边弹出元素
 ```
 * 集合类型 set, 不允许重复
-```
+``` java
 // 存储
 sadd key value
 // 获取
@@ -59,7 +59,7 @@ smembers key // 获取set集合所有元素
 srem key value
 ```
 * 有序集合类型 sortedset, 不允许重复，且元素有序
-```
+``` java
 // 存储
 zadd key score value // score 代表分数，即排序key
 // 获取
@@ -72,10 +72,10 @@ zrem key value
 // 排序
 ```  
 * 通用命令
-```
-keys * // 查询所有的键
-type key // 获取键对应 value 的类型
-del key // 删除指定的 key value
+``` java
+keys *      // 查询所有的键
+type key    // 获取键对应 value 的类型
+del key     // 删除指定的 key value
 ``` 
 #### 持久化操作
 * redis是一个内存数据化，当redis服务器重启数据就会丢失，可以将数据持久化存储到文件中
@@ -83,7 +83,7 @@ del key // 删除指定的 key value
     - RDB: 默认方式，不需要进行配置，默认使用此机制
         - 在一定的间隔时间中检测key的变化情况，然后持久化数据
         - 编辑conf文件
-            ```
+            ``` editorconfig
             # after 900 sec (15 min) if at least 1 key change
             save 900 1
             # after 300 sec (5 min) if at least 10 keys change
@@ -92,10 +92,10 @@ del key // 删除指定的 key value
             save 60 10000
             ```
         - 重新启动 redis 服务器，并指定配置文件  
-        `redis-server.exe redis.windows.conf`
+        `$ redis-server.exe redis.windows.conf`
     - AOF: 日志记录的方式，记录每一条命令的操作，每一次命令操作
         - 编辑conf文件
-        ```
+        ``` editorconfig
         appendonly no (关闭AOF) 改为 appendonly yes (开启AOF)
         # appendfsyc always  // 每一次操作都进行持久化存储
         appendfsunc everysec // 每隔一秒进行一次持久化
@@ -106,7 +106,7 @@ del key // 删除指定的 key value
 
 * Jedis: 一款java操作redis数据库的工具
     - 导入jar包
-        ```
+        ``` xml
         <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
         <dependency>
             <groupId>redis.clients</groupId>
@@ -122,7 +122,7 @@ del key // 删除指定的 key value
         </dependency>
         ```
     - 快速入门
-        ```
+        ``` java
         // 1.获取连接
         Jedis jedis = new Jedis("localhost", 6379);
         
@@ -133,7 +133,7 @@ del key // 删除指定的 key value
         jedis.close();
         ```
     - Jedis操作各种redis中的数据结构
-        ```
+        ``` java
         // 1.字符串类型 string
         set
         get
@@ -151,16 +151,16 @@ del key // 删除指定的 key value
         zrem
         ```
     - Jedis 连接池，JedisPool
-        - 创建连接池配置对象
-        `JedisPoolConfig config = new JedisPoolConfig();`
-        - 添加连接池配置参数
-        `config.setMaxTotal(50); // 最大连接数`
-        - 创建连接池对象
-        `JedisPool jedisPool = new JedisPool(config, "localhost", 6379);`
-        - 调用 getResource() 方法来获取连接
-        `Jedis jedis = jedisPool.getResource();`
-        - 连接池参数列表
-            ```
+        ``` java
+        // 1.创建连接池配置对象
+        JedisPoolConfig config = new JedisPoolConfig();
+        // 2.添加连接池配置参数
+        config.setMaxTotal(50); // 最大连接数
+        // 3.创建连接池对象
+        JedisPool jedisPool = new JedisPool(config, "localhost", 6379);
+        // 4.调用 getResource() 方法来获取连接
+        Jedis jedis = jedisPool.getResource();
+        // 5.连接池参数列表
             # 最大活动对象数
             redis.pool.maxTotal = 1000
             

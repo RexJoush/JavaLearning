@@ -10,19 +10,21 @@
 ####概念，客户端会话技术
 ####快速入门
 * 步骤
-    - 1.创建Cookie对象，绑定数据  
-    `new Cookie(String name, String value);`
-    - 2.发送Cookie对象  
-    `response.addCookie(Cookie cookie);`
-    - 3.获取Cookie，拿到数据  
-    `Cookie[] cookies = request.getCookies();`
+``` java
+// 1.创建Cookie对象，绑定数据  
+new Cookie(String name, String value);
+// 2.发送Cookie对象  
+response.addCookie(Cookie cookie);
+// 3.获取Cookie，拿到数据  
+Cookie[] cookies = request.getCookies();
+```
 ####实现原理
 * 基于响应头set-cookie和请求头cookie实现
 
 ####cookie的细节
 * 一次可否发送多个cookie
     - 可以
-    ```
+    ``` java
     Cookie c1 = new Cookie("msg1", "hello");
     Cookie c2 = new Cookie("msg2", "world");
     response.addCookie(c1);
@@ -32,7 +34,7 @@
 * cookie在浏览器中保存多长时间
     - 默认情况下，当浏览器关闭后，cookie资源被释放
     - 设置Cookie的生命周期，持久化存储  
-    ```
+    ``` java
     setMaxAge(int seconds);
     // 正数，将Cookie数据写到硬盘中，持久化存储，代表Cookie的存活时间
     // 负数，默认值，即关闭浏览器就清除

@@ -2,15 +2,17 @@
 ####概念，服务器端会话技术，将数据保存在服务器对象中，HttpSession
 ####快速入门
 * HttpSession对象
-    ```
+    ``` java
     Object getAttribute(String name);
     void setAttribute(String name, Object value);
     void removeAttribute(String name);
     ```
 * 获取HttpSession对象  
-    `HttpSession session = request.getSession();`
-* 使用HttpSession对象  
+    ``` java
+    HttpSession session = request.getSession();
     ```
+* 使用HttpSession对象  
+    ``` java
     session.setAttribute("msg", "Hello Session"); // 设置session
     Object obj = session.getAttribute("msg"); // 获取session
     ```
@@ -21,7 +23,7 @@
 * 当客户端关闭后，服务器不关闭，两次获取session是否为同一个？
     - 默认情况下不是
     - 如果需要， 则可以设置最大存活时间
-    ```
+    ``` java
     Cookie cookie = new Cookie("JSESSIONID",session.getId());
     cookie.setMaxAge(60*60); // 一个小时
     response.addCookie(cookie);

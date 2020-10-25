@@ -3,7 +3,7 @@
 #### Nginx + Tomcat 集群配置
 * 在一台电脑上安装两个 tomcat
 * 修改 tomcat 的配置文件，将端口进行修改
-```
+``` html
 conf\server.xml
 // 修改三个地方
 // 1.server标签
@@ -21,7 +21,7 @@ conf\server.xml
 
 * 配置 nginx
     - 修改 \nginx\conf\nginx.conf
-    ```
+    ``` json
     // 1.在server之前添加server列表
     upstream serverlib {    // serverlib名字随便起
         server localhost:8080; // 可以添加权重信息 server localhost:8080 weight 4;
@@ -50,7 +50,7 @@ conf\server.xml
     - 共享 session
         - 使用 tomcat 的广播机制，实现 session 共享，（不推荐）
             - 修改 server.xml 的内容
-                ```
+                ``` html
                 // 单集群，将 Engine 标签中的 Cluster 标签去掉注释即可
                 <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpClister" />
                 // 如果是多集群，可以加上参数

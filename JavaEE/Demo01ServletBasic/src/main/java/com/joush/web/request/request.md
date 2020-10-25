@@ -21,7 +21,7 @@ org.apache.catalina.connector.RequestFacade (tomcat实现的)
         - 获取get方式请求参数 name=tom  
             `String getQueryString(); `
         - 获取请求的uri /Demo1/demo01  
-            ```
+            ``` java
             String getRequestURI();
             StringBuffer getRequestURL(); // http://localhost:8080/Demo1/demo01
             
@@ -34,19 +34,19 @@ org.apache.catalina.connector.RequestFacade (tomcat实现的)
             `String getRemoteAddr(); `
 - 获取请求头数据
     * 方法
-        ```
+        ``` java
         String getHeader(String name); 通过请求头的名称获取请求头的值
         Enumeration<String> getHeaderNames(); 获取所有请求头名称
         ```
 - 获取请求体数据，请求体只有 POST 请求才有
     * 步骤
         - 获取流对象  
-          ``` 
+          ``` java 
           BufferedReader getReader(); 获取字符输入流，只能操作字符数据
           ServletInputStream getInputStream(); 获取字节输入流，可以操作所有类型数据
           ```
         - 从流对象获取数据
-        ```
+        ``` java
         // 2.读取数据
         String line = null;
         while ((line = reader.readLine()) != null){
@@ -55,9 +55,9 @@ org.apache.catalina.connector.RequestFacade (tomcat实现的)
         ```
 ####2.其他功能
 - 获取请求参数通用方式
-    ```
+    ``` java
     String getParameter(String name); 根据参数名获取参数值
-    tring[] getParameterValues(String name); 根据参数名获取参数值数组 hobby=movie&hobby=watch
+    String[] getParameterValues(String name); 根据参数名获取参数值数组 hobby=movie&hobby=watch
     Enumeration<String> getParameterNames(); 获取所有参数的名称
     Map<String,String[]> getParameterMap(); 获取所有参数的键值对 map 集合
     ```
@@ -78,7 +78,7 @@ org.apache.catalina.connector.RequestFacade (tomcat实现的)
 - 域对象，一个有作用范围对象
 - request域，代表一次请求的范围，一般用于请求转发的多个资源中共享数据
 - 方法
-    ```
+    ``` java
     setAttribute(String name, Object obj); // 存储数据
     getAttribute(String name); // 通过键值来获取数据
     removeAttribute(String name); // 通过键来移除键值对

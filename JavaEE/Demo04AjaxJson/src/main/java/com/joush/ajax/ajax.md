@@ -7,7 +7,7 @@
 * JQuery实现方式
     - $.ajax()
         - 语法 $.ajax(url, [settings]);
-        ```
+        ``` javascript
         $.ajax({
             url: '/Demo04/jqueryServlet', // 请求参数
             type: 'GET', // 请求方式
@@ -26,8 +26,11 @@
         ```
     - $.get(),$.post()
         - 语法 
-            - $.get(url, [data], [callback], [type]);
-            - $.post(url, [data], [callback], [type]);
+        ``` javascript
+        $.get(url, [data], [callback], [type]);
+        $.post(url, [data], [callback], [type]);
+        ```
+            
         - 参数
             - url, 请求路径
             - data, 请求参数
@@ -50,7 +53,7 @@
     - json对象["键名"]  obj["name""]
     - 数组对象[索引]     arr[1]
 * 遍历json
-    ```
+    ``` javascript
     for(let key in obj){
         // 错误写法，因为key获取的是 字符串，即 obj."name"，所以拿不到值
         console.log(key + ":" + obj.key);
@@ -63,7 +66,7 @@
     常见的解析器： Jsonlib,Gson,fastjson,jackson
 * JSON转换为Java对象
     - 导入jar包
-        ```
+        ``` xml
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

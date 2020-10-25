@@ -23,7 +23,7 @@
         - 注解配置
 * 过滤器细节
     - web.xml配置
-    ```
+    ``` xml
     <filter>
         <filter-name>demo01</filter-name>
         <filter-class>com.joush.filter.FilterDemo01</filter-class>

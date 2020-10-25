@@ -44,7 +44,7 @@
     - 获取  
         - `String getMimeType(String file);`
 * 域对象，共享数据
-    ```
+    ``` java
     setAttribute(String name, Object value);
     getAttribute(String name);
     removeAttribute(String name);

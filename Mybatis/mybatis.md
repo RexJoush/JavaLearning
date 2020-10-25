@@ -74,5 +74,22 @@ resource.close();
 * 明确    
     - 在实际开发中，我们采用不写实现类的方式，不管使用XML还是注解，但 Mybatis 支持写 dao 实现类的 
 
-* 自定义 Dao 的实现类
+#### 自定义 mybatis 框架
+* 分析
+    - mybatis 在使用代理 dao 实现增删改查时，做了两件事
+    - 创建代理对象
+    - 在代理对象中调用 selectList 方法
+
+* 步骤
+    - 根据配置文件的信息创建 Connection 对象，注册驱动获取连接
+    - 获取预处理对象 PreparedStatement，此时需要 sql 语句
+    - 执行查询 `ResultSet resultSet = preparedStatment.executeQuery(); `
+    - 遍历结果集，用于封装
+    - 返回 list 集合
+* 自定义 mybatis 能通过入门案例看到类
+    - class Resource
+    - class SqlSessionFactoryBuilder
+    - interface SqlSessionFactory
+    - interface SqlSession
+    
 
