@@ -11,7 +11,6 @@
         <module name="Demo05Redis" />
         <module name="Demo04AjaxJson" />
         <module name="Demo02MybatisCustomize" />
-        <module name="Demo01DockerIntroduction" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
