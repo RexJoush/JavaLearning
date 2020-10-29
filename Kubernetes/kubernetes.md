@@ -32,6 +32,7 @@ $ systemctl start kubelet
     ``` editorconfig
     # 创建文件夹  
     $ mkdir /usr/local/kubernetes
+    $ cd /usr/local/kubernetes
     
     # 此处注意，内容一定保证一样，空格缩进一定要一样，不然会出错，单行缩进一个空格，注意！！！
     $ vi mytomcat-rc.yaml
@@ -83,17 +84,26 @@ $ systemctl start kubelet
             
         $ kubectl create -f mytomcat-svc.yaml
         # service "mytomcat" created 创建成功
-        $ kubectl get svc 
+        $ kubectl get svc
         # 出现结果说明正确
         ```
     - 错误解决
-    ``` editorconfig
-    # kubectl get pods 出现 No resources found.
-    
-    # 1
-    $ vi /etc/kubernetes/apiserver
-    # 2.找到 
-    "KUBE_ADMISSION_CONTROL="-admission"
-    
-    
-    ```
+        - kubectl get pods 出现 No resources found.
+            ``` editorconfig
+            # 1.编辑文件
+            $ vi /etc/kubernetes/apiserver
+            # 2.找到 
+            "KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExits,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuoya",
+            去掉 ServiceAccount,保存退出
+            # 3.重启服务
+            systemctl restart kube-apiserver
+            # 4.查看结果即可
+            $ kubectl get pods
+            
+            ```
+        - docker pull 失败
+            ``` editorconfig
+            # 解决方案 1
+            $ yum install rhsm
+            $ docker pull register.access.redhat.com/rhel7/pod-infrastructure:lastest
+            ```
