@@ -158,3 +158,134 @@ $ systemctl start kubelet
     - 负责镜像管理以及 Pod 和容器的真正运行 (CRI)
 * kube-proxy
     - 负责为 Service 提供 cluster 内部的服务发现和负载均衡
+    
+#### Cluster
+* Cluster 是计算、存储和网络资源的集合，Kubernetes 利用这些资源运行各种基于容器的应用
+* Kubernetes Cluster 由 Master 和 Node 组成，节点上运行着若干 Kubernetes 服务
+
+#### Master
+* Master 主要职责是调度，即决定将应用放在哪里运行。Master 运行 Linux 系统，可以是物理机或虚拟机。Master 是 Kubernetes Cluster 的大脑
+* 运行着 Daemon 服务包括 kube-apiserver、kube-scheduler、kube-controller-manager、etcd 和 pod 网络
+* pod 网络
+    - pod 网络需要能够互相通信，Kubernetes Cluster 必须部署 Pod 网络，flannel 是其中一个可选方案
+    
+#### Node
+* 除了 Master 以外，Kubernetes 集群中的其他节点称为 Node 节点。
+* Node 负责运行容器应用，Node 由 Master 管理，Node 负责监控并汇报容器状况，根据 Master 管理容器的生命周期。Node 也运行在 Linux，可以是物理机或虚拟机
+* 每个 Node 节点都运行一组关键进程
+    - kubelet
+        - 负责 Pod 对应容器的创建、启动等任务，同时与 Master 密切合作，实现集群管理的基本功能
+    - kube-proxy
+        - 实现 Kubernetes Service 的通信与负载均衡机制的重要组件
+    - Docker Engine
+        - Docker 引擎，负责本机的容器创建和管理工作
+
+#### Pod
+* Pod 是 Kubernetes 的最小单元，也是最重要最基本的概念。每个 Pod 包含一个或多个容器， Pod 的容器会作为一个整体被 Master 调度到一个 Node 上运行。
+* Kubernetes 为每个 Pod 都分配了唯一的 IP 地址，称为 PodIP，一个 Pod 里的多个容器共享 PodIP 地址
+* 在 Kubernetes 里，一个 Pod 里的容器与另外主机上的 Pod 容器能够直接通信
+
+#### Service
+* Kubernetes Service 定义了外界访问一组特定 Pod 的方式，Service 有自己的 IP 和端口， Service 为 Pod 提供了负责均衡
+* 他是 Kubernetes 最核心的资源对象之一，每个 Service 其实就是我们经常提起的微服务架构中的一个微服务
+
+#### Replication Controller
+* Replication Controller (RC) 是 Kubernetes 系统中核心的概念之一他其实是定义了一个期望的场景，即声明某种 Pod 的副本数量在任意时刻都符合某个预期值，所以 RC 的定义包括如下几个部分
+    - Pod 期待的副本数 (replicas)
+    - 用于筛选目标 Pod 的 Label Selector
+    - 当 Pod 的副本数量小于预期数量时，用于创建新 Pod 的 Pod 模板 (template)
+* RC 的特性与作用
+    - 在大多数的情况下，我们通过定义一个 RC 实现 Pod 的创建过程以及副本数量的自动控制
+    - RC 包含完整的 Pod 定义模板
+    - RC 通过 Label Selector 机制实现对 Pod 副本的自动控制
+    - 通过改变 RC 里的副本数量，可以实现 Pod 的扩容或缩容功能
+    - 通过改变 RC 里 Pod 模板中的镜像版本，可以实现 Pod 的滚动升级
+    
+## Kubernetes 集群
+* kubernetes 集群部署有三种方式，kubeadm，minikube 和二进制包，前两种属于自动部署，简化部署操作，建议使用二进制包，利于学习
+
+#### 环境准备与规划
+* 推荐配置 2核2G
+* | 角色 | IP  | 组件 |
+  |:----|:----|:---- |
+  |master| 192.168.52.133| etcd, kube-apiserver, kube-controller, kube-scheduler, docker|
+  |node1 | 192.168.52.134| kube-proxy, kubelet, docker|
+  |node2 | 192.168.52.135| kube-proxy, kubelet, docker|
+* 步骤
+``` editorconfig
+# 查看默认防火墙状态（关闭显示 not running，开启显示 running）
+$ firewall-cmd --state
+
+# 关闭防火墙
+$ systemctl stop firewalld.service
+
+# 禁止 firewall 开机启动
+$ systemctl disable firewalld.service
+
+```
+* 获取 kubernetes 二进制包
+    - <https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.18.md#v11810>
+    - 找到 Server Binaries,下载 kubernetes-server-linux-amd64.tar.gz
+    
+#### Master 安装
+
+* docker 安装
+    <!--- 
+    # 设置 yum 源
+    ``` editorconfig
+    $ vi /etc/yum.repos.d/docker.repo
+    [dockerrepo]
+    name=Docker Repository
+    baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://yum.dockerproject.org/gpg
+    ```
+    --->
+    ``` editorconfig
+    # 安装 docker
+    $ yum install docker
+    
+    # 查看 docker 版本
+    $ docker -v
+    ```
+    
+* etcd 服务
+    - etcd 作为 Kubernetes 集群的主要服务，在安装 Kubernetes 各服务之前需要首先安装和启动
+    - 下载 etcd 二进制文件
+        <https://github.com/etcd-io/etcd/releases>   
+        etcd-v3.3.x-linux-amd64.tar.gz
+    - 上传至 /usr/local/kubernetes, 此文件夹随意即可
+    - 解压，并将 etcd 和 etcdctl 文件复制到 /usr/bin 目录下
+        ``` editorconfig
+        $ tar -xvf etcd-v3.3.25-linux-amd64.tar.gz
+        $ cd etcd-v3.3.25-linux-amd64
+        $ cp etcd etcdctl /usr/bin
+        ```
+    - 配置 systemd 服务文件 /usr/lib/systemd/system/etcd.service
+        ``` editorconfig
+        $ vi /usr/lib/systemd/system/etcd.service
+        
+        [Unit]
+        Description=Etcd Server
+        After=network.target
+        [Service]
+        Type=simple
+        EnvironmentFile=-/etc/etcd/etcd.conf
+        WorkingDirectory=/var/lib/etcd/
+        ExecStart=/usr/bin/etcd
+        Restart=on-failure
+        [Install]
+        WantedBy=multi-user.target
+        ```
+    - 启动与测试服务
+        ``` editorconfig
+        $ mkdir /var/lib/etcd # 创建出来工作目录
+        $ systemctl daemon-reload
+        $ systemctl enable etcd.service
+        $ systemctl start etcd.service
+        $ systemctl status etcd.service # 查看到 running 表示启动成功
+        $ etcdctl cluster-health # 出现 cluster is healthy 说明成功
+        ```
+
+* kube-apiserver 服务
