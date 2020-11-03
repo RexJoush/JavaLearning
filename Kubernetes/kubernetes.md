@@ -289,3 +289,113 @@ $ systemctl disable firewalld.service
         ```
 
 * kube-apiserver 服务
+    - 下载 kubernetes-server-linux-amd64.tar.gz
+    <https://kubernetes.io/docs/setup/release/notes/>
+    - 将 kubernetes/server/bin 下的 kube-apiserver kube-controller-manager kube-scheduler kubectl 以及管理要使用的二进制命令文件放到 /usr/bin目录
+    ``` editorconfig
+    cp kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/bin
+    ```
+    - 对 kube-apiserver 服务进行配置
+    ``` editorconfig
+    # 编辑 systemd 服务文件 
+    $ vi /usr/lib/systemd/system/kube-apiserver.service
+    
+    # 添加内容
+    [Unit]
+    Description=Kubernetes API server
+    Documentation=https://github.com/kubernetes/kubernetes
+    After=etcd.service
+    Wants=etcd.service
+    [Service]
+    EnvironmentFile=/etc/kubernetes/apiserver
+    EexcStart=/usr/bin/kube-apiserver $KUBE_API_ARGS
+    Restart=on-failure
+    Type=notify
+    [Install]
+    WantedBy=multi-user.target
+  
+    # 配置文件，创建目录
+    $ mkdir /etc/kubernetes
+    $ vi /etc/kubernetes/apiserver
+  
+    # 添加内容
+    KUBE_API_ARGS="--storage-backend=etcd3 --etcd-servers=http://127.0.0.1:2379 --insecure-bind-address=0.0.0.0
+    --insecure-port=8080 --service-cluster-ip-range=169.169.0.0/16 --service-node-port-range=1-65535
+    --admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,DedaultStorageClass,ResourceQuota
+    --logtostderr=true --log-dir=/var/log/kubernetes --v=2"
+    ```
+
+* kube-controller-manager 服务
+    - kube-controller-manager 依赖于 kube-apiserver 服务
+    ``` editorconfig
+    # 配置 systemd 服务文件
+    $ vi /usr/lib/systemd/system/kube-controller-manager.service
+    
+    # 添加内容
+    [Unit]
+    Description=Kubernetes Controller Manager
+    Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+    After=kube-apiserver.service
+    Requires=kube-apiserver.service
+    
+    [Service]
+    EnvironmentFile=/etc/kubernetes/controller-manager
+    EexcStart=/usr/bin/kube-controller-manager $KUBE_CONTROLLER_MANAGER_ARGS
+    Restart=on-failure
+    LimitNOFILE=65536
+  
+    [Install]
+    WantedBy=multi-user.target
+    
+    # 配置文件
+    $ vi /etc/kubernetes/controller-manager
+  
+    # 添加内容
+    KUBE_CONTROLLER_MANAGER_ARGS="--master=http://192.168.52.133:8080 --logtostderr=true --log-dir=/var/log/kubernetes --v=2"
+    ```
+
+* kube-scheduler 服务
+    - kube-scheduler 也依赖于 kube-apiserver 服务
+    ``` editorconfig
+    # 配置 systemd 服务文件
+    $ vi /usr/lib/systemd/system/kube-scheduler.service
+    
+    # 添加内容
+    [Unit]
+    Description=Kubernetes Scheduler
+    Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+    After=kube-apiserver.service
+    Requires=kube-apiserver.service
+    
+    [Service]
+    EnvironmentFile=/etc/kubernetes/scheduler
+    EexcStart=/usr/bin/kube-controller-manager $KUBE_SCHEDULER_ARGS
+    Restart=on-failure
+    LimitNOFILE=65536
+  
+    [Install]
+    WantedBy=multi-user.target
+    
+    # 配置文件
+    $ vi /etc/kubernetes/scheduler
+  
+    # 添加内容
+    KUBE_SCHEDULER_ARGS="--master=http://192.168.52.133:8080 --logtostderr=true --log-dir=/var/log/kubernetes --v=2"
+    ```  
+* 启动
+    - 完成上面配置后，开始启动服务
+    ``` editorconfig
+    # 挨个启动
+    $ systemctl daemon-reload
+    $ systemctl enable kube-apiserver.service
+    $ systemctl start kube-apiserver.service
+    $ systemctl enable kube-controller-manager.service
+    $ systemctl start kube-controller-manager.service
+    $ systemctl enable kube-scheduler.service
+    $ systemctl start kube-scheduler.service
+  
+    # 检查状态
+    $ systemctl status kube-apiserver.service
+    $ systemctl status kube-controller-manager.service
+    $ systemctl status kube-scheduler.service
+    ```
