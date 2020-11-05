@@ -21,6 +21,7 @@
 
     <!--  指定映射配置文件的位置，映射配置文件使每个dao独立的配置文件  -->
     <mappers>
+    <!--  <mapper resource="com/joush/dao/UserDao.xml"></mapper>  -->
         <mapper class="com.joush.domain.User"></mapper>
     </mappers>
 </configuration>

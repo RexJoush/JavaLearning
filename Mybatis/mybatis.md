@@ -20,57 +20,57 @@
     - 映射配置文件的操作配置，id 属性必须是 dao 接口的方法名
 
 * 项目设计模式讲解
-``` java
-/*
-    1.读取配置文件
-
-    在读取配置文件的时候绝对路径和相对路径都不可靠，只有两种方法
-    1.使用类加载器，但只能读取类路径的配置文件
-    2.使用 ServletContext 对象的 getRealPath() 获取路径
-*/
-InputStream resource = Resources.getResourceAsStream("sqlMapConfig.xml"); 
-
-/*
-    2.创建 SqlSessionFactory 工厂
+    ``` java
+    /*
+        1.读取配置文件
     
-    创建工厂时，mybatis 使用了 构建者模式，即 builder 为构建者，resource 可理解为付给构建者报酬
-    把对象的创建细节隐藏，使使用者直接调用方法即可拿到对象
-*/
-SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-SqlSessionFactory factory = builder.build(resource);
-
-/*
-    3.使用工厂生产 SqlSession 对象
+        在读取配置文件的时候绝对路径和相对路径都不可靠，只有两种方法
+        1.使用类加载器，但只能读取类路径的配置文件
+        2.使用 ServletContext 对象的 getRealPath() 获取路径
+    */
+    InputStream resource = Resources.getResourceAsStream("sqlMapConfig.xml"); 
     
-    生产 SqlSession 使用了 工厂模式 ，工厂模式的优点是解耦，降低类之间的依赖关系
-*/
-SqlSession session = factory.openSession();
-
-/*
-    4.使用 SqlSession 创建 Dao 接口的代理对象
+    /*
+        2.创建 SqlSessionFactory 工厂
+        
+        创建工厂时，mybatis 使用了 构建者模式，即 builder 为构建者，resource 可理解为付给构建者报酬
+        把对象的创建细节隐藏，使使用者直接调用方法即可拿到对象
+    */
+    SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+    SqlSessionFactory factory = builder.build(resource);
     
-    Dao接口实现类使用了 代理模式，即在不修改源码的基础上对已有方法进行增强
-*/
-UserDao dao = session.getMapper(UserDao.class);
-
-// 5.使用代理对象执行方法   
-List<User> users = dao.findAll();
-for (User user : users){
-    System.out.println(user);
-}
-
-// 6.释放资源
-session.close();
-resource.close();
-
-// 注意在映射配置文件中封装实体类，配置方式，指定实体类的全类名
-
-```
+    /*
+        3.使用工厂生产 SqlSession 对象
+        
+        生产 SqlSession 使用了 工厂模式 ，工厂模式的优点是解耦，降低类之间的依赖关系
+    */
+    SqlSession session = factory.openSession();
+    
+    /*
+        4.使用 SqlSession 创建 Dao 接口的代理对象
+        
+        Dao接口实现类使用了 代理模式，即在不修改源码的基础上对已有方法进行增强
+    */
+    UserDao dao = session.getMapper(UserDao.class);
+    
+    // 5.使用代理对象执行方法   
+    List<User> users = dao.findAll();
+    for (User user : users){
+        System.out.println(user);
+    }
+    
+    // 6.释放资源
+    session.close();
+    resource.close();
+    
+    // 注意在映射配置文件中封装实体类，配置方式，指定实体类的全类名
+    
+    ```
 * mybatis 基于注解的入门案例
-```
-把UserDao.xml 移除，在dao接口方法上使用 @Select注解，并指定 sql 语句
-同时需要在sqlMapConfig.xml 中的 mapper 配置时，使用 class 属性指定dao 接口的全类名
-```
+    ```
+    把UserDao.xml 移除，在dao接口方法上使用 @Select注解，并指定 sql 语句
+    同时需要在sqlMapConfig.xml 中的 mapper 配置时，使用 class 属性指定dao 接口的全类名
+    ```
 * 明确    
     - 在实际开发中，我们采用不写实现类的方式，不管使用XML还是注解，但 Mybatis 支持写 dao 实现类的 
 
@@ -83,13 +83,25 @@ resource.close();
 * 步骤
     - 根据配置文件的信息创建 Connection 对象，注册驱动获取连接
     - 获取预处理对象 PreparedStatement，此时需要 sql 语句
-    - 执行查询 `ResultSet resultSet = preparedStatment.executeQuery(); `
+    - 执行查询
+        ``` java 
+        ResultSet resultSet = preparedStatment.executeQuery(); 
+        ```
     - 遍历结果集，用于封装
     - 返回 list 集合
-* 自定义 mybatis 能通过入门案例看到类
+* 自定义 mybatis 能通过入门案例看到的类
     - class Resource
     - class SqlSessionFactoryBuilder
     - interface SqlSessionFactory
     - interface SqlSession
-    
+
+## mybatis 的 crud 操作
+
+## mybatis 的参数深入和结果集的深入
+
+## mybatis 中的配置（主配置文件: sqlMapConfig.xml）
+
+#### properties 标签
+#### typeAliases 标签
+#### mappers 标签    
 

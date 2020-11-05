@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo01MybatisIntroduction/Demo01MybatisIntroduction.iml" filepath="$PROJECT_DIR$/Mybatis/Demo01MybatisIntroduction/Demo01MybatisIntroduction.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo02MybatisCustomize/Demo02MybatisCustomize.iml" filepath="$PROJECT_DIR$/Mybatis/Demo02MybatisCustomize/Demo02MybatisCustomize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo03MybatisCRUD/Demo03MybatisCRUD.iml" filepath="$PROJECT_DIR$/Mybatis/Demo03MybatisCRUD/Demo03MybatisCRUD.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaEE/Demo04AjaxJson/Demo04AjaxJson.iml" filepath="$PROJECT_DIR$/JavaEE/Demo04AjaxJson/Demo04AjaxJson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo04MybatisMeP/Demo04MybatisMeP.iml" filepath="$PROJECT_DIR$/Mybatis/Demo04MybatisMeP/Demo04MybatisMeP.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaEE/Demo05Redis/Demo05Redis.iml" filepath="$PROJECT_DIR$/JavaEE/Demo05Redis/Demo05Redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaEE/Demo06MavenNginx/Demo06MavenNginx.iml" filepath="$PROJECT_DIR$/JavaEE/Demo06MavenNginx/Demo06MavenNginx.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaLearning.iml" filepath="$PROJECT_DIR$/.idea/JavaLearning.iml" />

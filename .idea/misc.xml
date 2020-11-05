@@ -20,8 +20,10 @@
         <option value="$PROJECT_DIR$/Framwork/Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo01MybatisIntroduction/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo02MybatisCustomize/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo03MybatisCRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo04MybatisMeP/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

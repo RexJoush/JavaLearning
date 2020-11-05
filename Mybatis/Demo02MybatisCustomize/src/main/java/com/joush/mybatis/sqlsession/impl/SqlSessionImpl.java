@@ -31,9 +31,9 @@ public class SqlSessionImpl implements SqlSession {
     @Override
     public <T> T getMapper(Class<T> daoInterfaceClass) {
 
-        Proxy.newProxyInstance(daoInterfaceClass.getClassLoader(),
+        return (T) Proxy.newProxyInstance(daoInterfaceClass.getClassLoader(),
                 new Class[]{daoInterfaceClass}, new MapperProxy(configuration.getMappers(), connection));
-        return null;
+
     }
 
     @Override

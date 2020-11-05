@@ -35,7 +35,7 @@ public class MapperProxy implements InvocationHandler {
         String methodName = method.getName();
 
         // 2.获取方法所在类的名称
-        Class<?> className = method.getDeclaringClass();
+        String className = method.getDeclaringClass().getName();
 
         // 3.组合 key
         String key = className + "." + methodName;

@@ -308,7 +308,7 @@ $ systemctl disable firewalld.service
     Wants=etcd.service
     [Service]
     EnvironmentFile=/etc/kubernetes/apiserver
-    EexcStart=/usr/bin/kube-apiserver $KUBE_API_ARGS
+    ExecStart=/usr/bin/kube-apiserver $KUBE_API_ARGS
     Restart=on-failure
     Type=notify
     [Install]
@@ -321,7 +321,7 @@ $ systemctl disable firewalld.service
     # 添加内容
     KUBE_API_ARGS="--storage-backend=etcd3 --etcd-servers=http://127.0.0.1:2379 --insecure-bind-address=0.0.0.0
     --insecure-port=8080 --service-cluster-ip-range=169.169.0.0/16 --service-node-port-range=1-65535
-    --admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,DedaultStorageClass,ResourceQuota
+    --admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,DefaultStorageClass,ResourceQuota
     --logtostderr=true --log-dir=/var/log/kubernetes --v=2"
     ```
 
@@ -340,7 +340,7 @@ $ systemctl disable firewalld.service
     
     [Service]
     EnvironmentFile=/etc/kubernetes/controller-manager
-    EexcStart=/usr/bin/kube-controller-manager $KUBE_CONTROLLER_MANAGER_ARGS
+    ExecStart=/usr/bin/kube-controller-manager $KUBE_CONTROLLER_MANAGER_ARGS
     Restart=on-failure
     LimitNOFILE=65536
   
@@ -369,7 +369,7 @@ $ systemctl disable firewalld.service
     
     [Service]
     EnvironmentFile=/etc/kubernetes/scheduler
-    EexcStart=/usr/bin/kube-controller-manager $KUBE_SCHEDULER_ARGS
+    ExecStart=/usr/bin/kube-controller-manager $KUBE_SCHEDULER_ARGS
     Restart=on-failure
     LimitNOFILE=65536
   

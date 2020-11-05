@@ -2,6 +2,8 @@ package com.joush.mybatis.sqlsession;
 
 import com.joush.mybatis.cfg.Configuration;
 import com.joush.mybatis.sqlsession.impl.SqlSessionFactoryImpl;
+import com.joush.mybatis.utils.XMLConfigBuilder;
+import com.joush.mybatis.utils.XMLConfigBuilder1;
 
 import java.io.InputStream;
 
@@ -17,7 +19,7 @@ public class SqlSessionFactoryBuilder {
      */
     public SqlSessionFactory build(InputStream config){
 
-        Configuration configuration = com.joush.mybatis.utils.XMLConfigBuilder.loadConfiguration(config);
+        Configuration configuration = XMLConfigBuilder.loadConfiguration(config);
 
         return new SqlSessionFactoryImpl(configuration);
 

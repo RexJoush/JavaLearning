@@ -18,7 +18,7 @@ public class Configuration {
     }
 
     public void setMappers(Map<String, Mapper> mappers) {
-        this.mappers.putAll(mappers); // 此处需要使用追加的方式
+        this.mappers.putAll(mappers);//此处需要使用追加的方式
     }
 
     public String getDriver() {
