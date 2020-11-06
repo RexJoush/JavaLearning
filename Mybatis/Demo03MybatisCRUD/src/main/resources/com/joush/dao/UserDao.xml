@@ -30,7 +30,17 @@
 
     <!--  根据名称模糊查询  -->
     <select id="findByName" resultType="com.joush.domain.User" parameterType="String">
-        select * from user where username like #{username};
+        <!-- select * from user where username like #{username}; -->
+        select * from user where username like '%${value}%';
     </select>
 
+    <!--  查询总用户数  -->
+    <select id="findTotal" resultType="int">
+        select count(id) from user;
+    </select>
+
+    <!--  根据 QueryVo 的条件查询用户  -->
+    <select id="findUserByVo" parameterType="com.joush.domain.QueryVo" resultType="com.joush.domain.User">
+        select * from user where username like #{user.username}
+    </select>
 </mapper>

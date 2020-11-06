@@ -97,7 +97,97 @@
 
 ## mybatis 的 crud 操作
 
+* 在 Dao 的接口中定义方法 
+``` java
+/*
+    com.joush.dao.UserDao.java
+*/
+
+// 查询所有
+List<User> findAll();
+
+// 保存方法
+void saveUser(User user);
+
+// 更新用户
+void updateUser(User user);
+
+// 根据 id 删除用户
+void deleteUser(int id);
+
+// 根据 id 查询用户
+User findById(int id);
+
+// 根据名字模糊查询
+List<User> findByName(String username);
+
+// 查询总用户数
+int findTotal();
+```
+
+* 在对应的 Dao.xml 中配置 sql 语句 
+``` xml
+<!-- com.joush.dao.UserDao.xml -->
+
+<!--  查询所有  -->
+<select id="findAll" resultType="com.joush.domain.User">
+    select * from user;
+</select>
+
+<!--  添加用户  -->
+<insert id="saveUser" parameterType="com.joush.domain.User">
+  insert into user (id,username,sex,birthday,address) values (#{id},#{username},#{sex},#{birthday},#{address});
+</insert>
+
+<!--  更新用户  -->
+<update id="updateUser" parameterType="com.joush.domain.User">
+    update user set username = #{username}, sex = #{sex}, birthday = #{birthday}, address = #{address} where id = #{id}
+</update>
+
+<!--  删除用户  -->
+<delete id="deleteUser" parameterType="int">
+    delete from user where id = #{id};
+</delete>
+
+<!--  查询一个  -->
+<select id="findById" resultType="com.joush.domain.User" parameterType="int">
+    select * from user where id = #{id};
+</select>
+
+<!--  根据名称模糊查询  -->
+<select id="findByName" resultType="com.joush.domain.User" parameterType="String">
+    <!--  此方式需要在传参的时候加上 %  
+          且，经过查看，此方式通过 PreparedStatement 的 ? 占位符  -->
+    select * from user where username like #{username};
+    <!--  此方式必须将变量名写为 value
+          通过是用 Statement 字符串拼接来实现的  -->
+    select * from user where username like '%${value}%';
+</select>
+
+<!--  查询总用户数  -->
+<select id="findTotal" resultType="int">
+    select count(id) from user;
+</select>
+```
+
 ## mybatis 的参数深入和结果集的深入
+#### 参数深入
+* parameterType （传入类型）
+* 传递简单类型
+* 传递 pojo 对象
+    - Mybatis 使用 ognl 表达式解析对象字段的值，#{} 或 ${} 括号中的值为 pojo 属性名称
+    - ognl (Object Graphic Navigation Language, 对象图导航语言)
+        - 通过对象中的取值方法获取数据，在写法上省略 get
+            ``` java
+            // 获取用户的名称
+            // 类中的写法
+            user.getUsername();
+            // ognl 表达式写法
+            user.username;
+            ```
+#### 结果集深入
+* 解决实体类名和数据库字段名不一致的问题
+
 
 ## mybatis 中的配置（主配置文件: sqlMapConfig.xml）
 

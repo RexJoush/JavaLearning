@@ -1,5 +1,6 @@
 package com.joush.dao;
 
+import com.joush.domain.QueryVo;
 import com.joush.domain.User;
 
 import java.util.List;
@@ -48,4 +49,16 @@ public interface UserDao {
      */
     List<User> findByName(String username);
 
+    /**
+     * 查询总用户数
+     * @return
+     */
+    int findTotal();
+
+    /**
+     * 根据 QueryVo 中的条件查询用户
+     * @param vo
+     * @return
+     */
+    List<User> findUserByVo(QueryVo vo);
 }

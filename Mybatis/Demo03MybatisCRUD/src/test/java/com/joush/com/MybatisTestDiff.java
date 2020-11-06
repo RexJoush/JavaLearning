@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 测试 Mybatis 的 CRUD 操作
  */
-public class MybatisTest {
+public class MybatisTestDiff {
 
     private InputStream in;
     private SqlSession sqlSession;
