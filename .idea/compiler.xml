@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Demo04AjaxJson" />
+        <module name="Demo04MybatisDao" />
         <module name="Demo06MavenNginx" />
         <module name="Demo01MybatisIntroduction" />
         <module name="Demo03MybatisCRUD" />
@@ -20,6 +21,7 @@
       <module name="Demo02MybatisCustomize" target="1.8" />
       <module name="Demo03MybatisCRUD" target="11" />
       <module name="Demo04AjaxJson" target="1.8" />
+      <module name="Demo04MybatisDao" target="11" />
       <module name="Demo04MybatisMeP" target="11" />
       <module name="Demo05Redis" target="1.8" />
       <module name="Demo06MavenNginx" target="1.8" />

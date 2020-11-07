@@ -79,11 +79,11 @@ public class MybatisTest {
     @Test
     public void testSaveUser() throws IOException {
         User user = new User();
-        user.setId(22);
-        user.setUsername("张三");
-        user.setBirthday("2020-10-10");
-        user.setAddress("河南省洛阳市");
-        user.setSex("男");
+        user.setUserId(22);
+        user.setUserName("张三");
+        user.setUserBirthday("2020-10-10");
+        user.setUserAddress("河南省洛阳市");
+        user.setUserSex("男");
 
         // 5.执行添加方法
         userDao.saveUser(user);
@@ -98,11 +98,11 @@ public class MybatisTest {
     @Test
     public void testUpdateUser(){
         User user = new User();
-        user.setId(22);
-        user.setUsername("张三 update");
-        user.setBirthday("2020-10-10");
-        user.setAddress("河南省洛阳市");
-        user.setSex("女");
+        user.setUserId(22);
+        user.setUserName("张三 update");
+        user.setUserBirthday("2020-10-10");
+        user.setUserAddress("河南省洛阳市");
+        user.setUserSex("女");
 
         // 5.执行更新方法
         userDao.updateUser(user);
@@ -124,7 +124,7 @@ public class MybatisTest {
     @Test
     public void testFindById(){
 
-        // 5.执行删除方法
+        // 5.执行查询一个
         User user = userDao.findById(41);
 
         // 6.输出查询结果
@@ -152,7 +152,7 @@ public class MybatisTest {
      */
     @Test
     public void testFindTotal(){
-        // 5.执行根据名字模糊查询的方法,注意此处需要加上模糊查询的通配符 %
+        // 5.查询个数
         int total = userDao.findTotal();
 
         System.out.println(total);
@@ -168,7 +168,7 @@ public class MybatisTest {
 
         QueryVo vo = new QueryVo();
         User user = new User();
-        user.setUsername("%王%");
+        user.setUserName("%王%");
         vo.setUser(user);
         List<User> users = userDao.findUserByVo(vo);
 

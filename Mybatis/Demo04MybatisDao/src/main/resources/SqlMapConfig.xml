@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--  配置 properties
+            可以在标签内部配置连接数据库的信息，也可以通过属性引用外部配置文件信息
+            resource 属性:
+                用于指定配置文件的位置，按照类路径填写，必须存在于类路径下
+            url 属性:
+                要求按照 url 的写法来写地址
+                URL: Uniform Resource Locator, 统一资源定位符，可以唯一标识一个资源的位置
+                    协议      主机    端口  URI
+                    http://localhost:8080/demo01/demoServlet
+                URL: Uniform Resource Identifier, 统一资源标识符，在应用中可以唯一定义一个资源
+    -->
+        <properties resource="jdbcConfig.properties"></properties>
+    <!--<properties url="file:///D:\a.properties"></properties>  -->
+
+    <!--  使用 typeAliases 配置别名，他只能配置 domain 中类的别名  -->
+    <typeAliases>
+        <!--  typeAlias 用于配置别名，type 表示 domain 下的全类名，alias 属性指定别名，当指定了别名，就不再区分大小写  -->
+        <!--  <typeAlias type="com.joush.domain.User" alias="user"></typeAlias>-->
+
+        <!--  package 用于指定配置别名的包，当指定之后，该包下的实体类都会注册别名，类名即别名，不再区分大小写  -->
+        <package name="com.joush.domain"/>
+
+    </typeAliases>
+
+    <!--  配置环境  -->
+    <environments default="mysql">
+
+        <!--  配置mysql的环境  -->
+        <environment id="mysql">
+            <!--  配置事务  -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--  配置连接池  -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--  配置映射文件的位置  -->
+    <mappers>
+        <!--<mapper resource="com/joush/dao/UserDao.xml"></mapper>-->
+        <package name="com.joush.dao"></package>
+    </mappers>
+</configuration>

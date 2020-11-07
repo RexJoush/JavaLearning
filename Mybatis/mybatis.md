@@ -187,11 +187,113 @@ int findTotal();
             ```
 #### 结果集深入
 * 解决实体类名和数据库字段名不一致的问题
-
-
+    - 起别名
+        ``` xml
+        <select id="findAll" resultType="com.joush.domain.User">
+        <!--    select * from user; -->
+                select id as userId, username as userName, address as userAddress, sex as userSex, birthday as userBirthday from user;
+        </select>
+        ```
+    - 添加单独配置
+        ``` xml
+        <!--  com.joush.dao.UserDao.xml  -->
+      
+        <!--  1.在 mapper 中配置查询结果的列名和实体类的属性名对应关系  -->
+        <resultMap id="userMap" type="com.joush.domain.User">
+            <!--  主键  -->
+            <id property="userId" column="id"></id>
+            <!--  非主键  -->
+            <result property="userName" column="username"></result>
+            <result property="userSex" column="sex"></result>
+            <result property="userAddress" column="address"></result>
+            <result property="userBirthday" column="birthday"></result>
+        </resultMap>
+      
+        <!--  2.同时在select标签指定返回结果集合  -->
+        <!--  查询所有  -->
+        <!-- <select id="findAll" resultType="com.joush.domain.User"> -->
+        <select id="findAll" resultMap="userMap">
+            select * from user;
+        <!-- select id as userId, username as userName, address as userAddress, sex as userSex, birthday as userBirthday from user; -->
+        </select>
+        ```
+    - PreparedStatement 对象的执行方法
+        ``` java
+        /* 
+            能执行 CRUD 中的任意一种语句，返回值是 boolean 类型，表示是否有结果集
+            有结果集是 true，没有是 false 
+        */
+        boolean execute() throws SQLException;
+        
+        /*
+            只能执行 CUD 操作，无法执行查询，返回结果是影响的行数
+        */
+        ResultSet executeQuery() throws SQLException;
+      
+        /*
+            只能执行 SELECT 语句，无法执行增删改，执行结果是结果集 ResultSet 对象
+        */
+        int executeUpdate() throws SQLException;
+        ```
 ## mybatis 中的配置（主配置文件: sqlMapConfig.xml）
-
 #### properties 标签
-#### typeAliases 标签
-#### mappers 标签    
+* 可以将数据库连接信息定义在 properties 标签中
+``` xml
+<!--  SqlMapConfig.xml  -->
 
+<!--  定义标签，resource 和 url 属性均可，但需要注意
+    resource 属性:
+        用于指定配置文件的位置，按照类路径填写，必须存在于类路径下
+    url 属性:
+        要求按照 url 的写法来写地址
+        URL: Uniform Resource Locator, 统一资源定位符，可以唯一标识一个资源的位置
+            协议      主机    端口  URI
+            http://localhost:8080/demo01/demoServlet
+        URL: Uniform Resource Identifier, 统一资源标识符，在应用中可以唯一定义一个资源
+  -->
+<properties resource="jdbcConfig.properties"></properties>
+<properties url="file:///D:\a.properties"></properties>
+
+<!--  使用 $ 获取变量值  -->
+<dataSource type="POOLED">
+    <property name="driver" value="${jdbc.driver}"/>
+    <property name="url" value="${jdbc.url}"/>
+    <property name="username" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+</dataSource>
+```
+``` properties
+# jdbcConfig.properties
+jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/joush?serverTimezone=UTC
+jdbc.username=root
+jdbc.password=password
+```
+#### typeAliases, package, mappers 标签
+* 配置别名，简写对应 dao.xml 中 select, update 等标签的 resultType 值
+``` xml
+<!--  SqlMapConfig.xml  -->
+
+<typeAliases>   
+    <!--  typeAlias 用于配置别名，type 表示 domain 下的全类名，alias 属性指定别名，当指定了别名，就不再区分大小写  -->
+    <typeAlias type="com.joush.domain.User" alias="user"></typeAlias>
+
+    <!--  package 用于指定配置别名的包，当指定之后，该包下的实体类都会注册别名，类名即别名，不再区分大小写  -->
+    <package name="com.joush.domain"/>
+
+</typeAliases>
+
+<mappers>
+    <!--  package标签用于指定 dao 接口所在的包，当指定了之后，就不需要写 mapper 以及 resource 或 class 了  -->
+    <!--  <mapper resource="com/joush/dao/UserDao.xml"></mapper>  -->
+    <package name="com.joush.dao"></package>
+</mappers>
+
+<!--  com.joush.dao.UserDao.xml  -->
+
+<!--  查询所有  -->
+<select id="findAll" resultType="user">
+    select * from user;
+</select>
+    ``` 
+## Mybatis 的连接池及事务

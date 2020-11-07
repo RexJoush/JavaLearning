@@ -1,7 +1,7 @@
 package com.joush.com;
 
 import com.joush.dao.UserDao;
-import com.joush.domain.QueryVo;
+import com.joush.dao.impl.UserDaoImpl;
 import com.joush.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -13,15 +13,15 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.PreparedStatement;
 import java.util.List;
 
 /**
  * 测试 Mybatis 的 CRUD 操作
  */
-public class MybatisTestDiff {
+public class MybatisTest {
 
     private InputStream in;
-    private SqlSession sqlSession;
     private UserDao userDao;
 
     /**
@@ -36,11 +36,9 @@ public class MybatisTestDiff {
         // 2.获取 SqlSessionFactory 对象
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
 
-        // 3.获取 SqlSession 对象
-        sqlSession = factory.openSession();
+        // 3.获取工厂对象创建 dao 对象
+        userDao = new UserDaoImpl(factory);
 
-        // 4.获取 UserDao 的代理对象
-        userDao = sqlSession.getMapper(UserDao.class);
     }
 
     /**
@@ -49,11 +47,7 @@ public class MybatisTestDiff {
      */
     @After // 在测试方法执行之后执行
     public void destroy() throws IOException {
-        // 提交事务
-        sqlSession.commit();
-
-        // 释放资源
-        sqlSession.close();
+        // 6.释放资源
         in.close();
     }
 
@@ -79,7 +73,7 @@ public class MybatisTestDiff {
     @Test
     public void testSaveUser() throws IOException {
         User user = new User();
-        user.setId(22);
+        user.setId(24);
         user.setUsername("张三");
         user.setBirthday("2020-10-10");
         user.setAddress("河南省洛阳市");
@@ -98,7 +92,7 @@ public class MybatisTestDiff {
     @Test
     public void testUpdateUser(){
         User user = new User();
-        user.setId(22);
+        user.setId(24);
         user.setUsername("张三 update");
         user.setBirthday("2020-10-10");
         user.setAddress("河南省洛阳市");
@@ -106,6 +100,7 @@ public class MybatisTestDiff {
 
         // 5.执行更新方法
         userDao.updateUser(user);
+
     }
 
     /**
@@ -115,7 +110,7 @@ public class MybatisTestDiff {
     public void testDeleteUser(){
 
         // 5.执行删除方法
-        userDao.deleteUser(22);
+        userDao.deleteUser(24);
     }
 
     /**
@@ -124,8 +119,8 @@ public class MybatisTestDiff {
     @Test
     public void testFindById(){
 
-        // 5.执行删除方法
-        User user = userDao.findById(41);
+        // 5.执行查询一个
+        User user = userDao.findById(42);
 
         // 6.输出查询结果
         System.out.println(user);
@@ -137,8 +132,7 @@ public class MybatisTestDiff {
     @Test
     public void testFindByName(){
         // 5.执行根据名字模糊查询的方法,注意此处需要加上模糊查询的通配符 %
-//        List<User> users = userDao.findByName("%王%");
-        List<User> users = userDao.findByName("王");
+        List<User> users = userDao.findByName("%王%");
 
         // 6.输出查询结果
         for (User user : users) {
@@ -152,32 +146,11 @@ public class MybatisTestDiff {
      */
     @Test
     public void testFindTotal(){
-        // 5.执行根据名字模糊查询的方法,注意此处需要加上模糊查询的通配符 %
+        // 5.查询个数
         int total = userDao.findTotal();
 
         System.out.println(total);
 
     }
-
-    /**
-     * 测试使用 QueryVo 作为查询条件
-     */
-    @Test
-    public void testFindByVo(){
-        // 5.执行根据名字模糊查询的方法,注意此处需要加上模糊查询的通配符 %
-
-        QueryVo vo = new QueryVo();
-        User user = new User();
-        user.setUsername("%王%");
-        vo.setUser(user);
-        List<User> users = userDao.findUserByVo(vo);
-
-        // 6.输出查询结果
-        for (User u : users) {
-            System.out.println(u);
-        }
-
-    }
-
 
 }
