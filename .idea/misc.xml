@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo01ServletBasic" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo02CookieSession" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo03FilterListener" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04AjaxJson" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04JsonAjax" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo05Redis" />
@@ -23,6 +26,11 @@
         <option value="$PROJECT_DIR$/Mybatis/Demo03MybatisCRUD/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo04MybatisMeP/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo04MybatisDao/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo05MybatisDynamicSql/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo06MybatisMultipleTables/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/Demo01ServletBasic/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/Demo02CookieSession/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo07MybatisMutipleToMultiple/pom.xml" />
       </list>
     </option>
   </component>

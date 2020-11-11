@@ -15,7 +15,7 @@
     <facet type="web" name="Web2">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaSE/out/artifacts/project1_war_exploded/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaSE1/out/artifacts/project1_war_exploded/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/day01/out/artifacts/project1_war_exploded" relative="/" />
@@ -26,7 +26,7 @@
     <facet type="web" name="Web3">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo02CookieSession/src/main/webapp/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo02CookieSession2/src/main/webapp/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/JavaEE/Demo02/src/main/webapp" relative="/" />
@@ -37,7 +37,7 @@
     <facet type="web" name="Web4">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo03FilterListener/target/Demo03-1.0-SNAPSHOT/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo03FilterListener1/target/Demo03-1.0-SNAPSHOT/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/JavaEE/Demo03/target/Demo03-1.0-SNAPSHOT" relative="/" />
@@ -48,7 +48,7 @@
     <facet type="web" name="Web5">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo01ServletBasic/src/main/webapp/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo01ServletBasic2/src/main/webapp/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/JavaEE/Demo01/src/main/webapp" relative="/" />
@@ -59,7 +59,7 @@
     <facet type="web" name="Web6">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo01ServletBasic/target/Demo01-1.0-SNAPSHOT/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo01ServletBasic2/target/Demo01-1.0-SNAPSHOT/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/JavaEE/Demo01/target/Demo01-1.0-SNAPSHOT" relative="/" />
@@ -70,7 +70,7 @@
     <facet type="web" name="Web7">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo03FilterListener/src/main/webapp/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo03FilterListener1/src/main/webapp/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/JavaEE/Demo03/src/main/webapp" relative="/" />
@@ -81,7 +81,7 @@
     <facet type="web" name="Web8">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo02CookieSession/target/Demo02-1.0-SNAPSHOT/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/JavaEE/Demo02CookieSession2/target/Demo02-1.0-SNAPSHOT/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/JavaEE/Demo02/target/Demo02-1.0-SNAPSHOT" relative="/" />
@@ -93,10 +93,11 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
+          <factory-entry name="JavaLearning" />
           <factory-entry name="default" />
         </datasource-mapping>
         <naming-strategy-map />
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/JavaEE/Demo02CookieSession/target/Demo02-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/JavaEE/Demo02CookieSession2/target/Demo02-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
