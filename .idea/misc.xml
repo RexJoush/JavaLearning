@@ -11,6 +11,7 @@
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo06Maven" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo06MavenNginx" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo07Nginx" />
+    <file type="web" url="file://$PROJECT_DIR$/Mybatis/Demo08MybatisJNDI" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -31,6 +32,7 @@
         <option value="$PROJECT_DIR$/JavaEE/Demo01ServletBasic/pom.xml" />
         <option value="$PROJECT_DIR$/JavaEE/Demo02CookieSession/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo07MybatisMutipleToMultiple/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo08MybatisJNDI/pom.xml" />
       </list>
     </option>
   </component>

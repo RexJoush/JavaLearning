@@ -624,3 +624,5 @@ public void testFindAll() throws IOException {
     left join role r on r.id = ur.rid;
 </select>
 ```
+
+## Mybatis 缓存

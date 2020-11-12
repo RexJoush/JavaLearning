@@ -14,6 +14,7 @@
         <module name="Demo06MybatisMultipleTables" />
         <module name="Demo04AjaxJson" />
         <module name="Demo07MybatisMutipleToMultiple" />
+        <module name="Demo08MybatisJNDI" />
         <module name="Demo03MybatisCRUD" />
         <module name="Demo01ServletBasic" />
         <module name="Demo02CookieSession" />
@@ -32,7 +33,9 @@
       <module name="Demo05Redis" target="1.8" />
       <module name="Demo06MavenNginx" target="1.8" />
       <module name="Demo06MybatisMultipleTables" target="1.5" />
-      <module name="Demo07MybatisMutipleToMultiple" target="11" />
+      <module name="Demo07MybatisMutipleToMultiple" target="1.5" />
+      <module name="Demo08MybatisJNDI" target="1.8" />
+      <module name="Demo09MybatisJNDI" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
