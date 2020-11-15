@@ -20,7 +20,6 @@
         <option value="$PROJECT_DIR$/JavaEE/Demo05Redis/pom.xml" />
         <option value="$PROJECT_DIR$/JavaEE/Demo04AjaxJson/pom.xml" />
         <option value="$PROJECT_DIR$/Demo06AjaxJson/pom.xml" />
-        <option value="$PROJECT_DIR$/JavaEE/Demo06MavenNginx/pom.xml" />
         <option value="$PROJECT_DIR$/Framwork/Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo01MybatisIntroduction/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo02MybatisCustomize/pom.xml" />
@@ -33,6 +32,11 @@
         <option value="$PROJECT_DIR$/JavaEE/Demo02CookieSession/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo07MybatisMutipleToMultiple/pom.xml" />
         <option value="$PROJECT_DIR$/Demo08MybatisJNDI/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo08MybatisCache/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo09MybatisCache/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo08MybatisDelayLoading/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo10MybatisAnnotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Demo11MybatisAnnotationMultipleTables/pom.xml" />
       </list>
     </option>
   </component>

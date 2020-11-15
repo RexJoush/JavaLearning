@@ -625,4 +625,347 @@ public void testFindAll() throws IOException {
 </select>
 ```
 
+## Mybatis 的延迟加载
+* 在一对多中，一个用户有100个账户，是否需要把关联账户查出？
+    - 在查询账户时，用户下的账户信息应该是什么时候使用，什么时候查询的
+* 查询账户时，是否需要把用户的关联信息查询出来？
+    - 在查询账户时，账户所属用户信息，应该是随着账户信息一起查询出来的
+
+* 延迟加载
+    - 在真正使用数据时才发起查询，不用的时候不查询，按需加载
+* 立即加载
+    - 不管用不用，只要调用方法
+
+#### 一对一
+* 修改 accountDao 文件
+``` xml
+<!--  com.joush.dao.AccountDao.xml  -->
+
+<!--  带一封装 account 和 user 的resultMap  -->
+<resultMap id="accountUserMap" type="account">
+    <id property="id" column="id"></id>
+    <result property="uid" column="uid"></result>
+    <result property="money" column="money"></result>
+
+    <!--  一对一的关系映射，配置封装 user 内容
+          select 属性指定的内容，查询用户的唯一标志
+          column 属性指定的内容，用户根据 id 查询时，所需要的参数值
+            -->
+    <association property="user" column="uid" javaType="user" select="com.joush.dao.UserDao.findById"></association>
+</resultMap>
+
+<!--  查询所有 -->
+<select id="findAll" resultMap="accountUserMap">
+    select * from account
+</select>
+```
+* 修改 mybatis 主配置文件
+> 配置方法见 <https://mybatis.org/mybatis-3/zh/configuration.html#settings>
+``` xml
+<!--  SqlMapConfig.xml  -->
+
+<!--  配置 mybatis 的参数  -->
+<settings>
+    <!--  开启 mybatis 支持延迟加载  -->
+    <setting name="lazyLoadingEnabled" value="true"/>
+    <setting name="aggressiveLazyLoading" value="false"/>
+</settings>
+```
+#### 一对多
+* 修改 userDao 文件
+``` xml
+<!--  com.joush.dao.userDao.xml  -->
+
+<!--  定义 User 的 resultMap  -->
+    <resultMap id="userAccountMap" type="user">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="address" column="address"></result>
+        <result property="sex" column="sex"></result>
+        <result property="birthday" column="birthday"></result>
+        <!--  此处的 column 是指通过 user 的 id 来查询，所以列名为 id  -->
+        <collection property="accounts" ofType="account" select="com.joush.dao.AccountDao.finAccountByUid" column="id"></collection>
+    </resultMap>
+
+<!--  查询所有 -->
+<select id="findAll" resultMap="accountUserMap">
+    select * from account
+</select>
+
+
+```
+* 修改 Account 相关文件
+``` java
+// com.joush.dao.AccountDao.java
+
+// 添加通过 id 查询的方法
+/**
+ * 根据用户 id 查询用户信息
+ * @param uid
+ * @return
+ */
+List<Account> finAccountByUid(int uid);
+```
+``` xml
+<!--  com.joush.dao.AccountDao.xml -->
+
+<!--  根据用户 id 查询账户列表  -->
+<select id="finAccountByUid" resultType="account">
+    select * from account where uid = #{uid};
+</select>
+```
+* 最后一步同上，开启主配置文件中的加载选项
+
 ## Mybatis 缓存
+
+#### 缓存的基本概念
+* 什么是缓存
+    - 存在内存中的临时数据
+* 为什么使用缓存
+    - 减少数据库交互，提高执行效率
+* 什么样的数据能使用缓存
+    - 适用于缓存
+        - 经常查询且不长改变
+        - 数据的正确与否对最终结果影响不大的
+    - 不适用缓存
+        - 经常改变的数据
+        - 数据的正确与否对最终结果影响很大
+        - 如，商品的库存，银行的汇率，股市的牌价等
+#### mybatis 的一级缓存
+* 指的是 Mybatis 中的 SqlSession 对象的缓存
+    ``` text
+    当执行查询后，查询结果会同时存入 SqlSession 提供的区域中，该区域结构为 Map 集合，当再次查询相同的数据，Mybatis 会先去 SqlSession 中查询，看是否有，有就直接返回
+    当 SqlSession 对象消失后，一级缓存消失
+    ```
+* 测试
+``` java 
+
+// 注意修改userDao.xml和UserDao.java的相关配置
+
+@Test
+public void testFirstLevelCache(){
+
+    User user1 = userDao.findById(41);
+    System.out.println(user1); // com.joush.domain.User@b968a76
+
+    sqlSession.clearCache(); // 此方法可以清空缓存，当清空时，缓存即消失，两个对象不再相等
+
+    User user2 = userDao.findById(41);
+    System.out.println(user2); // com.joush.domain.User@b968a76
+
+    System.out.println(user1 == user2); // true
+}
+```
+* 一级缓存的分析
+    - 一级缓存是 SqlSession 范围的缓存，当调用 SqlSession 的修改，添加，删除，commit(), close() 等方法时，一级缓存自动清空
+    
+#### mybatis 的二级缓存
+* 指的是 SqlSessionFactory 对象的缓存
+``` text
+该缓存由同一个 SqlSessionFactory 对象创建的 SqlSession 共享二级缓存
+```
+* 使用步骤
+    - 让 mybatis 支持二级缓存
+    ``` xml
+    <!--  sqlMapConfig.xml  -->
+    
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    ```
+    - 让当前的映射文件支持二级缓存
+    ``` xml
+    <!--  com.joush.dao.UserDao.xml  -->
+    
+    <!--  开启支持二级缓存  -->
+    <mapper namespace="com.joush.dao.UserDao">
+        <cache/>
+    </mapper>
+    ```
+    - 让当前的操作支持二级缓存
+    ``` xml
+    <!--  com.joush.dao.UserDao.xml  -->
+    
+    <!--  添加 userCache 属性，置为 true  -->
+    <!--  查询一个  -->
+    <select id="findById" resultType="user" parameterType="int" useCache="true">
+        select * from user where id = #{uid};
+    </select>
+    ```
+* 二级缓存分析
+    - 二级缓存存放的是数据，而不是对象，所以两次获取的不是同一个对象
+    
+## mybatis 注解开发
+* **注意，如果写了注解，同时还存在xml文件，那么无论使不使用 xml，mybatis 都会报错，所以建议统一为注解或者 xml**
+#### 在 dao 的方法上添加对应的注解和 sql 语句即可
+``` java
+// com.joush.dao.UserDao.java
+
+/**
+ * 查询所有用户
+ * @return
+ */
+@Select("select * from user")
+List<User> findAll();
+```
+
+#### mybatis 的单表 CRUD 操作
+``` java
+// com.joush.dao.UserDao.java
+/**
+ * 查询所有用户
+ * @return
+ */
+@Select("select * from user")
+List<User> findAll();
+
+/**
+ * 保存用户
+ * @param user
+ */
+@Insert("insert into user (id, username, address, sex, birthday) values (#{id},#{username},#{address},#{sex},#{birthday})")
+void saveUser(User user);
+
+/**
+ * 更新用户
+ * @param user
+ */
+@Update("update user set username = #{username}, address = #{address}, sex = #{sex}, birthday = #{birthday} where id = #{id}")
+void updateUser(User user);
+
+/**
+ * 删除用户
+ * @param id
+ */
+@Delete("delete from user where id = #{id}")
+void deleteUser(int id);
+
+/**
+ * 查询一个
+ * @param id
+ * @return
+ */
+@Select("select * from user where id = #{id}")
+User findById(int id);
+
+/**
+ * 根据名字模糊查询
+ * @return
+ */
+@Select("select * from user where username like #{username}")
+List<User> findByName();
+
+/**
+ * 查询总用户数量
+ * @return
+ */
+@Select("select count(*) from user")
+int findTotal();
+```
+
+#### mybatis 注解建立实体类和数据库列名之间的对应关系
+* 使用 Results 和 Result 注解
+``` java
+/**
+ * 查询所有用户
+ * @return
+ */
+@Select("select * from user")
+// 此处的 id 属性表示，可以在别的方法使用此注解，使用方法如 查询一个方法
+@Results(id = "userMap", value = {
+        @Result(id = true, column = "id", property = "userId"),
+        @Result(column = "username", property = "userName"),
+        @Result(column = "address", property = "userAddress"),
+        @Result(column = "sex", property = "userSex"),
+        @Result(column = "birthday", property = "userBirthday"),
+})
+
+/**
+ * 查询一个
+ * @param id
+ * @return
+ */
+@Select("select * from user where id = #{id}")
+@ResultMap(value = {"userMap"})
+@ResultMap("userMap") // 只有一个 value 值，value 可省略，数组只有一个值，{} 也可省略
+User findById(int id);
+```
+#### mybatis 的多表操作
+* 一对一，使用 one 注解
+``` java
+// com.joush.domain.Account.java
+
+// 多对一的映射，一个账户属于一个用户
+private User user;
+
+// com.joush.dao.AccountDao.java
+/**
+ * 查询所有账户，并获取每个账户所属的用户信息
+ * @return
+ */
+@Select("select * from account")
+@Results(id="accountMap",value={
+        @Result(id = true, column = "id", property = "id"),
+        @Result(column = "uid", property = "uid"),
+        @Result(column = "money", property = "money"),
+        /*
+            给 User 属性添加 one 注解，指定id为查询字段，全类名.方法名
+            同时 FetchType.EAGER 表示立即加载，FetchType.LAZY 为懒加载
+            一般一对一为立即加载，一对多为懒加载
+        */
+        @Result(property = "user", column = "uid", one = @One(
+                select = "com.joush.dao.UserDao.findById",fetchType = FetchType.EAGER
+        ))
+})
+List<Account> findAll();
+```
+* 一对多，使用 many 注解
+``` java
+// com.joush.domain.User.java
+private List<Account> accounts;
+
+// com.joush.dao.UserDao.java
+
+/**
+ * 查询所有用户
+ * @return
+ */
+
+@Select("select * from user")
+@Results(id = "userMap", value = {
+        @Result(id = true, column = "id", property = "userId"),
+        @Result(column = "username", property = "userName"),
+        @Result(column = "address", property = "userAddress"),
+        @Result(column = "sex", property = "userSex"),
+        @Result(column = "birthday", property = "userBirthday"),
+        /*
+            注意，此处需要给 AccountDao添加一个根据 id 查询账户的方法，才能执行
+        */
+        @Result(column = "id", property = "accounts", many = @Many(
+            select = "com.joush.dao.AccountDao.findById", fetchType = FetchType.LAZY
+        ))
+})
+List<User> findAll();
+
+// com.joush.dao.AccountDao.java
+/**
+     * 根据 id 查询一个
+     * @param id
+     * @return
+     */
+    @Select("select * from account where uid = #{id}")
+    Account findById(int id);
+```
+
+* 注解中使用 mybatis 的缓存
+    - 一级缓存默认开启，所以不需要关注
+    - 二级缓存开启方法
+    ``` java 
+    // com.joush.dao.UserDao.java
+    
+    // 在类上添加 CacheNamespace 注解，并设置 blocking 属性为 true，即表示开启二级缓存
+    @CacheNamespace(blocking = true)
+    public interface UserDao {
+        // ...
+    }
+    ```

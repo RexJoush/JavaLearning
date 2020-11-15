@@ -8,10 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Demo05MybatisDynamicSql" />
         <module name="Demo04MybatisDao" />
-        <module name="Demo06MavenNginx" />
+        <module name="Demo11MybatisAnnotationMultipleTables" />
+        <module name="Demo08MybatisDelayLoading" />
         <module name="Demo01MybatisIntroduction" />
         <module name="Demo02MybatisCustomize" />
         <module name="Demo06MybatisMultipleTables" />
+        <module name="Demo09MybatisCache" />
         <module name="Demo04AjaxJson" />
         <module name="Demo07MybatisMutipleToMultiple" />
         <module name="Demo08MybatisJNDI" />
@@ -19,6 +21,7 @@
         <module name="Demo01ServletBasic" />
         <module name="Demo02CookieSession" />
         <module name="Demo05Redis" />
+        <module name="Demo10MybatisAnnotation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
@@ -31,11 +34,12 @@
       <module name="Demo04MybatisDao" target="1.5" />
       <module name="Demo05MybatisDynamicSql" target="1.5" />
       <module name="Demo05Redis" target="1.8" />
-      <module name="Demo06MavenNginx" target="1.8" />
       <module name="Demo06MybatisMultipleTables" target="1.5" />
       <module name="Demo07MybatisMutipleToMultiple" target="1.5" />
-      <module name="Demo08MybatisJNDI" target="1.8" />
-      <module name="Demo09MybatisJNDI" target="1.5" />
+      <module name="Demo08MybatisDelayLoading" target="1.5" />
+      <module name="Demo09MybatisCache" target="1.5" />
+      <module name="Demo10MybatisAnnotation" target="1.5" />
+      <module name="Demo11MybatisAnnotationMultipleTables" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
