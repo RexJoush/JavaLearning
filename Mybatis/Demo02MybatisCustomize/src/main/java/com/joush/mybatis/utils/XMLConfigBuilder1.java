@@ -75,7 +75,7 @@ public class XMLConfigBuilder1 {
                     // 表示有 resource 属性，用的是 XML
 
                     // 取出属性的值
-                    String mapperPath = attribute.getValue(); // 获取属性的值 "com.joush.dao.UserDao.xml"
+                    String mapperPath = attribute.getValue(); // 获取属性的值 "com.com.joush.dao.UserDao.xml"
 
                     // 把映射配置文件的内容取出来，封装成一个map
                     Map<String, Mapper> mappers = loadMapperConfiguration(mapperPath);

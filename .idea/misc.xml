@@ -4,6 +4,7 @@
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo01ServletBasic" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo02CookieSession" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo03FilterListener" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo03FilterListener2" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04AjaxJson" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04JsonAjax" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo05Redis" />
@@ -37,6 +38,11 @@
         <option value="$PROJECT_DIR$/Mybatis/Demo08MybatisDelayLoading/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo10MybatisAnnotation/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/Demo11MybatisAnnotationMultipleTables/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot/Demo01SpringBootIntroduce/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/Demo03FilterListener/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot/Demo02SpringBootQuickCreate/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/Demo01SpringIntroduction/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/Demo02SpringIoC/pom.xml" />
       </list>
     </option>
   </component>

@@ -127,7 +127,7 @@ del key     // 删除指定的 key value
         Jedis jedis = new Jedis("localhost", 6379);
         
         // 2.操作
-        jedis.set("name","joush");
+        jedis.set("name","com.joush");
         
         // 3.关闭连接
         jedis.close();

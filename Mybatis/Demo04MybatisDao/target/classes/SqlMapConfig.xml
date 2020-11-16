@@ -21,10 +21,10 @@
     <!--  使用 typeAliases 配置别名，他只能配置 domain 中类的别名  -->
     <typeAliases>
         <!--  typeAlias 用于配置别名，type 表示 domain 下的全类名，alias 属性指定别名，当指定了别名，就不再区分大小写  -->
-        <!--  <typeAlias type="com.joush.domain.User" alias="user"></typeAlias>-->
+        <!--  <typeAlias type="com.com.joush.domain.User" alias="user"></typeAlias>-->
 
         <!--  package 用于指定配置别名的包，当指定之后，该包下的实体类都会注册别名，类名即别名，不再区分大小写  -->
-        <package name="com.joush.domain"/>
+        <package name="com.com.joush.domain"/>
 
     </typeAliases>
 
@@ -47,7 +47,7 @@
 
     <!--  配置映射文件的位置  -->
     <mappers>
-        <!--<mapper resource="com/joush/dao/UserDao.xml"></mapper>-->
-        <package name="com.joush.dao"></package>
+        <!--<mapper resource="com/com.joush/dao/UserDao.xml"></mapper>-->
+        <package name="com.com.joush.dao"></package>
     </mappers>
 </configuration>

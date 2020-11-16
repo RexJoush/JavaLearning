@@ -26,7 +26,7 @@
     ``` xml
     <filter>
         <filter-name>demo01</filter-name>
-        <filter-class>com.joush.filter.FilterDemo01</filter-class>
+        <filter-class>com.com.joush.filter.FilterDemo01</filter-class>
     </filter>
 
     <filter-mapping>

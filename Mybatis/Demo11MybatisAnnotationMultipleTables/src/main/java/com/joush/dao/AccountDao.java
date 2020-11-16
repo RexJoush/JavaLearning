@@ -21,7 +21,7 @@ public interface AccountDao {
             @Result(column = "uid", property = "uid"),
             @Result(column = "money", property = "money"),
             @Result(property = "user", column = "uid", one = @One(
-                    select = "com.joush.dao.UserDao.findById",fetchType = FetchType.EAGER
+                    select = "com.com.joush.dao.UserDao.findById",fetchType = FetchType.EAGER
             ))
     })
     List<Account> findAll();

@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.joush.dao.UserDao">
+<mapper namespace="com.com.joush.dao.UserDao">
 
     <!--  配置查询结果的列名和实体类的属性名对应关系  -->
-    <resultMap id="userMap" type="com.joush.domain.User">
+    <resultMap id="userMap" type="com.com.joush.domain.User">
         <!--  主键  -->
         <id property="userId" column="id"></id>
         <!--  非主键  -->
@@ -23,12 +23,12 @@
     </select>
 
     <!--  添加用户  -->
-    <insert id="saveUser" parameterType="com.joush.domain.User">
+    <insert id="saveUser" parameterType="com.com.joush.domain.User">
       insert into user (id,username,sex,birthday,address) values (#{id},#{username},#{sex},#{birthday},#{address});
     </insert>
 
     <!--  更新用户  -->
-    <update id="updateUser" parameterType="com.joush.domain.User">
+    <update id="updateUser" parameterType="com.com.joush.domain.User">
         update user set username = #{username}, sex = #{sex}, birthday = #{birthday}, address = #{address} where id = #{id}
     </update>
 
@@ -38,12 +38,12 @@
     </delete>
 
     <!--  查询一个  -->
-    <select id="findById" resultType="com.joush.domain.User" parameterType="int">
+    <select id="findById" resultMap="userMap" parameterType="int">
         select * from user where id = #{id};
     </select>
 
     <!--  根据名称模糊查询  -->
-    <select id="findByName" resultType="com.joush.domain.User" parameterType="String">
+    <select id="findByName" resultMap="userMap" parameterType="String">
         <!-- select * from user where username like #{username}; -->
         select * from user where username like '%${value}%';
     </select>
@@ -54,7 +54,7 @@
     </select>
 
     <!--  根据 QueryVo 的条件查询用户  -->
-    <select id="findUserByVo" parameterType="com.joush.domain.QueryVo" resultType="com.joush.domain.User">
+    <select id="findUserByVo" parameterType="com.com.joush.domain.QueryVo" resultMap="userMap">
         select * from user where username like #{user.username}
     </select>
 </mapper>

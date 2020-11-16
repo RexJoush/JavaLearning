@@ -20,7 +20,7 @@ public class Executor {
         try {
             // 1.取出 mapper 中的数据
             String queryString = mapper.getQueryString(); // select * from user
-            String resultType = mapper.getResultType(); // com.joush.domain.User
+            String resultType = mapper.getResultType(); // com.com.joush.domain.User
             Class domainClass = Class.forName(resultType);
 
             // 2.获取 PreparedStatement 对象

@@ -8,7 +8,7 @@
     <!--  配置 Servlet  -->
     <servlet>
         <servlet-name>demo01</servlet-name>
-        <servlet-class>com.joush.web.servlet.ServletDemo01</servlet-class>
+        <servlet-class>com.com.joush.web.servlet.ServletDemo01</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>demo01</servlet-name>
@@ -17,7 +17,7 @@
 
     <servlet>
         <servlet-name>demo02</servlet-name>
-        <servlet-class>com.joush.web.servlet.ServletDemo02</servlet-class>
+        <servlet-class>com.com.joush.web.servlet.ServletDemo02</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>demo02</servlet-name>
