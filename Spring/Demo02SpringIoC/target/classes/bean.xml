@@ -4,4 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
+    <!--  把对象的创建交给 spring 管理  -->
+    <bean id="accountService" class="com.joush.service.impl.AccountServiceImpl"></bean>
+    <bean id="accountDao" class="com.joush.dao.impl.AccountDaoImpl"></bean>
 </beans>

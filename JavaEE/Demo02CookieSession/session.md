@@ -1,6 +1,6 @@
-##Session
-####概念，服务器端会话技术，将数据保存在服务器对象中，HttpSession
-####快速入门
+## Session
+#### 概念，服务器端会话技术，将数据保存在服务器对象中，HttpSession
+#### 快速入门
 * HttpSession对象
     ``` java
     Object getAttribute(String name);
@@ -16,10 +16,10 @@
     session.setAttribute("msg", "Hello Session"); // 设置session
     Object obj = session.getAttribute("msg"); // 获取session
     ```
-####原理
+#### 原理
 * Session的实现是基于Cookie的
 
-####细节
+#### 细节
 * 当客户端关闭后，服务器不关闭，两次获取session是否为同一个？
     - 默认情况下不是
     - 如果需要， 则可以设置最大存活时间
@@ -38,6 +38,6 @@
     - 服务器关闭 
     - session对象调用调用invalidate()
     - session默认失效时间30分钟，可以配置
-####特点
+#### 特点
 * session是用于存储一次会话多次请求的数据，存在服务器端
 * session可以存储任意类型，任意大小的数据

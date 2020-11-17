@@ -59,7 +59,7 @@ Spring是分层的Java SE/EE应用 full-stack 轻量级开源框架
 ```
 * 测试方法
 ``` java
-// com.com.joush.ui.Client.java
+// com.joush.ui.Client.java
 
 // 1.获取核心容器对象
 /*
@@ -262,3 +262,74 @@ IOC 的作用，降低程序间的耦合
 ```
 
 ## Spring 基于注解的 IOC 配置
+
+#### 基础概念
+* 曾经的 xml 配置方法
+``` xml
+<bean id="accountService" class="com.com.joush.service.impl.AccountServiceImpl" 
+    scope="" init-method="" destroy-method="" >
+    
+    <property name="" value="" ref=""></property>
+</bean>
+```
+* 修改 xml 配置文件的约束，使得 spring 知道注解的位置
+``` resource.bean.xml
+
+<!--  注意，此时的 xml 头部信息和之前的 demo 已经不同了  -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!--  添加此标签告知 spring  -->
+    <context:component-scan base-package="com.joush"></context:component-scan>
+
+</beans>
+```
+* 注解的类型
+    - 用于创建对象的
+        - 作用和在 xml 配置中编写一个 <bean></bean> 标签实现功能一样的
+        ``` java
+        // com.joush.dao.impl.AccountServiceImpl.java
+        /* 
+            Component 注解
+                作用：用于将本类对象存入 spring 容器中
+                属性：value, 用于指定 bean 的 id 值，不写时，默认值为当前类名首字母改小写
+            Controller 注解，一般用于表示层
+            Service 注解，一般用于业务层
+            Repository 注解，一般用于持久层
+                作用：以上三个注解与 Component 一模一样，是 spring 框架为我们提供明确的三层使用的注解，是三层对象更清晰
+        */
+        @Component
+        @Component("accountServiceImpl")
+        @Component(value = "accountServiceImpl")
+        public class AccountServiceImpl implements AccountService {
+            // ...
+        }
+        ```
+    - 用于注入数据的
+        - 作用和在 xml 配置文件中的 bean 标签 写一个 <property></property> 的作用一样的
+        ``` java
+        // com.joush.service.impl.AccountServiceImpl.java
+        /*
+            Autowired 注解
+            作用：自动按照类型注入，只要容器有唯一的一个 bean 对象类型和要注入的变量类型匹配，就可以注入成功
+                  如果 ioc 容器中没有任何 bean 类型和要注入的变量类型匹配，则报错
+                  如果 ioc 容器有多个匹配时，首先匹配类型，如果匹配到多个，则根据变量名进行匹配，如果匹配到唯一一个，则注入成功，如果匹配不到，则注入失败  
+            出现位置：可以是成员变量，也可以是方法
+            细节：使用注解注入时，set 方法不是必须的
+            
+            Quailfier 注解 
+        */
+        @Autowired
+        private AccountDao accountDao = null;
+        ```
+    - 用于改变作用范围的
+        作用和在 bean 标签中使用 scope 属性作用一样的
+    - 和生命周期相关的
+        作用和在 bean 标签中使用 init-method 和 destroy-method 属性作用一样的

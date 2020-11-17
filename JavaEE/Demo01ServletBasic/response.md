@@ -1,5 +1,5 @@
-##Response
-####响应消息
+## Response 
+#### 响应消息
 * 数据格式
     - 响应行
         - 组成：协议/版本 响应状态码 状态码描述 HTTP/1.1 200 OK
@@ -14,7 +14,7 @@
     - 响应体
         - 传输的数据
 
-####Response对象
+#### Response对象
 * 功能，设置响应消息
     - 设置响应行
         - 格式: HTTP/1.1 200 OK 
@@ -30,14 +30,14 @@
         ```
         - 使用输出流，将数据输出到客户端浏览器
         
-##ServletContext对象
-####概念，代表整个 Web 应用，可以和服务器通信
-####获取
+## ServletContext对象
+#### 概念，代表整个 Web 应用，可以和服务器通信
+#### 获取
 * 通过 request 对象来获取  
 `request.getServletContext();`
 * 通过 HttpServlet 获取  
 `this.getServletContext();`
-####功能
+#### 功能
 * 获取MIME类型
     - MIME类型，在互联网通信过程种定义的一种文件数据类型
         - 格式：大类型/小类型 text/html image/jpeg

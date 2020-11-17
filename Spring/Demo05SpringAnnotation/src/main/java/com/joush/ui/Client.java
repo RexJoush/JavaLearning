@@ -1,6 +1,8 @@
 package com.joush.ui;
 
+import com.joush.dao.AccountDao;
 import com.joush.service.AccountService;
+import com.joush.service.impl.AccountServiceImpl;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
@@ -32,19 +34,16 @@ public class Client {
 
         // 1.获取核心容器对象
         ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
-        // ApplicationContext ac = new FileSystemXmlApplicationContext("E:\\WorkSpace\\JavaLearning\\Spring\\Demo02SpringIoC\\src\\main\\resources\\bean.xml");
 
         // 2.根据 id 获取 bean 对象
-//        AccountService accountService = (AccountService) ac.getBean("accountService");
-//        AccountDao accountDao = ac.getBean("accountDao", AccountDao.class); // 两种方式均可
+        AccountService accountService = (AccountService) ac.getBean("accountServiceImpl");
 
+//        System.out.println(accountService);
+//
+//        AccountDao accountDao = (AccountDao) ac.getBean("accountDaoImpl");
 
-        Resource resource = new ClassPathResource("bean.xml");
-        BeanFactory beanFactory = new XmlBeanFactory(resource);
+        accountService.saveAccount();
 
-        AccountService accountService = (AccountService) ac.getBean("accountService"); // 两种方式均可
-
-//        accountService.saveAccount();
 
 
     }

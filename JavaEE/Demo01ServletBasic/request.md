@@ -1,4 +1,4 @@
-##request 继承关系
+## request 继承关系
 ```
 ServletRequest      -- 接口
        | 继承
@@ -7,8 +7,8 @@ HttpServletRequest  -- 接口
 org.apache.catalina.connector.RequestFacade (tomcat实现的)
 ```
 
-##request 功能
-####1.获取请求数据
+## request 功能
+#### 获取请求数据
 - 获取请求行数据
     * GET /Demo1/demo01?name=tom HTTP/1.1
     * 方法
@@ -53,7 +53,7 @@ org.apache.catalina.connector.RequestFacade (tomcat实现的)
             System.out.println(line);
         }
         ```
-####2.其他功能
+#### 其他功能
 - 获取请求参数通用方式
     ``` java
     String getParameter(String name); 根据参数名获取参数值
@@ -74,7 +74,7 @@ org.apache.catalina.connector.RequestFacade (tomcat实现的)
       - 浏览器地址栏不发生变化
       - 只能转发到当前服务器内部资源
       - 多个资源中使用的是同一次请求
-####共享数据
+#### 共享数据
 - 域对象，一个有作用范围对象
 - request域，代表一次请求的范围，一般用于请求转发的多个资源中共享数据
 - 方法
@@ -84,6 +84,6 @@ org.apache.catalina.connector.RequestFacade (tomcat实现的)
     removeAttribute(String name); // 通过键来移除键值对
     ```
 
-####获取 ServletContext
+#### 获取 ServletContext
 - 获取ServletContext对象  
     `ServletContext getServletContext();`
