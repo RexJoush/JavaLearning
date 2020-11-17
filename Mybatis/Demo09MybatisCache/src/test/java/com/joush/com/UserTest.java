@@ -64,12 +64,12 @@ public class UserTest {
     public void testFirstLevelCache(){
 
         User user1 = userDao.findById(41);
-        System.out.println(user1); // com.com.joush.domain.User@b968a76
+        System.out.println(user1); // com.com.com.joush.domain.User@b968a76
 
         sqlSession.clearCache(); // 此方法可以清空缓存
 
         User user2 = userDao.findById(41);
-        System.out.println(user2); // com.com.joush.domain.User@b968a76
+        System.out.println(user2); // com.com.com.joush.domain.User@b968a76
 
         System.out.println(user1 == user2); // true
 
@@ -83,7 +83,7 @@ public class UserTest {
     public void testClearCache(){
         // 查询用户
         User user1 = userDao.findById(41);
-        System.out.println(user1); // com.com.joush.domain.User@73ff4fae
+        System.out.println(user1); // com.com.com.joush.domain.User@73ff4fae
 
         // 更新用户信息
         user1.setUsername("update clear cache");
@@ -93,7 +93,7 @@ public class UserTest {
 
         // 再次查询
         User user2 = userDao.findById(41);
-        System.out.println(user2); // com.com.joush.domain.User@2611b9a3
+        System.out.println(user2); // com.com.com.joush.domain.User@2611b9a3
 
         System.out.println(user1 == user2); // false
 

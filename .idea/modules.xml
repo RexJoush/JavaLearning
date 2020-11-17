@@ -14,10 +14,13 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/Demo02SpringIoC/Demo02SpringIoC.iml" filepath="$PROJECT_DIR$/Spring/Demo02SpringIoC/Demo02SpringIoC.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaEE/Demo03FilterListener/Demo03FilterListener.iml" filepath="$PROJECT_DIR$/JavaEE/Demo03FilterListener/Demo03FilterListener.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo03MybatisCRUD/Demo03MybatisCRUD.iml" filepath="$PROJECT_DIR$/Mybatis/Demo03MybatisCRUD/Demo03MybatisCRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/Demo03SpringBean/Demo03SpringBean.iml" filepath="$PROJECT_DIR$/Spring/Demo03SpringBean/Demo03SpringBean.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaEE/Demo04AjaxJson/Demo04AjaxJson.iml" filepath="$PROJECT_DIR$/JavaEE/Demo04AjaxJson/Demo04AjaxJson.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo04MybatisDao/Demo04MybatisDao.iml" filepath="$PROJECT_DIR$/Mybatis/Demo04MybatisDao/Demo04MybatisDao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/Demo04SpringDI/Demo04SpringDI.iml" filepath="$PROJECT_DIR$/Spring/Demo04SpringDI/Demo04SpringDI.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo05MybatisDynamicSql/Demo05MybatisDynamicSql.iml" filepath="$PROJECT_DIR$/Mybatis/Demo05MybatisDynamicSql/Demo05MybatisDynamicSql.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaEE/Demo05Redis/Demo05Redis.iml" filepath="$PROJECT_DIR$/JavaEE/Demo05Redis/Demo05Redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/Demo05SpringAnnotation/Demo05SpringAnnotation.iml" filepath="$PROJECT_DIR$/Spring/Demo05SpringAnnotation/Demo05SpringAnnotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo06MybatisMultipleTables/Demo06MybatisMultipleTables.iml" filepath="$PROJECT_DIR$/Mybatis/Demo06MybatisMultipleTables/Demo06MybatisMultipleTables.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo07MybatisMutipleToMultiple/Demo07MybatisMutipleToMultiple.iml" filepath="$PROJECT_DIR$/Mybatis/Demo07MybatisMutipleToMultiple/Demo07MybatisMutipleToMultiple.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis/Demo08MybatisDelayLoading/Demo08MybatisDelayLoading.iml" filepath="$PROJECT_DIR$/Mybatis/Demo08MybatisDelayLoading/Demo08MybatisDelayLoading.iml" />

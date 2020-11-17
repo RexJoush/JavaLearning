@@ -18,7 +18,7 @@ void contextInitialized(ServletContextEvent sce); // ServletContext 对象创建
         - web.xml
             ``` xml
             <listener>
-                <listener-class>com.com.joush.listener.ListenerDemo01ContextLoaderListener</listener-class>
+                <listener-class>com.com.com.joush.listener.ListenerDemo01ContextLoaderListener</listener-class>
             </listener>
            
             // 指定初始化参数

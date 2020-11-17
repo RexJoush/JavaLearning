@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.com.joush.dao.UserDao">
+<mapper namespace="com.com.com.joush.dao.UserDao">
 
     <!--  定义 User 的 resultMap  -->
     <resultMap id="userAccountMap" type="user">
@@ -12,7 +12,7 @@
         <result property="sex" column="sex"></result>
         <result property="birthday" column="birthday"></result>
         <!--  配置 user 对象中 accounts 集合的映射  -->
-        <collection property="accounts" ofType="account" select="com.com.joush.dao.AccountDao.finAccountByUid" column="id"></collection>
+        <collection property="accounts" ofType="account" select="com.com.com.joush.dao.AccountDao.finAccountByUid" column="id"></collection>
     </resultMap>
 
     <!--  查询所有  -->

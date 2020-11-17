@@ -7,7 +7,7 @@
     <properties resource="jdbcConfig.properties"></properties>
     
     <typeAliases>
-        <package name="com.com.joush.domain"/>
+        <package name="com.com.com.joush.domain"/>
     </typeAliases>
 
     <environments default="mysql">
@@ -23,6 +23,6 @@
     </environments>
     
     <mappers>
-        <package name="com.com.joush.dao"/>
+        <package name="com.com.com.joush.dao"/>
     </mappers>
 </configuration>

@@ -14,7 +14,7 @@
 * 环境搭建的注意事项
     - 创建 UserDao.xml 和 UserDao.java 时名称是为了和我们之前的知识保持一致，在 Mybatis 中，
       把持久层操作接口名称和映射文件也叫做 Mapper，所以 UserDao 和 UserMapper 是一样的
-    - 在 IDEA 中创建目录和包是不一样的：包 com.com.joush.dao是三级目录
+    - 在 IDEA 中创建目录和包是不一样的：包 com.com.com.joush.dao是三级目录
     - Mybatis 的映射配置文件必须和 dao 接口的包结构相同
     - 映射配置文件的 mapper 标签的 namespace 属性必须是 dao 接口的全类名
     - 映射配置文件的操作配置，id 属性必须是 dao 接口的方法名
@@ -100,7 +100,7 @@
 * 在 Dao 的接口中定义方法 
 ``` java
 /*
-    com.com.joush.dao.UserDao.java
+    com.com.com.joush.dao.UserDao.java
 */
 
 // 查询所有
@@ -127,20 +127,20 @@ int findTotal();
 
 * 在对应的 Dao.xml 中配置 sql 语句 
 ``` xml
-<!-- com.com.joush.dao.UserDao.xml -->
+<!-- com.com.com.joush.dao.UserDao.xml -->
 
 <!--  查询所有  -->
-<select id="findAll" resultType="com.com.joush.domain.User">
+<select id="findAll" resultType="com.com.com.joush.domain.User">
     select * from user;
 </select>
 
 <!--  添加用户  -->
-<insert id="saveUser" parameterType="com.com.joush.domain.User">
+<insert id="saveUser" parameterType="com.com.com.joush.domain.User">
   insert into user (id,username,sex,birthday,address) values (#{id},#{username},#{sex},#{birthday},#{address});
 </insert>
 
 <!--  更新用户  -->
-<update id="updateUser" parameterType="com.com.joush.domain.User">
+<update id="updateUser" parameterType="com.com.com.joush.domain.User">
     update user set username = #{username}, sex = #{sex}, birthday = #{birthday}, address = #{address} where id = #{id}
 </update>
 
@@ -150,12 +150,12 @@ int findTotal();
 </delete>
 
 <!--  查询一个  -->
-<select id="findById" resultType="com.com.joush.domain.User" parameterType="int">
+<select id="findById" resultType="com.com.com.joush.domain.User" parameterType="int">
     select * from user where id = #{id};
 </select>
 
 <!--  根据名称模糊查询  -->
-<select id="findByName" resultType="com.com.joush.domain.User" parameterType="String">
+<select id="findByName" resultType="com.com.com.joush.domain.User" parameterType="String">
     <!--  此方式需要在传参的时候加上 %  
           且，经过查看，此方式通过 PreparedStatement 的 ? 占位符  -->
     select * from user where username like #{username};
@@ -189,17 +189,17 @@ int findTotal();
 * 解决实体类名和数据库字段名不一致的问题
     - 起别名
         ``` xml
-        <select id="findAll" resultType="com.com.joush.domain.User">
+        <select id="findAll" resultType="com.com.com.joush.domain.User">
         <!--    select * from user; -->
                 select id as userId, username as userName, address as userAddress, sex as userSex, birthday as userBirthday from user;
         </select>
         ```
     - 添加单独配置
         ``` xml
-        <!--  com.com.joush.dao.UserDao.xml  -->
+        <!--  com.com.com.joush.dao.UserDao.xml  -->
       
         <!--  1.在 mapper 中配置查询结果的列名和实体类的属性名对应关系  -->
-        <resultMap id="userMap" type="com.com.joush.domain.User">
+        <resultMap id="userMap" type="com.com.com.joush.domain.User">
             <!--  主键  -->
             <id property="userId" column="id"></id>
             <!--  非主键  -->
@@ -211,7 +211,7 @@ int findTotal();
       
         <!--  2.同时在select标签指定返回结果集合  -->
         <!--  查询所有  -->
-        <!-- <select id="findAll" resultType="com.com.joush.domain.User"> -->
+        <!-- <select id="findAll" resultType="com.com.com.joush.domain.User"> -->
         <select id="findAll" resultMap="userMap">
             select * from user;
         <!-- select id as userId, username as userName, address as userAddress, sex as userSex, birthday as userBirthday from user; -->
@@ -265,7 +265,7 @@ int findTotal();
 ``` properties
 # jdbcConfig.properties
 jdbc.driver=com.mysql.cj.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/com.joush?serverTimezone=UTC
+jdbc.url=jdbc:mysql://localhost:3306/com.com.joush?serverTimezone=UTC
 jdbc.username=root
 jdbc.password=password
 ```
@@ -276,20 +276,20 @@ jdbc.password=password
 
 <typeAliases>   
     <!--  typeAlias 用于配置别名，type 表示 domain 下的全类名，alias 属性指定别名，当指定了别名，就不再区分大小写  -->
-    <typeAlias type="com.com.joush.domain.User" alias="user"></typeAlias>
+    <typeAlias type="com.com.com.joush.domain.User" alias="user"></typeAlias>
 
     <!--  package 用于指定配置别名的包，当指定之后，该包下的实体类都会注册别名，类名即别名，不再区分大小写  -->
-    <package name="com.com.joush.domain"/>
+    <package name="com.com.com.joush.domain"/>
 
 </typeAliases>
 
 <mappers>
     <!--  package标签用于指定 dao 接口所在的包，当指定了之后，就不需要写 mapper 以及 resource 或 class 了  -->
-    <!--  <mapper resource="com/com.joush/dao/UserDao.xml"></mapper>  -->
-    <package name="com.com.joush.dao"></package>
+    <!--  <mapper resource="com/com.com.joush/dao/UserDao.xml"></mapper>  -->
+    <package name="com.com.com.joush.dao"></package>
 </mappers>
 
-<!--  com.com.joush.dao.UserDao.xml  -->
+<!--  com.com.com.joush.dao.UserDao.xml  -->
 
 <!--  查询所有  -->
 <select id="findAll" resultType="user">
@@ -335,7 +335,7 @@ SqlSession openSession(boolean autoCommit);
 #### 使用 if where sql 标签
 * 在配置文件中写入配置
 ``` xml java
-<!--  com.com.joush.dao.UserDao.xml  -->
+<!--  com.com.com.joush.dao.UserDao.xml  -->
 
 <!--  根据条件查询  -->
 <select id="findUserByCondition" resultType="user" parameterType="user">
@@ -383,7 +383,7 @@ public void testFindByCondition(){
 ```
 * 可以使用 sql 标签来抽取重复的 sql 语句
 ``` xml
-<!--  com.com.joush.dao.UserDao.xml  -->
+<!--  com.com.com.joush.dao.UserDao.xml  -->
 
 <!--  抽取重复的 sql 语句  -->
 <sql id="defaultUser">
@@ -404,7 +404,7 @@ public void testFindByCondition(){
 #### 使用 foreach 标签实现集合查询
 * QueryVo 的定义
 ``` java
-// com.com.joush.domain.QueryVo.java
+// com.com.com.joush.domain.QueryVo.java
 private List<Integer> ids;
 public List<Integer> getIds() {
         return ids;
@@ -416,7 +416,7 @@ public void setIds(List<Integer> ids) {
 ```
 * xml中的配置
 ``` xml
-<!--  com.com.joush.dao.UserDao.xml  -->
+<!--  com.com.com.joush.dao.UserDao.xml  -->
 
 <!--  根据 queryVo中的集合实现查询用户列表  -->
 <select id="findUserInIds" resultType="user" parameterType="queryVo">
@@ -450,7 +450,7 @@ public void setIds(List<Integer> ids) {
 ```
 * 首先将 domain 文件进行修改，账户表添加用户属性
 ``` java
-// com.com.joush.domain.Account.java
+// com.com.com.joush.domain.Account.java
 private int id;
 private int uid;
 private double money;
@@ -462,7 +462,7 @@ private User user;
 ```
 * 在对应的配置文件中添加结果集映射
 ``` xml
-<!--  com.com.joush.dao.AccountDao.xml  -->
+<!--  com.com.com.joush.dao.AccountDao.xml  -->
 
 <!--  带一封装 account 和 user 的resultMap  -->
 <resultMap id="accountUserMap" type="account">
@@ -488,7 +488,7 @@ private User user;
 ```
 * 测试
 ``` java
-// com.com.joush.AccountTest.java
+// com.com.com.joush.AccountTest.java
 @Test
 public void testFindAll() throws IOException {
     // 5.执行查询所有方法
@@ -509,7 +509,7 @@ public void testFindAll() throws IOException {
 ```
 * 添加 list 属性
 ``` java
-com.com.joush.domain.User.java
+com.com.com.joush.domain.User.java
 
 private int id;
 private String username;
@@ -524,7 +524,7 @@ private List<Account> accounts;
 ```
 * 修改 xml 配置
 ``` xml
-<!--  com.com.joush.dao.UserDao.xml  -->
+<!--  com.com.com.joush.dao.UserDao.xml  -->
 
 <!--  定义 User 的 resultMap  -->
 <resultMap id="userAccountMap" type="user">
@@ -552,7 +552,7 @@ private List<Account> accounts;
 ```
 * 测试
 ``` java
-// com.com.joush.UserTest.java
+// com.com.com.joush.UserTest.java
 @Test
 public void testFindAll() throws IOException {
     // 5.执行查询所有方法
@@ -578,7 +578,7 @@ public void testFindAll() throws IOException {
 ```
 * 修改 xml 配置
 ``` xml
-<!--  com.com.joush.dao.RoleDao.xml  -->
+<!--  com.com.com.joush.dao.RoleDao.xml  -->
 
 <!--  定义 role 表的 resultMap  -->
 <resultMap id="roleMap" type="role">
@@ -601,7 +601,7 @@ public void testFindAll() throws IOException {
     left join user u on u.id = ur.uid;
 </select>
 
-<!--  com.com.joush.dao.UserDao.xml  -->
+<!--  com.com.com.joush.dao.UserDao.xml  -->
 <resultMap id="userMap" type="user">
     <id property="id" column="id"></id>
     <result property="username" column="username"></result>
@@ -639,7 +639,7 @@ public void testFindAll() throws IOException {
 #### 一对一
 * 修改 accountDao 文件
 ``` xml
-<!--  com.com.joush.dao.AccountDao.xml  -->
+<!--  com.com.com.joush.dao.AccountDao.xml  -->
 
 <!--  带一封装 account 和 user 的resultMap  -->
 <resultMap id="accountUserMap" type="account">
@@ -651,7 +651,7 @@ public void testFindAll() throws IOException {
           select 属性指定的内容，查询用户的唯一标志
           column 属性指定的内容，用户根据 id 查询时，所需要的参数值
             -->
-    <association property="user" column="uid" javaType="user" select="com.com.joush.dao.UserDao.findById"></association>
+    <association property="user" column="uid" javaType="user" select="com.com.com.joush.dao.UserDao.findById"></association>
 </resultMap>
 
 <!--  查询所有 -->
@@ -674,7 +674,7 @@ public void testFindAll() throws IOException {
 #### 一对多
 * 修改 userDao 文件
 ``` xml
-<!--  com.com.joush.dao.userDao.xml  -->
+<!--  com.com.com.joush.dao.userDao.xml  -->
 
 <!--  定义 User 的 resultMap  -->
     <resultMap id="userAccountMap" type="user">
@@ -684,7 +684,7 @@ public void testFindAll() throws IOException {
         <result property="sex" column="sex"></result>
         <result property="birthday" column="birthday"></result>
         <!--  此处的 column 是指通过 user 的 id 来查询，所以列名为 id  -->
-        <collection property="accounts" ofType="account" select="com.com.joush.dao.AccountDao.finAccountByUid" column="id"></collection>
+        <collection property="accounts" ofType="account" select="com.com.com.joush.dao.AccountDao.finAccountByUid" column="id"></collection>
     </resultMap>
 
 <!--  查询所有 -->
@@ -696,7 +696,7 @@ public void testFindAll() throws IOException {
 ```
 * 修改 Account 相关文件
 ``` java
-// com.com.joush.dao.AccountDao.java
+// com.com.com.joush.dao.AccountDao.java
 
 // 添加通过 id 查询的方法
 /**
@@ -707,7 +707,7 @@ public void testFindAll() throws IOException {
 List<Account> finAccountByUid(int uid);
 ```
 ``` xml
-<!--  com.com.joush.dao.AccountDao.xml -->
+<!--  com.com.com.joush.dao.AccountDao.xml -->
 
 <!--  根据用户 id 查询账户列表  -->
 <select id="finAccountByUid" resultType="account">
@@ -746,12 +746,12 @@ List<Account> finAccountByUid(int uid);
 public void testFirstLevelCache(){
 
     User user1 = userDao.findById(41);
-    System.out.println(user1); // com.com.joush.domain.User@b968a76
+    System.out.println(user1); // com.com.com.joush.domain.User@b968a76
 
     sqlSession.clearCache(); // 此方法可以清空缓存，当清空时，缓存即消失，两个对象不再相等
 
     User user2 = userDao.findById(41);
-    System.out.println(user2); // com.com.joush.domain.User@b968a76
+    System.out.println(user2); // com.com.com.joush.domain.User@b968a76
 
     System.out.println(user1 == user2); // true
 }
@@ -775,16 +775,16 @@ public void testFirstLevelCache(){
     ```
     - 让当前的映射文件支持二级缓存
     ``` xml
-    <!--  com.com.joush.dao.UserDao.xml  -->
+    <!--  com.com.com.joush.dao.UserDao.xml  -->
     
     <!--  开启支持二级缓存  -->
-    <mapper namespace="com.com.joush.dao.UserDao">
+    <mapper namespace="com.com.com.joush.dao.UserDao">
         <cache/>
     </mapper>
     ```
     - 让当前的操作支持二级缓存
     ``` xml
-    <!--  com.com.joush.dao.UserDao.xml  -->
+    <!--  com.com.com.joush.dao.UserDao.xml  -->
     
     <!--  添加 userCache 属性，置为 true  -->
     <!--  查询一个  -->
@@ -799,7 +799,7 @@ public void testFirstLevelCache(){
 * **注意，如果写了注解，同时还存在xml文件，那么无论使不使用 xml，mybatis 都会报错，所以建议统一为注解或者 xml**
 #### 在 dao 的方法上添加对应的注解和 sql 语句即可
 ``` java
-// com.com.joush.dao.UserDao.java
+// com.com.com.joush.dao.UserDao.java
 
 /**
  * 查询所有用户
@@ -811,7 +811,7 @@ List<User> findAll();
 
 #### mybatis 的单表 CRUD 操作
 ``` java
-// com.com.joush.dao.UserDao.java
+// com.com.com.joush.dao.UserDao.java
 /**
  * 查询所有用户
  * @return
@@ -893,12 +893,12 @@ User findById(int id);
 #### mybatis 的多表操作
 * 一对一，使用 one 注解
 ``` java
-// com.com.joush.domain.Account.java
+// com.com.com.joush.domain.Account.java
 
 // 多对一的映射，一个账户属于一个用户
 private User user;
 
-// com.com.joush.dao.AccountDao.java
+// com.com.com.joush.dao.AccountDao.java
 /**
  * 查询所有账户，并获取每个账户所属的用户信息
  * @return
@@ -914,17 +914,17 @@ private User user;
             一般一对一为立即加载，一对多为懒加载
         */
         @Result(property = "user", column = "uid", one = @One(
-                select = "com.com.joush.dao.UserDao.findById",fetchType = FetchType.EAGER
+                select = "com.com.com.joush.dao.UserDao.findById",fetchType = FetchType.EAGER
         ))
 })
 List<Account> findAll();
 ```
 * 一对多，使用 many 注解
 ``` java
-// com.com.joush.domain.User.java
+// com.com.com.joush.domain.User.java
 private List<Account> accounts;
 
-// com.com.joush.dao.UserDao.java
+// com.com.com.joush.dao.UserDao.java
 
 /**
  * 查询所有用户
@@ -942,12 +942,12 @@ private List<Account> accounts;
             注意，此处需要给 AccountDao添加一个根据 id 查询账户的方法，才能执行
         */
         @Result(column = "id", property = "accounts", many = @Many(
-            select = "com.com.joush.dao.AccountDao.findById", fetchType = FetchType.LAZY
+            select = "com.com.com.joush.dao.AccountDao.findById", fetchType = FetchType.LAZY
         ))
 })
 List<User> findAll();
 
-// com.com.joush.dao.AccountDao.java
+// com.com.com.joush.dao.AccountDao.java
 /**
      * 根据 id 查询一个
      * @param id
@@ -961,7 +961,7 @@ List<User> findAll();
     - 一级缓存默认开启，所以不需要关注
     - 二级缓存开启方法
     ``` java 
-    // com.com.joush.dao.UserDao.java
+    // com.com.com.joush.dao.UserDao.java
     
     // 在类上添加 CacheNamespace 注解，并设置 blocking 属性为 true，即表示开启二级缓存
     @CacheNamespace(blocking = true)

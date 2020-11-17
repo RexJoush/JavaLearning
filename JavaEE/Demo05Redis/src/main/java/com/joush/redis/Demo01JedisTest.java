@@ -88,7 +88,7 @@ public class Demo01JedisTest {
         Jedis jedis = new Jedis();
 
         // 存储 hash
-        jedis.hset("user", "name", "com.joush");
+        jedis.hset("user", "name", "com.com.joush");
         jedis.hset("user", "age", "23");
         jedis.hset("user", "sex", "male");
 
@@ -115,7 +115,7 @@ public class Demo01JedisTest {
         Jedis jedis = new Jedis(); // 空参，默认值是 localhost, 6379
 
         // 字符串存取操作
-        jedis.set("username","com.joush");
+        jedis.set("username","com.com.joush");
 
         String username = jedis.get("username");
         System.out.println(username);
@@ -132,7 +132,7 @@ public class Demo01JedisTest {
         Jedis jedis = new Jedis("localhost", 6379);
 
         // 2.操作
-        jedis.set("name","com.joush");
+        jedis.set("name","com.com.joush");
 
         // 3.关闭连接
         jedis.close();

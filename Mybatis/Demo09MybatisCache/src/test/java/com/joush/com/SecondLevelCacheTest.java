@@ -64,7 +64,7 @@ public class SecondLevelCacheTest {
 
         // 查询 41 的用户信息
         User user1 = userDao1.findById(41);
-        System.out.println(user1); // com.com.joush.domain.User@47dbb1e2
+        System.out.println(user1); // com.com.com.joush.domain.User@47dbb1e2
 
         sqlSession1.close(); // 一级缓存消失
 
@@ -79,7 +79,7 @@ public class SecondLevelCacheTest {
 
         // 查询 41 的用户信息
         User user2 = userDao2.findById(41);
-        System.out.println(user2); // com.com.joush.domain.User@77602954
+        System.out.println(user2); // com.com.com.joush.domain.User@77602954
 
         sqlSession1.close(); // 一级缓存消失
 

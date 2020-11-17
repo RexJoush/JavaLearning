@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.com.joush.dao.AccountDao">
+<mapper namespace="com.com.com.joush.dao.AccountDao">
 
     <!--  带一封装 account 和 user 的resultMap  -->
     <resultMap id="accountUserMap" type="account">
@@ -14,7 +14,7 @@
               select 属性指定的内容，查询用户的唯一标志
               column 属性指定的内容，用户根据 id 查询时，所需要的参数值
                 -->
-        <association property="user" column="uid" javaType="user" select="com.com.joush.dao.UserDao.findById"></association>
+        <association property="user" column="uid" javaType="user" select="com.com.com.joush.dao.UserDao.findById"></association>
     </resultMap>
 
     <!--  查询所有  -->

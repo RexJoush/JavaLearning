@@ -236,7 +236,7 @@ $ docker load -i mynginx.tar
 ``` editorconfig
 # 创建 Dockerfile 文件，并填写信息
 FROM centos:7  # 基础环境 Cent OS 7
-MAINTAINER com.joush # 创建者姓名
+MAINTAINER com.com.joush # 创建者姓名
 WORKDIR /usr    # 工作目录
 RUN mkdir/usr/local/java # 创建一个文件夹 
 ADD jdk-8u171-linux-x64.tar.gz /usr/local/java/ # 将jdk加入目录中

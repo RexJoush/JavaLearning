@@ -25,7 +25,7 @@ public class UserDaoImpl implements UserDao {
         SqlSession sqlSession = factory.openSession();
 
         // 2.调用 SqlSession 的方法，实现查询列表
-        List<User> users = sqlSession.selectList("com.com.joush.dao.UserDao.findAll"); // 参数是能获取信息的 key
+        List<User> users = sqlSession.selectList("com.com.com.joush.dao.UserDao.findAll"); // 参数是能获取信息的 key
 
         // 3.释放资源
         sqlSession.close();
@@ -37,7 +37,7 @@ public class UserDaoImpl implements UserDao {
         SqlSession sqlSession = factory.openSession();
 
         // 2.调用 SqlSession 的方法实现保存
-        sqlSession.insert("com.com.joush.dao.UserDao.saveUser", user); // 参数是能获取信息的 key
+        sqlSession.insert("com.com.com.joush.dao.UserDao.saveUser", user); // 参数是能获取信息的 key
 
         // 3.提交事务
         sqlSession.commit();
@@ -53,7 +53,7 @@ public class UserDaoImpl implements UserDao {
         SqlSession sqlSession = factory.openSession();
 
         // 2.调用 SqlSession 的方法实现保存
-        sqlSession.update("com.com.joush.dao.UserDao.updateUser", user); // 参数是能获取信息的 key
+        sqlSession.update("com.com.com.joush.dao.UserDao.updateUser", user); // 参数是能获取信息的 key
 
         // 3.提交事务
         sqlSession.commit();
@@ -67,7 +67,7 @@ public class UserDaoImpl implements UserDao {
         SqlSession sqlSession = factory.openSession();
 
         // 2.调用 SqlSession 的方法实现保存
-        sqlSession.delete("com.com.joush.dao.UserDao.deleteUser", id); // 参数是能获取信息的 key
+        sqlSession.delete("com.com.com.joush.dao.UserDao.deleteUser", id); // 参数是能获取信息的 key
 
         // 3.提交事务
         sqlSession.commit();
@@ -81,7 +81,7 @@ public class UserDaoImpl implements UserDao {
         SqlSession sqlSession = factory.openSession();
 
         // 2.调用 SqlSession 的方法实现保存
-        User user = sqlSession.selectOne("com.com.joush.dao.UserDao.findById", id);
+        User user = sqlSession.selectOne("com.com.com.joush.dao.UserDao.findById", id);
 
         // 4.释放资源
         sqlSession.close();
@@ -95,7 +95,7 @@ public class UserDaoImpl implements UserDao {
         SqlSession sqlSession = factory.openSession();
 
         // 2.调用 SqlSession 的方法，实现模糊查询列表
-        List<User> users = sqlSession.selectList("com.com.joush.dao.UserDao.findByName", username); // 参数是能获取信息的 key
+        List<User> users = sqlSession.selectList("com.com.com.joush.dao.UserDao.findByName", username); // 参数是能获取信息的 key
 
         // 3.释放资源
         sqlSession.close();
@@ -107,7 +107,7 @@ public class UserDaoImpl implements UserDao {
         SqlSession sqlSession = factory.openSession();
 
         // 2.调用 SqlSession 的方法实现查询个数
-        int total = sqlSession.selectOne("com.com.joush.dao.UserDao.findTotal");
+        int total = sqlSession.selectOne("com.com.com.joush.dao.UserDao.findTotal");
 
         // 4.释放资源
         sqlSession.close();

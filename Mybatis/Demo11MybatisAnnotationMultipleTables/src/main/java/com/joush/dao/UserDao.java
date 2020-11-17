@@ -25,7 +25,7 @@ public interface UserDao {
             @Result(column = "sex", property = "userSex"),
             @Result(column = "birthday", property = "userBirthday"),
             @Result(column = "id", property = "accounts", many = @Many(
-                select = "com.com.joush.dao.AccountDao.findById", fetchType = FetchType.LAZY
+                select = "com.com.com.joush.dao.AccountDao.findById", fetchType = FetchType.LAZY
             ))
     })
     List<User> findAll();

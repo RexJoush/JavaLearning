@@ -6,7 +6,7 @@
 
     <properties resource="jdbcConfig.properties"></properties>
     <typeAliases>
-        <package name="com.com.joush.domain"/>
+        <package name="com.com.com.joush.domain"/>
     </typeAliases>
 
     <!--  配置环境  -->
@@ -28,7 +28,7 @@
 
     <!--  配置映射文件的位置  -->
     <mappers>
-        <mapper resource="com/com.joush/dao/UserDao.xml"></mapper>
-        <mapper resource="com/com.joush/dao/RoleDao.xml"></mapper>
+        <mapper resource="com/com.com.joush/dao/UserDao.xml"></mapper>
+        <mapper resource="com/com.com.joush/dao/RoleDao.xml"></mapper>
     </mappers>
 </configuration>

@@ -43,6 +43,10 @@
         <option value="$PROJECT_DIR$/SpringBoot/Demo02SpringBootQuickCreate/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/Demo01SpringIntroduction/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/Demo02SpringIoC/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/Demo03SpringBean/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/Demo04SpringDependencyInjection/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo05SpringAnnotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/Demo05SpringAnnotation/pom.xml" />
       </list>
     </option>
   </component>

@@ -25,7 +25,7 @@
 
 * 编写 Spring Boot 引导类
 ``` java
-// com.com.joush.MySpringBootApplication.java
+// com.com.com.joush.MySpringBootApplication.java
 
 /*
     1.添加注解
@@ -42,7 +42,7 @@ public class MySpringBootApplication {
 
 * 编写 Controller 
 ``` java
-// com.com.joush.controller.QuickController.java
+// com.com.com.joush.controller.QuickController.java
 /*
     1.类添加 @Controller 注解
     2.方法添加 @RequestMapping("/quick"), @ResponseBody 注解             

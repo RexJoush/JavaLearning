@@ -6,26 +6,29 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Demo05MybatisDynamicSql" />
         <module name="Demo04MybatisDao" />
         <module name="Demo11MybatisAnnotationMultipleTables" />
         <module name="Demo08MybatisDelayLoading" />
-        <module name="Demo01MybatisIntroduction" />
         <module name="Demo02MybatisCustomize" />
+        <module name="Demo04AjaxJson" />
+        <module name="Demo03MybatisCRUD" />
+        <module name="Demo01ServletBasic" />
+        <module name="Demo03SpringBootQuickStart" />
+        <module name="Demo05Redis" />
+        <module name="Demo05MybatisDynamicSql" />
+        <module name="Demo03SpringBean" />
+        <module name="Demo01MybatisIntroduction" />
+        <module name="Demo04SpringDI" />
         <module name="Demo01SpringBootIntroduce" />
         <module name="Demo06MybatisMultipleTables" />
         <module name="Demo09MybatisCache" />
-        <module name="Demo04AjaxJson" />
+        <module name="Demo05SpringAnnotation" />
         <module name="Demo07MybatisMutipleToMultiple" />
         <module name="Demo08MybatisJNDI" />
-        <module name="Demo03MybatisCRUD" />
-        <module name="Demo01ServletBasic" />
         <module name="Demo02CookieSession" />
         <module name="Demo03FilterListener" />
-        <module name="Demo03SpringBootQuickStart" />
         <module name="Demo01SpringIntroduction" />
         <module name="Demo02SpringIoC" />
-        <module name="Demo05Redis" />
         <module name="Demo10MybatisAnnotation" />
         <module name="Demo02SpringBootQuickCreate" />
       </profile>
@@ -41,11 +44,14 @@
       <module name="Demo02SpringIoC" target="1.8" />
       <module name="Demo03FilterListener" target="1.8" />
       <module name="Demo03MybatisCRUD" target="1.8" />
+      <module name="Demo03SpringBean" target="1.8" />
       <module name="Demo03SpringBootQuickStart" target="1.8" />
       <module name="Demo04AjaxJson" target="1.8" />
       <module name="Demo04MybatisDao" target="1.8" />
+      <module name="Demo04SpringDI" target="1.8" />
       <module name="Demo05MybatisDynamicSql" target="1.8" />
       <module name="Demo05Redis" target="1.8" />
+      <module name="Demo05SpringAnnotation" target="1.8" />
       <module name="Demo06MybatisMultipleTables" target="1.8" />
       <module name="Demo07MybatisMutipleToMultiple" target="1.8" />
       <module name="Demo08MybatisDelayLoading" target="1.8" />

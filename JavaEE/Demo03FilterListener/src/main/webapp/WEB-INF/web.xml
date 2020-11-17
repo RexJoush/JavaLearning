@@ -6,7 +6,7 @@
 
 <!--    <filter>-->
 <!--        <filter-name>demo01</filter-name>-->
-<!--        <filter-class>com.com.joush.filter.FilterDemo01</filter-class>-->
+<!--        <filter-class>com.com.com.joush.filter.FilterDemo01</filter-class>-->
 <!--    </filter>-->
 
 <!--    <filter-mapping>-->
@@ -15,7 +15,7 @@
 <!--    </filter-mapping>-->
         
     <listener>
-        <listener-class>com.com.joush.listener.ListenerDemo01ContextLoaderListener</listener-class>
+        <listener-class>com.com.com.joush.listener.ListenerDemo01ContextLoaderListener</listener-class>
     </listener>
 
     <!--  指定初始化参数  -->

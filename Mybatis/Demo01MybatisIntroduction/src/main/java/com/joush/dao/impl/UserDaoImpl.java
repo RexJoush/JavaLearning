@@ -21,7 +21,7 @@ public class UserDaoImpl implements UserDao {
         SqlSession session = factory.openSession();
 
         // 使用 session 执行查询所有方法
-        List<User> users = session.selectList("com.com.joush.dao.UserDao.findAll"); // 配置文件中的 namespace + id 值
+        List<User> users = session.selectList("com.com.com.joush.dao.UserDao.findAll"); // 配置文件中的 namespace + id 值
         session.close();
         return users;
 
