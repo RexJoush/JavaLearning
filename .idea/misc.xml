@@ -48,6 +48,7 @@
         <option value="$PROJECT_DIR$/Demo05SpringAnnotation/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/Demo05SpringAnnotation/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/Demo06SpringAccountXMLIoc/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/Demo06SpringAccountAnnotationIoc/pom.xml" />
       </list>
     </option>
   </component>

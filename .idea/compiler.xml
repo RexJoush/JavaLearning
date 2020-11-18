@@ -9,7 +9,6 @@
         <module name="Demo04MybatisDao" />
         <module name="Demo11MybatisAnnotationMultipleTables" />
         <module name="Demo08MybatisDelayLoading" />
-        <module name="Demo06SpringAccountXMLIoc" />
         <module name="Demo02MybatisCustomize" />
         <module name="Demo04AjaxJson" />
         <module name="Demo03MybatisCRUD" />
@@ -17,6 +16,7 @@
         <module name="Demo03SpringBootQuickStart" />
         <module name="Demo05Redis" />
         <module name="Demo05MybatisDynamicSql" />
+        <module name="Demo06SpringAccountAnnotationIoc" />
         <module name="Demo03SpringBean" />
         <module name="Demo01MybatisIntroduction" />
         <module name="Demo04SpringDI" />
@@ -32,6 +32,12 @@
         <module name="Demo02SpringIoC" />
         <module name="Demo10MybatisAnnotation" />
         <module name="Demo02SpringBootQuickCreate" />
+      </profile>
+      <profile name="Annotation profile for Demo06SpringAccountXMLIoc" enabled="true">
+        <sourceOutputDir name="../Demo06SpringAccountXMLIoc/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../Demo06SpringAccountXMLIoc/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Demo07SpringAccountXMLIoc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
@@ -54,8 +60,9 @@
       <module name="Demo05Redis" target="1.8" />
       <module name="Demo05SpringAnnotation" target="1.8" />
       <module name="Demo06MybatisMultipleTables" target="1.8" />
-      <module name="Demo06SpringAccountXMLIoc" target="1.8" />
+      <module name="Demo06SpringAccountAnnotationIoc" target="1.8" />
       <module name="Demo07MybatisMutipleToMultiple" target="1.8" />
+      <module name="Demo07SpringAccountXMLIoc" target="1.8" />
       <module name="Demo08MybatisDelayLoading" target="1.8" />
       <module name="Demo09MybatisCache" target="1.8" />
       <module name="Demo10MybatisAnnotation" target="1.8" />

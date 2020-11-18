@@ -327,7 +327,7 @@ IOC 的作用，降低程序间的耦合
             Quailfier 注解 
             作用：再按照类型的基础之上，在按照名称注入。在给类成员注入时不能单独使用，需和 Autowired注解 一起使用但在给方法参数注入时，可以使用
             属性：value 用于指定注入 bean 的 id 
-      
+        
             Resource 注解
             作用：直接按照 bean 的 id 注入，可以独立使用
             属性: name 用于指定 bean 的 id
@@ -379,5 +379,5 @@ IOC 的作用，降低程序间的耦合
         @PreDestroy
         public void destroy(){
             System.out.println("销毁方法");
-            }
+        }
         ```
