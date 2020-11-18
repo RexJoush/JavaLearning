@@ -73,7 +73,7 @@
 #### 步骤
 
 * 系统初始化（Master，Node 均需要进行）
-``` editorconfig
+``` shell
 
 # 关闭防火墙
 $ systemctl stop firewalld
@@ -113,7 +113,7 @@ $ ntpdate time.windows.com
 ```
 
 * 在所有节点上安装 Docker kubeadm kubelet（Master，Node 均需要进行）
-``` editorconfig
+``` shell
 # 安装 docker
 $ wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
     # 如果提示 wget 未找到，则先安装 wget
@@ -152,7 +152,7 @@ $ systemctl enable kubelet
 ```
 
 * 部署 Master （仅 master 需要进行）
-``` editorconfig
+``` shell
 # 初始化集群环境
 $ kubeadm init --apiserver-advertise-address=192.168.52.136 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.19.4 --service-cidr=10.96.0.0/12 --pod-network-cidr=10.244.0.0/16
     # 此处如果提示版本错误，就把参数中 --kubernetes-version v1.19.4 改为错误提示中的版本
@@ -188,13 +188,13 @@ master   NotReady   master   2m30s   v1.19.4
 ```
 
 * node 节点加入集群（所有 node 需要进行）
-``` editorconfig
+``` shell
 # 加入集群，执行上面 master 节点完成最后面的提示信息，即加入完成
 kubeadm join 192.168.52.136:6443 --token wlaft6.hql5b1n452wbh1du --discovery-token-ca-cert-hash sha256:5458858a613822ef8cb7e1c0bc148c232081c990d2a3e2b504b7bc53b4be7c52
 ```
 
 * 查看集群配置（在 master 中进行）
-``` editorconfig
+``` shell
 # 查看集群状态，打印下面信息表示集群创建成功
 $ kubectl get nodes
 NAME     STATUS     ROLES    AGE   VERSION
@@ -202,7 +202,7 @@ master   NotReady   master   21m   v1.19.4
 node1    NotReady   <none>   4s    v1.19.4
 ```
 * 配置网络插件 CNI，使得集群能够互相访问（在 master 中进行）
-``` editorconfig
+``` shell
 # 安装 cni，因为访问外网，如果出现错误，多尝试几次即可
 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
@@ -228,7 +228,7 @@ node1    Ready    <none>   6m48s   v1.19.4
 ```
 
 * 集群通信测试（在 master 中进行）
-``` editorconfig
+``` shell
 # 在 master 节点上搭建 nigix 服务
 $ kubectl create deployment nginx --image=nginx
 
@@ -249,7 +249,7 @@ service/nginx        NodePort    10.99.57.60   <none>        80:31142/TCP   29s
 
 ```
 * 通过 node 节点进行访问（在任一 node 中进行）
-``` editorconfig
+``` shell
 # 在任一 node 节点上访问 nginx
 $ curl http://192.168.52.136:31142 # 此处的 ip 地址为 master ip，端口号为上一步查看到的端口号
 
@@ -258,7 +258,7 @@ $ curl http://192.168.52.136:31142 # 此处的 ip 地址为 master ip，端口�
 
 ## Kubernetes 集群, 二进制部署
 * 步骤
-``` editorconfig
+``` shell
 # 查看默认防火墙状态（关闭显示 not running，开启显示 running）
 $ firewall-cmd --state
 
@@ -278,7 +278,7 @@ $ systemctl disable firewalld.service
 * docker 安装
     <!--- 
     # 设置 yum 源
-    ``` editorconfig
+    ``` shell
     $ vi /etc/yum.repos.d/docker.repo
     [dockerrepo]
     name=Docker Repository
@@ -288,7 +288,7 @@ $ systemctl disable firewalld.service
     gpgkey=https://yum.dockerproject.org/gpg
     ```
     --->
-    ``` editorconfig
+    ``` shell
     # 安装 docker
     $ yum install docker
     
@@ -303,13 +303,13 @@ $ systemctl disable firewalld.service
         etcd-v3.3.x-linux-amd64.tar.gz
     - 上传至 /usr/local/kubernetes, 此文件夹随意即可
     - 解压，并将 etcd 和 etcdctl 文件复制到 /usr/bin 目录下
-        ``` editorconfig
+        ``` shell
         $ tar -xvf etcd-v3.3.25-linux-amd64.tar.gz
         $ cd etcd-v3.3.25-linux-amd64
         $ cp etcd etcdctl /usr/bin
         ```
     - 配置 systemd 服务文件 /usr/lib/systemd/system/etcd.service
-        ``` editorconfig
+        ``` shell
         $ vi /usr/lib/systemd/system/etcd.service
         
         [Unit]
@@ -325,7 +325,7 @@ $ systemctl disable firewalld.service
         WantedBy=multi-user.target
         ```
     - 启动与测试服务
-        ``` editorconfig
+        ``` shell
         $ mkdir /var/lib/etcd # 创建出来工作目录
         $ systemctl daemon-reload
         $ systemctl enable etcd.service
@@ -338,11 +338,11 @@ $ systemctl disable firewalld.service
     - 下载 kubernetes-server-linux-amd64.tar.gz
     <https://kubernetes.io/docs/setup/release/notes/>
     - 将 kubernetes/server/bin 下的 kube-apiserver kube-controller-manager kube-scheduler kubectl 以及管理要使用的二进制命令文件放到 /usr/bin目录
-    ``` editorconfig
+    ``` shell
     cp kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/bin
     ```
     - 对 kube-apiserver 服务进行配置
-    ``` editorconfig
+    ``` shell
     # 编辑 systemd 服务文件 
     $ vi /usr/lib/systemd/system/kube-apiserver.service
     
@@ -359,11 +359,11 @@ $ systemctl disable firewalld.service
     Type=notify
     [Install]
     WantedBy=multi-user.target
-  
+    
     # 配置文件，创建目录
     $ mkdir /etc/kubernetes
     $ vi /etc/kubernetes/apiserver
-  
+    
     # 添加内容
     KUBE_API_ARGS="--storage-backend=etcd3 --etcd-servers=http://127.0.0.1:2379 --insecure-bind-address=0.0.0.0
     --insecure-port=8080 --service-cluster-ip-range=169.169.0.0/16 --service-node-port-range=1-65535
@@ -373,7 +373,7 @@ $ systemctl disable firewalld.service
 
 * kube-controller-manager 服务
     - kube-controller-manager 依赖于 kube-apiserver 服务
-    ``` editorconfig
+    ``` shell
     # 配置 systemd 服务文件
     $ vi /usr/lib/systemd/system/kube-controller-manager.service
     
@@ -389,20 +389,20 @@ $ systemctl disable firewalld.service
     ExecStart=/usr/bin/kube-controller-manager $KUBE_CONTROLLER_MANAGER_ARGS
     Restart=on-failure
     LimitNOFILE=65536
-  
+    
     [Install]
     WantedBy=multi-user.target
     
     # 配置文件
     $ vi /etc/kubernetes/controller-manager
-  
+    
     # 添加内容
     KUBE_CONTROLLER_MANAGER_ARGS="--master=http://192.168.52.133:8080 --logtostderr=true --log-dir=/var/log/kubernetes --v=2"
     ```
 
 * kube-scheduler 服务
     - kube-scheduler 也依赖于 kube-apiserver 服务
-    ``` editorconfig
+    ``` shell
     # 配置 systemd 服务文件
     $ vi /usr/lib/systemd/system/kube-scheduler.service
     
@@ -418,19 +418,19 @@ $ systemctl disable firewalld.service
     ExecStart=/usr/bin/kube-controller-manager $KUBE_SCHEDULER_ARGS
     Restart=on-failure
     LimitNOFILE=65536
-  
+    
     [Install]
     WantedBy=multi-user.target
     
     # 配置文件
     $ vi /etc/kubernetes/scheduler
-  
+    
     # 添加内容
     KUBE_SCHEDULER_ARGS="--master=http://192.168.52.133:8080 --logtostderr=true --log-dir=/var/log/kubernetes --v=2"
-    ```  
+    ```
 * 启动
     - 完成上面配置后，开始启动服务
-    ``` editorconfig
+    ``` shell
     # 挨个启动
     $ systemctl daemon-reload
     $ systemctl enable kube-apiserver.service
@@ -439,7 +439,7 @@ $ systemctl disable firewalld.service
     $ systemctl start kube-controller-manager.service
     $ systemctl enable kube-scheduler.service
     $ systemctl start kube-scheduler.service
-  
+    
     # 检查状态
     $ systemctl status kube-apiserver.service
     $ systemctl status kube-controller-manager.service
@@ -449,7 +449,7 @@ $ systemctl disable firewalld.service
 ## Kubernetes 快速入门
 
 #### 环境准备
-``` editorconfig
+``` shell
 # 关闭防火墙
 $ systemctl disable firewalld
 $ systemctl stop firewalld
@@ -476,7 +476,7 @@ $ systemctl start kubelet
 
 * tomcat 配置
     - 添加以下两个配置文件
-    ``` editorconfig
+    ``` shell
     # 创建文件夹  
     $ mkdir /usr/local/kubernetes
     $ cd /usr/local/kubernetes
@@ -520,9 +520,9 @@ $ systemctl start kubelet
          selector:
           app: mytomcat
         ```
-  
+    
     - 执行命令
-        ``` editorconfig
+        ``` shell
         $ kubectl create -f mytomcat-rc.yaml
         # replicationcontroller "mytomcat" created 创建成功
             
@@ -541,7 +541,7 @@ $ systemctl start kubelet
         ```
     - 错误解决
         - kubectl get pods 出现 No resources found.
-            ``` editorconfig
+            ``` shell
             # 1.编辑文件
             $ vi /etc/kubernetes/apiserver
             # 2.找到 
@@ -554,7 +554,7 @@ $ systemctl start kubelet
             
             ```
         - docker pull 失败，即 kubectl get pods 一直显示 ContainerCreating，Ready 0/1 并没有跑起来
-            ``` editorconfig
+            ``` shell
             # 解决方案 1
             1. $ yum install *rhsm*
             # 此处，如果提示找不到 rhsm，那么可能是虚拟机装机时少勾选了一些东西
@@ -563,13 +563,13 @@ $ systemctl start kubelet
                 - Development Tools
                 - System Administration Tools
             2. $ docker pull register.access.redhat.com/rhel7/pod-infrastructure:lastest
-          
+            
             # 解决方案 2
             1. $ wget http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm
             2. $ rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem
             3. $ systemctl restart kubelet
             # 等一会看看会不会好
-          
+            
             # 解决方案3
             1. $ docker pull kubernetes/pause
             2. $ docker tag docker.io/kubernetes/pause:latest 192.168.52.132:5000/google_containers/pause-amd64.3.0
@@ -581,7 +581,7 @@ $ systemctl start kubelet
             # 三种方案如果都不行，那就不知道了.... 我也是稀里糊涂弄好的
             ```
         - 外部网不能访问
-            ``` editorconfig
+            ``` shell
             # 搭建好 k8s 集群内创建的容器，只能在其所在的节点上访问，不能在其他主机上访问
             1. $ vi /etc/sysctl.conf
             # 在后面添加一句

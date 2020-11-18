@@ -1,13 +1,13 @@
 package com.joush.service.impl;
 
 import com.joush.dao.AccountDao;
-import com.joush.dao.impl.AccountDaoImpl;
 import com.joush.service.AccountService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 
 /**
  * 账户业务层的实现类
@@ -27,13 +27,26 @@ import org.springframework.stereotype.Service;
  *     作用和在 bean 标签中使用 init-method 和 destroy-method 属性作用一样的
  */
 @Service("accountServiceImpl")
+//@Scope("prototype") // 多例延迟创建
+@Scope("singleton") // 单例立即创建
 public class AccountServiceImpl implements AccountService {
 
-    @Autowired
+
+    @Resource(name = "accountDaoImpl")
     private AccountDao accountDao = null;
 
     @Override
     public void saveAccount() {
         accountDao.saveAccount();
+    }
+
+    @PostConstruct
+    public void init(){
+        System.out.println("初始化方法");
+    }
+
+    @PreDestroy
+    public void destroy(){
+        System.out.println("销毁方法");
     }
 }

@@ -325,11 +325,59 @@ IOC 的作用，降低程序间的耦合
             细节：使用注解注入时，set 方法不是必须的
             
             Quailfier 注解 
+            作用：再按照类型的基础之上，在按照名称注入。在给类成员注入时不能单独使用，需和 Autowired注解 一起使用但在给方法参数注入时，可以使用
+            属性：value 用于指定注入 bean 的 id 
+      
+            Resource 注解
+            作用：直接按照 bean 的 id 注入，可以独立使用
+            属性: name 用于指定 bean 的 id
+            
+            以上三种注入都只能注入其他 bean 类型的数据，基本类型和 String 类型无法使用上述注解实现。
+            另，集合类型数据注入只能通过 xml 来实现
+            
+            Value 注解
+            作用：用于注入基本类型和 String 类型的数据
+            属性：value 用于指定数据的值，可以使用 spring 中的 SpEL （也就是 spring 的 EL 表达式）
+                SpEL的写法，${表达式}
         */
         @Autowired
+        @Quailfier
+        @ 
         private AccountDao accountDao = null;
         ```
     - 用于改变作用范围的
-        作用和在 bean 标签中使用 scope 属性作用一样的
+        - 作用和在 bean 标签中使用 scope 属性作用一样的
+        ``` java
+        // com.joush.dao.impl.AccountServiceImpl.java
+        /*
+            Scope
+            作用：用于指定bean的作用范围
+            属性：value：指定范围的取值。常用取值：singleton prototype
+        */
+        @Service("accountServiceImpl")
+        @Scope("prototype") // 多例延迟创建
+        // @Scope("singleton") // 单例立即创建
+        public class AccountServiceImpl implements AccountService {
+            // ...
+        }
+        ```
     - 和生命周期相关的
-        作用和在 bean 标签中使用 init-method 和 destroy-method 属性作用一样的
+        - 作用和在 bean 标签中使用 init-method 和 destroy-method 属性作用一样的
+        ``` java
+        // com.joush.dao.impl.AccountServiceImpl.java
+        /*
+            PreDestroy
+                作用：用于指定销毁方法
+            PostConstruct
+                作用：用于指定初始化方法
+        */
+        @PostConstruct
+        public void init(){
+            System.out.println("初始化方法");
+        }
+        
+        @PreDestroy
+        public void destroy(){
+            System.out.println("销毁方法");
+            }
+        ```

@@ -33,7 +33,7 @@ public class Client {
     public static void main(String[] args) {
 
         // 1.获取核心容器对象
-        ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
 
         // 2.根据 id 获取 bean 对象
         AccountService accountService = (AccountService) ac.getBean("accountServiceImpl");
@@ -44,6 +44,7 @@ public class Client {
 
         accountService.saveAccount();
 
+        ac.close();
 
 
     }
