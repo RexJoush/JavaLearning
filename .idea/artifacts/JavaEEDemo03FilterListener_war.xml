@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JavaEEDemo03FilterListener:war">
+    <output-path>$PROJECT_DIR$/JavaEE/JavaEEDemo03FilterListener/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>JavaEEDemo03FilterListener</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="JavaEEDemo03FilterListener-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="JavaEEDemo03FilterListener:war exploded" />
+    </root>
+  </artifact>
+</component>

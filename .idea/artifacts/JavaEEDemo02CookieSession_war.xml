@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JavaEEDemo02CookieSession:war">
+    <output-path>$PROJECT_DIR$/JavaEE/JavaEEDemo02CookieSession/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>JavaEEDemo02CookieSession</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="JavaEEDemo02CookieSession-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="JavaEEDemo02CookieSession:war exploded" />
+    </root>
+  </artifact>
+</component>

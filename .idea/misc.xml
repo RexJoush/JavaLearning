@@ -1,56 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo01ServletBasic" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo02CookieSession" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo03FilterListener" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo03FilterListener2" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04AjaxJson" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo04JsonAjax" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo05Redis" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo06AjaxJson" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo06Maven" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo06MavenNginx" />
-    <file type="web" url="file://$PROJECT_DIR$/JavaEE/Demo07Nginx" />
-    <file type="web" url="file://$PROJECT_DIR$/Mybatis/Demo08MybatisJNDI" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/JavaEEDemo01ServletBasic" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/JavaEEDemo02CookieSession" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/JavaEEDemo03FilterListener" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/JavaEEDemo04AjaxJson" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaEE/JavaEEDemo05Redis" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/JavaEE/Demo04/pom.xml" />
-        <option value="$PROJECT_DIR$/JavaEE/Demo05Redis/pom.xml" />
-        <option value="$PROJECT_DIR$/JavaEE/Demo04AjaxJson/pom.xml" />
-        <option value="$PROJECT_DIR$/Demo06AjaxJson/pom.xml" />
-        <option value="$PROJECT_DIR$/Framwork/Mybatis/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo01MybatisIntroduction/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo02MybatisCustomize/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo03MybatisCRUD/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo04MybatisMeP/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo04MybatisDao/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo05MybatisDynamicSql/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo06MybatisMultipleTables/pom.xml" />
-        <option value="$PROJECT_DIR$/JavaEE/Demo01ServletBasic/pom.xml" />
-        <option value="$PROJECT_DIR$/JavaEE/Demo02CookieSession/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo07MybatisMutipleToMultiple/pom.xml" />
-        <option value="$PROJECT_DIR$/Demo08MybatisJNDI/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo08MybatisCache/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo09MybatisCache/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo08MybatisDelayLoading/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo10MybatisAnnotation/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis/Demo11MybatisAnnotationMultipleTables/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBoot/Demo01SpringBootIntroduce/pom.xml" />
-        <option value="$PROJECT_DIR$/JavaEE/Demo03FilterListener/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBoot/Demo02SpringBootQuickCreate/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring/Demo01SpringIntroduction/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring/Demo02SpringIoC/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring/Demo03SpringBean/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring/Demo04SpringDependencyInjection/pom.xml" />
-        <option value="$PROJECT_DIR$/Demo05SpringAnnotation/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring/Demo05SpringAnnotation/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring/Demo06SpringAccountXMLIoc/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring/Demo06SpringAccountAnnotationIoc/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/JavaEEDemo01ServletBasic/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/JavaEEDemo02CookieSession/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/JavaEEDemo03FilterListener/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/JavaEEDemo04AjaxJson/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaEE/JavaEEDemo05Redis/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo01Introduction/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo02Customize/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo03CRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo04Dao/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo05DynamicSql/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo06MultipleTables/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo07MutipleToMultiple/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo08DelayLoading/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo09Cache/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo10Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MybatisDemo11AnnotationMultipleTables/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo01Introduction/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo02IoC/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo03Bean/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo04DI/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo05Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo01Introduce/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
 </project>
