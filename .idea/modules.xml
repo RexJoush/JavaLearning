@@ -30,6 +30,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo05Annotation/SpringDemo05Annotation.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo05Annotation/SpringDemo05Annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/SpringDemo07AccountAnnotationIoc.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/SpringDemo07AccountAnnotationIoc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" />
     </modules>
   </component>
 </project>

@@ -35,6 +35,8 @@
         <option value="$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo01Introduce/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringDemo08AccountAnnotationWithoutXml/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/pom.xml" />
       </list>
     </option>
   </component>

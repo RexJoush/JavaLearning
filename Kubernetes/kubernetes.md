@@ -104,7 +104,7 @@ $ cat >> /etc/hosts << EOF
 $ cat > /etc/sysctl.d/k8s.conf << EOF
     net.bridge.bridge-nf-call-ip6tables = 1
     net.bridge.bridge-nf-call-iptables = 1
-    EOF
+    EOF 
 $ sysctl --system  # 使之生效
 
 # 配置时间同步

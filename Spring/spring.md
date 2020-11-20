@@ -325,7 +325,7 @@ IOC 的作用，降低程序间的耦合
             细节：使用注解注入时，set 方法不是必须的
             
             Quailfier 注解 
-            作用：再按照类型的基础之上，在按照名称注入。在给类成员注入时不能单独使用，需和 Autowired注解 一起使用但在给方法参数注入时，可以使用
+            作用：再按照类型的基础之上，在按照名称注入。在给类成员注入时不能单独使用，需和 Autowired 注解一起使用但在给方法参数注入时，可以使用
             属性：value 用于指定注入 bean 的 id 
         
             Resource 注解
@@ -342,7 +342,6 @@ IOC 的作用，降低程序间的耦合
         */
         @Autowired
         @Quailfier
-        @ 
         private AccountDao accountDao = null;
         ```
     - 用于改变作用范围的
@@ -350,7 +349,7 @@ IOC 的作用，降低程序间的耦合
         ``` java
         // com.joush.dao.impl.AccountServiceImpl.java
         /*
-            Scope
+            Scope 注解
             作用：用于指定bean的作用范围
             属性：value：指定范围的取值。常用取值：singleton prototype
         */
@@ -366,9 +365,9 @@ IOC 的作用，降低程序间的耦合
         ``` java
         // com.joush.dao.impl.AccountServiceImpl.java
         /*
-            PreDestroy
+            PreDestroy 注解
                 作用：用于指定销毁方法
-            PostConstruct
+            PostConstruct 注解
                 作用：用于指定初始化方法
         */
         @PostConstruct
@@ -381,3 +380,65 @@ IOC 的作用，降低程序间的耦合
             System.out.println("销毁方法");
         }
         ```
+* Spring 的新注解
+    - 使用注解来替代 bean.xml
+    ``` java
+    // com.joush.config.SpringConfiguration.java
+    
+    /*
+    该类是一个配置类，作用和 bean.xml 一样
+    Configuration 注解
+        作用：指定当前类是一个配置类
+        细节：当配置类作为 AnnotationConfigApplicationContext 对象创建的参数时，该注解可以不写
+    ComponentScan 注解
+        作用：指定 Spring 在初始化时要扫描的包，等同于bean中的
+        <context:component-scan base-package="com.joush"></context:component-scan>
+        属性：value: 和 beanPackage 作用一样，用于指定创建容器需要扫描的包，等同于上一句的配置
+    Bean 注解
+        作用：用于把当前方法的返回值作为 bean 对象存入 spring 容器中
+        属性: name 用于指定 bean 的 id，默认是当前的方法名
+    Import 注解
+        作用：用于导入其他配置类，即可以在主配置类中添加注解，指明其他配置类
+        属性：value：用于指定其他配置类的字节码文件, Import注解写的即是主配置类
+    PropertiesSource 注解
+        作用：用于指定 properties 文件的位置
+        属性：value：指定文件的名称和路径
+              关键字 classpath 表示类路径下
+    */
+    @Configuration
+    @ComponentScan(basePackages = "com.joush")
+    @Import(JdbcConfig.class)
+    public class SpringConfiguration {
+        
+        /**
+         * 创建一个 QueryRunner 对象
+         * @param dataSource
+         * @return
+         */
+        @Bean(name = "runner")
+        public QueryRunner createQueryRunner(DataSource dataSource){
+            return new QueryRunner(dataSource);
+        }
+  
+        /**
+         * 创建数据源对象
+         * @return
+         */
+        @Bean(name = "dataSource")
+        public DataSource createDataSource(){
+            ComboPooledDataSource ds = new ComboPooledDataSource();
+    
+            try {
+                ds.setDriverClass("com.mysql.cj.jdbc.Driver");
+                ds.setJdbcUrl("jdbc:mysql://localhost:3306/joush?serverTimezone=UTC");
+                ds.setUser("root");
+                ds.setPassword("liyihang123");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return ds;
+        }
+        
+    }
+    
+    ```
