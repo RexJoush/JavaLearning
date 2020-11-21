@@ -273,7 +273,7 @@ IOC 的作用，降低程序间的耦合
 </bean>
 ```
 * 修改 xml 配置文件的约束，使得 spring 知道注解的位置
-``` resource.bean.xml
+``` xml
 
 <!--  注意，此时的 xml 头部信息和之前的 demo 已经不同了  -->
 
@@ -419,7 +419,7 @@ IOC 的作用，降低程序间的耦合
         public QueryRunner createQueryRunner(DataSource dataSource){
             return new QueryRunner(dataSource);
         }
-  
+    
         /**
          * 创建数据源对象
          * @return
@@ -442,3 +442,27 @@ IOC 的作用，降低程序间的耦合
     }
     
     ```
+* Junit 集成
+    - junit 不会知道是否采用了 spring，所以在执行 Test 方法时，不会创建 ioc 核心容器
+    - 所以写了 Autowired 注解也不会注入
+    ``` java
+    /*
+        com.joush.test.AccountServiceTest.java
+        Spring 整合 Junit 配置
+            1.导入 spring 整合 junit 的坐标
+            2.使用 Junit 提供的注解，把原有的 main 方法替换成 spring 提供的 main 方法
+                @RunWith
+            3.告知 spring 运行器，ioc 是基于 xml 还是注解，并说明位置
+                @ContextConfiguration
+                    locations: 指定 xml 文件的位置
+                    classes: 指定注解类所在的位置
+        当使用 spring 5.x 版本时，要求 junit 的版本必须是 4.1.2及以上
+    */
+    @RunWith(SpringJUnit4ClassRunner.class)
+    @ContextConfiguration(classes = SpringConfiguration.class)
+    public class AccountServiceTest {
+        // ...
+    }
+    ```
+
+## AoP

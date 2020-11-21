@@ -5,25 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/main/java/com/joush/dao/AccountDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/main/java/com/joush/dao/impl/AccountDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/main/java/com/joush/domain/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/main/java/com/joush/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/main/java/com/joush/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/main/java/config/JdbcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/main/java/config/SpringConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/main/resources/jdbcConfig.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/test/java/com/joush/test/AccountServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/test/java/com/joush/test/QueryRunnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_11_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/kubernetes.md" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/kubernetes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/src/test/java/com/joush/test/AccountServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/src/test/java/com/joush/test/AccountServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/src/test/java/com/joush/test/AccountServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/src/test/java/com/joush/test/AccountServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/test/java/com/joush/test/AccountServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/test/java/com/joush/test/AccountServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/target/classes/config/JdbcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/target/classes/config/JdbcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/target/test-classes/com/joush/test/AccountServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/target/test-classes/com/joush/test/AccountServiceTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spring/spring.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/spring.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,22 +64,36 @@
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo01Introduce" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountServiceTest.testFindAll (1)">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AccountServiceTest.testFindAll (2)">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="AccountServiceTest.testFindAll (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpringDemo08AccountAnnotationWithoutXml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joush.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.joush.test" />
+      <option name="MAIN_CLASS_NAME" value="com.joush.test.AccountServiceTest" />
+      <option name="METHOD_NAME" value="testFindAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountServiceTest.testFindAll (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringDemo06AccountXMLIoc" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.joush.test.*" />
@@ -160,6 +165,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AccountServiceTest.testFindAll (2)" />
         <item itemvalue="JUnit.AccountServiceTest.testFindAll (1)" />
         <item itemvalue="JUnit.QueryRunnerTest.testQueryRunner" />
         <item itemvalue="JUnit.AccountServiceTest.testFindAll" />
@@ -178,7 +184,8 @@
       <workItem from="1605749868784" duration="72000" />
       <workItem from="1605749954377" duration="5580000" />
       <workItem from="1605776922452" duration="1829000" />
-      <workItem from="1605832833433" duration="11577000" />
+      <workItem from="1605832833433" duration="12223000" />
+      <workItem from="1605935691536" duration="4092000" />
     </task>
     <servers />
   </component>
@@ -190,22 +197,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605856322771" />
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1605859039333">
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1605937477174">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605859039333" />
-    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1605859039333">
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605937477174" />
+    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1605937477174">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.center/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605859039333" />
-    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1605859039333">
+    <state width="1876" height="295" key="GridCell.Tab.0.center/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605937477174" />
+    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1605937477174">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.left/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605859039333" />
-    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1605859039333">
+    <state width="1876" height="295" key="GridCell.Tab.0.left/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605937477174" />
+    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1605937477174">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.right/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605859039333" />
+    <state width="1876" height="295" key="GridCell.Tab.0.right/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605937477174" />
     <state x="455" y="213" key="new project wizard" timestamp="1605833438403">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
