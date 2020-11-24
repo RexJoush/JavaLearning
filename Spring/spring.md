@@ -291,157 +291,159 @@ IOC 的作用，降低程序间的耦合
 
 </beans>
 ```
-* 注解的类型
-    - 用于创建对象的
-        - 作用和在 xml 配置中编写一个 <bean></bean> 标签实现功能一样的
-        ``` java
-        // com.joush.dao.impl.AccountServiceImpl.java
-        /* 
-            Component 注解
-                作用：用于将本类对象存入 spring 容器中
-                属性：value, 用于指定 bean 的 id 值，不写时，默认值为当前类名首字母改小写
-            Controller 注解，一般用于表示层
-            Service 注解，一般用于业务层
-            Repository 注解，一般用于持久层
-                作用：以上三个注解与 Component 一模一样，是 spring 框架为我们提供明确的三层使用的注解，是三层对象更清晰
-        */
-        @Component
-        @Component("accountServiceImpl")
-        @Component(value = "accountServiceImpl")
-        public class AccountServiceImpl implements AccountService {
-            // ...
-        }
-        ```
-    - 用于注入数据的
-        - 作用和在 xml 配置文件中的 bean 标签 写一个 <property></property> 的作用一样的
-        ``` java
-        // com.joush.service.impl.AccountServiceImpl.java
-        /*
-            Autowired 注解
-            作用：自动按照类型注入，只要容器有唯一的一个 bean 对象类型和要注入的变量类型匹配，就可以注入成功
-                  如果 ioc 容器中没有任何 bean 类型和要注入的变量类型匹配，则报错
-                  如果 ioc 容器有多个匹配时，首先匹配类型，如果匹配到多个，则根据变量名进行匹配，如果匹配到唯一一个，则注入成功，如果匹配不到，则注入失败  
-            出现位置：可以是成员变量，也可以是方法
-            细节：使用注解注入时，set 方法不是必须的
-            
-            Quailfier 注解 
-            作用：再按照类型的基础之上，在按照名称注入。在给类成员注入时不能单独使用，需和 Autowired 注解一起使用但在给方法参数注入时，可以使用
-            属性：value 用于指定注入 bean 的 id 
-        
-            Resource 注解
-            作用：直接按照 bean 的 id 注入，可以独立使用
-            属性: name 用于指定 bean 的 id
-            
-            以上三种注入都只能注入其他 bean 类型的数据，基本类型和 String 类型无法使用上述注解实现。
-            另，集合类型数据注入只能通过 xml 来实现
-            
-            Value 注解
-            作用：用于注入基本类型和 String 类型的数据
-            属性：value 用于指定数据的值，可以使用 spring 中的 SpEL （也就是 spring 的 EL 表达式）
-                SpEL的写法，${表达式}
-        */
-        @Autowired
-        @Quailfier
-        private AccountDao accountDao = null;
-        ```
-    - 用于改变作用范围的
-        - 作用和在 bean 标签中使用 scope 属性作用一样的
-        ``` java
-        // com.joush.dao.impl.AccountServiceImpl.java
-        /*
-            Scope 注解
-            作用：用于指定bean的作用范围
-            属性：value：指定范围的取值。常用取值：singleton prototype
-        */
-        @Service("accountServiceImpl")
-        @Scope("prototype") // 多例延迟创建
-        // @Scope("singleton") // 单例立即创建
-        public class AccountServiceImpl implements AccountService {
-            // ...
-        }
-        ```
-    - 和生命周期相关的
-        - 作用和在 bean 标签中使用 init-method 和 destroy-method 属性作用一样的
-        ``` java
-        // com.joush.dao.impl.AccountServiceImpl.java
-        /*
-            PreDestroy 注解
-                作用：用于指定销毁方法
-            PostConstruct 注解
-                作用：用于指定初始化方法
-        */
-        @PostConstruct
-        public void init(){
-            System.out.println("初始化方法");
-        }
-        
-        @PreDestroy
-        public void destroy(){
-            System.out.println("销毁方法");
-        }
-        ```
-* Spring 的新注解
-    - 使用注解来替代 bean.xml
+#### 注解的类型
+* 用于创建对象的
+    - 作用和在 xml 配置中编写一个 <bean></bean> 标签实现功能一样的
     ``` java
-    // com.joush.config.SpringConfiguration.java
-    
-    /*
-    该类是一个配置类，作用和 bean.xml 一样
-    Configuration 注解
-        作用：指定当前类是一个配置类
-        细节：当配置类作为 AnnotationConfigApplicationContext 对象创建的参数时，该注解可以不写
-    ComponentScan 注解
-        作用：指定 Spring 在初始化时要扫描的包，等同于bean中的
-        <context:component-scan base-package="com.joush"></context:component-scan>
-        属性：value: 和 beanPackage 作用一样，用于指定创建容器需要扫描的包，等同于上一句的配置
-    Bean 注解
-        作用：用于把当前方法的返回值作为 bean 对象存入 spring 容器中
-        属性: name 用于指定 bean 的 id，默认是当前的方法名
-    Import 注解
-        作用：用于导入其他配置类，即可以在主配置类中添加注解，指明其他配置类
-        属性：value：用于指定其他配置类的字节码文件, Import注解写的即是主配置类
-    PropertiesSource 注解
-        作用：用于指定 properties 文件的位置
-        属性：value：指定文件的名称和路径
-              关键字 classpath 表示类路径下
+    // com.joush.dao.impl.AccountServiceImpl.java
+    /* 
+        Component 注解
+            作用：用于将本类对象存入 spring 容器中
+            属性：value, 用于指定 bean 的 id 值，不写时，默认值为当前类名首字母改小写
+        Controller 注解，一般用于表示层
+        Service 注解，一般用于业务层
+        Repository 注解，一般用于持久层
+            作用：以上三个注解与 Component 一模一样，是 spring 框架为我们提供明确的三层使用的注解，是三层对象更清晰
     */
-    @Configuration
-    @ComponentScan(basePackages = "com.joush")
-    @Import(JdbcConfig.class)
-    public class SpringConfiguration {
+    @Component
+    @Component("accountServiceImpl")
+    @Component(value = "accountServiceImpl")
+    public class AccountServiceImpl implements AccountService {
+        // ...
+    }
+    ```
+* 用于注入数据的
+    - 作用和在 xml 配置文件中的 bean 标签 写一个 <property></property> 的作用一样的
+    ``` java
+    // com.joush.service.impl.AccountServiceImpl.java
+    /*
+        Autowired 注解
+        作用：自动按照类型注入，只要容器有唯一的一个 bean 对象类型和要注入的变量类型匹配，就可以注入成功
+              如果 ioc 容器中没有任何 bean 类型和要注入的变量类型匹配，则报错
+              如果 ioc 容器有多个匹配时，首先匹配类型，如果匹配到多个，则根据变量名进行匹配，如果匹配到唯一一个，则注入成功，如果匹配不到，则注入失败  
+        出现位置：可以是成员变量，也可以是方法
+        细节：使用注解注入时，set 方法不是必须的
         
-        /**
-         * 创建一个 QueryRunner 对象
-         * @param dataSource
-         * @return
-         */
-        @Bean(name = "runner")
-        public QueryRunner createQueryRunner(DataSource dataSource){
-            return new QueryRunner(dataSource);
-        }
+        Quailfier 注解 
+        作用：再按照类型的基础之上，在按照名称注入。在给类成员注入时不能单独使用，需和 Autowired 注解一起使用但在给方法参数注入时，可以使用
+        属性：value 用于指定注入 bean 的 id 
     
-        /**
-         * 创建数据源对象
-         * @return
-         */
-        @Bean(name = "dataSource")
-        public DataSource createDataSource(){
-            ComboPooledDataSource ds = new ComboPooledDataSource();
-    
-            try {
-                ds.setDriverClass("com.mysql.cj.jdbc.Driver");
-                ds.setJdbcUrl("jdbc:mysql://localhost:3306/joush?serverTimezone=UTC");
-                ds.setUser("root");
-                ds.setPassword("liyihang123");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return ds;
-        }
+        Resource 注解
+        作用：直接按照 bean 的 id 注入，可以独立使用
+        属性: name 用于指定 bean 的 id
         
+        以上三种注入都只能注入其他 bean 类型的数据，基本类型和 String 类型无法使用上述注解实现。
+        另，集合类型数据注入只能通过 xml 来实现
+        
+        Value 注解
+        作用：用于注入基本类型和 String 类型的数据
+        属性：value 用于指定数据的值，可以使用 spring 中的 SpEL （也就是 spring 的 EL 表达式）
+            SpEL的写法，${表达式}
+    */
+    @Autowired
+    @Quailfier
+    private AccountDao accountDao = null;
+    ```
+* 用于改变作用范围的
+    - 作用和在 bean 标签中使用 scope 属性作用一样的
+    ``` java
+    // com.joush.dao.impl.AccountServiceImpl.java
+    /*
+        Scope 注解
+        作用：用于指定bean的作用范围
+        属性：value：指定范围的取值。常用取值：singleton prototype
+    */
+    @Service("accountServiceImpl")
+    @Scope("prototype") // 多例延迟创建
+    // @Scope("singleton") // 单例立即创建
+    public class AccountServiceImpl implements AccountService {
+        // ...
+    }
+    ```
+* 和生命周期相关的
+    - 作用和在 bean 标签中使用 init-method 和 destroy-method 属性作用一样的
+    ``` java
+    // com.joush.dao.impl.AccountServiceImpl.java
+    /*
+        PreDestroy 注解
+            作用：用于指定销毁方法
+        PostConstruct 注解
+            作用：用于指定初始化方法
+    */
+    @PostConstruct
+    public void init(){
+        System.out.println("初始化方法");
     }
     
+    @PreDestroy
+    public void destroy(){
+        System.out.println("销毁方法");
+    }
     ```
+
+#### Spring 的新注解
+
+* 使用注解来替代 bean.xml
+``` java
+// com.joush.config.SpringConfiguration.java
+
+/*
+该类是一个配置类，作用和 bean.xml 一样
+Configuration 注解
+    作用：指定当前类是一个配置类
+    细节：当配置类作为 AnnotationConfigApplicationContext 对象创建的参数时，该注解可以不写
+ComponentScan 注解
+    作用：指定 Spring 在初始化时要扫描的包，等同于bean中的
+    <context:component-scan base-package="com.joush"></context:component-scan>
+    属性：value: 和 beanPackage 作用一样，用于指定创建容器需要扫描的包，等同于上一句的配置
+Bean 注解
+    作用：用于把当前方法的返回值作为 bean 对象存入 spring 容器中
+    属性: name 用于指定 bean 的 id，默认是当前的方法名
+Import 注解
+    作用：用于导入其他配置类，即可以在主配置类中添加注解，指明其他配置类
+    属性：value：用于指定其他配置类的字节码文件, Import注解写的即是主配置类
+PropertiesSource 注解
+    作用：用于指定 properties 文件的位置
+    属性：value：指定文件的名称和路径
+          关键字 classpath 表示类路径下
+*/
+@Configuration
+@ComponentScan(basePackages = "com.joush")
+@Import(JdbcConfig.class)
+public class SpringConfiguration {
+    
+    /**
+     * 创建一个 QueryRunner 对象
+     * @param dataSource
+     * @return
+     */
+    @Bean(name = "runner")
+    public QueryRunner createQueryRunner(DataSource dataSource){
+        return new QueryRunner(dataSource);
+    }
+
+    /**
+     * 创建数据源对象
+     * @return
+     */
+    @Bean(name = "dataSource")
+    public DataSource createDataSource(){
+        ComboPooledDataSource ds = new ComboPooledDataSource();
+
+        try {
+            ds.setDriverClass("com.mysql.cj.jdbc.Driver");
+            ds.setJdbcUrl("jdbc:mysql://localhost:3306/joush?serverTimezone=UTC");
+            ds.setUser("root");
+            ds.setPassword("liyihang123");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ds;
+    }
+    
+}
+
+```
 * Junit 集成
     - junit 不会知道是否采用了 spring，所以在执行 Test 方法时，不会创建 ioc 核心容器
     - 所以写了 Autowired 注解也不会注入
@@ -465,4 +467,298 @@ IOC 的作用，降低程序间的耦合
     }
     ```
 
-## AoP
+#### 银行转账案例
+* 解决出现的事务问题
+``` java 
+// com.joush.dao.impl.AccountDaoImpl.java
+
+@Override
+public void transfer(String sourceName, String targetName, double money) {
+    // 1.根据名称查询转出账户
+    Account source = accountDao.findAccountByName(sourceName);  // 拿到第一个链接
+
+    // 2.根据名称查询转入账户
+    Account target = accountDao.findAccountByName(targetName);  // 拿到第二个连接
+
+    // 3.转出账户减钱
+    source.setMoney(source.getMoney() - money);
+    accountDao.updateAccount(source);       // 拿到第三个连接
+    
+    int a = 1/0; // 此处出现异常，则转账出现问题
+    
+    // 4.转入账户加钱
+    target.setMoney(target.getMoney() + money);
+    accountDao.updateAccount(target);       // 拿到第四个连接
+    
+    /*
+        因为四次数据库交互是四次独立的连接，四次事务是独立的，无法有效进行事务控制
+        解决方法
+            使用 ThreadLocal 对象把 Connection 和当前线程绑定，使得一个线程中只有一个能控制事务的对象
+        具体方式看工程 SpringDemo09AccountProject
+    */
+}
+```
+
+#### 动态代理
+* 基于接口的动态代理
+``` java
+// com.joush.proxy.Client.java
+/*
+    动态代理
+        特点：字节码随用随加载
+        作用：不修改源码的基础上对方法增强
+        分类：基于接口的，基于子类的
+    基于接口的动态代理
+        涉及的类，Proxy
+        提供者：JDK
+    如何创建代理对象
+        使用 Proxy 类中的 newProxyInstance 方法
+    创建代理对象的要求
+        被代理类最少实现一个接口，如果没有，则不能使用
+    方法签名
+    public static Object newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h);
+        参数：
+            ClassLoader loader, 类加载器，用于加载代理对象的字节码，和被代理对象使用同样的类加载器，固定写法
+            Class<?>[] interfaces, 字节码数组，用于代理对象和被代理对象有相同的方法
+            InvocationHandler h, 用于提供增强的代码，写如何代理，一般写一个该接口的实现类，通常写的匿名内部类（非必须）
+
+ */
+IProducer proxyProducer = (IProducer) Proxy.newProxyInstance(producer.getClass().getClassLoader(),
+        producer.getClass().getInterfaces(),
+        new InvocationHandler() {
+            /**
+             * 执行被代理对象的任何接口方法，都会经过该方法
+             * @param proxy 代理对象的引用
+             * @param method 当前执行的方法
+             * @param args 当前执行方法所需的参数
+             * @return 和被代理对象方法有相同的返回值
+             * @throws Throwable
+             */
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                /*
+                    提供增强的代码
+                 */
+                Object returnValue = null;
+                // 获取方法的执行参数
+                double money = (double) args[0];
+
+                // 判断当前方法是不是 销售
+                if ("saleProduct".equals(method.getName())){
+                    returnValue = method.invoke(producer, money * 0.8);
+                }
+
+                return returnValue;
+
+            }
+        });
+proxyProducer.saleProduct(10000d); // 卖电脑，拿钱 8000.0
+```
+* 基于子类的动态代理
+``` java
+/*
+    动态代理
+        特点：字节码随用随加载
+        作用：不修改源码的基础上对方法增强
+        分类：基于接口的，基于子类的
+    基于子类的动态代理
+        涉及的类，Enhancer
+        提供者：第三方 cglib 库
+    如何创建代理对象
+        使用 Enhancer 类中的 create 方法
+    创建代理对象的要求
+        被代理类不能是最终类
+    方法签名
+    public static Object create(Class type, Callback callback);
+        参数：
+            Class type, 字节码，被代理对象的字节码
+            Callback callback, 用于提供增强的代码，写如何代理，一般写一个该接口的实现类，通常写的匿名内部类（非必须）
+                               此接口的实现类都是谁用谁写，我们一般写的是该接口的子接口实现类，MethodInterceptor
+
+ */
+Producer cglibProducer = (Producer) Enhancer.create(producer.getClass(), new MethodInterceptor() {
+    /**
+     * 执行被代理对象的任何方法都会经过该方法
+     * @param o 代理对象的引用
+     * @param method 当前执行的方法
+     * @param objects 当前执行方法所需的参数
+     *  以上三个参数和基于接口动态代理中 invoke 方法参数一样的
+     * @param methodProxy 当前执行方法的代理对象
+     * @return 与执行方法的返回值相同
+     * @throws Throwable
+     */
+    @Override
+    public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+        /*
+            提供增强的代码
+         */
+        Object returnValue = null;
+        // 获取方法的执行参数
+        double money = (double) objects[0];
+
+        // 判断当前方法是不是 销售
+        if ("saleProduct".equals(method.getName())) {
+            returnValue = method.invoke(producer, money * 0.8);
+        }
+
+        return returnValue;
+    }
+});
+
+
+cglibProducer.saleProduct(12000d); // 卖电脑，拿钱 9600.0
+```
+## AoP 
+
+#### AoP(Aspect Oriented Programming, 面向切面编程)
+
+* 概念
+    - 通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术
+    - AOP 是 OOP 的延续，是软件开发中的一个热点，也是 Spring 框架中的一个重要内容，是函数式编程的一种衍生泛型
+    - 利用 AOP 可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时挺高了开发的效率
+* 作用和优势
+    - 在程序运行期间，不修改源码对已有方法增强
+    - 减少重复代码
+    - 提高开发效率
+    - 维护方便
+* 实现方式
+    - 动态代理
+
+#### Spring 中的 AoP
+* Spring 中的术语
+    - Joinpoint，连接点，所谓连接点是指那些被拦截到的点，在 spring 中，这些点指的是方法，因为 spring 只支持方法类型的连接点，通俗来讲，业务层的所有方法都是连接点
+    - Pointcut，切入点，所谓切入点是指我们要对哪些 Joinpoint 进行拦截的定义，通俗来讲，业务层中被增强的方法，都叫切入点
+    - Advice，通知/增强，拦截之后要做的事情，指的就是通知
+        - 通知的类型
+            - 前置通知，在 invoke 方法执行之前的即称为前置通知
+            - 后置通知，在 invoke 方法执行后的称为后置通知
+            - 异常通知，在 catch 块中的代码称为异常通知
+            - 最终通知，在 finally 块中的代码称为最终通知
+            - 环绕通知，在 invoke 方法执行就是环绕通知，有明确的调用方法，invoke
+        ``` java 
+        // com.joush.service.impl.AccountServiceImpl.java
+        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {  // 环绕通知
+        
+            if("test".equals(method.getName())){
+                return method.invoke(accountService,args);
+            }
+
+            Object returnValue = null;
+
+            try {
+                // 1.开启事务
+                transactionManager.beginTransaction();          // 前置通知
+                // 2.执行操作
+                returnValue = method.invoke(accountService, args);
+                // 3.提交事务
+                transactionManager.commit();    // 后置通知
+                // 4.返回结果
+                return returnValue;
+            } catch (Exception e){      // 异常通知
+                // 回滚
+                transactionManager.rollback();
+                throw new RuntimeException(e);
+            } finally {                 // 最终通知
+                // 释放资源
+                transactionManager.release();
+            }
+        }
+        ```
+    - Introduction，引介，引介是一种特殊的通知，在不修改类代码的前提下，Introduction 可以在运行期为类动态地添加一些方法或 Field
+    - Target，目标对象，代理的目标对象
+    - Weaving，织入，是指把增强应用到目标对象来创建新的代理对象的过程。 spring 采用动态代理织入，而 AspectJ 采用编译期织入和类装载期织入。
+    - Proxy，代理，一个类被AOP织入增强后，就产生一个结果代理类
+    - Aspect，切面，是切入点和通知（引介）的结合
+
+* spring 中基于 xml 的 aop 配置
+``` xml
+<!-- source.bean.xml  -->
+<!--  配置 Spring Ioc, 配置 service 对象  -->
+    <bean id="accountService" class="com.joush.service.impl.AccountServiceImpl"></bean>
+
+    <!--  spring 中基于 xml 的 aop 配置步骤
+        1.把通知的 bean 也交给 spring 管理
+        2.使用 aop:config 标签表明开始 aop 配置
+        3.使用 aop:aspect 标签表明配置切面
+            id 属性，给切面提供一个唯一标识
+            ref 属性，是指定通知类 bean 的 id
+        4.在 aop:aspect 标签内部使用对应的标签来配置通知的类型
+            示例是时 printlog 在切入点方法执行之前执行，所以属于前置通知
+            app:before 表示配置前置通知
+                method 属性：用于指定 Logger 类中哪个方法是前置通知
+                pointcut 属性，用于指定切入点表达式，该表达式的含义是指对业务层中哪些方法增强
+                切入点表达式的写法
+                    关键字：execution
+                    表达式：访问修饰符 返回值 包名.包名.包名...类名.方法名
+                    标准的表达式写法
+                        public void com.joush.service.impl.AccountServiceImpl.saveAccount()
+                        访问修饰符可以省略
+                            void com.joush.service.impl.AccountServiceImpl.saveAccount()
+                        返回值可以使用通配符
+                            * com.joush.service.impl.AccountServiceImpl.saveAccount()
+                        包名可以使用通配符，表示任意包，但需要写够包的目录
+                            * *.*.*.*.AccountServiceImpl.saveAccount()
+                        包名可以使用 .. 表示当前包及其子包
+                            * *..AccountServiceImpl.saveAccount()
+                        类名和方法名都可以使用通配符 *
+                            * *..*.*()
+                        参数列表
+                            可以直接写数据类型
+                                基本类型直接写名字   int
+                                引用类型写包名.类名 java.long.String
+                            可以使用通配符，表示任意类型，必须有参数
+                            * *..*.*(*)
+                            可以使用 .. 表示有无参数均可，有参数任意类型均可
+                            * *..*.*(..)
+                    全通配写法
+                        * *..*.*(..)
+
+                    实际开发中切入表达式的通常写法
+                        切到业务层类下的所有方法
+                            * com.joush.service.impl.*.*(..)
+    -->
+    <!--  配置 Logger 类  -->
+    <bean id="logger" class="com.joush.utils.Logger"></bean>
+
+    <!--  配置 aop  -->
+    <aop:config>
+        <!--  配置切面  -->
+        <aop:aspect id="logAdvice" ref="logger">
+            <!--  配置通知类型，并且建立通知方法和切入点方法的关联  -->
+            <aop:before method="printLog" pointcut="execution(* com.joush.service.impl.*.*(..))"></aop:before>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
+```
+
+* 多通知类型和通用化的切入点表达式
+``` xml
+<!--  resource.bean.xml  -->
+<aop:config>
+
+    <!--  配置切入点表达式
+            id 用于指定唯一标识，expression 属性用于指定表达式的内容
+                此标签卸载 aop:aspect 标签内部，所以只能当前切面使用
+            但，还支持写在 aop:aspect 标签外部，则所有切面均可使用
+            
+            要求必须配置在切面之前
+        -->
+    <aop:pointcut id="pt1" expression="execution(* com.joush.service.impl.*.*(..))"/>
+    <!--  配置切面  -->
+    <aop:aspect id="logAdvice" ref="logger">
+        <!--  配置前置通知，切入点方法之前  -->
+        <aop:before method="beforePrintLog" pointcut-ref="pt1"></aop:before>
+
+        <!--  配置后置通知，切入点方法之后  -->
+        <aop:after-returning method="afterReturningPrintLog" pointcut-ref="pt1"></aop:after-returning>
+
+        <!--  配置异常通知，切入点方法出现异常  -->
+        <aop:after-throwing method="afterThrowingPrintLog" pointcut-ref="pt1"></aop:after-throwing>
+
+        <!--  配置最终通知，切入点方法是否异常，一定执行  -->
+        <aop:after method="afterPrintLog" pointcut-ref="pt1"></aop:after>
+        
+    </aop:aspect>
+</aop:config>
+```

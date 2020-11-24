@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--  配置 Spring Ioc, 配置 service 对象  -->
+    <bean id="accountService" class="com.joush.service.impl.AccountServiceImpl"></bean>
+
+    <!--  配置 Logger 类  -->
+    <bean id="logger" class="com.joush.utils.Logger"></bean>
+
+    <!--  配置 aop  -->
+    <aop:config>
+
+        <!--  配置切入点表达式
+                id 用于指定唯一标识，expression 属性用于指定表达式的内容
+                    此标签卸载 aop:aspect 标签内部，所以只能当前切面使用
+                但，还支持写在 aop:aspect 标签外部，则所有切面均可使用
+                要求必须配置在切面之前
+            -->
+        <aop:pointcut id="pt1" expression="execution(* com.joush.service.impl.*.*(..))"/>
+        <!--  配置切面  -->
+        <aop:aspect id="logAdvice" ref="logger">
+            <!--  配置前置通知，切入点方法之前  -->
+            <!--            <aop:before method="beforePrintLog" pointcut-ref="pt1"></aop:before>-->
+
+            <!--            &lt;!&ndash;  配置后置通知，切入点方法之后  &ndash;&gt;-->
+            <!--            <aop:after-returning method="afterReturningPrintLog" pointcut-ref="pt1"></aop:after-returning>-->
+
+            <!--            &lt;!&ndash;  配置异常通知，切入点方法出现异常  &ndash;&gt;-->
+            <!--            <aop:after-throwing method="afterThrowingPrintLog" pointcut-ref="pt1"></aop:after-throwing>-->
+
+            <!--            &lt;!&ndash;  配置最终通知，切入点方法是否异常，一定执行  &ndash;&gt;-->
+            <!--            <aop:after method="afterPrintLog" pointcut-ref="pt1"></aop:after>-->
+
+            <!--  具体介绍看 Logger 类  -->
+            <aop:around method="aroundPrintLog" pointcut-ref="pt1"></aop:around>
+
+
+        </aop:aspect>
+    </aop:config>
+
+</beans>

@@ -19,18 +19,23 @@
         <module name="SpringDemo05Annotation" />
         <module name="MybatisDemo03CRUD" />
         <module name="MybatisDemo08DelayLoading" />
+        <module name="SpringDemo11Aop" />
         <module name="JavaEEDemo03FilterListener" />
         <module name="MybatisDemo04Dao" />
         <module name="SpringDemo07AccountAnnotationIoc" />
+        <module name="SpringDemo13AnnotationAop" />
         <module name="SpringDemo04DI" />
         <module name="MybatisDemo11AnnotationMultipleTables" />
         <module name="SpringDemo02IoC" />
         <module name="SpringBootDemo02QuickCreate" />
+        <module name="SpringDemo10Proxy" />
         <module name="SpringDemo03Bean" />
         <module name="MybatisDemo05DynamicSql" />
+        <module name="SpringDemo09AccountProject" />
         <module name="MybatisDemo09Cache" />
         <module name="SpringDemo01Introduction" />
         <module name="JavaEEDemo05Redis" />
+        <module name="SpringDemo12AdviceType" />
         <module name="SpringDemo08AccountAnnotationWithoutXml" />
       </profile>
     </annotationProcessing>
@@ -61,6 +66,11 @@
       <module name="SpringDemo06AccountXMLIoc" target="1.8" />
       <module name="SpringDemo07AccountAnnotationIoc" target="1.8" />
       <module name="SpringDemo08AccountAnnotationWithoutXml" target="1.8" />
+      <module name="SpringDemo09AccountProject" target="1.8" />
+      <module name="SpringDemo10Proxy" target="1.8" />
+      <module name="SpringDemo11Aop" target="1.8" />
+      <module name="SpringDemo12AdviceType" target="1.8" />
+      <module name="SpringDemo13AnnotationAop" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

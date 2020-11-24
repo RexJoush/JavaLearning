@@ -31,6 +31,11 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/SpringDemo07AccountAnnotationIoc.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/SpringDemo07AccountAnnotationIoc.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo09AccountProject/SpringDemo09AccountProject.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/SpringDemo09AccountProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo10Proxy/SpringDemo10Proxy.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/SpringDemo10Proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo11Aop/SpringDemo11Aop.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo11Aop/SpringDemo11Aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo12AdviceType/SpringDemo12AdviceType.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/SpringDemo12AdviceType.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/SpringDemo13AnnotationAop.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/SpringDemo13AnnotationAop.iml" />
     </modules>
   </component>
 </project>

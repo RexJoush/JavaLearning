@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--  配置 Spring Ioc, 配置 service 对象  -->
+    <bean id="accountService" class="com.joush.service.impl.AccountServiceImpl"></bean>
+
+    <!--  spring 中基于 xml 的 aop 配置步骤
+        1.把通知的 bean 也交给 spring 管理
+        2.使用 aop:config 标签表明开始 aop 配置
+        3.使用 aop:aspect 标签表明配置切面
+            id 属性，给切面提供一个唯一标识
+            ref 属性，是指定通知类 bean 的 id
+        4.在 aop:aspect 标签内部使用对应的标签来配置通知的类型
+            示例是时 printlog 在切入点方法执行之前执行，所以属于前置通知
+            app:before 表示配置前置通知
+                method 属性：用于指定 Logger 类中哪个方法是前置通知
+                pointcut 属性，用于指定切入点表达式，该表达式的含义是指对业务层中哪些方法增强
+                切入点表达式的写法
+                    关键字：execution
+                    表达式：访问修饰符 返回值 包名.包名.包名...类名.方法名
+                    标准的表达式写法
+                        public void com.joush.service.impl.AccountServiceImpl.saveAccount()
+                        访问修饰符可以省略
+                            void com.joush.service.impl.AccountServiceImpl.saveAccount()
+                        返回值可以使用通配符
+                            * com.joush.service.impl.AccountServiceImpl.saveAccount()
+                        包名可以使用通配符，表示任意包，但需要写够包的目录
+                            * *.*.*.*.AccountServiceImpl.saveAccount()
+                        包名可以使用 .. 表示当前包及其子包
+                            * *..AccountServiceImpl.saveAccount()
+                        类名和方法名都可以使用通配符 *
+                            * *..*.*()
+                        参数列表
+                            可以直接写数据类型
+                                基本类型直接写名字   int
+                                引用类型写包名.类名 java.long.String
+                            可以使用通配符，表示任意类型，必须有参数
+                            * *..*.*(*)
+                            可以使用 .. 表示有无参数均可，有参数任意类型均可
+                            * *..*.*(..)
+                    全通配写法
+                        * *..*.*(..)
+
+                    实际开发中切入表达式的通常写法
+                        切到业务层类下的所有方法
+                            * com.joush.service.impl.*.*(..)
+    -->
+    <!--  配置 Logger 类  -->
+    <bean id="logger" class="com.joush.utils.Logger"></bean>
+
+    <!--  配置 aop  -->
+    <aop:config>
+        <!--  配置切面  -->
+        <aop:aspect id="logAdvice" ref="logger">
+            <!--  配置通知类型，并且建立通知方法和切入点方法的关联  -->
+            <aop:before method="printLog" pointcut="execution(* com.joush.service.impl.*.*(..))"></aop:before>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

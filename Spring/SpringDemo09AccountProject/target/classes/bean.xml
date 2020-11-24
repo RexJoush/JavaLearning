@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  配置代理的 service  -->
+    <bean id="proxyAccountService" factory-bean="beanFactory" factory-method="getAccountService"></bean>
+
+    <!--  配置 BeanFactory  -->
+    <bean id="beanFactory" class="com.joush.factory.BeanFactory">
+        <property name="accountService" ref="accountService"></property>
+        <property name="transactionManager" ref="transactionManager"></property>
+    </bean>
+
+    <!-- 配置 Service   -->
+    <bean id="accountService" class="com.joush.service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"></property>
+        <property name="transactionManager" ref="transactionManager"></property>
+    </bean>
+
+    <!-- 配置 Dao   -->
+    <bean id="accountDao" class="com.joush.dao.impl.AccountDaoImpl">
+        <property name="runner" ref="runner"></property>
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+
+    <!-- 配置 QueryRunner   -->
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype"></bean>
+
+    <!-- 配置 数据源   -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/joush?serverTimezone=UTC"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="liyihang123"></property>
+    </bean>
+
+    <!-- 配置 Connection 工具类   -->
+    <bean id="connectionUtils" class="com.joush.utils.ConnectionUtils">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!-- 配置 TransactionManager 工具类   -->
+    <bean id="transactionManager" class="com.joush.utils.TransactionManager">
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+
+    <!-- 配置 Connection 工具类   -->
+
+</beans>

@@ -5,16 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/SpringDemo09AccountProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/java/com/joush/dao/AccountDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/java/com/joush/dao/impl/AccountDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/java/com/joush/domain/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/java/com/joush/factory/BeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/java/com/joush/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/java/com/joush/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/java/com/joush/service/impl/AccountServiceImpl_old.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/java/com/joush/utils/ConnectionUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/java/com/joush/utils/TransactionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/main/resources/bean.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/src/test/java/com/joush/test/AccountServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/SpringDemo10Proxy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/src/main/java/com/joush/cglib/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/src/main/java/com/joush/cglib/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/src/main/java/com/joush/proxy/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/src/main/java/com/joush/proxy/FindRoad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/src/main/java/com/joush/proxy/IProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/src/main/java/com/joush/proxy/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo11Aop/SpringDemo11Aop.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo11Aop/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo11Aop/src/main/java/com/joush/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo11Aop/src/main/java/com/joush/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo11Aop/src/main/java/com/joush/utils/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo11Aop/src/main/resources/bean.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo11Aop/src/test/java/com/joush/test/AoPTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/SpringDemo12AdviceType.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/src/main/java/com/joush/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/src/main/java/com/joush/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/src/main/java/com/joush/utils/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/src/main/resources/bean.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/src/test/java/com/joush/test/AoPTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/SpringDemo13AnnotationAop.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/src/main/java/com/joush/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/src/main/java/com/joush/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/src/main/java/com/joush/utils/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/src/main/resources/bean.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/src/test/java/com/joush/test/AoPTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/src/test/java/com/joush/test/AccountServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/src/test/java/com/joush/test/AccountServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/test/java/com/joush/test/AccountServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/src/test/java/com/joush/test/AccountServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/target/classes/config/JdbcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/target/classes/config/JdbcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/target/test-classes/com/joush/test/AccountServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/target/test-classes/com/joush/test/AccountServiceTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spring/spring.md" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/spring.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +64,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -49,35 +90,92 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo13AnnotationAop" />
+      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo12AdviceType\src" />
+      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo10Proxy\src\main\java\com\joush\cglib" />
+      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo09AccountProject" />
+      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo08AccountAnnotationWithoutXml" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.joush.service.impl" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\WorkSpace\JavaLearning\Spring" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo08AccountAnnotationWithoutXml" />
-      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo08AccountAnnotationWithoutXml\src" />
-      <recent name="E:\WorkSpace\JavaLearning\SpringBoot" />
-      <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate" />
-      <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo01Introduce" />
-    </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountServiceTest.testFindAll (2)">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.AoPTest (2)">
+    <configuration name="AoPTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.joush.test.AoPTest" />
+      <module name="SpringDemo12AdviceType" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joush.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AoPTest (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.joush.test.AoPTest" />
+      <module name="SpringDemo13AnnotationAop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joush.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AoPTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.joush.test.AoPTest" />
+      <module name="SpringDemo11Aop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joush.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.joush.cglib.Client" />
+      <module name="SpringDemo10Proxy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joush.cglib.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServiceTest.testFindAll (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringDemo08AccountAnnotationWithoutXml" />
+    <configuration name="AccountServiceTest.testTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringDemo09AccountProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.joush.test.*" />
@@ -86,71 +184,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.joush.test" />
       <option name="MAIN_CLASS_NAME" value="com.joush.test.AccountServiceTest" />
-      <option name="METHOD_NAME" value="testFindAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AccountServiceTest.testFindAll (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringDemo06AccountXMLIoc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush.test" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.test.AccountServiceTest" />
-      <option name="METHOD_NAME" value="testFindAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AccountServiceTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringDemo07AccountAnnotationIoc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush.test" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.test.AccountServiceTest" />
-      <option name="METHOD_NAME" value="testFindAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QueryRunnerTest.testQueryRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringDemo08AccountAnnotationWithoutXml" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush.test" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.test.QueryRunnerTest" />
-      <option name="METHOD_NAME" value="testQueryRunner" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest.ss" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MybatisDemo09Cache" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.com.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush.com" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.com.UserTest" />
-      <option name="METHOD_NAME" value="ss" />
+      <option name="METHOD_NAME" value="testTransfer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AccountServiceTest.testFindAll (2)" />
-        <item itemvalue="JUnit.AccountServiceTest.testFindAll (1)" />
-        <item itemvalue="JUnit.QueryRunnerTest.testQueryRunner" />
-        <item itemvalue="JUnit.AccountServiceTest.testFindAll" />
-        <item itemvalue="JUnit.UserTest.ss" />
+        <item itemvalue="Application.AoPTest (2)" />
+        <item itemvalue="Application.AoPTest (1)" />
+        <item itemvalue="Application.AoPTest" />
+        <item itemvalue="JUnit.AccountServiceTest.testTransfer" />
+        <item itemvalue="Application.Client (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +219,10 @@
       <workItem from="1605749954377" duration="5580000" />
       <workItem from="1605776922452" duration="1829000" />
       <workItem from="1605832833433" duration="12223000" />
-      <workItem from="1605935691536" duration="4092000" />
+      <workItem from="1605935691536" duration="4747000" />
+      <workItem from="1606005263121" duration="17598000" />
+      <workItem from="1606099238770" duration="5198000" />
+      <workItem from="1606179063824" duration="15132000" />
     </task>
     <servers />
   </component>
@@ -193,33 +230,65 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605856322771">
+    <state x="765" y="245" key="#com.intellij.ide.util.MemberChooser" timestamp="1606181585988">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605856322771" />
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1605937477174">
+    <state x="765" y="245" key="#com.intellij.ide.util.MemberChooser/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606181585988" />
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606013773977">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605937477174" />
-    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1605937477174">
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606013773977" />
+    <state width="1876" height="253" key="GridCell.Tab.0.bottom" timestamp="1606209399618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.center/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605937477174" />
-    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1605937477174">
+    <state width="1876" height="253" key="GridCell.Tab.0.bottom/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606209399618" />
+    <state width="1876" height="253" key="GridCell.Tab.0.center" timestamp="1606209399618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.left/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605937477174" />
-    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1605937477174">
+    <state width="1876" height="253" key="GridCell.Tab.0.center/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606209399618" />
+    <state width="1876" height="253" key="GridCell.Tab.0.left" timestamp="1606209399618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.right/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605937477174" />
-    <state x="455" y="213" key="new project wizard" timestamp="1605833438403">
+    <state width="1876" height="253" key="GridCell.Tab.0.left/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606209399618" />
+    <state width="1876" height="253" key="GridCell.Tab.0.right" timestamp="1606209399618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="455" y="213" key="new project wizard/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605833438403" />
-    <state x="616" y="250" key="run.anything.popup" timestamp="1605857367603">
+    <state width="1876" height="253" key="GridCell.Tab.0.right/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606209399618" />
+    <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1606208597312">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="616" y="250" key="run.anything.popup/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1605857367603" />
+    <state width="1876" height="364" key="GridCell.Tab.1.bottom/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606208597312" />
+    <state width="1876" height="364" key="GridCell.Tab.1.center" timestamp="1606208597312">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="364" key="GridCell.Tab.1.center/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606208597312" />
+    <state width="1876" height="364" key="GridCell.Tab.1.left" timestamp="1606208597312">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="364" key="GridCell.Tab.1.left/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606208597312" />
+    <state width="1876" height="364" key="GridCell.Tab.1.right" timestamp="1606208597312">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="364" key="GridCell.Tab.1.right/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606208597312" />
+    <state x="490" y="195" key="Maven.ArtifactSearchDialog" timestamp="1606207542929">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="490" y="195" key="Maven.ArtifactSearchDialog/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606207542929" />
+    <state x="681" y="281" width="582" height="524" key="StructurePopup" timestamp="1606010657676">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="681" y="281" width="582" height="524" key="StructurePopup/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606010657676" />
+    <state x="455" y="213" key="new project wizard" timestamp="1606207841504">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="455" y="213" key="new project wizard/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606207841504" />
+    <state x="616" y="250" key="run.anything.popup" timestamp="1606100271689">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="616" y="250" key="run.anything.popup/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606100271689" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1606015868267">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/-1600.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1606015868267" />
   </component>
 </project>
