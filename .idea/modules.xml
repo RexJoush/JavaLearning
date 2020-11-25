@@ -36,6 +36,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo11Aop/SpringDemo11Aop.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo11Aop/SpringDemo11Aop.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo12AdviceType/SpringDemo12AdviceType.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/SpringDemo12AdviceType.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/SpringDemo13AnnotationAop.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/SpringDemo13AnnotationAop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/SpringDemo14JdbcTemplate.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/SpringDemo14JdbcTemplate.iml" />
     </modules>
   </component>
 </project>

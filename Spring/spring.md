@@ -762,3 +762,102 @@ cglibProducer.saleProduct(12000d); // 卖电脑，拿钱 9600.0
     </aop:aspect>
 </aop:config>
 ```
+
+#### Spring JdbcTemplate
+* JdbcTemplate 的基本用法
+``` java 
+// com.joush.template.JdbcTemplateDemo01.java
+
+// 0.配置数据源
+DriverManagerDataSource dataSource = new DriverManagerDataSource();
+dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+dataSource.setUrl("jdbc:mysql://localhost:3306/joush?serverTimezone=UTC");
+dataSource.setUsername("root");
+dataSource.setPassword("liyihang123");
+
+// 1.创建 JdbcTemplate 对象
+JdbcTemplate jdbcTemplate = new JdbcTemplate();
+
+jdbcTemplate.setDataSource(dataSource);
+
+// 2.执行操作
+jdbcTemplate.execute("insert into new_account (name, money) values ('ddd', 1000)");
+```
+
+* JdbcTemplate 基于 Spring Ioc 的用法
+``` xml
+<!--  resource.bean.xml  -->
+
+<!--  配置 jdbcTemplate  -->
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <property name="dataSource" ref="dateSource"></property>
+</bean>
+
+<bean id="dateSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+    <property name="url" value="jdbc:mysql://localhost:3306/joush?serverTimezone=UTC"></property>
+    <property name="username" value="root"></property>
+    <property name="password" value="liyihang123"></property>
+</bean>
+```
+``` java
+// com.joush.template.JdbcTemplateDemo01.java
+
+// 1.获取容器
+ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+
+// 2.获取对象
+JdbcTemplate template = ac.getBean("jdbcTemplate", JdbcTemplate.class);
+
+// 3.执行操作
+jdbcTemplate.execute("insert into new_account (name, money) values ('eee', 1000)");
+```
+* JdbcTemplate 的 CRUD 操作
+``` java
+// com.joush.template.JdbcTemplateDemo03.java
+
+// 1.获取容器
+ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+
+// 2.获取对象
+JdbcTemplate template = ac.getBean("jdbcTemplate", JdbcTemplate.class);
+
+// 3.执行操作
+
+// 保存
+template.update("insert into new_account (name, money) values (?,?)", "fff",1000d);
+
+// 更新
+template.update("update new_account set money = ? where id = ?", 2000d, 6);
+
+// 删除
+template.update("delete from new_account where id = ?", 6);
+
+// 查询所有，需要考虑封装结果集
+List<Account> accounts = template.query("select * from new_account", new AccountRowMapper()); // 自己写实现类，查看 com.joush.template.JdbcTemplateDemo03.AccountRowMapper.java
+List<Account> accounts = template.query("select * from new_account", new BeanPropertyRowMapper<Account>(Account.class)); // spring 写实现类
+for (Account account : accounts){
+    System.out.println(account);
+}
+
+// 查询一个
+List<Account> accounts2 = template.query("select * from new_account where id = ?", new BeanPropertyRowMapper<Account>(Account.class), 1);
+System.out.println(accounts2.isEmpty()? "没有结果" : accounts2.get(0));
+
+// 查询返回一行一列（使用聚合函数，不加 group by 子句）
+long integer = template.queryForObject("select count(*) from new_account where money > ?", Long.class, 900d);
+System.out.println(integer); // 4
+```
+* Spring 中的 JdbcDaoSupport 使用
+``` java
+// com.joush.dao.impl.AccountDaoImpl.java
+
+public class AccountDaoImpl extends JdbcDaoSupport implements AccountDao {
+    @Override
+    public Account findAccountById(int id) {
+                                  // 此处如果有很多 dao，只需要继承 spring 提供的 JdbcDaoSupport 即可，不需要重复定义 jdbcTemplate
+        List<Account> accounts = super.getJdbcTemplate().query("select * from new_account where id = ?", new BeanPropertyRowMapper<Account>(Account.class), id);
+        return accounts.isEmpty()? null : accounts.get(0);
+    }
+
+```

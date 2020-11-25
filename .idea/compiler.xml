@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="MybatisDemo02Customize" />
         <module name="SpringDemo06AccountXMLIoc" />
+        <module name="SpringDemo14JdbcTemplate" />
         <module name="JavaEEDemo02CookieSession" />
         <module name="JavaEEDemo04AjaxJson" />
         <module name="MybatisDemo06MultipleTables" />
@@ -71,6 +72,7 @@
       <module name="SpringDemo11Aop" target="1.8" />
       <module name="SpringDemo12AdviceType" target="1.8" />
       <module name="SpringDemo13AnnotationAop" target="1.8" />
+      <module name="SpringDemo14JdbcTemplate" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

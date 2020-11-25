@@ -43,6 +43,7 @@
         <option value="$PROJECT_DIR$/Spring/SpringDemo11Aop/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/pom.xml" />
       </list>
     </option>
   </component>
