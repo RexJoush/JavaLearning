@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MybatisDemo02Customize" />
+        <module name="SpringDemo15AccountAopTransactionXml" />
         <module name="SpringDemo06AccountXMLIoc" />
         <module name="SpringDemo14JdbcTemplate" />
+        <module name="SpringDemo16AccountAopTransactionAnnotation" />
         <module name="JavaEEDemo02CookieSession" />
         <module name="JavaEEDemo04AjaxJson" />
         <module name="MybatisDemo06MultipleTables" />
@@ -26,6 +28,7 @@
         <module name="SpringDemo07AccountAnnotationIoc" />
         <module name="SpringDemo13AnnotationAop" />
         <module name="SpringDemo04DI" />
+        <module name="SpringDemo15AccountAopTran" />
         <module name="MybatisDemo11AnnotationMultipleTables" />
         <module name="SpringDemo02IoC" />
         <module name="SpringBootDemo02QuickCreate" />
@@ -36,6 +39,7 @@
         <module name="MybatisDemo09Cache" />
         <module name="SpringDemo01Introduction" />
         <module name="JavaEEDemo05Redis" />
+        <module name="SpringDemo15AccountAopTransactionAnnotation" />
         <module name="SpringDemo12AdviceType" />
         <module name="SpringDemo08AccountAnnotationWithoutXml" />
       </profile>
@@ -73,6 +77,10 @@
       <module name="SpringDemo12AdviceType" target="1.8" />
       <module name="SpringDemo13AnnotationAop" target="1.8" />
       <module name="SpringDemo14JdbcTemplate" target="1.8" />
+      <module name="SpringDemo15AccountAopTran" target="1.8" />
+      <module name="SpringDemo15AccountAopTransactionAnnotation" target="1.8" />
+      <module name="SpringDemo15AccountAopTransactionXml" target="1.8" />
+      <module name="SpringDemo16AccountAopTransactionAnnotation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -44,6 +44,9 @@
         <option value="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo15AccountAopTransactionAnnotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo15AccountAopTransactionXml/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/SpringDemo16AccountAopTransactionAnnotation/pom.xml" />
       </list>
     </option>
   </component>

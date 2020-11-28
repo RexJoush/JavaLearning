@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <!--  配置代理的 service  -->
-    <bean id="proxyAccountService" factory-bean="beanFactory" factory-method="getAccountService"></bean>
-
-    <!--  配置 BeanFactory  -->
-    <bean id="beanFactory" class="com.joush.factory.BeanFactory">
-        <property name="accountService" ref="accountService"></property>
-        <property name="transactionManager" ref="transactionManager"></property>
-    </bean>
 
     <!-- 配置 Service   -->
     <bean id="accountService" class="com.joush.service.impl.AccountServiceImpl">
@@ -45,5 +40,26 @@
     <bean id="transactionManager" class="com.joush.utils.TransactionManager">
         <property name="connectionUtils" ref="connectionUtils"></property>
     </bean>
+    
+    <!--  配置 Aop  -->
+    <aop:config>
+        <!--  配置 通用的切入点表达式  -->
+        <aop:pointcut id="pt1" expression="execution(* com.joush.service.impl.*.*(..))"/>
+        
+        <aop:aspect id="txAdvice" ref="transactionManager">
+            <!--  配置前置通知，开启事务  -->
+            <aop:before method="beginTransaction" pointcut-ref="pt1"></aop:before>
 
+            <!--  配置后置通知，提交事务  -->
+            <aop:after-returning method="commit" pointcut-ref="pt1"></aop:after-returning>
+
+            <!--  配置异常通知，回滚事务  -->
+            <aop:after-throwing method="rollback" pointcut-ref="pt1"></aop:after-throwing>
+
+            <!--  配置最终通知，释放资源  -->
+            <aop:after method="release" pointcut-ref="pt1"></aop:after>
+        </aop:aspect>
+            
+    </aop:config>
+    
 </beans>

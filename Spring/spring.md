@@ -167,7 +167,7 @@ IOC 的作用，降低程序间的耦合
 * 构造函数注入，使用标签 constructor-arg
 ``` xml
 <!-- resources.bean.xml -->
-在 bean 标签内部使用
+<!-- 在 bean 标签内部使用
 标签的属性
     type, 用于指定要注入的数据类型，该类数据类型也是构造函数中某个或某些参数的类型
     index, 指定要注入的数据给构造函数中指定索引的位置，索引从 0 开始
@@ -180,7 +180,7 @@ IOC 的作用，降低程序间的耦合
 优势
     在注入数据时，注入数据时必须的操作，否则无法创建对象成功
 弊端
-    改变了 bean 对象的实例化方式，使我们在创建对象时，用不到的数据也必须提供
+    改变了 bean 对象的实例化方式，使我们在创建对象时，用不到的数据也必须提供 -->
 
 <bean id="accountService" class="com.com.joush.service.impl.AccountServiceImpl">
     <constructor-arg type="java.lang.String" name="name" value="test"></constructor-arg>
@@ -192,7 +192,7 @@ IOC 的作用，降低程序间的耦合
 * set 方法注入，使用 property 标签
 ``` xml
 <!-- resources.bean.xml -->
-在标签 bean 内部使用，同时需要提供 set 方法，且标签的 name 属性不与成员属性同名，而是与 set 方法同名
+<!-- 在标签 bean 内部使用，同时需要提供 set 方法，且标签的 name 属性不与成员属性同名，而是与 set 方法同名
 标签的属性
     name, 用于指定注入时所调用的 set 方法名称
     value, 用于给基本类型和 String 类型
@@ -200,7 +200,7 @@ IOC 的作用，降低程序间的耦合
 优势
     创建对象是时，明确的限制，可以直接使用默认构造函数
  弊端
-    如果某个成员必须有值，获取对象时 set 方法无法保证一定执行
+    如果某个成员必须有值，获取对象时 set 方法无法保证一定执行 -->
 
 <bean id="accountService2" class="com.com.joush.service.impl.AccountServiceImpl2">
     <property name="name" value="test2"></property>
@@ -211,11 +211,11 @@ IOC 的作用，降低程序间的耦合
 * 注入集合数据 使用 list map array set props 标签
 ``` xml
 <!-- resources.bean.xml -->
-用于给 List 集合注入的标签
+<!-- 用于给 List 集合注入的标签
     list array set
 用于给 Map 集合注入的标签
     map props
-即，结构相同标签可以互换，只需使用记住两个即可
+即，结构相同标签可以互换，只需使用记住两个即可 -->
 
 <bean id="accountService3" class="com.com.joush.service.impl.AccountServiceImpl3">
     <property name="myStrings">
@@ -625,6 +625,7 @@ cglibProducer.saleProduct(12000d); // 卖电脑，拿钱 9600.0
     - 动态代理
 
 #### Spring 中的 AoP
+
 * Spring 中的术语
     - Joinpoint，连接点，所谓连接点是指那些被拦截到的点，在 spring 中，这些点指的是方法，因为 spring 只支持方法类型的连接点，通俗来讲，业务层的所有方法都是连接点
     - Pointcut，切入点，所谓切入点是指我们要对哪些 Joinpoint 进行拦截的定义，通俗来讲，业务层中被增强的方法，都叫切入点
