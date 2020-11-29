@@ -860,5 +860,151 @@ public class AccountDaoImpl extends JdbcDaoSupport implements AccountDao {
         List<Account> accounts = super.getJdbcTemplate().query("select * from new_account where id = ?", new BeanPropertyRowMapper<Account>(Account.class), id);
         return accounts.isEmpty()? null : accounts.get(0);
     }
+```
+* 注解 aop 的问题
+``` java
+// com.joush.utils.TransactionManager.java
+/*
+    在使用注解配置的 aop 时，四个通知会出现问题，从而导致无法提交事务，所以使用环绕通知来控制事务
+*/
+/**
+ * 环绕通知实现事务
+ * @param proceedingJoinPoint
+ * @return
+ */
+@Around("pt1()")
+public Object aroundAdvice(ProceedingJoinPoint proceedingJoinPoint){
 
+    Object returnValue = null;
+
+    try {
+        // 1.获取参数
+        Object[] args = proceedingJoinPoint.getArgs();
+
+        // 2.开启事务
+        this.beginTransaction();
+
+        // 3.执行方法
+        returnValue = proceedingJoinPoint.proceed(args);
+
+        // 4.提交事务
+        this.commit();
+
+        return returnValue;
+    } catch (Throwable e){
+        // 5.回滚事务
+        this.rollback();
+        throw new RuntimeException(e);
+    } finally {
+        // 释放资源
+        this.release();
+    }
+}
+```
+
+#### Spring 中的事务管理
+
+* spring 中基于 XML 的声明式事务控制
+``` xml
+<!--  resource.bean.xml  -->
+<!--  spring 中基于 XML 的声明式事务控制配置步骤
+
+    1.配置事务管理器
+    2.配置事务通知
+        需要导入事务约束 tx 名称空间和约束，同时也需要 aop 的
+        <?xml version="1.0" encoding="UTF-8"?>
+        <beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:aop="http://www.springframework.org/schema/aop"
+               xmlns:tx="http://www.springframework.org/schema/tx"
+               xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/tx
+                http://www.springframework.org/schema/tx/spring-tx.xsd
+                http://www.springframework.org/schema/aop
+                http://www.springframework.org/schema/aop/spring-aop.xsd">
+        使用 tx:advice 标签配置事务通知
+            属性
+                id 事务通知的唯一标识
+                transaction-manager 给事务通知提供事务管理器的引用
+    3.配置 aop 的切入点表达式
+    4.建立事务通知和切入点表达式的关系
+    5.配置事务的属性
+        在事务通知 tx:advice 标签内部
+  -->
+
+<!--  配置事务管理器  -->
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dateSource"></property>
+</bean>
+
+<!--  配置事务通知  -->
+<tx:advice id="txAdvice" transaction-manager="transactionManager">
+
+    <!--
+        配置事务的属性
+        isolation: 用于指定事务的隔离级别，默认值是 DEFAULT，表示使用数据库的默认级别
+        read-only: 用于指定事务是否只读，只有查询方法可以设置为 true，默认为 false，表示读写
+        timeout: 用于指定事务的超时时间，默认为 -1，表示永不超时，可以指定数值，以秒为单位
+        propagation: 用于指定事务的传播行为，默认值是 REQUIRED，表示一定会有事务，增删改的选择，查询方法可以选择 SUPPORTS
+        rollback-for: 用于指定一个异常，当产生该异常时，事务回滚，产生其他异常，不回滚。没有默认值，表示任何异常都回滚
+        no-rollback-for: 用于指定一个异常，当产生该异常时，事务不回滚，产生其他异常，都回滚。没有默认值，表示任何异常都回滚
+        -->
+    <tx:attributes>
+        <tx:method name="*" propagation="REQUIRED" read-only="false"/> <!--  所有方法  -->
+        <tx:method name="find*" propagation="SUPPORTS" read-only="true" /> <!--  查询方法以 find 开头  -->
+    </tx:attributes>
+</tx:advice>
+
+<!--  配置aop  -->
+<aop:config>
+    <!--  配置切入点表达式  -->
+    <aop:pointcut id="pt1" expression="execution(* com.joush.service.impl.*.*(..))"></aop:pointcut>
+
+    <!--  建立切入点表达式和事务通知的对应关系  -->
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="pt1"></aop:advisor>
+
+</aop:config>
+```
+
+* spring 中基于注解的声明式事务控制
+``` xml
+<!--  resource.bean.xml  -->
+<!--  spring 中基于 XML 的声明式事务控制配置步骤
+
+    1.配置事务管理器
+    2.开启 spring 对注解事务的支持
+    3.在需要事务支持的地方使用 @Transactional 注解
+  -->
+
+<!--  配置事务管理器  -->
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dateSource"></property>
+</bean>
+
+<!--  开启 spring 对注解事务的支持  -->
+<tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+```
+``` java
+// com.joush.service.impl.AcccountServiceImpl.java
+
+@Service("accountService")
+@Transactional(propagation = Propagation.SUPPORTS, readOnly = true) // 查询型配置
+public class AccountServiceImpl implements AccountService {
+    // ...
+
+    // 需要读写型配置
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+    public void transfer(String sourceName, String targetName, double money) {
+        // ...
+    }
+
+    // ...
+}
+
+/**
+ * 因为使用注解型的配置，在 service 中的方法都需要配置读写型还是只读型，所以更推荐使用基于 xml 的配置
+ */
+    
 ```

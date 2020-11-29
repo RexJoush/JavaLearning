@@ -14,9 +14,12 @@
         <module name="JavaEEDemo02CookieSession" />
         <module name="JavaEEDemo04AjaxJson" />
         <module name="MybatisDemo06MultipleTables" />
+        <module name="SpringDemo17TransactionBaseOnSpring" />
         <module name="MybatisDemo10Annotation" />
         <module name="MybatisDemo01Introduction" />
         <module name="MybatisDemo07MutipleToMultiple" />
+        <module name="SpringDemo19AnnotationTransactionWithoutXml" />
+        <module name="SpringDemo18TransactionBaseOnAnnotation" />
         <module name="JavaEEDemo01ServletBasic" />
         <module name="SpringBootDemo01Introduce" />
         <module name="SpringDemo05Annotation" />
@@ -81,6 +84,10 @@
       <module name="SpringDemo15AccountAopTransactionAnnotation" target="1.8" />
       <module name="SpringDemo15AccountAopTransactionXml" target="1.8" />
       <module name="SpringDemo16AccountAopTransactionAnnotation" target="1.8" />
+      <module name="SpringDemo17TransactionBaseOnSpring" target="1.8" />
+      <module name="SpringDemo18TransactionBaseOnAnnotation" target="1.8" />
+      <module name="SpringDemo19AnnotationTransactionWithoutXml" target="1.8" />
+      <module name="SpringDemo20ProgrammingTransaction" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

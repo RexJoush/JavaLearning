@@ -64,11 +64,11 @@ public class AccountServiceImpl implements AccountService {
         // 2.根据名称查询转入账户
         Account target = accountDao.findAccountByName(targetName);
 
-//        int i = 1/0;
-
         // 3.转出账户减钱
         source.setMoney(source.getMoney() - money);
         accountDao.updateAccount(source);
+
+//        int i = 1/0;
 
         // 4.转入账户加钱
         target.setMoney(target.getMoney() + money);

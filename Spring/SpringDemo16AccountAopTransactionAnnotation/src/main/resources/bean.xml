@@ -13,6 +13,8 @@
     <!--  配置 spring 创建容器时扫描的包  -->
     <context:component-scan base-package="com.joush"></context:component-scan>
 
+    <!-- 配置 QueryRunner   -->
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype"></bean>
 
     <!-- 配置数据源   -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">

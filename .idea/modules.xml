@@ -39,6 +39,9 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/SpringDemo14JdbcTemplate.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/SpringDemo14JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo15AccountAopTransactionXml/SpringDemo15AccountAopTransactionXml.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo15AccountAopTransactionXml/SpringDemo15AccountAopTransactionXml.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo16AccountAopTransactionAnnotation/SpringDemo16AccountAopTransactionAnnotation.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo16AccountAopTransactionAnnotation/SpringDemo16AccountAopTransactionAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo17TransactionBaseOnSpring/SpringDemo17TransactionBaseOnSpring.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo17TransactionBaseOnSpring/SpringDemo17TransactionBaseOnSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo18TransactionBaseOnAnnotation/SpringDemo18TransactionBaseOnAnnotation.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo18TransactionBaseOnAnnotation/SpringDemo18TransactionBaseOnAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo19AnnotationTransactionWithoutXml/SpringDemo19AnnotationTransactionWithoutXml.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo19AnnotationTransactionWithoutXml/SpringDemo19AnnotationTransactionWithoutXml.iml" />
     </modules>
   </component>
 </project>

@@ -15,11 +15,13 @@ import java.util.List;
 /**
  * 账户的持久层实现类
  */
-@Repository("accountDao")
+@Repository("accountDaoImpl")
 public class AccountDaoImpl implements AccountDao {
 
     @Autowired
     private QueryRunner runner;
+
+
     @Autowired
     private ConnectionUtils connectionUtils;
 
