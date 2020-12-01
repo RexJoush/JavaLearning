@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="MybatisDemo02Customize" />
         <module name="SpringDemo15AccountAopTransactionXml" />
+        <module name="SpringMVCDemo01Introduce" />
         <module name="SpringDemo06AccountXMLIoc" />
         <module name="SpringDemo14JdbcTemplate" />
         <module name="SpringDemo16AccountAopTransactionAnnotation" />
@@ -88,6 +89,7 @@
       <module name="SpringDemo18TransactionBaseOnAnnotation" target="1.8" />
       <module name="SpringDemo19AnnotationTransactionWithoutXml" target="1.8" />
       <module name="SpringDemo20ProgrammingTransaction" target="1.8" />
+      <module name="SpringMVCDemo01Introduce" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

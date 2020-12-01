@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--  开启注解扫描  -->
+    <context:component-scan base-package="com.joush"></context:component-scan>
+
+    <!--  配置视图解析器对象  -->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--  视图解析器的目录，方便 Spring MVC 帮助实现返回字符串自动跳转字符串所在页面  -->
+        <property name="prefix" value="/WEB-INF/pages/"></property>
+        <!--  页面的后缀名  -->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!--  开启 Spring MVC 框架的注解支持  -->
+    <mvc:annotation-driven/>
+</beans>

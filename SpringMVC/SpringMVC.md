@@ -42,3 +42,124 @@
 * 利用 Spring 提供的 Mock 对象能够非常简单的进行 Web 层单元测试。
 * 本地化、主题的解析的支持，使我们更容易进行国际化和主题的切换。
 * 强大的 JSP 标签库，使 JSP 编写更容易。
+
+## Spring MVC 入门
+
+#### 环境搭建与入门程序
+* /SpringMVC/SpringMVCDemo01Introduce
+``` xml
+<!--  pom.xml  -->
+<!--  1.新建 web 项目，会有默认依赖，加入新的依赖  -->
+<!--  2.导入坐标  -->
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>5.2.11.RELEASE</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.2.11.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.2.11.RELEASE</version>
+</dependency>
+```
+``` xml 
+<!--  resource.META-INF.web.xml  -->
+<!--  配置加载初始化和基础的 Servlet  -->
+<servlet>
+    <servlet-name>dispatcherServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+    <!--  初始化参数，加载 spring 的配置文件  -->
+    <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:springmvc.xml</param-value>
+    </init-param>
+    <!--  启动服务器时就创建此 Servlet  -->
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>dispatcherServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+</servlet-mapping>
+```
+``` xml
+<!--  resource.springmvc.xml  -->
+<!--  关于 spring ioc 等等的相关配置文件，注意 xml 的命名空间  -->
+
+<!--  开启注解扫描  -->
+<context:component-scan base-package="com.joush"></context:component-scan>
+
+<!--  配置视图解析器对象  -->
+<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <!--  视图解析器的目录，方便 Spring MVC 帮助实现返回字符串自动跳转字符串所在页面  -->
+    <property name="prefix" value="/WEB-INF/pages/"></property>
+    <!--  页面的后缀名  -->
+    <property name="suffix" value=".jsp"></property>
+</bean>
+
+<!--  开启 Spring MVC 框架的注解支持  -->
+<mvc:annotation-driven/>
+<!--    
+    在SpringMVC的各个组件中，处理器映射器、处理器适配器、视图解析器称为 SpringMVC 的三大组件。
+    使用<mvc:annotation-driven>自动加载 RequestMappingHandlerMapping（处理映射器）和 RequestMappingHandlerAdapter（处理适配器）
+    可用在 SpringMVC.xml 配置文件中使用 <mvc:annotation-driven> 替代注解处理器和适配器的配置。
+-->
+```
+* 启动服务器后做的一些事情
+    - 启动服务器，加载配置文件
+        - DispatcherServlet 对象创建
+        - springmvc.xml 被加载
+        - HelloController 创建对象
+    - 发送请求，后台处理请求
+        - 经过 dispatcherServlet 前端控制器，所有请求都会经过此 Servlet（指挥控制中心）
+        - 请求找到 /hello，返回 success
+        - 视图解析器找到 success.jsp 返回前端页面
+
+* RequestMapping 注解
+    - 代码讲解
+    ``` java
+    // com.joush.controller.HelloController.java
+    
+    @Controller
+    @RequestMapping(path = "/user") // 此时的访问路径是 http://localhost:8080/SpringMVCDemo01Introduce/user/hello
+    public class HelloController {
+        /*
+            RequestMapping 可以写在类上或者是方法上，如果写在类上，就可以实现模块化开发, 在跳转路径上就需要加上类上的路径 
+        */
+        @RequestMapping(path = "/hello") // 此时的访问路径是 http://localhost:8080/SpringMVCDemo01Introduce/hello
+        public String sayHello(){
+            System.out.println("Hello World");
+            return "success";
+        }
+    }
+    ```
+    - 属性
+        - value: 用于指定请求的 URL，它和 path 属性是一样的
+        - method: 用于指定请求的方式
+        - params: 用于指定限制请求参数的条件，支持简单的表达式，要求请求的参数的 key 和 value 必须和配置的一样
+            ``` java
+            params = {"accountName"}, // 表示请求参数必须有 accountName
+            params = {"accountName = 111"}, // 表示请求参数必须有 accountName, 且值为 111
+            params = {"money!100"}, // 表示请求参数中 money 的值不能为 100
+            ```
+        - header: 用于指定限制请求消息头的条件，即请求的请求头中必须包含的属性
+        - 注意，以上四个属性只要出现 2 个以上，他们的关系是与的关系, 即所有条件必须同时满足
+    ``` java
+    @Controller
+    public class HelloController {
+    
+        @RequestMapping(value = "/testRequestMapping", method = {RequestMethod.GET,RequestMethod.POST}, params = {"username=111"},headers = {"Accept"})
+        public String testRequestMapping(){
+            System.out.println("测试 RequestMapping 注解");
+            return "success";
+        }
+    
+    }
+    ```
