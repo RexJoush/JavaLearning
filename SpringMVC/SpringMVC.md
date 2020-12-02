@@ -23,6 +23,7 @@
     - 它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时它还支持 RESTful 编程风格的请求。
 
 #### Spring MVC 的优势
+
 * 清晰的角色划分
     - 前端控制器（DispatcherServlet）
     - 请求到处理器映射（HandlerMapping）
@@ -163,3 +164,58 @@
     
     }
     ```
+
+## Spring MVC 的请求参数绑定
+
+#### 请求参数的绑定说明
+
+* 绑定机制
+    - 表单提交的数据都是k=v格式的 username=haha&password=123
+    - SpringMVC 的参数绑定过程是把表单提交的请求参数，作为控制器中方法的参数进行绑定的
+    - 要求：提交表单的 name 和参数的名称是相同的
+* 支持的数据类型
+    - 基本数据类型和字符串类型
+    - 实体类型（JavaBean）
+    - 集合数据类型（List，Map 等）
+
+* 基本数据类型和字符串类型
+    - 提交表单的 name 和参数名称是相同的
+    - 区分大小写
+* 实体类型（JavaBean）
+    - 提交表单的 name 和 JavaBean 中的属性名称需要一致
+    - 如果一个 JavaBean 类中包含其他的引用类型，那么表单的 name 属性需要编写成：对象.属性 如：address.name
+    ``` html
+        <!--  webapp.param.jsp  -->
+        <!--  表单  -->
+        <form action="param/saveAccount" method="post">
+            姓名：<input type="text" name="username">
+            密码：<input type="password" name="password">
+            金额：<input type="text" name="money">
+            
+            <!--  实体类有引用成员变量，使用 对象名.属性名 进行封装  -->
+            用户名：<input type="text" name="user.name">
+            年龄：<input type="text" name="user.age">
+            <input type="submit" value="提交">
+        </form>
+    ```
+* 给集合属性数据封装
+    
+    - jsp 页面编写方式：list[0].属性
+* 请求参数中文乱码的解决
+``` xml
+<!--  webapp/WEB-INF/web.xml  -->
+<!--  配置 Spring 提供的过滤器类，解决中文乱码问题  -->
+<filter>
+    <filter-name>characterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <!-- 初始化参数 -->
+    <init-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>characterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
