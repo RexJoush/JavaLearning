@@ -71,7 +71,7 @@
 </dependency>
 ```
 ``` xml 
-<!--  resource.META-INF.web.xml  -->
+<!--  resources.META-INF.web.xml  -->
 <!--  配置加载初始化和基础的 Servlet  -->
 <servlet>
     <servlet-name>dispatcherServlet</servlet-name>
@@ -91,7 +91,7 @@
 </servlet-mapping>
 ```
 ``` xml
-<!--  resource.springmvc.xml  -->
+<!--  resources.springmvc.xml  -->
 <!--  关于 spring ioc 等等的相关配置文件，注意 xml 的命名空间  -->
 
 <!--  开启注解扫描  -->
@@ -184,6 +184,17 @@
 * 实体类型（JavaBean）
     - 提交表单的 name 和 JavaBean 中的属性名称需要一致
     - 如果一个 JavaBean 类中包含其他的引用类型，那么表单的 name 属性需要编写成：对象.属性 如：address.name
+    ```java 
+        // com.joush.domain.Account.java
+        public class Account implements Serializable {
+        
+            private String username;
+            private String password;
+            private double money;
+            
+            private User user;
+        }
+        ```
     ``` html
         <!--  webapp.param.jsp  -->
         <!--  表单  -->
@@ -199,8 +210,45 @@
         </form>
     ```
 * 给集合属性数据封装
-    
     - jsp 页面编写方式：list[0].属性
+    ```java 
+    // com.joush.domain.Account.java
+    public class Account implements Serializable {
+    
+        private String username;
+        private String password;
+        private double money;
+    
+        private List<User> list;
+        private Map<String, User> map;
+    }
+    ```
+    ``` html
+    <!--  webapp.param.jsp  -->
+    <form action="param/saveAccount" method="post"><br>
+        
+        姓名：<input type="text" name="username"><br>
+        密码：<input type="password" name="password"><br>
+        金额：<input type="text" name="money"><br>
+
+        <!--  封装到 User 对象中，将此对象封装到 list 中
+                list[0].attribute1
+                list[0].attribute2
+                成员集合的名字[下标值].集合元素的属性名
+          -->
+        用户名1：<input type="text" name="list[0].name"><br>
+        年龄1：<input type="text" name="list.[0].age"><br>
+
+        <!--  封装到 User 对象中，将此对象封装到 map 中
+                map['key'].attribute1
+                map['key'].attribute2
+                成员集合的名字['键值'].集合元素的属性名
+          -->
+        用户名2：<input type="text" name="map['one'].name"><br>
+        年龄2：<input type="text" name="map['one'].age"><br>
+        <input type="submit" value="提交"><br>
+    </form>
+    ```
 * 请求参数中文乱码的解决
 ``` xml
 <!--  webapp/WEB-INF/web.xml  -->
@@ -218,4 +266,72 @@
     <filter-name>characterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
 </filter-mapping>
+```
+
+* 自定义类型转换器
+    - 实现 org.springframework.core.convert.converter.Converter 接口
+    ``` java
+    // com.joush.utils.StringToDateConverter.java
+    //                                                      转换的泛型
+    public class StringToDateConverter implements Converter<String, Date> {
+    
+        /**
+         * @param s 传入的字符串
+         * @return 转换后的日期
+         */
+        @Override
+        public Date convert(String s) {
+            if (s == null){
+                throw new RuntimeException("please input date string.");
+            }
+            // 使用 java.text.DateFormat 对象进行日期的格式化
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            // 把字符串转换日期
+            try {
+                return dateFormat.parse(s);
+            } catch (ParseException e) {
+                throw new RuntimeException("data type transfer error");
+            }
+        }
+    }
+    ```
+    - 配置 spring mvc 的类型转换器
+    ``` xml
+    <!--  resources.springmvc.xml  -->
+    
+    <!--  配置自定义类型转换器  -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.joush.utils.StringToDateConverter"/>
+            </set>
+        </property>
+    </bean>
+    
+    <!--  开启 Spring MVC 框架的注解支持，同时支持类型转换器  -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+    ```
+* 获取原生的 Servlet Api
+``` java
+// com.joush.controller.ParamController.java
+/**
+ * 获取原生的 servlet api
+ * @return
+ */
+@RequestMapping("/testServlet")
+//                          获取谁即可直接在请求方法的参数列表中加入参数即可
+public String testServlet(HttpServletRequest request, HttpServletResponse response){
+
+    System.out.println(request);
+
+    HttpSession session = request.getSession();
+    System.out.println(session);
+    
+    ServletContext servletContext = session.getServletContext();
+    System.out.println(servletContext);
+
+    System.out.println(response);
+
+    return "success";
+}
 ```

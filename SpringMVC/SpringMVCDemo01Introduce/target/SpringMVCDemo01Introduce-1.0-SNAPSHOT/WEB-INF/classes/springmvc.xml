@@ -22,6 +22,15 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
-    <!--  开启 Spring MVC 框架的注解支持  -->
-    <mvc:annotation-driven/>
+    <!--  配置自定义类型转换器  -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.joush.utils.StringToDateConverter"/>
+            </set>
+        </property>
+    </bean>
+
+    <!--  开启 Spring MVC 框架的注解支持，同时支持类型转换器  -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
 </beans>
