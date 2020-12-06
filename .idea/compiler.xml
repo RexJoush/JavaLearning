@@ -12,6 +12,7 @@
         <module name="SpringDemo06AccountXMLIoc" />
         <module name="SpringDemo14JdbcTemplate" />
         <module name="SpringDemo16AccountAopTransactionAnnotation" />
+        <module name="SpringMVCDemo02Response" />
         <module name="JavaEEDemo02CookieSession" />
         <module name="JavaEEDemo04AjaxJson" />
         <module name="MybatisDemo06MultipleTables" />
@@ -90,6 +91,7 @@
       <module name="SpringDemo19AnnotationTransactionWithoutXml" target="1.8" />
       <module name="SpringDemo20ProgrammingTransaction" target="1.8" />
       <module name="SpringMVCDemo01Introduce" target="1.8" />
+      <module name="SpringMVCDemo02Response" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

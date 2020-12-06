@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/JavaEEDemo04AjaxJson" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE/JavaEEDemo05Redis" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo01Introduce" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo02Response" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -52,6 +53,7 @@
         <option value="$PROJECT_DIR$/Spring/SpringDemo18TransactionBaseOnAnnotation/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/SpringDemo19AnnotationTransactionWithoutXml/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo01Introduce/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo02Response/pom.xml" />
       </list>
     </option>
   </component>

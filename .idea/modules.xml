@@ -43,6 +43,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo18TransactionBaseOnAnnotation/SpringDemo18TransactionBaseOnAnnotation.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo18TransactionBaseOnAnnotation/SpringDemo18TransactionBaseOnAnnotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo19AnnotationTransactionWithoutXml/SpringDemo19AnnotationTransactionWithoutXml.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo19AnnotationTransactionWithoutXml/SpringDemo19AnnotationTransactionWithoutXml.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo01Introduce/SpringMVCDemo01Introduce.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo01Introduce/SpringMVCDemo01Introduce.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo02Response/SpringMVCDemo02Response.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo02Response/SpringMVCDemo02Response.iml" />
     </modules>
   </component>
 </project>
