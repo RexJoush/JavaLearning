@@ -687,3 +687,32 @@ public @ResponseBody User testAjax(@RequestBody User user){
     return user;
 }
 ```
+
+## 文件上传
+
+#### 文件上传回顾
+
+* 文件上传的必要前提
+    - form 表单的 enctype 取值必须是 multipart/form-data（默认值是 application/x-www-form-urlencoded，enctype 是表单请求正文的类型）
+    - method 属性取值必须是 post
+    - 提供一个文件选择域 `<input type="file" />`
+* 文件上传的原理分析
+``` 
+    当 form 表单的 enctype 取值不是默认值后，request.getParameter() 将失效
+    enctype="application/x-www-form-urlencoded" 时，form 表单的正文内容是
+        key=value&key=value&key=value
+    当 form 表单的 enctype 取值为 multipart/form-data 时，请求正文内容就变成
+        每一部分都是 MIME 类型描述的正文
+            ----------------------------------7de1a433602ac  分界符
+            Content-Disposition: form-data; name="userName"  协议头
+            aaa                                              协议正文
+            ----------------------------------7de1a433602ac
+            Content-Disposition:form-data;name="file";filename="C:\x\x.txt"
+            Content-Type: text/plain                         协议类型（MIME 类型） 
+            ----------------------------------7de1a433602ac
+```
+* 借助第三方组件实现上传
+    - commons-fileupload-x.x.x.jar
+    - commons-io-x.x.jar
+
+#### 传统
