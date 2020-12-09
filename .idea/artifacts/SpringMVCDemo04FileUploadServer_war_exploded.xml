@@ -1,0 +1,27 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SpringMVCDemo04FileUploadServer:war exploded">
+    <output-path>$PROJECT_DIR$/SpringMVC/SpringMVCDemo04FileUploadServer/target/SpringMVCDemo04FileUploadServer-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>SpringMVCDemo04FileUploadServer</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SpringMVCDemo04FileUploadServer" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.39" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:9.0.39" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/SpringMVC/SpringMVCDemo04FileUploadServer/target/SpringMVCDemo04FileUploadServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="SpringMVCDemo04FileUploadServer/web/Web" />
+    </root>
+  </artifact>
+</component>

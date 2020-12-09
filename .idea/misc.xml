@@ -9,6 +9,9 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo01Introduce" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo02Response" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo03FileUpload" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo04FileUploadServer" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo06Interceptor" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -56,6 +59,9 @@
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo01Introduce/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo02Response/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo03FileUpload/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo04FileUploadServer/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo06Interceptor/pom.xml" />
       </list>
     </option>
   </component>

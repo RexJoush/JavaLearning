@@ -45,6 +45,9 @@
       <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo01Introduce/SpringMVCDemo01Introduce.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo01Introduce/SpringMVCDemo01Introduce.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo02Response/SpringMVCDemo02Response.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo02Response/SpringMVCDemo02Response.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo03FileUpload/SpringMVCDemo03FileUpload.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo03FileUpload/SpringMVCDemo03FileUpload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo04FileUploadServer/SpringMVCDemo04FileUploadServer.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo04FileUploadServer/SpringMVCDemo04FileUploadServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception/SpringMVCDemo05Exception.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception/SpringMVCDemo05Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo06Interceptor/SpringMVCDemo06Interceptor.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo06Interceptor/SpringMVCDemo06Interceptor.iml" />
     </modules>
   </component>
 </project>

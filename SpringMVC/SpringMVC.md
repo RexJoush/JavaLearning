@@ -716,3 +716,407 @@ public @ResponseBody User testAjax(@RequestBody User user){
     - commons-io-x.x.jar
 
 #### 传统
+``` html
+<!--  webapp.index.jsp  -->
+<form action="user/fileUpload1" method="post" enctype="multipart/form-data">
+    选择文件: <input type="file" name="upload"><br>
+    <input type="submit" value="上传">
+</form>
+
+```
+``` java
+// com.joush.controller.UserController.java
+@RequestMapping("fileUpload1")
+public String fileUpload1(HttpServletRequest request) throws Exception {
+    System.out.println("文件上传");
+
+    // 使用 fileupload 组件完成上传
+    // 指定上传位置
+    String path = request.getSession().getServletContext().getRealPath("/uploads/");
+    System.out.println(path);  // C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\SpringMVCDemo03FileUpload\uploads\
+
+    // 判断该路径是否存在
+    File file = new File(path);
+
+    // 不存在则创建
+    if (!file.exists()){
+        // 创建文件夹
+        file.mkdirs();
+    }
+
+    // 解析 request 对象，获取上传文件项
+    DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
+    ServletFileUpload upload = new ServletFileUpload(fileItemFactory);
+
+    // 解析 request
+    List<FileItem> fileItems = upload.parseRequest(request);
+
+    // 遍历
+    for (FileItem item : fileItems){
+        // 判断当前 item 对象是否是上传文件项
+        if (item.isFormField()){
+            // 说明普通表单项
+        }
+        else {
+            // 说明是上传文件项
+
+            // 获取上传文件名称
+            String fileName = item.getName();
+
+            // 把文件的名称设置唯一值，uuid
+            String uuid = UUID.randomUUID().toString().replace("-", "");
+            fileName = uuid + "_" + fileName;
+
+            // 完成文件上传
+            item.write(new File(path, fileName));
+
+            // 删除临时文件
+            item.delete();
+        }
+    }
+
+    return "success";
+}
+```
+#### spring 框架文件上传
+
+* 配置文件解析器
+``` xml
+<!--  resources.springmvc.xml  -->
+<!--  配置文件解析器对象，要求 id 名必须是 multipartResolver  -->
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <property name="maxUploadSize" value="10485760" />  <!--  最大上传文件大小 10485760 = 10 * 1024 * 1024 ,即 10 MB，以字节为单位  -->
+</bean>
+```
+* 上传
+``` java
+// com.joush.controller.UserController.java
+/**
+ * spring mvc 文件上传
+ * @param request
+ * @param upload
+ * @return
+ * @throws Exception
+ */
+@RequestMapping("fileUpload2")
+                                                                   // 此处名字必须和上传文件的表单名字一样
+public String fileUpload1(HttpServletRequest request, MultipartFile upload) throws Exception {
+    System.out.println("spring mvc 文件上传");
+
+    // 使用 fileupload 组件完成上传
+    // 指定上传位置
+    String path = request.getSession().getServletContext().getRealPath("/uploads/");
+    System.out.println(path);  // C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\SpringMVCDemo03FileUpload\uploads\
+
+    // 判断该路径是否存在
+    File file = new File(path);
+
+    // 不存在则创建
+    if (!file.exists()){
+        // 创建文件夹
+        file.mkdirs();
+    }
+
+    /*
+        说明上传文件项
+     */
+    // 获取上传文件名称
+    String filename = upload.getOriginalFilename();
+
+    // 把文件的名称设置唯一值，uuid
+    String uuid = UUID.randomUUID().toString().replace("-", "");
+    filename = uuid + "_" + filename;
+
+
+    // 完成文件上传
+    upload.transferTo(new File(path, filename));
+
+    return "success";
+}
+```
+
+#### spring mvc 跨服务器文件上传
+* 简介
+    - 在实际开发中，我们会有很多处理不同功能的服务器。
+    - 例如：
+        - 应用服务器：负责部署我们的应用
+        - 数据库服务器：运行我们的数据库
+        - 缓存和消息服务器：负责处理大并发访问的缓存和消息
+        - 文件服务器：负责存储用户上传文件的服务器
+* 建立两个服务器
+    - 应用服务器和文件服务器
+    - 启动两个 tomcat，配置不同的端口
+    - 一个 FileUpload 服务器，一个 spring mvc 服务器
+* 添加依赖
+``` xml
+<!--  pom.xml  -->
+<!--  帮助实现跨服务器上传文件  -->
+<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-server -->
+<dependency>
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-server</artifactId>
+    <version>1.19.4</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
+<dependency>
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-client</artifactId>
+    <version>1.19.4</version>
+</dependency>
+```
+* 配置服务器为非只读，允许读写，不然会报 405 错误
+``` xml
+<!--  SpringMVCDemo04FileUploadServer.webapp.WEB-INF.web.xml  -->
+
+<!--  添加下面配置  -->
+<servlet>
+    <servlet-name>default</servlet-name>
+    <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+    <init-param>
+        <param-name>debug</param-name>
+        <param-value>0</param-value>
+    </init-param>
+    <!--  使得服务器变为非只读，即可读写  -->
+    <init-param>
+        <param-name>readonly</param-name>
+        <param-value>false</param-value>
+    </init-param>
+
+    <init-param>
+        <param-name>listings</param-name>
+        <param-value>false</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/</url-pattern>
+</servlet-mapping>
+```
+* 编写 controller
+``` java
+// com.joush.controller.UserController.java
+/**
+ * 跨服务器文件上传
+ * @param upload
+ * @return
+ * @throws Exception
+ */
+@RequestMapping("fileUpload3")
+public String fileUpload3(MultipartFile upload) throws Exception {
+    System.out.println("跨服务器文件上传");
+
+    // 定义服务器上传路径
+    String path = "http://localhost:8081/SpringMVCDemo04FileUploadServer/uploads/";
+
+    /*
+        说明上传文件项
+     */
+    // 获取上传文件名称
+    String filename = upload.getOriginalFilename();
+
+    // 把文件的名称设置唯一值，uuid
+    String uuid = UUID.randomUUID().toString().replace("-", "");
+    filename = uuid + "_" + filename;
+
+    // 完成文件上传，跨服务器
+
+    // 1.创建客户端对象
+    Client client = Client.create();
+
+    // 2.和图片服务器进行连接
+    WebResource webResource = client.resource(path + filename);// 因为 path后面加了 / 所以此处不用拼接 /
+
+    // 3.上传文件
+    webResource.put(upload.getBytes());
+
+    return "success";
+}
+```
+
+## Spring MVC 中的异常处理
+
+#### 异常处理的思路
+* Controller调用service，service 调用 dao，异常都是向上抛出的，最终有 DispatcherServlet 找异常处理器进行异常的处理。
+* ssm 中的异常处理
+``` text
+    浏览器 ---> 前端控制器 ---> web（controller）---> service ---> dao
+           处理异常       默认抛出             默认抛出      默认抛出              
+    浏览器 <--- 前端控制器 <--- web（controller）<--- service <--- dao
+                    |
+                    |
+            添加异常处理器组件,处理异常，并返回浏览器错误提示页面
+```
+
+#### Spring MVC 处理异常
+
+* 编写自定义异常类（提示异常信息）
+``` java
+// com.joush.exception.SysException.java
+public class SysException extends Exception{
+    private String message;
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public SysException(String message) {
+        this.message = message;
+    }
+    
+}
+```
+* 编写异常处理器
+``` java
+// com.joush.exception.SysExceptionResolver.java
+public class SysExceptionResolver implements HandlerExceptionResolver {
+
+    /**
+     * 处理异常的逻辑
+     * @param httpServletRequest 请求的 request
+     * @param httpServletResponse 请求的 response
+     * @param o 当前处理器对象，用的很少
+     * @param e 抛出的自定义异常
+     * @return
+     */
+    @Override
+    public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
+
+        // 获得异常对象
+        SysException exception = null;
+        // 如果当前异常对象是自定义异常
+        if (e instanceof SysException){
+            exception = (SysException) e;
+        } else {
+            exception = new SysException("系统正在维护...");
+        }
+
+        // 创建 ModelAndView
+        ModelAndView mv = new ModelAndView();
+
+        // 存入提示信息
+        mv.addObject("errorMsg", exception.getMessage());
+
+        // 跳转 error.jsp
+        mv.setViewName("error");
+
+        return mv;
+    }
+}
+```
+* 配置异常处理器（跳转提示页面）
+``` xml
+<!--  resources.springmvc.xml  -->
+<!--  配置异常处理器  -->
+<bean id="sysExceptionResolver" class="com.joush.exception.SysExceptionResolver" />
+```
+
+## Spring MVC 中的拦截器
+
+#### 拦截器的作用
+
+* Spring MVC 的处理器拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行预处理和后处理
+* 用户可以自己定义一些拦截器来实现特定的功能
+* 拦截器链（Interceptor Chain）
+    - 拦截器链就是将拦截器按一定的顺序联结成一条链
+    - 在访问被拦截的方法或字段时，拦截器链中的拦截器就会按其之前定义的顺序被调用
+* 拦截器与过滤器的区别
+    - 过滤器是 servlet 规范中的一部分，任何 java web 工程都可以使用, 拦截器是 Spring MVC 框架自己的，只有使用了 Spring MVC 框架的工程才能用
+    - 过滤器在 url-pattern 中配置了 /* 之后，可以对所有要访问的资源拦截。拦截器它是只会拦截访问的控制器方法，如果访问的是 jsp，html,css,image 或者 js 是不会进行拦截的
+* 拦截器也是 AOP 思想的具体应用
+* 要想自定义拦截器，要求必须实现 HandlerInterceptor 接口
+
+#### 自定义拦截器
+
+* 编写拦截器类，实现 HandlerInterceptor 接口
+``` java
+// com.joush.interceptor.MyInterceptor1.java
+
+public class MyInterceptor implements HandlerInterceptor {
+
+    /**
+     * 预处理，controller 执行前
+     * @param request
+     * @param response
+     * @param handler
+     * @return true 放行，执行下一个拦截器，如果没有，执行 controller
+     *         false 不放行，可以跳转到某个页面
+     * @throws Exception
+     */
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("MyInterceptor executed!");
+        /*
+            放行
+        */
+        return true;
+
+        /*
+            不放行
+        */
+        request.getRequestDispatcher("/WEB-INF/pages/error.jsp").forward();
+        retrun false;
+    }
+
+     /**
+     * 后处理，controller 执行之后 success.jsp 执行之前
+     * @param request
+     * @param response
+     * @param handler
+     * @param modelAndView
+     * @throws Exception
+     */
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        System.out.println("Post MyInterceptor1 executed! 111");
+    }
+    
+
+    /**
+     * success.jsp 页面执行后，该方法执行
+     * @param request
+     * @param response
+     * @param handler
+     * @param ex
+     * @throws Exception
+     */
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        System.out.println("afterCompletion executed! 111");
+    }
+}
+
+/*
+    关于多个拦截器的执行顺序
+    interceptor 1 Pre 方法 --> interceptor 2 Pre 方法 --> controller 方法
+    --> interceptor 2 Post 方法 --> interceptor 1 Post 方法 --> success.jsp
+    --> interceptor 2 afterCompletion 方法 --> interceptor 1 afterCompletion 方法
+*/
+```
+* 配置拦截器
+``` xml
+<!--  resources.springmvc.xml  -->
+<!--  配置拦截器  -->
+<mvc:interceptors>
+    <!--  可配置多个  -->
+    <mvc:interceptor>
+        <!--  配置拦截路径-->
+        <mvc:mapping path="/user/*"/> <!--  /** 表示拦截所有  -->
+        <!--  配置拦截器对象-->
+        <bean id="myInterceptor1" class="com.joush.interceptor.MyInterceptor1"></bean>
+    </mvc:interceptor>
+
+    <mvc:interceptor>
+        <!--  配置拦截路径-->
+        <mvc:mapping path="/user/*"/> <!--  /** 表示拦截所有  -->
+        <!--  配置拦截器对象-->
+        <bean id="myInterceptor2" class="com.joush.interceptor.MyInterceptor2"></bean>
+    </mvc:interceptor>
+</mvc:interceptors>
+```
+
