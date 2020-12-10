@@ -20,6 +20,7 @@
         <module name="MybatisDemo10Annotation" />
         <module name="SpringMVCDemo06Interceptor" />
         <module name="MybatisDemo01Introduction" />
+        <module name="SpringMVCDemo07SSM" />
         <module name="MybatisDemo07MutipleToMultiple" />
         <module name="SpringDemo19AnnotationTransactionWithoutXml" />
         <module name="SpringDemo18TransactionBaseOnAnnotation" />
@@ -100,6 +101,7 @@
       <module name="SpringMVCDemo04FileUploadServer" target="1.8" />
       <module name="SpringMVCDemo05Exception" target="1.8" />
       <module name="SpringMVCDemo06Interceptor" target="1.8" />
+      <module name="SpringMVCDemo07SSM" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

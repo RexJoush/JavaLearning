@@ -937,7 +937,7 @@ public String fileUpload3(MultipartFile upload) throws Exception {
 ## Spring MVC 中的异常处理
 
 #### 异常处理的思路
-* Controller调用service，service 调用 dao，异常都是向上抛出的，最终有 DispatcherServlet 找异常处理器进行异常的处理。
+* Controller 调用 service，service 调用 dao，异常都是向上抛出的，最终有 DispatcherServlet 找异常处理器进行异常的处理。
 * ssm 中的异常处理
 ``` text
     浏览器 ---> 前端控制器 ---> web（controller）---> service ---> dao
@@ -1120,3 +1120,134 @@ public class MyInterceptor implements HandlerInterceptor {
 </mvc:interceptors>
 ```
 
+## S（Spring）S（Spring MVC）M（Mybatis）整合
+
+#### 结构
+``` text
+  表现层         业务层         持久层
+Spring MVC      Spring        Mybatis
+    <----------- 整合 ----------->
+即：以 Spring 为基础，整合 Spring MVC 和 Mybatis
+```
+
+#### 搭建环境
+
+* 搭建 Spring 环境
+    - 导入坐标，此处坐标较多，查看 `pom.xml`
+    - 编写 domain，dao，service，和 serviceImpl
+    - 添加 serviceImpl 注解配置
+    ``` java
+    // com.joush.service.impl.AccountServiceImpl.java
+    @Service("accountService")
+    public class AccountServiceImpl implements AccountService {
+        @Override
+        public List<Account> findAll() {
+            System.out.println("业务层查询所有");
+            return null;
+        }
+    
+        @Override
+        public void saveAccount(Account account) {
+            System.out.println("业务层保存账户");
+        }
+    }
+    ```
+    - 添加 spring 配置文件
+    ``` xml
+    <!--  resources.applicationContext.xml  -->
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xmlns:aop="http://www.springframework.org/schema/aop"
+           xmlns:tx="http://www.springframework.org/schema/tx"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx.xsd">
+    
+        <!--  开启 spring 注解扫描，希望处理 service 和 dao，不需要处理 controller  -->
+        <context:component-scan base-package="com.joush">
+            <!--  配置哪些注解不扫描，即 controller  -->
+            <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        </context:component-scan>
+    </beans>
+    ```
+
+* 搭建 Spring MVC 环境
+    - 配置 `web.xml`
+    ``` xml
+    <!--  配置前端控制器  -->
+    <servlet>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+        <!--  配置初始化加载  -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc.xml</param-value>
+        </init-param>
+        <!--  启动服务器时创建容器  -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!--  配置解决中文乱码的过滤器-->
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    ```
+    - 配置 `springmvc.xml`
+    ``` xml
+    <!--  开启 spring mvc 注解扫描，只扫描 controller  -->
+    <context:component-scan base-package="com.joush">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--  配置视图解析器  -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!--  配置前端控制器，不拦截静态资源  -->
+    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
+
+    <!--  配置开启 spring mvc 注解支持  -->
+    <mvc:annotation-driven/>
+    ```
+* Spring 整合 Spring MVC 
+    - 启动 Tomcat 服务器时，需要加载 Spring 的配置文件
+    - ServletContext 域对象是整个 web 的最顶层对象，在 Tomcat 创建时创建，销毁时销毁
+    - 通过一类监听器，监听 ServletContext 域对象的创建和销毁
+    - 监听器进行 Spring 配置文件的加载，创建 Web 版本工厂，存储 ServletContext 对象
+    ``` xml
+    <!--  webapp.WEB-INF.web.xml  -->  
+    <!--  配置 Spring 的监听器，默认只加载 WEB-INF 目录下的 applicationContext.xml 配置文件  -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!--  设置加载配置文件的路径  -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    ```
+* 搭建 Mybatis 环境
