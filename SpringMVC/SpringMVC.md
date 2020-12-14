@@ -1251,3 +1251,124 @@ Spring MVC      Spring        Mybatis
     </context-param>
     ```
 * 搭建 Mybatis 环境
+    - 编写配置文件 `SqlMapConfig.xml`
+    ``` xml
+    <!--  resources.SqlMapConfig.xml  -->
+    <?xml version="1.0" encoding="utf-8" ?>
+    <!DOCTYPE configuration
+            PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+            "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    <configuration>
+        <!--  配置环境  -->
+        <environments default="mysql">
+            <environment id="mysql">
+                <transactionManager type="JDBC"></transactionManager>
+                <dataSource type="POOLED">
+                    <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                    <property name="url" value="jdbc:mysql://localhost:3306/joush?serverTimezone=UTC"/>
+                    <property name="username" value="root"/>
+                    <property name="password" value="liyihang123"/>
+                </dataSource>
+            </environment>
+        </environments>
+    
+        <!--  引入映射文件  -->
+        <mappers>
+            <package name="com.joush.dao"/>
+        </mappers>
+    </configuration>
+    ```
+    - 在 dao 上添加注解，让 mybatis 创建代理 dao
+    ``` java
+    // com.joush.dao.AccountDao.java
+    /**
+     * 查询所有
+     * @return
+     */
+    @Select("select * from account")
+    List<Account> findAll();
+
+    /**
+     * 保存账户
+     * @param account
+     */
+    @Insert("insert into account (name, money) values (#{name}, #{money})")
+    void saveAccount(Account account);
+    ```
+    - 测试查询方法
+    ``` java
+    // com.joush.test.TestMybatis.java
+    @Test
+    public void run1() throws IOException {
+        // 1.加载配置文件
+        InputStream inputStream = Resources.getResourceAsStream("SqlMapConfig.xml");
+
+        // 2.创建 SqlSessionFactory 对象
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        // 3.创建 SqlSession 对象
+        SqlSession sqlSession = factory.openSession();
+
+        // 4.获取代理对象
+        AccountDao dao = sqlSession.getMapper(AccountDao.class);
+
+        // 5.查询
+        List<Account> accounts = dao.findAll();
+        for (Account account : accounts) {
+            System.out.println(account);
+        }
+
+        // 6.释放资源
+        sqlSession.close();
+        inputStream.close();
+
+    }
+    ```
+* Spring 整合 Mybatis
+    - 配置 mybatis 的 SqlSession 依赖注入
+    ``` xml
+    <!--  resources.applicationContext.xml  -->
+    <!--  Spring 整合 Mybatis  -->
+    <!--  配置连接池  -->
+    <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource" >
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/joush?serverTimezone=UTC"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="liyihang123"></property>
+    </bean>
+
+    <!--  配置 SqlSessionFactory 工厂  -->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--  配置 AccountDao 接口所在的包  -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" id="mapperScanner">
+        <property name="basePackage" value="com.joush.dao"></property>
+    </bean>
+    ```
+
+    - 配置事务
+    ``` xml
+    <!--  resources.applicationContext.xml  -->
+    
+    <!--  配置 Spring 的声明式事务管理  -->
+
+    <!--  配置事务管理器  -->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!--  配置事务通知  -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="find" read-only="true"/>
+            <tx:method name="*" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--  配置 aop 增强  -->
+    <aop:config>
+        <!--  配置切入点表达式  -->
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.joush.service.impl.*.*(..))"></aop:advisor>
+    </aop:config>
+    ```

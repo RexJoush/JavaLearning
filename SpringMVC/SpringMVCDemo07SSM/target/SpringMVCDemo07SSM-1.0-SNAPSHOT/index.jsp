@@ -12,5 +12,11 @@
 </head>
 <body>
     <a href="account/findAll">测试</a>
+
+    <form action="account/save" method="post">
+        name: <input type="text" name="name">
+        money: <input type="text" name="money">
+        <input type="submit" value="保存">
+    </form>
 </body>
 </html>

@@ -18,4 +18,45 @@
         <!--  配置哪些注解不扫描，即 controller  -->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+
+
+    <!--  Spring 整合 Mybatis  -->
+    <!--  配置连接池  -->
+    <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource" >
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/joush?serverTimezone=UTC"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="liyihang123"></property>
+    </bean>
+
+    <!--  配置 SqlSessionFactory 工厂  -->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--  配置 AccountDao 接口所在的包  -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" id="mapperScanner">
+        <property name="basePackage" value="com.joush.dao"></property>
+    </bean>
+
+    <!--  配置 Spring 的声明式事务管理  -->
+
+    <!--  配置事务管理器  -->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!--  配置事务通知  -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="find" read-only="true"/>
+            <tx:method name="*" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--  配置 aop 增强  -->
+    <aop:config>
+        <!--  配置切入点表达式  -->
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.joush.service.impl.*ServiceImpl.*(..))"></aop:advisor>
+    </aop:config>
+
 </beans>
