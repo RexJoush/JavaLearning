@@ -1,0 +1,41 @@
+# 普通数据的配置
+name: joush
+
+# 对象的配置
+person:
+  name: joush
+  age: 18
+  addr: beijing
+
+# 行内对象配置
+person1: {name: joush, age: 18, addr: shanghai}
+
+# 配置集合或数组（字符串）
+city:
+  - beijing
+  - tianjin
+  - shanghai
+  - chongqing
+
+# 行内方式
+city2: [beijing,tianjin,chongqing,shanghai]
+
+# 配置集合或数组（对象数据）
+student:
+  - name: tom
+    age: 18
+    addr: beijing
+  - name: kite
+    age: 20
+    addr: shanghai
+
+# 行内方式
+student2: [{name: tom, age: 18, addr: beijing},{name: kite, age: 20, addr: shanghai}]
+
+# 配置 map 集合
+map:
+    key1: value1
+    key2: value2
+
+server:
+  port: 8082

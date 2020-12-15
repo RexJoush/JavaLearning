@@ -1,16 +1,14 @@
 package com.joush.controller;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Quick {
+public class QuickController {
 
-    @RequestMapping("/quick")
+    @RequestMapping("/quick2")
     public String quick(){
-        return "hello";
+        return "Spring Boot!";
     }
-
 
 }

@@ -28,29 +28,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/webapp/WEB-INF/pages/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/test/java/com/joush/test/TestMybatis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SpringMVCDemo07SSM_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/SpringMVCDemo07SSM_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_2.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_41.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_41.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/java/com/joush/controller/QuickController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_18.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_18.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_16_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_18_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_6_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_6_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_6_28.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_6_28.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_3_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_3_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_3_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_10_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVC.md" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVC.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/SpringMVCDemo07SSM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/SpringMVCDemo07SSM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/java/com/joush/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/java/com/joush/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/java/com/joush/dao/AccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/java/com/joush/dao/AccountDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/java/com/joush/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/java/com/joush/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT/WEB-INF/classes/com/joush/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT/WEB-INF/classes/com/joush/controller/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT/WEB-INF/classes/com/joush/dao/AccountDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT/WEB-INF/classes/com/joush/dao/AccountDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT/WEB-INF/classes/com/joush/service/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT/WEB-INF/classes/com/joush/service/impl/AccountServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/SpringMVCDemo07SSM-1.0-SNAPSHOT/WEB-INF/lib/c3p0-0.9.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/classes/com/joush/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/classes/com/joush/controller/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/classes/com/joush/dao/AccountDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/classes/com/joush/dao/AccountDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/classes/com/joush/service/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/target/classes/com/joush/service/impl/AccountServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBoot.md" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBoot.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/SpringBootDemo02QuickCreate.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/java/com/joush/QuickCreateApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/java/com/joush/controller/Quick.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/test/java/com/joush/QuickCreateApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +93,8 @@
         <option value="Kotlin File" />
         <option value="Interface" />
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -84,19 +114,30 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.29804373" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\resources" />
+      <recent name="E:\WorkSpace\JavaLearning\SpringMVC\SpringMVCDemo07SSM\src\main\resources" />
+      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo20ProgrammingTransaction\src\main\resources" />
+      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo20ProgrammingTransaction\src\main\java\com\joush" />
+      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo19AnnotationTransactionWithoutXml" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\WorkSpace\JavaLearning\SpringMVC\SpringMVCDemo03FileUpload\src\main\resources" />
       <recent name="E:\WorkSpace\JavaLearning\SpringMVC\SpringMVCDemo02Response\src\main\webapp\WEB-INF" />
@@ -104,6 +145,7 @@
       <recent name="E:\WorkSpace\JavaLearning\Spring" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example" />
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -112,36 +154,14 @@
       <recent name="com.joush.service.impl" />
       <recent name="com.joush.template" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\WorkSpace\JavaLearning\SpringMVC\SpringMVCDemo07SSM\src\main\resources" />
-      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo20ProgrammingTransaction\src\main\resources" />
-      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo20ProgrammingTransaction\src\main\java\com\joush" />
-      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo19AnnotationTransactionWithoutXml" />
-      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo18TransactionBaseOnAnnotation" />
-    </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.37">
+  <component name="RunManager" selected="Spring Boot.Springbootdemo02quickcreateApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AccountServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringDemo19AnnotationTransactionWithoutXml" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush.test" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.test.AccountServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,9 +231,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MySpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="SpringBootDemo01Introduce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joush.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.MySpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="QuickCreateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="SpringBootDemo02QuickCreate" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.QuickCreateApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Springbootdemo02quickcreateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SpringBootDemo02QuickCreate" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.MySpringBootApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -383,21 +423,22 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.AccountServiceTest.testTransfer (1)" />
-      <item itemvalue="JUnit.AccountServiceTest (1)" />
       <item itemvalue="JUnit.TestSpring.run1" />
       <item itemvalue="JUnit.TestMybatis.run1" />
       <item itemvalue="JUnit.TestMybatis.run2" />
       <item itemvalue="Spring Boot.QuickCreateApplication" />
       <item itemvalue="Tomcat Server.FileUpload" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.37" />
+      <item itemvalue="Spring Boot.MySpringBootApplication" />
+      <item itemvalue="Spring Boot.Springbootdemo02quickcreateApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.MySpringBootApplication" />
         <item itemvalue="JUnit.TestMybatis.run2" />
         <item itemvalue="JUnit.TestMybatis.run1" />
         <item itemvalue="JUnit.TestSpring.run1" />
         <item itemvalue="JUnit.AccountServiceTest.testTransfer (1)" />
-        <item itemvalue="JUnit.AccountServiceTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -438,7 +479,7 @@
       <workItem from="1607570849411" duration="16161000" />
       <workItem from="1607921595760" duration="67000" />
       <workItem from="1607921730822" duration="50000" />
-      <workItem from="1607921859374" duration="8627000" />
+      <workItem from="1607921859374" duration="19280000" />
     </task>
     <servers />
   </component>
