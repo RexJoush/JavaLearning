@@ -21,7 +21,7 @@
     </bean>
 
     <!--  配置前端控制器，静态资源不拦截  -->
-    <mvc:resources mapping="/js/**/" location="/js/"></mvc:resources>
+    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
 
     <!--  配置异常处理器  -->
     <bean id="sysExceptionResolver" class="com.joush.exception.SysExceptionResolver" />

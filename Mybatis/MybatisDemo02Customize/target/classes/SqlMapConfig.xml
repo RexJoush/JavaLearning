@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--  mybatis 主配置文件  -->
+<configuration>
+    <!--  配置环境  -->
+    <environments default="mysql">
+
+        <!--  配置mysql的环境  -->
+        <environment id="mysql">
+            <!--  配置mysql的事务类型  -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--  配置数据源  -->
+            <dataSource type="POOLED">
+            <!--  配置数据库的基本信息  -->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/com.com.joush?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="liyihang123"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--  指定映射配置文件的位置，映射配置文件使每个dao独立的配置文件  -->
+    <mappers>
+    <!--  <mapper resource="com/com.com.joush/dao/UserDao.xml"></mapper>  -->
+        <mapper class="com.com.com.joush.domain.User"></mapper>
+    </mappers>
+</configuration>

@@ -46,6 +46,4 @@
         <property name="connectionUtils" ref="connectionUtils"></property>
     </bean>
 
-    <!-- 配置 Connection 工具类   -->
-
 </beans>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<mapper namespace="com.com.com.joush.dao.UserDao">
+    <!--  配置查询所有  -->
+    <!--  id为方法名  -->
+    <select id="findAll" resultType="com.com.com.joush.domain.User">
+        select * from user;
+    </select>
+</mapper>

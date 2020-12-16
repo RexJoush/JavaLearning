@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!-- 配置 Service   -->
+    <bean id="accountService" class="com.joush.service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"></property>
+        <property name="transactionManager" ref="transactionManager"></property>
+    </bean>
+
+    <!-- 配置 Dao   -->
+    <bean id="accountDao" class="com.joush.dao.impl.AccountDaoImpl">
+        <property name="runner" ref="runner"></property>
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+
+    <!-- 配置 QueryRunner   -->
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype"></bean>
+
+    <!-- 配置 数据源   -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/joush?serverTimezone=UTC"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="liyihang123"></property>
+    </bean>
+
+    <!-- 配置 Connection 工具类   -->
+    <bean id="connectionUtils" class="com.joush.utils.ConnectionUtils">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!-- 配置 TransactionManager 工具类   -->
+    <bean id="transactionManager" class="com.joush.utils.TransactionManager">
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+    
+    <!--  配置 Aop  -->
+    <aop:config>
+        <!--  配置 通用的切入点表达式  -->
+        <aop:pointcut id="pt1" expression="execution(* com.joush.service.impl.*.*(..))"/>
+        
+        <aop:aspect id="txAdvice" ref="transactionManager">
+            <!--  配置前置通知，开启事务  -->
+            <aop:before method="beginTransaction" pointcut-ref="pt1"></aop:before>
+
+            <!--  配置后置通知，提交事务  -->
+            <aop:after-returning method="commit" pointcut-ref="pt1"></aop:after-returning>
+
+            <!--  配置异常通知，回滚事务  -->
+            <aop:after-throwing method="rollback" pointcut-ref="pt1"></aop:after-throwing>
+
+            <!--  配置最终通知，释放资源  -->
+            <aop:after method="release" pointcut-ref="pt1"></aop:after>
+        </aop:aspect>
+            
+    </aop:config>
+    
+</beans>

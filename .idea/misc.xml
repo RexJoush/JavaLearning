@@ -63,8 +63,8 @@
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo06Interceptor/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/pom.xml" />
       </list>
     </option>
   </component>

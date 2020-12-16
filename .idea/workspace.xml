@@ -28,38 +28,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/java/com/joush/controller/Quick2Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/java/com/joush/controller/Quick3Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/main/java/com/joush/controller/MybatisController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/main/java/com/joush/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/main/java/com/joush/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/test/java/com/joush/MybatisTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBoot.md" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBoot.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/java/com/joush/MySpringBootApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/java/com/joush/controller/QuickController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/java/com/joush/controller/QuickController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/test/java/com/joush/MySpringBootApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo09Cache/target/classes/com/joush/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo09Cache/target/classes/com/joush/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo09Cache/target/test-classes/com/joush/com/SecondLevelCacheTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo09Cache/target/test-classes/com/joush/com/UserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/target/test-classes/com/joush/test/AccountServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/target/test-classes/com/joush/test/AccountServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/target/classes/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/target/classes/bean.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/target/test-classes/com/joush/test/AccountServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/target/test-classes/com/joush/test/AccountServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/target/classes/com/joush/dao/impl/AccountDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/target/classes/com/joush/dao/impl/AccountDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo16AccountAopTransactionAnnotation/target/classes/com/joush/service/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo16AccountAopTransactionAnnotation/target/classes/com/joush/service/impl/AccountServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo18TransactionBaseOnAnnotation/target/classes/com/joush/service/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo18TransactionBaseOnAnnotation/target/classes/com/joush/service/impl/AccountServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo01Introduce/target/classes/com/joush/Controller/QuickController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo01Introduce/target/classes/com/joush/MySpringBootApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/main/java/com/joush/MySpringBootApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/test/java/com/joush/MySpringBootApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/test/java/com/joush/MybatisTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/test/java/com/joush/MybatisTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception/target/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception/target/classes/springmvc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,20 +99,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/main/java/com/joush" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29804373" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo03Mybatis\src\main\java\com\joush" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\resources" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\java\com\joush" />
       <recent name="E:\WorkSpace\JavaLearning\SpringMVC\SpringMVCDemo07SSM\src\main\resources" />
       <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo20ProgrammingTransaction\src\main\resources" />
-      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo20ProgrammingTransaction\src\main\java\com\joush" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\java" />
@@ -137,7 +134,7 @@
       <recent name="com.joush.template" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MybatisTest.test">
+  <component name="RunManager" selected="Spring Boot.SpringBootDemo03MybatisApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -145,6 +142,22 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySpringBootApplication.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringBootDemo03Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joush.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.joush" />
+      <option name="MAIN_CLASS_NAME" value="com.joush.MySpringBootApplication" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,6 +173,22 @@
       <option name="PACKAGE_NAME" value="com.joush" />
       <option name="MAIN_CLASS_NAME" value="com.joush.MybatisTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisTest.mybatisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringBootDemo03Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joush.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.joush" />
+      <option name="MAIN_CLASS_NAME" value="com.joush.MybatisTest" />
+      <option name="METHOD_NAME" value="mybatisTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,47 +209,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMybatis.run1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringMVCDemo07SSM" />
+    <configuration name="SpringBootApplicationTests.mybatisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringBootDemo03Mybatis" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.joush.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.joush.test" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.test.TestMybatis" />
-      <option name="METHOD_NAME" value="run1" />
+      <option name="PACKAGE_NAME" value="com.joush" />
+      <option name="MAIN_CLASS_NAME" value="com.joush.SpringBootApplicationTests" />
+      <option name="METHOD_NAME" value="mybatisTest" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMybatis.run2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringMVCDemo07SSM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush.test" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.test.TestMybatis" />
-      <option name="METHOD_NAME" value="run2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MySpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="SpringBootDemo01Introduce" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.MySpringBootApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -234,6 +234,13 @@
     </configuration>
     <configuration name="SpringBootDemo02QuickCreateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="SpringBootDemo02QuickCreate" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.MySpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringBootDemo03MybatisApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SpringBootDemo03Mybatis" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.MySpringBootApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -424,26 +431,27 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestMybatis.run1" />
-      <item itemvalue="JUnit.TestMybatis.run2" />
       <item itemvalue="Spring Boot.QuickCreateApplication" />
       <item itemvalue="Tomcat Server.FileUpload" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.37" />
-      <item itemvalue="Spring Boot.MySpringBootApplication" />
       <item itemvalue="Spring Boot.Springbootdemo02quickcreateApplication" />
       <item itemvalue="Spring Boot.SpringBootDemo03MybatisApplication" />
       <item itemvalue="Spring Boot.Springbootdemo02quickcreateApplication (1)" />
       <item itemvalue="Spring Boot.SpringBootDemo02QuickCreateApplication" />
       <item itemvalue="JUnit.MybatisTest" />
       <item itemvalue="JUnit.MybatisTest.test" />
+      <item itemvalue="JUnit.MySpringBootApplication.test1" />
+      <item itemvalue="Spring Boot.SpringBootDemo03MybatisApplication (1)" />
+      <item itemvalue="JUnit.SpringBootApplicationTests.mybatisTest" />
+      <item itemvalue="JUnit.MybatisTest.mybatisTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MybatisTest.mybatisTest" />
+        <item itemvalue="JUnit.SpringBootApplicationTests.mybatisTest" />
         <item itemvalue="JUnit.MybatisTest.test" />
+        <item itemvalue="JUnit.MySpringBootApplication.test1" />
         <item itemvalue="JUnit.MybatisTest" />
-        <item itemvalue="Spring Boot.MySpringBootApplication" />
-        <item itemvalue="JUnit.TestMybatis.run2" />
-        <item itemvalue="JUnit.TestMybatis.run1" />
       </list>
     </recent_temporary>
   </component>
@@ -484,7 +492,7 @@
       <workItem from="1607570849411" duration="16161000" />
       <workItem from="1607921595760" duration="67000" />
       <workItem from="1607921730822" duration="50000" />
-      <workItem from="1607921859374" duration="34530000" />
+      <workItem from="1607921859374" duration="37976000" />
     </task>
     <servers />
   </component>
@@ -527,5 +535,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/main/java/com/joush/controller/MybatisController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
