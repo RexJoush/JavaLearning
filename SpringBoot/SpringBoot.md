@@ -109,7 +109,7 @@ public class QuickController {
     ```
 ## Spring Boot 的配置文件
 * 在 resources 下创建 `**/application*.properties`
-``` properties
+```javaproperties
 # resources.application.properties
 # 在此处修改配置可以覆盖默认配置
 # 配置默认端口号
@@ -130,8 +130,8 @@ server.servlet.context-path=/demo
   - 容易被人类阅读，容易和脚本语言交互的，可以被支持YAML库的不同的编程语言程序导入
   - C/C++, Ruby, Python, Java, Perl, C#, PHP等。YML文件是以数据为核心的，比传统的xml方式更加简洁
 * yaml 语法
-    ``` yaml
-    # 键: 值
+```yaml
+# 键: 值
     # 注意 : 和 值之间的空格不能省略
     # 同时以缩进确定层级关系，不限制缩进位数，但同一缩进代表同一层级
     
@@ -173,5 +173,5 @@ server.servlet.context-path=/demo
     map:
       key1: value1
       key2: value2
-    ```
+```
 
