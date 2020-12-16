@@ -24,7 +24,7 @@
 
 * 配置 nginx
     - 修改 \nginx\conf\nginx.conf
-    ``` json
+    ``` editorconfig
     // 1.在server之前添加server列表
     upstream serverlib {    // serverlib名字随便起
         server localhost:8080; // 可以添加权重信息 server localhost:8080 weight 4;
