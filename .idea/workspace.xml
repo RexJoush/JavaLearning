@@ -30,7 +30,6 @@
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Docker/docker.md" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/docker.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maven/maven.md" beforeDir="false" afterPath="$PROJECT_DIR$/Maven/maven.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -429,7 +428,7 @@
       <workItem from="1607570849411" duration="16161000" />
       <workItem from="1607921595760" duration="67000" />
       <workItem from="1607921730822" duration="50000" />
-      <workItem from="1607921859374" duration="23788000" />
+      <workItem from="1607921859374" duration="24359000" />
     </task>
     <servers />
   </component>

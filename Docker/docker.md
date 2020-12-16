@@ -233,13 +233,19 @@ $ docker load -i mynginx.tar
 
 #### 使用脚本创建镜像
 * 步骤
-``` dockerfile
+```dockerfile
 # 创建 Dockerfile 文件，并填写信息
-FROM centos:7  # 基础环境 Cent OS 7
-MAINTAINER com.com.joush # 创建者姓名
-WORKDIR /usr    # 工作目录
-RUN mkdir/usr/local/java # 创建一个文件夹 
-ADD jdk-8u171-linux-x64.tar.gz /usr/local/java/ # 将jdk加入目录中
+
+# 基础环境 Cent OS 7
+FROM centos:7
+# 创建者姓名
+MAINTAINER com.com.joush
+# 工作目录
+WORKDIR /usr
+# 创建一个文件夹
+RUN mkdir/usr/local/java
+# 将jdk加入目录中
+ADD jdk-8u171-linux-x64.tar.gz /usr/local/java/
 
 # 在里面添加 jdk jre path 环境变量
 ENV JAVA_HOME /usr/local/java/jdk.1.8.0_171
@@ -247,6 +253,7 @@ ENV JRE_HOME $JAVA_HOME/jre
 ENV CLASS_PATH $JAVA_HOME/bin/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib:$CLASS_PATH
 ENV path $JAVA_HOME/bin:$PATH
 ```
+
 ```shell
 # 运行命令
 $ docker build -t="镜像名称" Dockerfile文件目录
