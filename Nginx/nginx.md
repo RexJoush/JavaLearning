@@ -23,22 +23,22 @@
     - 打开 localhost:80 看到提示信息即代表安装成功
 
 * 配置 nginx
-    - 修改 \nginx\conf\nginx.conf
-    ``` editorconfig
-    // 1.在server之前添加server列表
-    upstream serverlib {    // serverlib名字随便起
-        server localhost:8080; // 可以添加权重信息 server localhost:8080 weight 4;
-        server localhost:8081;               //  server localhost:8081 weight 10;
-        ip_hash;    // 保证一个用户每次只访问同一台服务器，解决session共享的问题
+    - 修改 `\nginx\conf\nginx.conf`
+    ``` lombok.config
+    # 1.在 server 之前添加 server 列表
+    upstream serverlib {    # serverlib名字随便起
+        server localhost:8080; # 可以添加权重信息 server localhost:8080 weight 4;
+        server localhost:8081;               # server localhost:8081 weight 10;
+        ip_hash;    # 保证一个用户每次只访问同一台服务器，解决session共享的问题
     }
   
-    // 2.在server 的location中添proxy_pass
+    # 2.在 server 的 location 中添 proxy_pass
     server {
             listen       80;
-            server_name  localhost; // 域名信息
+            server_name  localhost; # 域名信息
             location / {
                 root   html;
-                proxy_pass http://serverlib; // 服务器列表名称
+                proxy_pass http://serverlib; # 服务器列表名称
                 index  index.html index.htm;
             }
             error_page   500 502 503 504  /50x.html;
@@ -47,13 +47,13 @@
             }
         }
     ```
-* tomcat 集群的session共享问题
+* tomcat 集群的 session 共享问题
     - 一个用户只在其中一台进行操作
-        - 在serverlib中加上一个参数，ip_hash;
+        - 在 serverlib 中加上一个参数，ip_hash;
     - 共享 session
         - 使用 tomcat 的广播机制，实现 session 共享，（不推荐）
-            - 修改 server.xml 的内容
-                ``` html
+            - 修改 `server.xml` 的内容
+                ``` nginx
                 <!-- 单集群，将 Engine 标签中的 Cluster 标签去掉注释即可  -->
                 <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpClister" />
                 <!-- 如果是多集群，可以加上参数  -->
