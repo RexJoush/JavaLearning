@@ -3,7 +3,7 @@ name: joush
 
 # 对象的配置
 person:
-  name: joush
+  name: joush2
   age: 18
   addr: beijing
 

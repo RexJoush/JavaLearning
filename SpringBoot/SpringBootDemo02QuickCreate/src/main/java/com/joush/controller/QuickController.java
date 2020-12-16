@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QuickController {
 
-    @RequestMapping("/quick2")
+    @RequestMapping("/quick")
     public String quick(){
         return "Spring Boot!";
     }

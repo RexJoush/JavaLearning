@@ -23,6 +23,7 @@
       <module fileurl="file://$PROJECT_DIR$/Mybatis/MybatisDemo11AnnotationMultipleTables/MybatisDemo11AnnotationMultipleTables.iml" filepath="$PROJECT_DIR$/Mybatis/MybatisDemo11AnnotationMultipleTables/MybatisDemo11AnnotationMultipleTables.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBootDemo01Introduce/SpringBootDemo01Introduce.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBootDemo01Introduce/SpringBootDemo01Introduce.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/SpringBootDemo02QuickCreate.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/SpringBootDemo02QuickCreate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/SpringBootDemo03Mybatis.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/SpringBootDemo03Mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo01Introduction/SpringDemo01Introduction.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo01Introduction/SpringDemo01Introduction.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo02IoC/SpringDemo02IoC.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo02IoC/SpringDemo02IoC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo03Bean/SpringDemo03Bean.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo03Bean/SpringDemo03Bean.iml" />

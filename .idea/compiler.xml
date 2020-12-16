@@ -13,6 +13,7 @@
         <module name="SpringDemo14JdbcTemplate" />
         <module name="SpringDemo16AccountAopTransactionAnnotation" />
         <module name="SpringMVCDemo02Response" />
+        <module name="SpringBootDemo03Mybatis" />
         <module name="JavaEEDemo02CookieSession" />
         <module name="JavaEEDemo04AjaxJson" />
         <module name="MybatisDemo06MultipleTables" />
@@ -73,6 +74,7 @@
       <module name="MybatisDemo11AnnotationMultipleTables" target="1.8" />
       <module name="SpringBootDemo01Introduce" target="1.8" />
       <module name="SpringBootDemo02QuickCreate" target="1.8" />
+      <module name="SpringBootDemo03Mybatis" target="1.8" />
       <module name="SpringDemo01Introduction" target="1.8" />
       <module name="SpringDemo02IoC" target="1.8" />
       <module name="SpringDemo03Bean" target="1.8" />
@@ -108,6 +110,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringBootDemo01Introduce" options="-parameters" />
       <module name="SpringBootDemo02QuickCreate" options="-parameters" />
+      <module name="SpringBootDemo03Mybatis" options="-parameters" />
     </option>
   </component>
 </project>
