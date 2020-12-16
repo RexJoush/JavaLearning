@@ -3,7 +3,7 @@
 #### 安装 Docker
 * 官方建议是用 Ubuntu，Cent OS 建议7以上版本
 * 安装步骤
-``` editorconfig
+``` shell
 # yum 包更新到最新  
 $ sudo yum update
 
@@ -21,8 +21,8 @@ $ docker -v
 ```
 
 #### 设置国内的镜像
-* 编辑文件  
-`$ vi /etc/docker/daemon.json`
+* 编辑文件
+   `$ vi /etc/docker/daemon.json`
 * 加入内容
     ``` json
     {
@@ -31,7 +31,7 @@ $ docker -v
     ```
 
 #### Docker 的启动与停止
-``` editorconfig
+``` shell
 # 启动  
 $ systemctl start docker
 # 查看服务  
@@ -47,7 +47,7 @@ $ docker --help
 ## Docker 常用命令
 
 #### 镜像相关命令
-``` editorconfig
+``` shell
 # 查看安装的镜像
 $ docker images 
 # REPOSITORY  TAG     IMAGE_ID  CREATED   SIZE
@@ -71,7 +71,7 @@ $ docker rmi `docker images -q`
 #### 容器相关命令
 
 * 查看正在运行的容器  
-    ``` editorconfig
+    ``` shell
     # 运行中的
     $ docker ps
     # 运行不运行的都查看
@@ -79,7 +79,7 @@ $ docker rmi `docker images -q`
     ```
 
 * 创建与启动容器
-    ``` editorconfig
+    ``` shell
     $ docker run
     # 参数解释
     -i # 运行容器
@@ -91,7 +91,7 @@ $ docker rmi `docker images -q`
     -p # 表示端口映射，前者是宿主机端口，后者是容器内的端口映射，可以使用多个 -p 做多个端口映射
     ```
     - 交互式创建容器  
-        ``` editorconfig
+        ``` shell
         $ docker run -it --name=容器名称 镜像名称:标签 /bin/bash
         $ docker run -it --name=myredis redis /bin/bash
         $ docker run -it --name=mycentos centos:7 /bin/bash
@@ -100,7 +100,7 @@ $ docker rmi `docker images -q`
         $ exit # 交互式方式，退出时容器就停止了
         ```
     - 守护式创建容器
-        ``` editorconfig
+        ``` shell
         $ docker run -di --name=容器名称 镜像名称:标签
         $ docker run -di --name=myredis2 redis
         # 登录守护式创建的容器
@@ -108,7 +108,7 @@ $ docker rmi `docker images -q`
         $ docker exec -it myredis2 /bin/bash
         ```
 * 容器的停止与启动
-    ``` editorconfig
+    ``` shell
     # 停止容器
     $ docker stop 容器名称(id)
     $ docker stop myredis
@@ -116,14 +116,14 @@ $ docker rmi `docker images -q`
     # 启动容器
     $ docker start 容器名称(id)
     $ docker start myredis
-  
+    
     # 删除容器
     # 删除之前，需要先停掉对应容器
     $ docker rm 容器名称(id)
     $ docker rm myredis
     ```
 * 文件拷贝
-    ``` editorconfig
+    ``` shell
     # 拷贝进容器
     $ docker cp 拷贝的文件或目录 容器名称:容器目录
     $ docker cp /etc/java redis:/bin
@@ -133,7 +133,7 @@ $ docker rmi `docker images -q`
     $ docker cp redis:/bin /etc/java 
     ```
 * 目录挂载
-    ``` editorconfig
+    ``` shell
     # 我们可以在创建容器的时候，将宿主机的目录与容器内目录进行映射，
     # 这样就可以通过修改宿主机目录，而影响容器。修改容器也可影响宿主机
     
@@ -145,7 +145,7 @@ $ docker rmi `docker images -q`
 #### mysql 部署
 
 * 步骤
-    ``` editorconfig
+    ``` shell
     # 拉取 mysql 镜像
     $ docker pull mysql
     
@@ -159,7 +159,7 @@ $ docker rmi `docker images -q`
 #### tomcat 部署
 
 * 步骤
-    ``` editorconfig
+    ``` shell
     # 拉取镜像
     $ docker pull tomcat
     
@@ -170,17 +170,17 @@ $ docker rmi `docker images -q`
 
 #### nginx 部署
 * 步骤
-    ``` editorconfig
+    ``` shell
     # 拉取镜像
     $ docker pull nginx
     
     # 创建容器
     $ docker run -di -p 80:80 --name=mynginx nginx
     ```
-  
+
 #### redis 部署
 * 步骤
-``` editorconfig
+``` shell
 # 拉取镜像
 $ docker pull redis
 
@@ -194,7 +194,7 @@ $ docker run -di -p 6379:6379 --name=myredis redis
 ```
 
 ## 迁移与备份
-``` editorconfig
+``` shell
 # 保存容器为镜像
 $ docker commit 容器名称 镜像名称
 $ docker commit mynginx mynginx_i
@@ -233,7 +233,7 @@ $ docker load -i mynginx.tar
 
 #### 使用脚本创建镜像
 * 步骤
-``` editorconfig
+``` dockerfile
 # 创建 Dockerfile 文件，并填写信息
 FROM centos:7  # 基础环境 Cent OS 7
 MAINTAINER com.com.joush # 创建者姓名
@@ -246,19 +246,18 @@ ENV JAVA_HOME /usr/local/java/jdk.1.8.0_171
 ENV JRE_HOME $JAVA_HOME/jre
 ENV CLASS_PATH $JAVA_HOME/bin/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib:$CLASS_PATH
 ENV path $JAVA_HOME/bin:$PATH
-
+```
+```shell
 # 运行命令
 $ docker build -t="镜像名称" Dockerfile文件目录
 $ docker build -t="jdk1.8" . 
 
 # 查看构建是否成功
 $ docker images
-
 ```
-
 #### 构建私有仓库
 * 步骤
-``` editorconfig
+``` shell
 # 拉取私有仓库镜像
 $ docker pull registry
 
@@ -282,7 +281,7 @@ $ systemctl restart docker
 #### 上传镜像至私有仓库
 
 * 步骤
-``` editorconfig
+``` shell
 # 标记此镜像为私有仓库镜像
 $ docker tag 镜像名称  私服地址
 $ docker tag jdk1.8 192.168.52.129:5000/jdk1.8
