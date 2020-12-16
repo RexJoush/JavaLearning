@@ -24,7 +24,7 @@
 
 * 配置 nginx
     - 修改 `\nginx\conf\nginx.conf`
-    ``` lombok.config
+    ``` nginx
     # 1.在 server 之前添加 server 列表
     upstream serverlib {    # serverlib名字随便起
         server localhost:8080; # 可以添加权重信息 server localhost:8080 weight 4;
@@ -53,7 +53,7 @@
     - 共享 session
         - 使用 tomcat 的广播机制，实现 session 共享，（不推荐）
             - 修改 `server.xml` 的内容
-                ``` nginx
+                ``` xml
                 <!-- 单集群，将 Engine 标签中的 Cluster 标签去掉注释即可  -->
                 <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpClister" />
                 <!-- 如果是多集群，可以加上参数  -->
