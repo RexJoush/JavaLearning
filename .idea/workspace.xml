@@ -28,44 +28,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_6_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_55_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_55_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_55_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_55_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_55_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_55_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/java/com/joush/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/java/com/joush/joush/SpringBootDemo04RedisApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/java/com/joush/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/test/java/com/joush/RedisTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/c3p0-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/druid.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/jdbc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day06/demo04Interface/ReadMe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day08/demo01Collection/CollectionReadMe.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day13/demo04File/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day14/demo01OutputStream/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day14/demo01OutputStream/c.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day14/demo02InputStream/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day14/demo02InputStream/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day14/demo03Copy/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day14/demo03Copy/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day14/demo05Writer/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day15/demo01Properties/prop.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day15/demo02BufferedStream/prop.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day15/demo03BufferedChar/prop.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day15/demo04Encoding/GBK.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day15/demo04Encoding/UTF8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day15/demo05ExchangeCoding/GBK.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day16/demo01ObjectStream/b.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day16/demo02PrintStream/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day18/demo05JUnit/JUnit单元测试.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day18/demo08ReflectAnnotation/bug.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day19/demo01Mysql/demo.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day19/demo01Mysql/mysql.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day19/demo02JDBC/jdbc.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day19/demo03DataBasePoolC3P0/ConnectionPool.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/joush/day19/demo05SpringJDBC/SpringJDBC.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo01Basic/com/pro.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo02Project/com/c3p0-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo02Project/com/druid.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo02Project/com/jdbc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo02Project/com/pro.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo02Project/com/project/Demo05TextSort/in.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo02Project/com/project/Demo05TextSort/out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo02Project/com/project/Demo06FileUpload/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSEDemo02Project/com/project/Demo07FileUploadAdvance/a.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBoot.md" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBoot.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +96,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/src/main/java/com/joush" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -117,11 +105,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo04Redis\src\main\resources" />
+      <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo04Redis\src\main\java\com\joush" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo03Mybatis\src\main\java\com\joush" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\resources" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\java\com\joush" />
-      <recent name="E:\WorkSpace\JavaLearning\SpringMVC\SpringMVCDemo07SSM\src\main\resources" />
-      <recent name="E:\WorkSpace\JavaLearning\Spring\SpringDemo20ProgrammingTransaction\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\java" />
@@ -143,7 +131,7 @@
       <recent name="com.joush.template" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringBootDemo03MybatisApplication">
+  <component name="RunManager" selected="JUnit.RedisTest.redisTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -167,21 +155,6 @@
       <option name="MAIN_CLASS_NAME" value="com.joush.MySpringBootApplication" />
       <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MybatisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringBootDemo03Mybatis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.MybatisTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -213,6 +186,22 @@
       <option name="PACKAGE_NAME" value="com.joush" />
       <option name="MAIN_CLASS_NAME" value="com.joush.MybatisTest" />
       <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RedisTest.redisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringBootDemo04Redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joush.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.joush" />
+      <option name="MAIN_CLASS_NAME" value="com.joush.RedisTest" />
+      <option name="METHOD_NAME" value="redisTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -258,6 +247,13 @@
     <configuration name="SpringBootDemo03MybatisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="SpringBootDemo03Mybatis" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.MySpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringBootDemo04RedisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SpringBootDemo04Redis" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.SpringBootDemo04RedisApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -447,20 +443,21 @@
       <item itemvalue="Spring Boot.SpringBootDemo03MybatisApplication" />
       <item itemvalue="Spring Boot.Springbootdemo02quickcreateApplication (1)" />
       <item itemvalue="Spring Boot.SpringBootDemo02QuickCreateApplication" />
-      <item itemvalue="JUnit.MybatisTest" />
       <item itemvalue="JUnit.MybatisTest.test" />
       <item itemvalue="JUnit.MySpringBootApplication.test1" />
       <item itemvalue="Spring Boot.SpringBootDemo03MybatisApplication (1)" />
       <item itemvalue="JUnit.SpringBootApplicationTests.mybatisTest" />
       <item itemvalue="JUnit.MybatisTest.mybatisTest" />
+      <item itemvalue="Spring Boot.SpringBootDemo04RedisApplication" />
+      <item itemvalue="JUnit.RedisTest.redisTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RedisTest.redisTest" />
         <item itemvalue="JUnit.MybatisTest.mybatisTest" />
         <item itemvalue="JUnit.SpringBootApplicationTests.mybatisTest" />
         <item itemvalue="JUnit.MybatisTest.test" />
         <item itemvalue="JUnit.MySpringBootApplication.test1" />
-        <item itemvalue="JUnit.MybatisTest" />
       </list>
     </recent_temporary>
   </component>
@@ -501,7 +498,7 @@
       <workItem from="1607570849411" duration="16161000" />
       <workItem from="1607921595760" duration="67000" />
       <workItem from="1607921730822" duration="50000" />
-      <workItem from="1607921859374" duration="39586000" />
+      <workItem from="1607921859374" duration="44908000" />
     </task>
     <servers />
   </component>

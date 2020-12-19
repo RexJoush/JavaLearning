@@ -321,5 +321,92 @@ public class MybatisController {
 ```
 
 #### Spring Boot 集成 JUnit
+
 * 起步依赖已经由自动化构建添加过了 `spring-boot-starter-test`
 
+* 建立测试文件即可
+```java
+// com.joush.MybatisTest.java
+
+import com.joush.domain.User;
+import com.joush.mapper.UserMapper;
+import org.junit.jupiter.api.Test; // 注意 test 的导包位置
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
+
+@SpringBootTest
+public class MybatisTest {
+    @Autowired
+    private UserMapper userMapper;
+
+    @Test
+    void mybatisTest(){
+        List<User> users = userMapper.queryUserList();
+        System.out.println(users);
+    }
+}
+```
+
+#### Spring Boot 集成 Spring Data JPA
+
+#### Spring Boot 集成 Redis 
+* 添加起步依赖
+```xml
+<!--  pom.xml  -->
+<!--  Redis 起步依赖  -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
+```
+* 添加 redis 配置信息
+```properties
+# resources.application.properties
+# redis 连接信息
+spring.redis.host=127.0.0.1
+spring.redis.port=6379
+```
+* 编写测试
+```java
+// com.joush.RedisTest.java
+// 测试之前需先打开 redis 服务器
+@SpringBootTest
+public class RedisTest {
+
+    @Autowired
+    private RedisTemplate<String, String> redisTemplate; // redis 模板对象
+
+    @Autowired
+    private UserMapper userMapper; // 数据库对象
+
+    @Test
+    public void redisTest() throws JsonProcessingException {
+
+        // 1.从 redis 获取数据，数据形式为 json
+        String userListJson = redisTemplate.boundValueOps("user.findAll").get(); // 获取数据
+
+        // 2.判断 redis 是否存在该数据
+        if (null == userListJson){
+            // 3.不存在，去数据库查询
+            List<User> users = userMapper.queryUserList();
+
+            // 4.将查询的结果放入 json 格式，使用 jackson 转换
+            ObjectMapper objectMapper = new ObjectMapper(); // jackson 转换 json
+            userListJson = objectMapper.writeValueAsString(users);
+
+            redisTemplate.boundValueOps("user.findAll").set(userListJson); // 写入 json 数据
+
+            System.out.println("数据库中查询获得 User");
+        } else {
+            // 5.打印
+            System.out.println("获取 redis 缓存");
+        }
+
+        System.out.println(userListJson);
+
+    }
+
+}
+```

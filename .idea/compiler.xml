@@ -51,6 +51,7 @@
         <module name="JavaEEDemo05Redis" />
         <module name="SpringDemo15AccountAopTransactionAnnotation" />
         <module name="SpringDemo12AdviceType" />
+        <module name="SpringBootDemo04Redis" />
         <module name="SpringDemo08AccountAnnotationWithoutXml" />
         <module name="SpringMVCDemo05Exception" />
       </profile>
@@ -75,6 +76,7 @@
       <module name="SpringBootDemo01Introduce" target="1.8" />
       <module name="SpringBootDemo02QuickCreate" target="1.8" />
       <module name="SpringBootDemo03Mybatis" target="1.8" />
+      <module name="SpringBootDemo04Redis" target="1.8" />
       <module name="SpringDemo01Introduction" target="1.8" />
       <module name="SpringDemo02IoC" target="1.8" />
       <module name="SpringDemo03Bean" target="1.8" />
@@ -111,6 +113,7 @@
       <module name="SpringBootDemo01Introduce" options="-parameters" />
       <module name="SpringBootDemo02QuickCreate" options="-parameters" />
       <module name="SpringBootDemo03Mybatis" options="-parameters" />
+      <module name="SpringBootDemo04Redis" options="-parameters" />
     </option>
   </component>
 </project>
