@@ -51,6 +51,7 @@
       <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception/SpringMVCDemo05Exception.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception/SpringMVCDemo05Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo06Interceptor/SpringMVCDemo06Interceptor.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo06Interceptor/SpringMVCDemo06Interceptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/SpringMVCDemo07SSM.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM/SpringMVCDemo07SSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vue/VueDemo01Introduction/VueDemo01Introduction.iml" filepath="$PROJECT_DIR$/Vue/VueDemo01Introduction/VueDemo01Introduction.iml" />
     </modules>
   </component>
 </project>

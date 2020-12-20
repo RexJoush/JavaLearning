@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-on:mouseover</title>
+	<meta charset="utf-8">
+	<style>
+		#div1, #div2 {
+			background-color: burlywood;
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div id="div1" @mouseover="fun1">
+			<textarea @mouseover="fun2($event)">这是一个文件域</textarea>
+		</div>
+
+		<!--<div id="div2" onmouseover="divmouseover()">
+			<textarea onmouseover="textareamouseover()">这是一个文件域</textarea>
+		</div>-->
+
+	</div>
+
+</body>
+	<script type="text/javascript">
+
+		// 传统 js 方式
+		function divmouseover(){
+			alert("鼠标移动到了 div 上");
+		}
+		function textareamouseover(){
+			alert("鼠标移动到了 textarea 上");
+			event.stopPropagation(); // 停止事件传播，即 textarea 的事件触发之后，不再触发父级元素 div 的事件
+		}
+
+
+		/*
+			@事件名称 等同于 v-on:事件名称
+			@mouseover 等同于 v-on:mouseover
+		 */
+		// view 写法
+		new Vue ({
+			el: "#app",
+			methods: {
+
+				fun1: function (event){
+					alert("鼠标停在 div 上")
+				},
+				fun2: function (event){
+					alert("鼠标停在 textarea 上");
+					event.stopPropagation();
+				}
+			}
+		})
+	</script>
+</html>

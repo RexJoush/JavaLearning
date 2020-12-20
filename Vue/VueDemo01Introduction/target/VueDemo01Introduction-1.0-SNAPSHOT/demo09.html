@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-model</title>
+	<meta charset="utf-8">
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<form action="" method="post">
+			<!--  v-model 可以从 data 中获取 json 数据格式的内容-->
+			username: <input type="text" name="username" v-model:value="user.username"><br>
+			password: <input type="text" name="password" v-model:value="user.password"><br>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+
+		// view model
+		new Vue({
+			el: "#app",
+			data: {
+				user: {
+					username: 'test',
+					password: '99999',
+				},
+			},
+			methods: {
+				fun1: function (){
+					alert("按下的是回车")
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>

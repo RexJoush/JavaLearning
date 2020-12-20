@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="SpringMVCDemo07SSM:war" />
+      <artifact name="VueDemo01Introduction:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -28,32 +28,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_6_0_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_55_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_55_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_55_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_55_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_55_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_55_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/java/com/joush/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/java/com/joush/joush/SpringBootDemo04RedisApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/java/com/joush/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/test/java/com/joush/RedisTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/VueDemo01Introduction_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/VueDemo01Introduction_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/VueDemo01Introduction.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/java/com/example/VueDemo01Introduction/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/java/com/example/VueDemo01Introduction/HelloResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/java/com/example/VueDemo01Introduction/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/resources/META-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo02.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo03.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo04.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo05.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo06.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo07.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo08.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo09.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBoot.md" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBoot.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -105,11 +104,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WorkSpace\JavaLearning\Vue\VueDemo01Introduction\src\main\webapp" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo04Redis\src\main\resources" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo04Redis\src\main\java\com\joush" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo03Mybatis\src\main\java\com\joush" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\resources" />
-      <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\java\com\joush" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\java" />
@@ -131,7 +130,15 @@
       <recent name="com.joush.template" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RedisTest.redisTest">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.37">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -139,22 +146,6 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MySpringBootApplication.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringBootDemo03Mybatis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.MySpringBootApplication" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -272,20 +263,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileUpload" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.37" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER" value="false" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="Tomcat 9.0.37" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.37" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="SpringMVCDemo04FileUploadServer:war">
+        <artifact name="VueDemo01Introduction:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/SpringMVCDemo04FileUploadServer" />
+            <option name="CONTEXT_PATH" value="/VueDemo01Introduction" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_JavaLearning_3" />
-        <option name="HTTP_PORT" value="8081" />
-        <option name="JNDI_PORT" value="1090" />
+        <option name="BASE_DIRECTORY_NAME" value="3de47b36-aac1-4161-9c74-2e19be05ae7a" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -293,80 +282,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="54546" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="SpringMVCDemo04FileUploadServer:war" />
-        </option>
-      </method>
-    </configuration>
-    <configuration name="Tomcat 9.0.37" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.37" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER" value="false" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="SpringMVCDemo07SSM:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/SpringMVCDemo07SSM" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_JavaLearning" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64308" />
+        <option name="DEBUG_PORT" value="65302" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -431,33 +347,32 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="SpringMVCDemo07SSM:war" />
+          <artifact name="VueDemo01Introduction:war exploded" />
         </option>
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="JUnit.MybatisTest.test" />
+      <item itemvalue="JUnit.SpringBootApplicationTests.mybatisTest" />
+      <item itemvalue="JUnit.MybatisTest.mybatisTest" />
+      <item itemvalue="JUnit.RedisTest.redisTest" />
       <item itemvalue="Spring Boot.QuickCreateApplication" />
-      <item itemvalue="Tomcat Server.FileUpload" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.37" />
       <item itemvalue="Spring Boot.Springbootdemo02quickcreateApplication" />
       <item itemvalue="Spring Boot.SpringBootDemo03MybatisApplication" />
       <item itemvalue="Spring Boot.Springbootdemo02quickcreateApplication (1)" />
       <item itemvalue="Spring Boot.SpringBootDemo02QuickCreateApplication" />
-      <item itemvalue="JUnit.MybatisTest.test" />
-      <item itemvalue="JUnit.MySpringBootApplication.test1" />
       <item itemvalue="Spring Boot.SpringBootDemo03MybatisApplication (1)" />
-      <item itemvalue="JUnit.SpringBootApplicationTests.mybatisTest" />
-      <item itemvalue="JUnit.MybatisTest.mybatisTest" />
       <item itemvalue="Spring Boot.SpringBootDemo04RedisApplication" />
-      <item itemvalue="JUnit.RedisTest.redisTest" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.37" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="JUnit.RedisTest.redisTest" />
         <item itemvalue="JUnit.MybatisTest.mybatisTest" />
         <item itemvalue="JUnit.SpringBootApplicationTests.mybatisTest" />
         <item itemvalue="JUnit.MybatisTest.test" />
-        <item itemvalue="JUnit.MySpringBootApplication.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -498,7 +413,7 @@
       <workItem from="1607570849411" duration="16161000" />
       <workItem from="1607921595760" duration="67000" />
       <workItem from="1607921730822" duration="50000" />
-      <workItem from="1607921859374" duration="44908000" />
+      <workItem from="1607921859374" duration="56470000" />
     </task>
     <servers />
   </component>

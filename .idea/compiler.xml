@@ -6,53 +6,54 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MybatisDemo02Customize" />
         <module name="SpringDemo15AccountAopTransactionXml" />
         <module name="SpringMVCDemo01Introduce" />
-        <module name="SpringDemo06AccountXMLIoc" />
         <module name="SpringDemo14JdbcTemplate" />
         <module name="SpringDemo16AccountAopTransactionAnnotation" />
-        <module name="SpringMVCDemo02Response" />
         <module name="SpringBootDemo03Mybatis" />
+        <module name="MybatisDemo10Annotation" />
+        <module name="SpringMVCDemo06Interceptor" />
+        <module name="MybatisDemo01Introduction" />
+        <module name="MybatisDemo07MutipleToMultiple" />
+        <module name="SpringDemo19AnnotationTransactionWithoutXml" />
+        <module name="SpringDemo18TransactionBaseOnAnnotation" />
+        <module name="JavaEEDemo01ServletBasic" />
+        <module name="SpringBootDemo01Introduce" />
+        <module name="SpringDemo07AccountAnnotationIoc" />
+        <module name="SpringDemo13AnnotationAop" />
+        <module name="SpringDemo04DI" />
+        <module name="SpringDemo15AccountAopTran" />
+        <module name="VueDemo01Introduction" />
+        <module name="SpringDemo02IoC" />
+        <module name="SpringBootDemo02QuickCreate" />
+        <module name="SpringDemo10Proxy" />
+        <module name="SpringDemo03Bean" />
+        <module name="SpringDemo09AccountProject" />
+        <module name="SpringDemo01Introduction" />
+        <module name="SpringDemo12AdviceType" />
+        <module name="SpringBootDemo04Redis" />
+        <module name="SpringDemo08AccountAnnotationWithoutXml" />
+        <module name="MybatisDemo02Customize" />
+        <module name="SpringDemo06AccountXMLIoc" />
+        <module name="SpringMVCDemo02Response" />
         <module name="JavaEEDemo02CookieSession" />
         <module name="JavaEEDemo04AjaxJson" />
         <module name="MybatisDemo06MultipleTables" />
         <module name="SpringDemo17TransactionBaseOnSpring" />
-        <module name="MybatisDemo10Annotation" />
-        <module name="SpringMVCDemo06Interceptor" />
-        <module name="MybatisDemo01Introduction" />
         <module name="SpringMVCDemo07SSM" />
-        <module name="MybatisDemo07MutipleToMultiple" />
-        <module name="SpringDemo19AnnotationTransactionWithoutXml" />
-        <module name="SpringDemo18TransactionBaseOnAnnotation" />
         <module name="SpringMVCDemo03FileUpload" />
-        <module name="JavaEEDemo01ServletBasic" />
-        <module name="SpringBootDemo01Introduce" />
         <module name="SpringDemo05Annotation" />
         <module name="MybatisDemo03CRUD" />
         <module name="MybatisDemo08DelayLoading" />
         <module name="SpringDemo11Aop" />
         <module name="JavaEEDemo03FilterListener" />
         <module name="MybatisDemo04Dao" />
-        <module name="SpringDemo07AccountAnnotationIoc" />
-        <module name="SpringDemo13AnnotationAop" />
-        <module name="SpringDemo04DI" />
-        <module name="SpringDemo15AccountAopTran" />
         <module name="MybatisDemo11AnnotationMultipleTables" />
-        <module name="SpringDemo02IoC" />
-        <module name="SpringBootDemo02QuickCreate" />
-        <module name="SpringDemo10Proxy" />
-        <module name="SpringDemo03Bean" />
         <module name="MybatisDemo05DynamicSql" />
         <module name="SpringMVCDemo04FileUploadServer" />
-        <module name="SpringDemo09AccountProject" />
         <module name="MybatisDemo09Cache" />
-        <module name="SpringDemo01Introduction" />
         <module name="JavaEEDemo05Redis" />
         <module name="SpringDemo15AccountAopTransactionAnnotation" />
-        <module name="SpringDemo12AdviceType" />
-        <module name="SpringBootDemo04Redis" />
-        <module name="SpringDemo08AccountAnnotationWithoutXml" />
         <module name="SpringMVCDemo05Exception" />
       </profile>
     </annotationProcessing>
@@ -106,6 +107,7 @@
       <module name="SpringMVCDemo05Exception" target="1.8" />
       <module name="SpringMVCDemo06Interceptor" target="1.8" />
       <module name="SpringMVCDemo07SSM" target="1.8" />
+      <module name="VueDemo01Introduction" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

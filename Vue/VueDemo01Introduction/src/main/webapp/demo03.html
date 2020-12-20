@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-on:keydown</title>
+	<meta charset="utf-8">
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+		Vue：<input type="text" v-on:keydown="fun($event)">
+		<hr>
+		传统 JS<input type="text" onkeydown="showKeyCode()">
+
+	</div>
+
+</body>
+	<script type="text/javascript">
+
+		/*  传统的 js 键盘按下事件  */
+		function showKeyCode(){
+			// event 对象和我们的 document 对象以及 window 对象是一样的，可以不用定义
+			let keyCode = event.keyCode;
+			if (keyCode < 48 || keyCode > 57) { // 48 表示 0，57 表示 9，即表示除了数字之外的键
+				// 不让键盘的按键起作用，即不允许输入除数字之外的字符
+				event.preventDefault();
+			}
+		}
+
+		// view 写法
+		new Vue ({
+			el: "#app",
+			data: {
+				message: "hello vue!"
+			},
+			methods: {
+				/* $event 是 vue 中的事件对象，和传统 js 的 event 对象是一样的 */
+				fun: function (event){
+					let keyCode = event.keyCode;
+					if (keyCode < 48 || keyCode > 57) { // 48 表示 0，57 表示 9，即表示除了数字之外的键
+						// 不让键盘的按键起作用，即不允许输入除数字之外的字符
+						event.preventDefault();
+					}
+				}
+			}
+		})
+	</script>
+</html>

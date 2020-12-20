@@ -13,6 +13,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo06Interceptor" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM" />
+    <file type="web" url="file://$PROJECT_DIR$/Vue/VueDemo01Introduction" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -66,6 +67,7 @@
         <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/pom.xml" />
+        <option value="$PROJECT_DIR$/Vue/VueDemo01Introduction/pom.xml" />
       </list>
     </option>
   </component>

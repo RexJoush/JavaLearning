@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-for遍历数组</title>
+	<meta charset="utf-8">
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="(item, index) in product">{{item}} = {{index}}</li>
+		</ul>
+		<ul>
+			<li v-for="(key, value) in product">{{value}} = {{key}}</li>
+		</ul>
+		<table>
+			<tr v-for="(product, index) in products">
+				<td>{{index}}</td>
+				<td>{{product.id}}</td>
+				<td>{{product.name}}</td>
+				<td>{{product.price}}</td>
+			</tr>
+		</table>
+	</div>
+
+	<script type="text/javascript">
+
+		// view model
+		new Vue({
+			el: "#app",
+			data: {
+				arr: [1,2,3,4,5],
+				products: [
+					{id: 1, name: "电脑", price: 5000,},
+					{id: 2, name: "手机", price: 6000,},
+					{id: 3, name: "平板", price: 7000,}
+				],
+				product: {
+					id: 1,
+					name: "电脑",
+					price: 5000
+,				}
+			},
+			methods: {
+				fun1: function (){
+					alert("按下的是回车")
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>

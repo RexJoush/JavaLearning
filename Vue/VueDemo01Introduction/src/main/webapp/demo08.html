@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-bind</title>
+	<meta charset="utf-8">
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!--  插值表达式不能用于属性的赋值，想要使用，需要使用 v-bind  -->
+		<font size="5" v-bind:color="color1">rex</font>
+		<font size="5" v-bind:color="color2">joush</font>
+	</div>
+
+	<script type="text/javascript">
+
+		// view model
+		new Vue({
+			el: "#app",
+			data: {
+				color1: 'red',
+				color2: 'green',
+			},
+			methods: {
+				fun1: function (){
+					alert("按下的是回车")
+				}
+			}
+		})
+
+		// 传统 js 的 innerText 与 innerHTML
+		window.onload = function () {
+			// document.getElementById("div1").innerHTML = ("<h1>Hello</h1>");
+			// document.getElementById("div2").innerText = ("<h1>Hello</h1>");
+		}
+	</script>
+</body>
+</html>

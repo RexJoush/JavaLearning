@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>快速入门</title>
+	<meta charset="utf-8">
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{message}} 	<!--Vue 的插值表达式，将 data 中定义的数据显示到此处-->
+		{{ false ? "YES" : "NO"}}
+	</div>
+
+</body>
+	<script type="text/javascript">
+		// view model
+		// 创建 vue 对象
+		new Vue({
+			el: "#app", // 由 vue 接管 app 的 div 区域
+			data: {
+				message: "hello vue!",
+
+			}
+		})
+	</script>
+</html>

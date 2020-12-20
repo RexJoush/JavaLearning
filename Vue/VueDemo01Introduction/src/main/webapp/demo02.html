@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-on:click</title>
+	<meta charset="utf-8">
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+		<button v-on:click="func1('good')">Vue 的 onclick</button>
+
+	</div>
+
+</body>
+	<script type="text/javascript">
+		// view model
+		new Vue ({
+			el: "#app",
+			data: {
+				message: "hello vue!"
+			},
+			methods: {
+				func1: function (msg){
+					alert("hello");
+					this.message = msg;
+				}
+			}
+		})
+	</script>
+</html>
