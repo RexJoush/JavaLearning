@@ -28,31 +28,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/VueDemo01Introduction_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/VueDemo01Introduction_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/VueDemo01Introduction.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/java/com/example/VueDemo01Introduction/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/java/com/example/VueDemo01Introduction/HelloResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/java/com/example/VueDemo01Introduction/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo02.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo03.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo04.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo05.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo06.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo07.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo08.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo09.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/src/main/webapp/demo12.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/vue.md" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/vue.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,13 +119,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -413,7 +395,8 @@
       <workItem from="1607570849411" duration="16161000" />
       <workItem from="1607921595760" duration="67000" />
       <workItem from="1607921730822" duration="50000" />
-      <workItem from="1607921859374" duration="56470000" />
+      <workItem from="1607921859374" duration="58411000" />
+      <workItem from="1608553901733" duration="1947000" />
     </task>
     <servers />
   </component>

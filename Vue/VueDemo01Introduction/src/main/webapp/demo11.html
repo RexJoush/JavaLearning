@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-if 与 v-show</title>
+	<meta charset="utf-8">
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<span v-if="false">传智播客</span> <!--  v-if 根据表达式的值来确定是否渲染元素  -->
+
+		<span v-show="false">itcast</span> <!--  v-show 根据表达式的值来切换元素的 display css 属性-->
+		<button @click="toggle">切换</button>
+	</div>
+
+	<script type="text/javascript">
+
+		// view model
+		new Vue({
+			el:"#app",
+			data:{
+				flag:false
+			},
+			methods:{
+				toggle:function(){
+					this.flag = !this.flag;
+				}
+			}
+		})
+
+	</script>
+</body>
+</html>

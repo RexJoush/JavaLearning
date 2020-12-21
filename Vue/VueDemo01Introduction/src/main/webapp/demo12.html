@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-if 与 v-show</title>
+	<meta charset="utf-8">
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+	</div>
+
+	<script type="text/javascript">
+
+		let vm = new Vue({
+			el: "#app",
+			data: {
+				message: 'hello world'
+			},
+			beforeCreate: function () {
+				console.log(this);
+				showData('创建vue实例前', this);
+			},
+			created: function () {
+				showData('创建vue实例后', this);
+			},
+			beforeMount: function () {
+				showData('挂载到dom前', this);
+			},
+			mounted: function () {
+				showData('挂载到dom后', this);
+			},
+			beforeUpdate: function () {
+				showData('数据变化更新前', this);
+			},
+			updated: function () {
+				showData('数据变化更新后', this);
+			},
+			beforeDestroy: function () {
+				vm.test = "3333";
+				showData('vue实例销毁前', this);
+			},
+			destroyed: function () {
+				showData('vue实例销毁后', this);
+			}
+		});
+
+		function realDom() {
+			console.log('真实dom结构：' + document.getElementById('app').innerHTML);
+		}
+
+		function showData(process, obj) {
+			console.log(process);
+			console.log('data 数据：' + obj.message)
+			console.log('挂载的对象：')
+			console.log(obj.$el)
+			realDom();
+			console.log('------------------')
+			console.log('------------------')
+		}
+		// vm.message = "good...";
+		vm.$destroy();
+
+	</script>
+</body>
+</html>
