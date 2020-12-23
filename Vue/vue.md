@@ -48,7 +48,7 @@ Vue.js 是一个提供了 MVVM 风格的双向数据绑定的 Javascript 库，�
     <head>
       <meta charset="utf-8" />
       <title>快速入门</title>
-      <script src="js/vuejs-2.5.16.js"></script>
+      <script src="js/vue.js"></script>
     </head>
     <body>
         <div id="app">

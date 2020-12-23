@@ -14,6 +14,7 @@
         <module name="MybatisDemo10Annotation" />
         <module name="SpringMVCDemo06Interceptor" />
         <module name="MybatisDemo01Introduction" />
+        <module name="VueDemo02Project" />
         <module name="MybatisDemo07MutipleToMultiple" />
         <module name="SpringDemo19AnnotationTransactionWithoutXml" />
         <module name="SpringDemo18TransactionBaseOnAnnotation" />
@@ -108,6 +109,7 @@
       <module name="SpringMVCDemo06Interceptor" target="1.8" />
       <module name="SpringMVCDemo07SSM" target="1.8" />
       <module name="VueDemo01Introduction" target="1.8" />
+      <module name="VueDemo02Project" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -116,6 +118,7 @@
       <module name="SpringBootDemo02QuickCreate" options="-parameters" />
       <module name="SpringBootDemo03Mybatis" options="-parameters" />
       <module name="SpringBootDemo04Redis" options="-parameters" />
+      <module name="VueDemo02Project" options="-parameters" />
     </option>
   </component>
 </project>
