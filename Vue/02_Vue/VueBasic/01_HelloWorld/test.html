@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>01_HelloWorld</title>
+</head>
+
+<body>
+
+<!--
+    1. 引入Vue.js
+    2. 创建Vue对象
+        el : 指定根element(选择器)
+        data : 初始化数据(页面可以访问)
+    3. 双向数据绑定 : v-model
+    4. 显示数据 : {{xxx}}
+    5. 理解vue的mvvm实现
+-->
+
+<!--模板-->
+<div id="test">
+    <input type="text" v-model="msg"><br>
+    <!--指令-->
+    <input type="text" v-model="msg">
+    <!--指令-->
+    <p>hello {{msg}}</p>
+    <!--大括号表达式-->
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    const vm = new Vue({ // 配置对象 options
+        // 配置选项(option)
+        el: '#test',  // element: 指定用vue来管理页面中的哪个标签区域
+        data: {
+            msg: 'atguigu'
+        }
+    })
+</script>
+
+<!-- MVVM
+model，模型，即数据对象，就是 data
+view，视图，模板页面
+viewModel，视图模型，本质就是 vue 的实例
+
+-->
+</body>
+
+</html>
