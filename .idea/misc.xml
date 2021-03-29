@@ -13,6 +13,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo05Exception" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo06Interceptor" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVCDemo07SSM" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringSecurity" />
     <file type="web" url="file://$PROJECT_DIR$/Vue/VueDemo01Introduction" />
     <file type="web" url="file://$PROJECT_DIR$/Vue/VueDemo02Project" />
   </component>
@@ -70,6 +71,9 @@
         <option value="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/pom.xml" />
         <option value="$PROJECT_DIR$/Vue/VueDemo01Introduction/pom.xml" />
         <option value="$PROJECT_DIR$/Vue/VueDemo02Project/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/pom.xml" />
       </list>
     </option>
   </component>

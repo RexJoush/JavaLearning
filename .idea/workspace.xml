@@ -28,7 +28,145 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringBootSecurityDemo01_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringBootSecurityDemo01_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringBootSecurityDemo02_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringBootSecurityDemo02_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringBootSecurityDemo03_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringBootSecurityDemo03_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringSecurityDemo01Introduction_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpringSecurityDemo01Introduction_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/spring_security_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/spring_security_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_44.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_44.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_5_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_12_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_12_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/java/com/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/java/com/joush/controller/RouterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/level1/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/level1/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/level1/3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/level2/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/level2/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/level2/3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/level3/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/level3/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/level3/3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/src/main/resources/templates/views/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/java/com/joush/controller/RouterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/java/com/util/MySecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/level1/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/level1/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/level1/3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/level2/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/level2/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/level2/3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/level3/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/level3/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/level3/3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/java/com/joush/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/java/com/joush/config/MySecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/java/com/joush/controller/RouterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/level1/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/level1/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/level1/3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/level2/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/level2/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/level2/3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/level3/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/level3/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/level3/3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates/views/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringSecurity/SpringSecurity.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaEEDemo01ServletBasic_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JavaEEDemo01ServletBasic_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaEE/JavaEEDemo01ServletBasic/JavaEEDemo01ServletBasic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaEE/JavaEEDemo01ServletBasic/JavaEEDemo01ServletBasic.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaEE/JavaEEDemo01ServletBasic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaEE/JavaEEDemo01ServletBasic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaEE/JavaEEDemo01ServletBasic/target/classes/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaEE/JavaEEDemo01ServletBasic/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaEE/JavaEEDemo01ServletBasic/target/classes/druid.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo03CRUD/MybatisDemo03CRUD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mybatis/MybatisDemo03CRUD/MybatisDemo03CRUD.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo04Dao/MybatisDemo04Dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mybatis/MybatisDemo04Dao/MybatisDemo04Dao.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo05DynamicSql/MybatisDemo05DynamicSql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mybatis/MybatisDemo05DynamicSql/MybatisDemo05DynamicSql.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo06MultipleTables/MybatisDemo06MultipleTables.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mybatis/MybatisDemo06MultipleTables/MybatisDemo06MultipleTables.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo07MutipleToMultiple/MybatisDemo07MutipleToMultiple.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mybatis/MybatisDemo07MutipleToMultiple/MybatisDemo07MutipleToMultiple.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo08DelayLoading/MybatisDemo08DelayLoading.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mybatis/MybatisDemo08DelayLoading/MybatisDemo08DelayLoading.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo09Cache/MybatisDemo09Cache.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mybatis/MybatisDemo09Cache/MybatisDemo09Cache.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo10Annotation/MybatisDemo10Annotation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mybatis/MybatisDemo10Annotation/MybatisDemo10Annotation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mybatis/MybatisDemo11AnnotationMultipleTables/MybatisDemo11AnnotationMultipleTables.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mybatis/MybatisDemo11AnnotationMultipleTables/MybatisDemo11AnnotationMultipleTables.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo01Introduction/SpringDemo01Introduction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo01Introduction/SpringDemo01Introduction.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo02IoC/SpringDemo02IoC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo02IoC/SpringDemo02IoC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo03Bean/SpringDemo03Bean.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo03Bean/SpringDemo03Bean.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo04DI/SpringDemo04DI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo04DI/SpringDemo04DI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo05Annotation/SpringDemo05Annotation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo05Annotation/SpringDemo05Annotation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo06AccountXMLIoc/SpringDemo06AccountXMLIoc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/SpringDemo07AccountAnnotationIoc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo07AccountAnnotationIoc/SpringDemo07AccountAnnotationIoc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo08AccountAnnotationWithoutXml/SpringDemo08AccountAnnotationWithoutXml.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/SpringDemo09AccountProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo09AccountProject/SpringDemo09AccountProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/SpringDemo10Proxy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo10Proxy/SpringDemo10Proxy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo11Aop/SpringDemo11Aop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo11Aop/SpringDemo11Aop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/SpringDemo12AdviceType.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo12AdviceType/SpringDemo12AdviceType.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/SpringDemo13AnnotationAop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo13AnnotationAop/SpringDemo13AnnotationAop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/SpringDemo14JdbcTemplate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo14JdbcTemplate/SpringDemo14JdbcTemplate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo15AccountAopTransactionXml/SpringDemo15AccountAopTransactionXml.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo15AccountAopTransactionXml/SpringDemo15AccountAopTransactionXml.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo16AccountAopTransactionAnnotation/SpringDemo16AccountAopTransactionAnnotation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo16AccountAopTransactionAnnotation/SpringDemo16AccountAopTransactionAnnotation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo17TransactionBaseOnSpring/SpringDemo17TransactionBaseOnSpring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo17TransactionBaseOnSpring/SpringDemo17TransactionBaseOnSpring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo18TransactionBaseOnAnnotation/SpringDemo18TransactionBaseOnAnnotation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo18TransactionBaseOnAnnotation/SpringDemo18TransactionBaseOnAnnotation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring/SpringDemo19AnnotationTransactionWithoutXml/SpringDemo19AnnotationTransactionWithoutXml.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring/SpringDemo19AnnotationTransactionWithoutXml/SpringDemo19AnnotationTransactionWithoutXml.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/VueDemo01Introduction/VueDemo01Introduction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/VueDemo01Introduction/VueDemo01Introduction.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +180,28 @@
         <option value="spring-beans.schema" />
         <option value="Jsp File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/RexJoush/JavaLearning" />
+      </set>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -75,27 +228,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../local/Java/LeetcodeTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/src/main/resources/templates" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29804373" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\WorkSpace\JavaLearning\Vue\VueDemo02Project\src\main\webapp\js" />
-      <recent name="E:\WorkSpace\JavaLearning\Vue\VueDemo02Project\src\main\webapp" />
-      <recent name="E:\WorkSpace\JavaLearning\Vue\VueDemo01Introduction\src\main\webapp" />
-      <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo04Redis\src\main\resources" />
-      <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo04Redis\src\main\java\com\joush" />
+      <recent name="D:\WorkSpace\JavaLearning\SpringSecurity\SpringBootSecurityDemo03\src\main\resources\templates" />
+      <recent name="D:\WorkSpace\JavaLearning\SpringSecurity\SpringBootSecurityDemo02\src\main\resources\templates\views" />
+      <recent name="D:\WorkSpace\JavaLearning\SpringSecurity\SpringBootSecurityDemo01\src\main\resources\templates\views" />
+      <recent name="D:\WorkSpace\JavaLearning\SpringSecurity\SpringBootSecurityDemo01\src\main\resources\templates" />
+      <recent name="D:\WorkSpace\JavaLearning\SpringSecurity\SpringBootSecurityDemo01\src\main\resources\templates\views\level3" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WorkSpace\JavaLearning\SpringSecurity\SpringBootSecurityDemo02\src\main\resources\templates" />
+      <recent name="D:\WorkSpace\JavaLearning\SpringSecurity\SpringBootSecurityDemo03\src\main\resources\templates\views" />
+      <recent name="D:\WorkSpace\JavaLearning\SpringSecurity\SpringBootSecurityDemo01\src\main\resources\templates\views" />
       <recent name="E:\WorkSpace\JavaLearning\SpringBoot\SpringBootDemo02QuickCreate\src\main\java" />
       <recent name="E:\WorkSpace\JavaLearning\SpringMVC\SpringMVCDemo03FileUpload\src\main\resources" />
-      <recent name="E:\WorkSpace\JavaLearning\SpringMVC\SpringMVCDemo02Response\src\main\webapp\WEB-INF" />
-      <recent name="E:\WorkSpace\JavaLearning\SpringMVC\SpringMVCDemo01Introduce\src\main\webapp" />
-      <recent name="E:\WorkSpace\JavaLearning\Spring" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.joush" />
@@ -103,81 +257,52 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.joush.config" />
       <recent name="com.joush.controller" />
       <recent name="com.joush.interceptor" />
       <recent name="com.joush.test" />
       <recent name="com.joush.service.impl" />
-      <recent name="com.joush.template" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.VueProjectApplication">
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="11" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn verify install:install" />
+      <command value="mvn clean" />
+      <command value="mvn install" />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringBootSecurityDemo03Application">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VueProjectApplicationTests.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="VueDemo02Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.VueProjectApplicationTests" />
-      <option name="METHOD_NAME" value="testFindAll" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="SpringBootSecurityDemo02Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SpringBootSecurityDemo02" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.SpringBootSecurityDemo02Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VueProjectApplicationTests.testFindById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="VueDemo02Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.VueProjectApplicationTests" />
-      <option name="METHOD_NAME" value="testFindById" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="SpringBootSecurityDemo03Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SpringBootSecurityDemo03" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.SpringBootSecurityDemo03Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VueProjectApplicationTests.testUpdateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="VueDemo02Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.joush" />
-      <option name="MAIN_CLASS_NAME" value="com.joush.VueProjectApplicationTests" />
-      <option name="METHOD_NAME" value="testUpdateUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VueProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="VueDemo02Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.joush.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.VueProjectApplication" />
-      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+    <configuration name="SpringSecurityDemo01Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SpringBootSecurityDemo01" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.joush.SpringSecurityDemo01Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,12 +315,77 @@
           </settings>
         </artifact>
       </deployment>
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="0f208ab6-79fc-4977-9e25-811c0f24f496" />
+      </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49974" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -204,22 +394,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test" />
-      <item itemvalue="JUnit.VueProjectApplicationTests.testFindAll" />
-      <item itemvalue="JUnit.VueProjectApplicationTests.testFindById" />
-      <item itemvalue="JUnit.VueProjectApplicationTests.testUpdateUser" />
-      <item itemvalue="Spring Boot.VueProjectApplication" />
+      <item itemvalue="Spring Boot.SpringSecurityDemo01Application" />
+      <item itemvalue="Spring Boot.SpringBootSecurityDemo02Application" />
+      <item itemvalue="Spring Boot.SpringBootSecurityDemo03Application" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.37" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.VueProjectApplication" />
-        <item itemvalue="JUnit.VueProjectApplicationTests.testFindById" />
-        <item itemvalue="JUnit.VueProjectApplicationTests.testUpdateUser" />
-        <item itemvalue="JUnit.VueProjectApplicationTests.testFindAll" />
-        <item itemvalue="Application.Test" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -272,6 +451,15 @@
       <workItem from="1611138576587" duration="1182000" />
       <workItem from="1611303430847" duration="1554000" />
       <workItem from="1611386418898" duration="571000" />
+      <workItem from="1615725214690" duration="652000" />
+      <workItem from="1615774972245" duration="647000" />
+      <workItem from="1615885469380" duration="1624000" />
+      <workItem from="1616308301023" duration="620000" />
+      <workItem from="1616376373328" duration="2409000" />
+      <workItem from="1616461356257" duration="4034000" />
+      <workItem from="1616466812453" duration="5266000" />
+      <workItem from="1616483260889" duration="13122000" />
+      <workItem from="1616506509752" duration="20050000" />
     </task>
     <servers />
   </component>

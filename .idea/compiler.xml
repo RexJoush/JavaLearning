@@ -44,11 +44,14 @@
         <module name="SpringMVCDemo07SSM" />
         <module name="SpringMVCDemo03FileUpload" />
         <module name="SpringDemo05Annotation" />
+        <module name="SpringBootSecurityDemo01" />
         <module name="MybatisDemo03CRUD" />
         <module name="MybatisDemo08DelayLoading" />
         <module name="SpringDemo11Aop" />
         <module name="JavaEEDemo03FilterListener" />
         <module name="MybatisDemo04Dao" />
+        <module name="SpringBootSecurityDemo03" />
+        <module name="SpringBootSecurityDemo02" />
         <module name="MybatisDemo11AnnotationMultipleTables" />
         <module name="MybatisDemo05DynamicSql" />
         <module name="SpringMVCDemo04FileUploadServer" />
@@ -66,40 +69,44 @@
       <module name="JavaEEDemo05Redis" target="1.8" />
       <module name="MybatisDemo01Introduction" target="1.8" />
       <module name="MybatisDemo02Customize" target="1.8" />
-      <module name="MybatisDemo03CRUD" target="1.8" />
-      <module name="MybatisDemo04Dao" target="1.8" />
-      <module name="MybatisDemo05DynamicSql" target="1.8" />
-      <module name="MybatisDemo06MultipleTables" target="1.8" />
-      <module name="MybatisDemo07MutipleToMultiple" target="1.8" />
-      <module name="MybatisDemo08DelayLoading" target="1.8" />
-      <module name="MybatisDemo09Cache" target="1.8" />
-      <module name="MybatisDemo10Annotation" target="1.8" />
-      <module name="MybatisDemo11AnnotationMultipleTables" target="1.8" />
+      <module name="MybatisDemo03CRUD" target="1.5" />
+      <module name="MybatisDemo04Dao" target="1.5" />
+      <module name="MybatisDemo05DynamicSql" target="1.5" />
+      <module name="MybatisDemo06MultipleTables" target="1.5" />
+      <module name="MybatisDemo07MutipleToMultiple" target="1.5" />
+      <module name="MybatisDemo08DelayLoading" target="1.5" />
+      <module name="MybatisDemo09Cache" target="1.5" />
+      <module name="MybatisDemo10Annotation" target="1.5" />
+      <module name="MybatisDemo11AnnotationMultipleTables" target="1.5" />
+      <module name="spring-security" target="11" />
       <module name="SpringBootDemo01Introduce" target="1.8" />
-      <module name="SpringBootDemo02QuickCreate" target="1.8" />
-      <module name="SpringBootDemo03Mybatis" target="1.8" />
-      <module name="SpringBootDemo04Redis" target="1.8" />
-      <module name="SpringDemo01Introduction" target="1.8" />
-      <module name="SpringDemo02IoC" target="1.8" />
-      <module name="SpringDemo03Bean" target="1.8" />
-      <module name="SpringDemo04DI" target="1.8" />
-      <module name="SpringDemo05Annotation" target="1.8" />
-      <module name="SpringDemo06AccountXMLIoc" target="1.8" />
-      <module name="SpringDemo07AccountAnnotationIoc" target="1.8" />
-      <module name="SpringDemo08AccountAnnotationWithoutXml" target="1.8" />
-      <module name="SpringDemo09AccountProject" target="1.8" />
-      <module name="SpringDemo10Proxy" target="1.8" />
-      <module name="SpringDemo11Aop" target="1.8" />
-      <module name="SpringDemo12AdviceType" target="1.8" />
-      <module name="SpringDemo13AnnotationAop" target="1.8" />
-      <module name="SpringDemo14JdbcTemplate" target="1.8" />
+      <module name="SpringBootDemo02QuickCreate" target="11" />
+      <module name="SpringBootDemo03Mybatis" target="11" />
+      <module name="SpringBootDemo04Redis" target="11" />
+      <module name="SpringBootSecurityDemo01" target="11" />
+      <module name="SpringBootSecurityDemo02" target="11" />
+      <module name="SpringBootSecurityDemo03" target="11" />
+      <module name="SpringDemo01Introduction" target="1.5" />
+      <module name="SpringDemo02IoC" target="1.5" />
+      <module name="SpringDemo03Bean" target="1.5" />
+      <module name="SpringDemo04DI" target="1.5" />
+      <module name="SpringDemo05Annotation" target="1.5" />
+      <module name="SpringDemo06AccountXMLIoc" target="1.5" />
+      <module name="SpringDemo07AccountAnnotationIoc" target="1.5" />
+      <module name="SpringDemo08AccountAnnotationWithoutXml" target="1.5" />
+      <module name="SpringDemo09AccountProject" target="1.5" />
+      <module name="SpringDemo10Proxy" target="1.5" />
+      <module name="SpringDemo11Aop" target="1.5" />
+      <module name="SpringDemo12AdviceType" target="1.5" />
+      <module name="SpringDemo13AnnotationAop" target="1.5" />
+      <module name="SpringDemo14JdbcTemplate" target="1.5" />
       <module name="SpringDemo15AccountAopTran" target="1.8" />
       <module name="SpringDemo15AccountAopTransactionAnnotation" target="1.8" />
-      <module name="SpringDemo15AccountAopTransactionXml" target="1.8" />
-      <module name="SpringDemo16AccountAopTransactionAnnotation" target="1.8" />
-      <module name="SpringDemo17TransactionBaseOnSpring" target="1.8" />
-      <module name="SpringDemo18TransactionBaseOnAnnotation" target="1.8" />
-      <module name="SpringDemo19AnnotationTransactionWithoutXml" target="1.8" />
+      <module name="SpringDemo15AccountAopTransactionXml" target="1.5" />
+      <module name="SpringDemo16AccountAopTransactionAnnotation" target="1.5" />
+      <module name="SpringDemo17TransactionBaseOnSpring" target="1.5" />
+      <module name="SpringDemo18TransactionBaseOnAnnotation" target="1.5" />
+      <module name="SpringDemo19AnnotationTransactionWithoutXml" target="1.5" />
       <module name="SpringDemo20ProgrammingTransaction" target="1.8" />
       <module name="SpringMVCDemo01Introduce" target="1.8" />
       <module name="SpringMVCDemo02Response" target="1.8" />
@@ -108,8 +115,9 @@
       <module name="SpringMVCDemo05Exception" target="1.8" />
       <module name="SpringMVCDemo06Interceptor" target="1.8" />
       <module name="SpringMVCDemo07SSM" target="1.8" />
+      <module name="SpringSecurityDemo01Introduction" target="11" />
       <module name="VueDemo01Introduction" target="1.8" />
-      <module name="VueDemo02Project" target="1.8" />
+      <module name="VueDemo02Project" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -118,7 +126,12 @@
       <module name="SpringBootDemo02QuickCreate" options="-parameters" />
       <module name="SpringBootDemo03Mybatis" options="-parameters" />
       <module name="SpringBootDemo04Redis" options="-parameters" />
+      <module name="SpringBootSecurityDemo01" options="-parameters" />
+      <module name="SpringBootSecurityDemo02" options="-parameters" />
+      <module name="SpringBootSecurityDemo03" options="-parameters" />
+      <module name="SpringSecurityDemo01Introduction" options="-parameters" />
       <module name="VueDemo02Project" options="-parameters" />
+      <module name="spring-security" options="-parameters" />
     </option>
   </component>
 </project>

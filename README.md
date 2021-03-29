@@ -84,8 +84,14 @@
 |:---|:---|
 |Spring Boot|<a href="https://github.com/RexJoush/JavaLearning/blob/master/SpringBoot/SpringBoot.md">查看</a>|
 
+## Spring Security
+
+|内容|链接|
+|:---|:---|
+|Spring Security|<a href="https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md">查看</a>|
+
 ## Vue
 
 |内容|链接|
 |:---|:---|
-|Spring Boot|<a href="https://github.com/RexJoush/JavaLearning/blob/master/Vue/vue.md">查看</a>|
+|Vue|<a href="https://github.com/RexJoush/JavaLearning/blob/master/Vue/vue.md">查看</a>|

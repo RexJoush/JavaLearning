@@ -25,6 +25,9 @@
       <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/SpringBootDemo02QuickCreate.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBootDemo02QuickCreate/SpringBootDemo02QuickCreate.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/SpringBootDemo03Mybatis.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBootDemo03Mybatis/SpringBootDemo03Mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/SpringBootDemo04Redis.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBootDemo04Redis/SpringBootDemo04Redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/SpringBootSecurityDemo01.iml" filepath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo01/SpringBootSecurityDemo01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/SpringBootSecurityDemo02.iml" filepath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo02/SpringBootSecurityDemo02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/SpringBootSecurityDemo03.iml" filepath="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03/SpringBootSecurityDemo03.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo01Introduction/SpringDemo01Introduction.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo01Introduction/SpringDemo01Introduction.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo02IoC/SpringDemo02IoC.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo02IoC/SpringDemo02IoC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringDemo03Bean/SpringDemo03Bean.iml" filepath="$PROJECT_DIR$/Spring/SpringDemo03Bean/SpringDemo03Bean.iml" />
