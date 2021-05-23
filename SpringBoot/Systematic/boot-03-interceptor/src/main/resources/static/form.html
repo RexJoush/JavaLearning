@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<form action="/upload" method="post" enctype="multipart/form-data">
+  email:<input type="email" name="email"><br>
+  name:<input type="text" name="name"><br>
+  头像:<input type="file" name="image"><br>
+  生活照:<input type="file" name="photos" multiple><br>
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+spring:
+  redis:
+    url: redis://123456@www.rexjoush.com:6379
+    client-type: jedis
+management:
+  endpoints:
+    enabled-by-default: true # 默认开启所有端点
+    web:
+      exposure:
+        include: '*' # 以 web 方式暴露所有端点
+  endpoint:
+    health:
+      show-details: always # 显示健康的详情
+      enabled: true # 可以将所有关掉，开启部分端点
+    info:
+      enabled: true
