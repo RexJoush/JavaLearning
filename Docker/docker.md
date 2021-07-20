@@ -262,7 +262,7 @@ $ docker build -t="jdk1.8" .
 # 查看构建是否成功
 $ docker images
 ```
-#### 构建私有仓库
+## 构建私有仓库
 * 步骤
 ``` shell
 # 拉取私有仓库镜像
@@ -285,7 +285,7 @@ $ vi /etc/docker/daemon.json
 $ systemctl restart docker
 ```
 
-#### 上传镜像至私有仓库
+## 上传镜像至私有仓库
 
 * 步骤
 ``` shell
