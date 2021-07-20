@@ -1,140 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.joush</groupId>
-  <artifactId>SpringCloudDemo01</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <groupId>org.joush</groupId>
+    <artifactId>SpringCloudDemo01</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <modules>
-    <module>cloud-provider-payment8001</module>
-  </modules>
-
-
-  <name>Maven</name>
-  <!-- FIXME change it to the project's website -->
-  <url>https://maven.apache.org/</url>
-  <inceptionYear>2001</inceptionYear>
-
-  <distributionManagement>
-    <site>
-      <id>website</id>
-      <url>scp://webhost.company.com/www/website</url>
-    </site>
-  </distributionManagement>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
-  <!--
-    Maven 使用 dependencyManagement 元素来提供了一种管理依赖版本号的方式
-    通常会在一个组织或者项目的最顶层的父 POM 中看到 dependencyManagement
-
-    使用 pom.xml 中的 dependencyManagement 元素能让所有在子项目中引用一个依赖而不用显示的列出版本号
-    Maven 会沿着父子层级向上走，直到找到一个拥有 dependencyManagement 元素的项目，然后它就会使用这个
-    dependencyManagement 元素中指定的版本号
-
-    这样做的好处就是：如果有多个子项目都引用同一个依赖，则可以避免在每个使用的子项目里都声明一个版本号
-      这样当想升级或切换到另一个版本时，只需要在顶层父容器里更新，而不需要一个个子项目的修
-    另外如果某个子项目需要另外的一个版本，只需要声明 version 即可
+    <modules>
+        <module>cloud-provider-payment8001</module>
+        <module>cloud-provider-payment8002</module>
+        <module>cloud-consumer-order80</module>
+        <module>cloud-api-commons</module>
+        <module>cloud-eureka-server7001</module>
+        <module>cloud-eureka-server7002</module>
+        <module>cloud-provider-consul-payment8003</module>
+        <module>cloud-consumer-consul-order80</module>
+    </modules>
 
 
-    -->
-  <dependencyManagement>
-    <dependencies>
-      <!--  spring boot 2.4.3  -->
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.4.3</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+    <name>Maven</name>
+    <!-- FIXME change it to the project's website -->
+    <url>https://maven.apache.org/</url>
+    <inceptionYear>2001</inceptionYear>
 
-      <!--  spring cloud 2020.0.2  -->
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>2020.0.2</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+    <distributionManagement>
+        <site>
+            <id>website</id>
+            <url>scp://webhost.company.com/www/website</url>
+        </site>
+    </distributionManagement>
 
-      <dependency>
-        <groupId>com.alibaba.cloud</groupId>
-        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-        <version>2021.1</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 
-      <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.23</version>
-      </dependency>
+    <!--
+      Maven 使用 dependencyManagement 元素来提供了一种管理依赖版本号的方式
+      通常会在一个组织或者项目的最顶层的父 POM 中看到 dependencyManagement
 
-      <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>druid</artifactId>
-        <version>1.2.5</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mybatis.spring.boot</groupId>
-        <artifactId>mybatis-spring-boot-starter</artifactId>
-        <version>2.1.4</version>
-      </dependency>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-      </dependency>
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>1.2.17</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+      使用 pom.xml 中的 dependencyManagement 元素能让所有在子项目中引用一个依赖而不用显示的列出版本号
+      Maven 会沿着父子层级向上走，直到找到一个拥有 dependencyManagement 元素的项目，然后它就会使用这个
+      dependencyManagement 元素中指定的版本号
 
-  <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.7.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.9.1</version>
-        <configuration>
-          <locales>en,fr</locales>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+      这样做的好处就是：如果有多个子项目都引用同一个依赖，则可以避免在每个使用的子项目里都声明一个版本号
+        这样当想升级或切换到另一个版本时，只需要在顶层父容器里更新，而不需要一个个子项目的修
+      另外如果某个子项目需要另外的一个版本，只需要声明 version 即可
 
-  <reporting>
-    <plugins>
-      <plugin>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </reporting>
+
+      -->
+    <dependencyManagement>
+        <dependencies>
+            <!--  spring boot 2.4.3  -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.4.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--  spring cloud 2020.0.2  -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2020.0.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2021.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.23</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.2.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.1.4</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+            <plugins>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.7.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.1.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.9.1</version>
+                <configuration>
+                    <locales>en,fr</locales>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

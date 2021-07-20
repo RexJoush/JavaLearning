@@ -394,20 +394,21 @@ mycar:
         ```
         
     * @RequestBody  （获取请求体）
-    ```html
-    <form action="/save" method="post">
-            username: <input type="text" name="username">
-        email: <input type="text" name="email">
-            <input type="submit" value="submit">
-    </form>
-    ```
     
-    ```java
-    @PostMapping("/save")
-    public Map<String, Object> getCar(
-        // 获取特定 cookie 值
-        @CookieValue("token") String token){}
-    ```
+        ```html
+        <form action="/save" method="post">
+                username: <input type="text" name="username">
+            email: <input type="text" name="email">
+                <input type="submit" value="submit">
+        </form>
+        ```
+
+        ```java
+        @PostMapping("/save")
+        public Map<String, Object> getCar(
+            // 获取特定 cookie 值
+            @CookieValue("token") String token){}
+        ```
 
 
 #### 参数绑定
