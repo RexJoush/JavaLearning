@@ -854,7 +854,7 @@ public class PaymentMain8001 {
         ```java
         @SpringBootApplication
         @EnableEurekaClient
-        // 此处添加注解
+        // 此处添加注解	
         @LoadBalancerClients(defaultConfiguration = MySelfRule.class)
         public class OrderMainApplication {
         
