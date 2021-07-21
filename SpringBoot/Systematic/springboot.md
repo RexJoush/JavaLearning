@@ -1009,19 +1009,19 @@ public String upload(@RequestParam("email") String email,   // 普通属性
 
 * 添加连接 redis 配置
 
-    ```yaml
-    spring:
-      redis:
-        # 第一种，将所有信息配置到url中，或者分开连接也可，用户名和密码都可省
-      	# redis://user:password@example.com:6379
-        url: redis://123456@www.xxx.com:6379
-        
-        # 第二种
-        host: example.com
-        username: xxx
-        password: 123456
-        port: 6379
-    ```
+```yaml
+spring:
+  redis:
+# 第一种，将所有信息配置到url中，或者分开连接也可，用户名和密码都可省
+# redis://user:password@example.com:6379
+    url: redis://123456@www.xxx.com:6379
+    
+    # 第二种
+    host: example.com
+    username: xxx
+    password: 123456
+    port: 6379
+```
 
 * 存储和获取
 
@@ -1093,19 +1093,19 @@ public String upload(@RequestParam("email") String email,   // 普通属性
 
 * 配置暴露所有 endpoints
 
-    ```yaml
-    # managment 是所有 actutor 的配置 
-    management:
-      endpoints:
-        enabled-by-default: true  # 默认开启所有监控端点
-      	web:
-          exposure:
-            include: '*' # 以 web 方式暴露所有端点
-      endpoint:
-      # 某个端点的具体配置
-        health:
-          show-details: always # 显示健康的详情
-    ```
+```yaml
+# managment 是所有 actutor 的配置 
+management:
+  endpoints:
+    enabled-by-default: true  # 默认开启所有监控端点
+  	web:
+      exposure:
+        include: '*' # 以 web 方式暴露所有端点
+  endpoint:
+# 某个端点的具体配置
+    health:
+      show-details: always # 显示健康的详情
+```
 
 #### Health Endpoints
 
