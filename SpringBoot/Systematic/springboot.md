@@ -240,8 +240,6 @@ mycar:
               static-locations: [classpath:/haha/]
         ```
 
-        
-
 * 访问，静态映射/**
 
 * 静态资源访问前缀
@@ -253,13 +251,25 @@ mycar:
         static-path-pattern: /res/**
     ```
 
-    
-
 * 当有controller 和静态资源路径一样时，先访问controller，在访问静态资源
 
 * resources 下的目录结构
 
-    ![image-20210427140834101](C:\Users\joush\AppData\Roaming\Typora\typora-user-images\image-20210427140834101.png)
+```text
+resources|
+         |--META-INF|
+         |          |--resources
+         |--haha|
+         |      |--haha.txt
+         |--public
+         |      |--b.txt
+         |--resources
+         |      |--c.txt
+         |--static
+         |      |--d.txt
+         |      |--index.html
+         |--application.yml
+```
 
 * 访问
 
@@ -282,7 +292,7 @@ mycar:
 
     * 核心 filter
 
-        * 用法：表单 method=post，隐藏域 _method=put
+        * 用法：表单 method=post，隐藏域 `_method=put`
             ```html
             <!--  index.html  -->
             <html>
@@ -319,23 +329,21 @@ mycar:
             ```
 * rest 原理
 
-    * 表单提交会带上 _method=PUT
-    * 请求过来被HiddenHttpMethodFilter拦截
+    * 表单提交会带上 `_method=PUT`
+    * 请求过来被 HiddenHttpMethodFilter 拦截
         * 请求是否正常，并且是POST
-            * 获取到**_method**的值
+            * 获取到_method的值
             * 兼容以下请求
                 * PUT
                 * DELETE
                 * OPTION
             * 原生 request(post) 包装模式 requestWrpper 重写了 getMethod 方法，返回是传入的值，此处用到了装饰者模式
-            * 过滤器链放行的时候用 wrapper，以后的方法调用 getMethod 是调用 requestWrapper 的
+            * 过滤器链放行的时候用 wrapper，以后的方法调用 getMethod 是调用 requestWrapper
 
 #### 普通参数与基本注解
-
 * 注解
 
     * @PathVariable （路径变量）
-
         ```java
         @GetMapping("/car/{id}/owner/{username}")
         public Map<String, Object> getCar(
@@ -350,7 +358,6 @@ mycar:
         ```
 
     * @RequestHeader （获取请求头）
-
         ```java
         @GetMapping("/car/{id}/owner/{username}")
         public Map<String, Object> getCar(
@@ -360,12 +367,9 @@ mycar:
         	@RequestHeader Map<String, String> headers){}
         ```
 
-        
-
     * @ModeAttribute 
 
     * @RequestParam （获取请求参数）
-
         ```java
         @GetMapping("/car/{id}/owner/{username}")
             public Map<String, Object> getCar(
@@ -379,13 +383,11 @@ mycar:
         ```
 
     * @MatrixVariable （矩阵变量）
-
         ```HTML
         <a href="/cars/sell;low=34;brand=byd,audi,yadi">@MatrixVariable</a>
         ```
 
     * @CookieValue （获取cookie 值）
-
         ```java
         @GetMapping("/car/{id}/owner/{username}")
         public Map<String, Object> getCar(
@@ -394,7 +396,6 @@ mycar:
         ```
         
     * @RequestBody  （获取请求体）
-    
         ```html
         <form action="/save" method="post">
                 username: <input type="text" name="username">
@@ -402,7 +403,6 @@ mycar:
                 <input type="submit" value="submit">
         </form>
         ```
-
         ```java
         @PostMapping("/save")
         public Map<String, Object> getCar(
@@ -1102,7 +1102,7 @@ public String upload(@RequestParam("email") String email,   // 普通属性
           exposure:
             include: '*' # 以 web 方式暴露所有端点
       endpoint:
-      	# 某个端点的具体配置
+      # 某个端点的具体配置
         health:
           show-details: always # 显示健康的详情
     ```
