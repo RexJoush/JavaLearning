@@ -415,14 +415,13 @@ public class PaymentMain8001 {
 
 * 测试请求地址 `http://localhost/consumer/payment/get/6`
 
-    ```json
-    // 出现两种情况，8001，8002 轮询的执行请求，表示配置成功
+    ```js
     {
         code: 200,
-        message: "查询成功, serverPort: 8002",
+        message: '查询成功, serverPort: 8002',
         data: {
             id: 6,
-            serial: "ccc"
+            serial: 'ccc'
         }
     }
     ```
