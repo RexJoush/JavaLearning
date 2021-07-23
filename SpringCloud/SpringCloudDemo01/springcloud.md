@@ -719,7 +719,7 @@ public class PaymentMain8001 {
 
 #### 三个注册中心的异同
 
-# 6.负载均衡
+# 6.服务调用
 
 ## Ribbon
 
@@ -868,3 +868,289 @@ public class PaymentMain8001 {
 
 #### Ribbon 负载均衡算法
 
+* 原理
+
+    * rest 接口第几次请求数 % 服务器集群总数量 = 实际调用服务器位置下表，每次服务器重新启动后 rest 接口计数从1开始
+
+* 源码
+
+    ```java
+    // org.springframework.cloud.loadbalancer.core.RandomLoadBalancer
+    // 此处用到了 CAS 自旋锁的知识
+    public Mono<Response<ServiceInstance>> choose(Request request) {
+        ServiceInstanceListSupplier supplier = (ServiceInstanceListSupplier)this.serviceInstanceListSupplierProvider.getIfAvailable(NoopServiceInstanceListSupplier::new);
+        return supplier.get(request).next().map((serviceInstances) -> {
+            return this.processInstanceResponse(supplier, serviceInstances);
+        });
+    }
+    ```
+
+    
+
+* 手写
+
+    * 定义接口
+
+        ```java
+        // SpringCloudDemo01.cloud-consumer-order80.src.main.java.com.joush.lb.LoadBalancer.java
+        /**
+         * 自实现轮询负载均衡算法
+         */
+        public interface LoadBalancer {
+        
+            ServiceInstance instances(List<ServiceInstance> serviceInstances);
+        
+        }
+        ```
+
+    * 实现负载均衡算法
+
+        ```java
+        // SpringCloudDemo01.cloud-consumer-order80.src.main.java.com.joush.lb.MyLB.java
+        @Component
+        public class MyLB implements LoadBalancer{
+        
+            // 一个原子数字类
+            private AtomicInteger atomicInteger = new AtomicInteger(0);
+        
+            // 自旋锁实现自增加 1
+            public final int getAndIncrement(){
+                int current;
+                int next;
+        
+                do {
+                    current = this.atomicInteger.get();
+                    next = current >= 2147483647 ? 0 : current + 1;
+                } while (!this.atomicInteger.compareAndSet(current, next));
+        
+                System.out.println("times: " + next);
+                return next;
+            }
+        
+            @Override
+            public ServiceInstance instances(List<ServiceInstance> serviceInstances) {
+                // 获取负载均衡的值
+                int index = getAndIncrement() % serviceInstances.size();
+        
+                // 返回进程内负载均衡
+                return serviceInstances.get(index);
+            }
+        }
+        ```
+
+    * 调用
+
+        ```java
+        // SpringCloudDemo01.cloud-consumer-order80.src.main.java.com.joush.controller.OrderController.java
+        @GetMapping("/consumer/payment/lb")
+        public String getPaymentLB(){
+            // 获取所有服务
+            List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        
+            // 无效服务
+            if (instances == null || instances.size() <= 0){
+                return null;
+            }
+        
+            ServiceInstance serviceInstance = loadBalancer.instances(instances);
+        
+            URI uri = serviceInstance.getUri();
+        
+            return restTemplate.getForObject(uri + "payment/lb", String.class);
+        }
+        ```
+
+## OpenFeign
+
+#### 概述
+
+* OpenFeign 是什么
+
+    * [官网](https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/)
+    * Feign 是一个声明式的 WebService客户端。使用 Feign能让编写 WebService 客户端更加简单。
+    * 使用方法是定义一个服务接口，然后添加注解。Feign 也支持可拔插式的编码器和解码器。
+    * Spring cloud 对 Feign 进行了封装，使其支持了 Spring MVC 标准注解和 HttpMessageConverters。
+    * Feign 可以与 Eureka 和 Ribbon 组合使用以支持负载均衡
+
+* OpenFeign 能干什么
+
+    * Feign 旨在使编写 Java Http 客户端变得更容易
+
+        ```text
+        前面在使用 Ribbon + RestTemplate 时，利用 RestTemplate 对 http 请求的封装处理，形成了一套模板化的调用方法。但在实际开发中，由于对服务依赖的调用可能不止一处，往往一个接口会被多处调用，所以通常都会针对每个微服务自行封装一些客户端类来包装这些依赖服务的调用。所以，Feign在此基础上做了进一步封装，由他来帮助我们定义和实现依赖服务接口的定义。在 Feign 的实现下，我们只需创建一个接口并使用注解的方式来配置即可（以前是 Dao 接口上面标注 Mapper 注解，现在是一个微服务接口上面标注一个 Feign 注解即可），简化了 Spring Cloud Ribbon 时，自动封装服务调用客户端的开发量
+        ```
+
+    * Feign 集成了 Ribbon
+
+        ```text
+        利用 Ribbon 维护了 Payment 的服务列表信息，并且通过轮询实现了客户端的负载均衡。而与 Ribbon 不同，通过 Frign 只需要定义服务绑定接口且以声明式的方法，优雅而且简单的实现了服务。
+        ```
+
+#### OpenFeign 使用步骤
+
+* 接口 + 注解
+
+* 新建 cloud-consumer-feign-order80
+
+* POM
+
+    ```xml
+    <!--  SpringCloudDemo01.cloud-consumer-order80.src.pom.xml  -->
+    <!--  引入 openfeign  -->
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
+    ```
+
+* YML
+
+    ```yml
+    # SpringCloudDemo01.cloud-consumer-feign-order80.src.main.resources.application.yml
+    server:
+      port: 80
+    eureka:
+      client:
+        register-with-eureka: false
+        service-url:
+          defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka # 集群版
+    
+    ```
+
+* 主启动
+
+    ```java
+    // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.OrderMainOpenFeignApplication.java
+    @SpringBootApplication
+    @EnableFeignClients // 激活并开启 openfeign
+    public class OrderMainOpenFeignApplication {
+    
+        public static void main(String[] args) {
+            SpringApplication.run(OrderMainOpenFeignApplication.class);
+        }
+    
+    }
+    ```
+
+* 业务类
+
+    * 业务逻辑接口 + @FeignClient 配置调用 provider 服务
+
+    * 新建 PaymentFeignService 接口并新增注解 @FeignClient
+
+        ```java
+        // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.service.PaymentFeignService.java
+        @Component
+        @FeignClient(value = "CLOUD-PAYMENT-SERVICE")
+        public interface PaymentFeignService {
+            
+            // 此处 value = '' 必须写，不然会找不到方法
+            @GetMapping(value = "/payment/getPaymentById/{id}")
+            CommonResult<Payment> getPaymentById(@Param("id") int id);
+        
+        }
+        ```
+
+    * 控制层 Controller
+
+        ```java
+        // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.controller.OrderFeignController.java
+        @RestController
+        public class OrderFeignController {
+        
+            @Resource
+            private PaymentFeignService paymentFeignService;
+        
+            @GetMapping("/consumer/payment/get/{id}")
+            public CommonResult<Payment> getPaymentById(@PathVariable("id") int id){
+        
+                return paymentFeignService.getPaymentById(id);
+        
+            }
+        
+        }
+        ```
+
+* 测试
+
+    * 启动 eureka 集群 7001/7002
+    * 启动微服务提供者 8001/8002
+    * 启动 OpenFeign
+    * `http://localhost/consumer/payment/get/6`
+    * Feign 自带负载均衡配置
+
+* 总结
+
+#### OpenFeign 超时控制
+
+* 经测试，Spring Cloud 2020 以后 ribbon 已经被整体移出了，所以此处设置不生效
+
+* 超时设置，故意设置超时演示出错情况
+
+* OpenFeign默认等待 1 s，超过后报错
+
+* 是什么
+
+* YML 文件中需要开启 OpenFeign 客户端超时控制 
+
+    ```yml
+    # SpringCloudDemo01.cloud-consumer-feign-order80.src.main.resources.application.yml
+    ribbon:
+      ReadTimeout: 5000 # 建立连接到读取资源的所用时间
+      ConnectTimeout: 5000 # 建立连接所用时间
+    ```
+
+#### OpenFeign 日志打印功能
+
+* Feigin 提供了日志打印功能，我们可以通过配置来调整日志级别，从而了解 Feign 中 Http 请求的细节
+
+* 日志级别
+
+    * NONE: 默认的，不显示日志
+
+    * BASIC: 仅记录方法、URL、响应状态码及执行时间
+    * HEADERS: 除 BASIC 中定义的信息外，还有请求和响应的头信息
+    * FULL: 除了 HEADERS 中的信息之外，还有请求和响应的正文以及元数据
+
+* 开启日志
+
+    * 添加日志级别组件
+
+        ```java
+        // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.config.FeignConfig.java
+        @Configuration
+        public class FeignConfig {
+        
+            @Bean
+            Logger.Level feignLoggerLevel(){
+                return Logger.Level.FULL;
+            }
+        
+        }
+        ```
+
+        ```yml
+        # SpringCloudDemo01.cloud-consumer-feign-order80.src.main.resources.application.yml
+        logging:
+          level:
+            # feign 日志以什么级别监控哪个接口
+            com.joush.service.paymentFeignService: debug
+        ```
+
+        ```java
+        // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.service.PaymentFeignService.java
+        // 此处加上 configuration，值是配置类的字节码文件
+        @Component
+        @FeignClient(value = "CLOUD-PAYMENT-SERVICE", configuration = FeignConfig.class)
+        public interface PaymentFeignService {
+        
+            // 此处 value = '' 必须写，不然会找不到方法
+            @GetMapping(value = "/payment/getPaymentById/{id}")
+            CommonResult<Payment> getPaymentById(@PathVariable("id") int id);
+        
+            @GetMapping(value = "/payment/feign/timeout")
+            String paymentFeignTimeout();
+        }
+        ```
+
+        

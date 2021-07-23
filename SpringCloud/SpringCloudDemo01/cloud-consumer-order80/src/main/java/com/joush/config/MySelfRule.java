@@ -17,9 +17,9 @@ import org.springframework.core.env.Environment;
 /**
  * spring-cloud-loadbalancer 自定义规则类
  */
-@Configuration
+// @Configuration
 public class MySelfRule {
-    @Bean
+    // @Bean
     public ReactorLoadBalancer<ServiceInstance> randomLoadBalancer(Environment environment,
                                                                    LoadBalancerClientFactory loadBalancerClientFactory){
         String name = environment.getProperty(LoadBalancerClientFactory.PROPERTY_NAME);

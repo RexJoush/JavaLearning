@@ -13,7 +13,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@LoadBalancerClients(defaultConfiguration = MySelfRule.class)
+// @LoadBalancerClients(defaultConfiguration = MySelfRule.class)
 public class OrderMainApplication {
 
     public static void main(String[] args) {
