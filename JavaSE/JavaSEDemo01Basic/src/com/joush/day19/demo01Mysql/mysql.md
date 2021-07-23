@@ -506,14 +506,18 @@
 #### 内连接查询
 * 隐式内连接：使用 where 条件消除无用数据
     例子
+        ``` sql
         select * from emp e,dept d where e.id = d.id;
+        ```
 * 显示内连接：
     - 语法
         select 字段列表 from 表名1 inner join 表名2 on 条件
         例子
+            ``` sql
             select * from emp [inner] join dept on emp.id = dept.id;
             -- inner 可省
             select * from emp join dept on emp.id = dept.id;
+            ```
 * 内连接查询
     - 从哪些表中查询
     - 条件是什么
