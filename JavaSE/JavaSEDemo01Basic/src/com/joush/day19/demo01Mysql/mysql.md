@@ -5,7 +5,7 @@
         ``` sql
         -- 创建名为 my_database 的数据库
         create database my_database;
-        ``` 
+        ```
     - 创建数据库，判断是否存在，再创建
         ``` sql
         -- 如果不存在，创建名为 my_database 的数据库
@@ -21,7 +21,7 @@
         -- 创建名为 my_database 的数据库（如果不存在），设置默认字符集为 utf-8
         create database if not exists my_database character set utf8; 
         ```
-             
+    
 * R Retrieve(查询)
     ``` sql
     -- 查询所有数据库的名称
@@ -29,13 +29,13 @@
     -- 查询名字为 mysql数据库的创建语句
     show create database mysql; 
     ```
-        
+    
 * U Update(修改)
     ``` sql
     -- 修改数据库的字符集
     alter database my_database character set utf8; 将数据库 my_database 字符集改为 utf8 
     ```
-        
+    
 * D Delete(删除)
     - 删除数据库
         ``` sql
@@ -48,7 +48,7 @@
         -- 如果存在，再删除 my_database 数据库
         drop database if exists my_database; 
         ```
-     
+    
     - 使用数据库
         ``` sql
         -- 查询当前正在使用的数据库
@@ -72,17 +72,17 @@
         - 最后一列不加 **,**
         - 数据库类型
         ``` sql
-        - int --整型 
+        -- int --整型 
             age int,
-        - double -- 浮点型
+        -- double -- 浮点型
             socre double(5,2), -- 五位长度，两位小数
-        - date -- 日期，只包含年月日
+        -- date -- 日期，只包含年月日
             yyyy-MM-dd
-        - datetime -- 日期，包含年月日时分秒
+        -- datetime -- 日期，包含年月日时分秒
             yyyy-MM-dd HH:mm:ss
-        - timestamp -- 时间戳类型，包含年月日时分秒
+        -- timestamp -- 时间戳类型，包含年月日时分秒
             yyyy-MM-dd HH:mm:ss, -- 如果不给这个字段赋值，或赋值为 null，则默认使用当前系统时间，来自动赋值
-        - varchar() -- 可变长字符串
+        -- varchar() -- 可变长字符串
             name varchar(10), -- 最大长度为 10 的字符串
         ```
     - test
@@ -116,7 +116,7 @@
 * U Update(修改)
     - 修改表名
         ``` sql
-        --将 my_table 表修改名字为 new_table
+        -- 将 my_table 表修改名字为 new_table
         alter table my_table rename to new_table;
         ```
     - 修改表的字符集
@@ -129,8 +129,8 @@
     - 添加一列
         ``` sql
       -- 给 my_table 添加一列，名为 col_name，数据类型为 data_type
-        alter table my_table add col_name data_type;
-        ```
+      alter table my_table add col_name data_type;
+      ```
     - 修改列的类型、名称
         - 修改列的名称和类型
         ``` sql
@@ -158,7 +158,7 @@
 ## DML (Data Manipulation Language) 数据操纵语言
 #### 增删改表中的数据
 * 添加数据
-    
+  
     - 语法
     ``` sql
     insert into my_table (col_name1, col_name2, col_name3, ..., col_namen) values (value1, value2, value3, ... valuen);
@@ -407,9 +407,9 @@
                 id int primary key auto_increment,
                 name varchar(20)
             );
-          
+            
             alter table stu id int auto_increment;
-            ```             
+            ```
         - 删除自动增长
             ``` sql
             alter table stu modify id int;
@@ -443,9 +443,9 @@
             ```
         - 分类
             ``` sql
-            - 级联更新
+            -- 级联更新
                 on update cascade;
-            - 级联删除
+            -- 级联删除
                 on delete cascade;
             ```
 
@@ -506,14 +506,14 @@
 #### 内连接查询
 * 隐式内连接：使用 where 条件消除无用数据
     例子
-        ``` sql
+        ```sql
         select * from emp e,dept d where e.id = d.id;
         ```
 * 显示内连接：
     - 语法
         select 字段列表 from 表名1 inner join 表名2 on 条件
         例子
-            ``` sql
+            ```sql
             select * from emp [inner] join dept on emp.id = dept.id;
             -- inner 可省
             select * from emp join dept on emp.id = dept.id;
@@ -562,7 +562,7 @@
         -- 如，查询员工的入职日期是2011-11-11之后的员工信息和部门信息
         select * from dept t1, (select * from emp where emp.join_date > '2011-11-11') t2 where t1.id = t2.id;
         ```
-     
+    
 ## 事务
 #### 事务的基本介绍
 * 概念
@@ -586,7 +586,7 @@
         commit;
     -- 发现有问题，回滚
         rollback;
-    ```     
+    ```
     - mysql 数据库中事务默认自动提交
         - 事务提交的两种方式
             - 自动提交，一条 DML(增删改)语句会自动提交一次事务，mysql 默认自动提交
