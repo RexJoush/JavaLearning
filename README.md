@@ -492,6 +492,12 @@ My Java Learning Process. © 2020-2021 | Rex Joush
 
 		- [Ribbon 负载均衡算法](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/SpringCloudDemo01/springcloud.md#ribbon-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95)
 
+	- OpenFeign
+		- [概述](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/SpringCloudDemo01/springcloud.md#%E6%A6%82%E8%BF%B0-1)
+
+		- [OpenFeign 超时控制](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/SpringCloudDemo01/springcloud.md#openfeign-%E8%B6%85%E6%97%B6%E6%8E%A7%E5%88%B6)
+
+		- [OpenFeign 日志打印功能](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/SpringCloudDemo01/springcloud.md#openfeign-%E6%97%A5%E5%BF%97%E6%89%93%E5%8D%B0%E5%8A%9F%E8%83%BD)
 
 ## Spring Security
 
