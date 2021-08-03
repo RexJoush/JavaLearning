@@ -52,49 +52,82 @@ My Java Learning Process. © 2020-2021 | Rex Joush
 * [JDBC](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo02JDBC/jdbc.md)
 
 ##  Mysql
-#### DDL (Data Definition Language) 数据定义语言
-* [操作数据库](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93crud)
-		
-* [操作数据表](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%93%8D%E4%BD%9C%E8%A1%A8crud)
+* DDL (Data Definition Language) 数据定义语言
+	- [操作数据库](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93crud)
+			
+	- [操作数据表](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%93%8D%E4%BD%9C%E8%A1%A8crud)
 
-#### DML (Data Manipulation Language) 数据操纵语言
-* [增删改表中的数据](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%A2%9E%E5%88%A0%E6%94%B9%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE)
+* DML (Data Manipulation Language) 数据操纵语言
+	- [增删改表中的数据](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%A2%9E%E5%88%A0%E6%94%B9%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE)
 
-#### DQL (Data Query Language) 数据查询语言
-* [查询表中的数据](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%9F%A5%E8%AF%A2%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE)
+* DQL (Data Query Language) 数据查询语言
+	- [查询表中的数据](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%9F%A5%E8%AF%A2%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE)
 
-#### DCL (Data Control Language) 数据控制语言
-* [管理用户](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7)
+* DCL (Data Control Language) 数据控制语言
+	- [管理用户](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7)
 
-* [权限管理](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86)
+	- [权限管理](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86)
 
-#### 约束
-* [概念](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%A6%82%E5%BF%B5)
-* [分类](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%88%86%E7%B1%BB)
+* 约束
+	- [概念](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%A6%82%E5%BF%B5)
+	
+	- [分类](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%88%86%E7%B1%BB)
 
-#### 数据库设计
-* [多表之间的关系](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%A4%9A%E8%A1%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB)
+* 数据库设计
+	- [多表之间的关系](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%A4%9A%E8%A1%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB)
 
-* [数据库设计的范式](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%8C%83%E5%BC%8F%E8%AE%BE%E8%AE%A1%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E9%9C%80%E8%A6%81%E9%81%B5%E5%BE%AA%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%84%E8%8C%83%E8%A6%81%E9%81%B5%E5%BE%AA%E5%90%8E%E8%BE%B9%E7%9A%84%E8%8C%83%E5%BC%8F%E8%A6%81%E6%B1%82%E5%BF%85%E9%A1%BB%E5%85%88%E9%81%B5%E5%BE%AA%E5%89%8D%E9%9D%A2%E7%9A%84%E6%89%80%E6%9C%89%E8%8C%83%E5%BC%8F%E8%A6%81%E6%B1%82)
+	- [数据库设计的范式](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%8C%83%E5%BC%8F%E8%AE%BE%E8%AE%A1%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E9%9C%80%E8%A6%81%E9%81%B5%E5%BE%AA%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%84%E8%8C%83%E8%A6%81%E9%81%B5%E5%BE%AA%E5%90%8E%E8%BE%B9%E7%9A%84%E8%8C%83%E5%BC%8F%E8%A6%81%E6%B1%82%E5%BF%85%E9%A1%BB%E5%85%88%E9%81%B5%E5%BE%AA%E5%89%8D%E9%9D%A2%E7%9A%84%E6%89%80%E6%9C%89%E8%8C%83%E5%BC%8F%E8%A6%81%E6%B1%82)
 
-#### 数据库的备份和还原
-* [命令行](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%91%BD%E4%BB%A4%E8%A1%8C)
+* 数据库的备份和还原
+	- [命令行](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%91%BD%E4%BB%A4%E8%A1%8C)
 
-* [图形化工具](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%9B%BE%E5%BD%A2%E5%8C%96%E5%B7%A5%E5%85%B7)
+	- [图形化工具](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%9B%BE%E5%BD%A2%E5%8C%96%E5%B7%A5%E5%85%B7)
 
-#### 多表查询
-* [内连接查询](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%86%85%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2)
+* 多表查询
+	- [内连接查询](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%86%85%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2)
 
-* [外连接查询](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%A4%96%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2)
+	- [外连接查询](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%A4%96%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2)
 
-* [子查询](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%AD%90%E6%9F%A5%E8%AF%A2)
+	- [子查询](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%AD%90%E6%9F%A5%E8%AF%A2)
 
-#### 事务
-* [事务的基本介绍](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D)
+* 事务
+	- [事务的基本介绍](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D)
 
-* [事务的四大特征](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E5%BE%81)
+	- [事务的四大特征](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E5%BE%81)
 
-* [事务的隔离级别](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB)
+	- [事务的隔离级别](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB)
+
+* 变量
+	- [系统变量](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F)
+
+	- [自定义变量](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F)
+
+* 存储过程
+	- [使用说明](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
+
+	- [特性](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E7%89%B9%E6%80%A7)
+
+	- [创建语法](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%88%9B%E5%BB%BA%E8%AF%AD%E6%B3%95)
+
+	- [案例讲解](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%A1%88%E4%BE%8B%E8%AE%B2%E8%A7%A3)
+
+	- [案例](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%A1%88%E4%BE%8B)
+
+	- [存储过程相关语句](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9B%B8%E5%85%B3%E8%AF%AD%E5%8F%A5)
+
+* 函数
+	- [介绍](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E4%BB%8B%E7%BB%8D)
+
+	- [语法](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E8%AF%AD%E6%B3%95)
+
+	- [案例](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E6%A1%88%E4%BE%8B-1)
+
+	- [函数的相关语句](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%87%BD%E6%95%B0%E7%9A%84%E7%9B%B8%E5%85%B3%E8%AF%AD%E5%8F%A5)
+
+* 流程控制
+	- [分支结构](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84)
+
+	- [循环结构](https://github.com/RexJoush/JavaLearning/blob/master/JavaSE/JavaSEDemo01Basic/src/com/joush/day19/demo01Mysql/mysql.md#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84)
 
 
 ## JavaEE

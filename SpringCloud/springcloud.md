@@ -342,7 +342,7 @@ public class PaymentMain8001 {
     server:
       port: 8002
     ```
-
+    
 * Controller 层添加端口属性
 
     ```java
@@ -891,7 +891,7 @@ public class PaymentMain8001 {
 
     * 定义接口
         ```java
-        // SpringCloudDemo01.cloud-consumer-order80.src.main.java.com.joush.lb.LoadBalancer.java
+        // SpringCloudDemo01.cloud-consumer-order80.java.com.joush.lb.LoadBalancer.java
         
         /**
          * 自实现轮询负载均衡算法
@@ -905,7 +905,7 @@ public class PaymentMain8001 {
 
     * 实现负载均衡算法
         ```java
-        // SpringCloudDemo01.cloud-consumer-order80.src.main.java.com.joush.lb.MyLB.java
+        // SpringCloudDemo01.cloud-consumer-order80.java.com.joush.lb.MyLB.java
         @Component
         public class MyLB implements LoadBalancer{
         
@@ -939,7 +939,7 @@ public class PaymentMain8001 {
 
     * 调用
         ```java
-        // SpringCloudDemo01.cloud-consumer-order80.src.main.java.com.joush.controller.OrderController.java
+        // SpringCloudDemo01.cloud-consumer-order80.java.com.joush.controller.OrderController.java
         @GetMapping("/consumer/payment/lb")
         public String getPaymentLB(){
             // 获取所有服务
@@ -993,7 +993,7 @@ public class PaymentMain8001 {
 * POM
 
     ```xml
-    <!--  SpringCloudDemo01.cloud-consumer-order80.src.pom.xml  -->
+    <!--  SpringCloudDemo01.cloud-consumer-order80.pom.xml  -->
     <!--  引入 openfeign  -->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
@@ -1004,7 +1004,7 @@ public class PaymentMain8001 {
 * YML
 
     ```yml
-    # SpringCloudDemo01.cloud-consumer-feign-order80.src.main.resources.application.yml
+    # SpringCloudDemo01.cloud-consumer-feign-order80.main.resources.application.yml
     server:
       port: 80
     eureka:
@@ -1018,7 +1018,7 @@ public class PaymentMain8001 {
 * 主启动
 
     ```java
-    // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.OrderMainOpenFeignApplication.java
+    // SpringCloudDemo01.cloud-consumer-feign-order80.com.joush.OrderMainOpenFeignApplication.java
     @SpringBootApplication
     @EnableFeignClients // 激活并开启 openfeign
     public class OrderMainOpenFeignApplication {
@@ -1037,7 +1037,7 @@ public class PaymentMain8001 {
     * 新建 PaymentFeignService 接口并新增注解 @FeignClient
 
         ```java
-        // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.service.PaymentFeignService.java
+        // SpringCloudDemo01.cloud-consumer-feign-order80.com.joush.service.PaymentFeignService.java
         @Component
         @FeignClient(value = "CLOUD-PAYMENT-SERVICE")
         public interface PaymentFeignService {
@@ -1052,7 +1052,7 @@ public class PaymentMain8001 {
     * 控制层 Controller
 
         ```java
-        // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.controller.OrderFeignController.java
+        // SpringCloudDemo01.cloud-consumer-feign-order80.com.joush.controller.OrderFeignController.java
         @RestController
         public class OrderFeignController {
         
@@ -1092,7 +1092,7 @@ public class PaymentMain8001 {
 * YML 文件中需要开启 OpenFeign 客户端超时控制 
 
     ```yml
-    # SpringCloudDemo01.cloud-consumer-feign-order80.src.main.resources.application.yml
+    # SpringCloudDemo01.cloud-consumer-feign-order80.resources.application.yml
     ribbon:
       ReadTimeout: 5000 # 建立连接到读取资源的所用时间
       ConnectTimeout: 5000 # 建立连接所用时间
@@ -1115,7 +1115,7 @@ public class PaymentMain8001 {
     * 添加日志级别组件
 
         ```java
-        // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.config.FeignConfig.java
+        // SpringCloudDemo01.cloud-consumer-feign-order80.com.joush.config.FeignConfig.java
         @Configuration
         public class FeignConfig {
         
@@ -1128,7 +1128,7 @@ public class PaymentMain8001 {
         ```
 
         ```yml
-        # SpringCloudDemo01.cloud-consumer-feign-order80.src.main.resources.application.yml
+        # SpringCloudDemo01.cloud-consumer-feign-order80.main.resources.application.yml
         logging:
           level:
             # feign 日志以什么级别监控哪个接口
@@ -1136,13 +1136,13 @@ public class PaymentMain8001 {
         ```
 
         ```java
-        // SpringCloudDemo01.cloud-consumer-feign-order80.src.java.com.joush.service.PaymentFeignService.java
+        // SpringCloudDemo01.cloud-consumer-feign-order80.com.joush.service.PaymentFeignService.java
         // 此处加上 configuration，值是配置类的字节码文件
         @Component
         @FeignClient(value = "CLOUD-PAYMENT-SERVICE", configuration = FeignConfig.class)
         public interface PaymentFeignService {
         
-            // 此处 value = '' 必须写，不然会找不到方法
+            // 此处 value = “” 必须写，不然会找不到方法
             @GetMapping(value = "/payment/getPaymentById/{id}")
             CommonResult<Payment> getPaymentById(@PathVariable("id") int id);
         
@@ -1184,14 +1184,140 @@ public class PaymentMain8001 {
 #### Hystrix 案例
 
 * 构建
-    * 
+    * 新建 `cloud-eureka-server7001` 模块
+    * 新建 `cloud-provider-hystrix-payment8001 ` 模块
+    * 具体代码参考 `SpringCloudDemo02` 模块
+    * 测试
+        * 启动 `eureka7001`， `payment8001`
+        * 访问正常连接：<http://localhost:8001/payment/hystrix/ok/6>
+        * 异常连接: <http://localhost:8001/payment/hystrix/timeout/6>
+    
 * 高并发测试
+
+    * 介绍
+        * 使用 JMeter，20000个并发请求timeout地址
+        * 再次访问 ok 地址
+        * 出现等待问题，系统被卡死
+        * 原因是 tomcat 系统资源被占用过多
+        * 结论，如果消费者端 80 此时也进行高并发请求，那么消费者也只能等待，最终导致消费者 80 端不满
+    * 消费者加入
+        * 新建消费者模块 `cloud-consumer-feign-hystrix-order80`
+        * 继续压测，发现消费者端已经崩溃
+
 * 故障现象和导致原因
+
+    * 8001 同一层次的气筒接口服务呗困死，因为 tomcat 线程池里的线程被占用了
+    * 80 此时调用 8001，客户端访问响应缓慢
+
 * 上诉结论
+
+    * 因为由上述故障或不佳表现，才有了降级，容错，限流等技术的诞生
+
 * 如何解决
-* 服务降级
-* 服务熔断
-* 服务限流
+
+    * 超时导师服务器变慢，让用户不再等待
+    * 出错，宕机或程序出错，出错要有兜底
+    * 解决
+        * 对方服务（8001）超时或者宕机了，调用者（80）不能一直卡死等待，必须有服务降级
+        * 对方服务（8001）ok，调用者（80）自己出故障或者有自我要求（自己等待的时间小于服务提供者），自己处理降级
+
+#### 服务降级
+
+* 服务端服务降级（8001）
+    * 8001端解决，设置自身调用超时时间的峰值，峰值内可以正常运行，超过了需要有兜底的方法处理，作为服务降级 fallback
+
+    * 添加注解，并添加错误处理方法
+
+        ```java
+        // SpringCloudDemo02.cloud-provider-hystrix-payment8001.com.joush.service.impl.PaymentServiceImpl.java
+        
+        // 此处指定超时处理方法，指定超时时间
+            @HystrixCommand(fallbackMethod = "paymentInfoTimeoutHandler", commandProperties = {
+                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
+            })
+        @Override
+        public String paymentInfoTimeout(int id){
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        
+            return "线程池: " + Thread.currentThread().getName() + "paymentInfoTimeout\n" +
+                "id: " + id;
+        }
+        
+        /**
+         * 超时解决办法，此处不仅仅超时会处理，如果原方法抛出异常了也会进行处理。
+         * @param id
+         * @return
+         */
+        public String paymentInfoTimeoutHandler(int id){
+        
+            return "线程池: " + Thread.currentThread().getName() + "paymentInfoTimeoutHandler\n" +
+                "id: " + id + ", 超时处理";
+        }
+        ```
+
+    * 一旦调用服务方法失败并抛出了错误信息后，会自动调用 `@HystrixCommand` 标注好的 fallbackMethod 调用类中的指定方法
+
+    * 主启动类激活，添加注解 `@EnableCircuitBreaker`
+
+        ```java
+        // SpringCloudDemo02.cloud-provider-hystrix-payment8001.com.joush.PaymentHystrixMain8001.java
+        @SpringBootApplication
+        @EnableEurekaClient
+        @EnableCircuitBreaker
+        public class PaymentHystrixMain8001 {
+        
+            public static void main(String[] args) {
+                SpringApplication.run(PaymentHystrixMain8001.class);
+            }
+        
+        }
+        ```
+
+
+* 客户端服务降级（80）
+
+    * yml 添加支持
+
+        ```yml
+        # SpringCloudDemo02.cloud-provider-hystrix-payment8001.resources.application.yml
+        server:
+          port: 80
+        eureka:
+          client:
+            register-with-eureka: false
+            service-url:
+              defaultZone: http://eureka7001.com:7001/eureka/
+        # 添加 hystrix 支持
+        feign:
+          hystrix:
+            enabled: true
+        ```
+
+    * 主启动类添加支持
+
+        ```java
+        // SpringCloudDemo02.cloud-consumer-feign-hystrix-order80.com.joush.OrderHystrixMain80
+        @SpringBootApplication
+        @EnableFeignClients
+        @EnableHystrix // 添加服务降级支持
+        public class OrderHystrixMain80 {
+        
+            public static void main(String[] args) {
+                SpringApplication.run(OrderHystrixMain80.class);
+            }
+        
+        }
+        ```
+
+        
+
+#### 服务熔断
+
+#### 服务限流
 
 #### hystrix 工作流程
 
