@@ -1,0 +1,11 @@
+spring:
+#  security:
+#    user:
+#      name: joush
+#      password: 111111
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/javatest?serverTimezong=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456

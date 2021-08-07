@@ -1,6 +1,7 @@
 package com.joush.controller;
 
 import com.joush.service.PaymentHystrixService;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
  * @time 2021.07.30 16:24
  */
 @RestController
+// @DefaultProperties(defaultFallback = "paymentGlobalFallback")
 public class OrderHystrixController {
 
     @Resource
@@ -25,9 +27,10 @@ public class OrderHystrixController {
     }
 
     @GetMapping("/consumer/payment/hystrix/timeout/{id}")
-    @HystrixCommand(fallbackMethod = "paymentInfoTimeoutHandler", commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")
-    })
+    @HystrixCommand
+//    @HystrixCommand(fallbackMethod = "paymentInfoTimeoutHandler", commandProperties = {
+//            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")
+//    })
     public String paymentInfoTimeout(@PathVariable("id") int id){
         return paymentHystrixService.paymentInfoTimeout(id);
     }
@@ -38,6 +41,11 @@ public class OrderHystrixController {
                 "id: " + id + ", 超时处理, 80 端";
     }
 
+
+    // 全局 fallback 方法
+    public String paymentGlobalFallback(){
+        return "Global 异常处理信息，请稍后再试";
+    }
 
 
 }

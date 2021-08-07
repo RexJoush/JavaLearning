@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @time 2021.07.30 16:17
  */
 @Component
-@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT")
+// 此处指定该接口的 fallback 类为上一步新建的异常处理类
+@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT", fallback = PaymentFallbackService.class)
 public interface PaymentHystrixService {
 
     @GetMapping(value = "/payment/hystrix/ok/{id}")

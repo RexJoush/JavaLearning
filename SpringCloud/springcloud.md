@@ -1300,7 +1300,7 @@ public class PaymentMain8001 {
     * 主启动类添加支持
 
         ```java
-        // SpringCloudDemo02.cloud-consumer-feign-hystrix-order80.com.joush.OrderHystrixMain80
+        // SpringCloudDemo02.cloud-consumer-feign-hystrix-order80.com.joush.OrderHystrixMain80.java
         @SpringBootApplication
         @EnableFeignClients
         @EnableHystrix // 添加服务降级支持
@@ -1313,15 +1313,252 @@ public class PaymentMain8001 {
         }
         ```
 
+* 默认服务降级
+
+    * 每个方法都配置一个服务降级方法，则会造成代码膨胀，解决如下，添加全局服务降级方法
+
+        ```java
+        // SpringCloudDemo02.cloud-consumer-feign-hystrix-order80.com.joush.controller.OrderHystrixController.java
+        @RestController
+        @DefaultProperties(defaultFallback = "paymentGlobalFallback")
+        public class OrderHystrixController {
+            
+            @GetMapping("/consumer/payment/hystrix/timeout/{id}")
+            @HystrixCommand // 此注解不需要指明方法，即调用默认方法，如果指明，则使用指明的方法
+        //    @HystrixCommand(fallbackMethod = "paymentInfoTimeoutHandler", commandProperties = {
+        //            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")
+        //    })
+            public String paymentInfoTimeout(@PathVariable("id") int id){
+                return paymentHystrixService.paymentInfoTimeout(id);
+            }
+            
+            // 特殊 fallback 方法
+            public String paymentInfoTimeoutHandler(int id){
+                return "线程池: " + Thread.currentThread().getName() + "paymentInfoTimeoutHandler\n" +
+                        "id: " + id + ", 超时处理, 80 端";
+            }
+            
+            // 全局 fallback 方法
+            public String paymentGlobalFallback(){
+                return "Global 异常处理信息，请稍后再试";
+            }
+        }
+        ```
+
+* 服务降级方法在 controller 层和正常代码一起，造成代码杂糅，如何处理
+
+    * 服务降级，客户端去调用服务端，碰上服务端宕机或关闭，本次案例服务降级是在客户端80处理的，与服务端8001没有关系，只需要为 Feign 客户端定义的接口添加一个服务降级处理的实现类即可实现解耦
+
+    * 新建类实现要服务降级的 Feign 接口
+
+        ```java
+        // SpringCloudDemo02.cloud-consumer-feign-hystrix-order80.com.joush.service.PaymentFallbackService.java
+        @Component
+        public class PaymentFallbackService implements PaymentHystrixService{
+            @Override
+            public String paymentInfoOk(int id) {
+                return "PaymentFallbackService fall back";
+            }
         
+            @Override
+            public String paymentInfoTimeout(int id) {
+                return null;
+            }
+        }
+        ```
+
+    * 添加注解
+
+        ```java
+        // // SpringCloudDemo02.cloud-consumer-feign-hystrix-order80.com.joush.service.PaymentHystrixService.java
+        @Component
+        // 此处指定该接口的 fallback 类为上一步新建的异常处理类
+        @FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT", fallback = PaymentFallbackService.class)
+        public interface PaymentHystrixService {
+        
+            @GetMapping(value = "/payment/hystrix/ok/{id}")
+            String paymentInfoOk(@PathVariable("id") int id);
+        
+            @GetMapping(value = "/payment/hystrix/timeout/{id}")
+            String paymentInfoTimeout(@PathVariable("id") int id);
+        
+        }
+        ```
+
+* 测试
+    * 启动 eureka7001
+    * 启动 Payment8001
+    * 访问测试 <http://localhost/consumer/payment/hystrix/ok/6>
+    * 故意关闭 8001
+    * 查看调用提示
 
 #### 服务熔断
 
-#### 服务限流
+* 类别保险丝，达到最大访问后，直接拒绝访问，调用服务降级方法返回提示
+
+* 服务降级 --> 熔断 --> 恢复调用链路
+
+* 熔断概述
+    * 熔断是应对雪崩效应的一种微服务链路保护机制。和扇出链路的某个微服务出错不可用或者响应时间太长时，会进行服务降级，进而熔断该节点微服务的调用，快速返回错误的响应信息
+    * 当检测到该节点微服务调用响应正常后，恢复调用链路。
+    * 在 Spring Cloud 框架里，熔断机制通过  Hystrix 实现。Hystrix 会监控微服务间调用的状况，当失败调用到一定阈值，缺省是5秒内20次调用失败，就会启动熔断机制。熔断机制的注解是 `@HystrixCommand`
+
+* 熔断的三种状态
+    * 开放，系统正常提供服务，当超过自身承受力时，进入关闭状态
+    * 关闭，关闭状态时，不对外提供服务
+    * 半开，当关闭一段时间后，能够提供服务了，再小范围的提供服务，直至完全恢复正常
+
+* 修改 `cloud-provider-hystrix-payment8001`
+
+    * PaymentService
+
+        ```java
+        // SpringCloudDemo02.cloud-provider-hystrix-payment8001.com.joush.service.impl.PaymentServiceImpl.java
+        /*
+        	服务熔断部分
+        */
+        @HystrixCommand(fallbackMethod = "paymentCircuitBreakerFallback", commandProperties = {
+            @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),   // 是否开启断路器
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),  // 请求次数
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),   // 时间窗口期
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),   // 请求失败达到多少后执行熔断，按照百分比计算，超过 60%
+        })
+        public String paymentCircuitBreaker(@PathVariable("id") int id){
+            if (id < 0) {
+                throw new RuntimeException("id 不能为负数");
+            }
+        
+            String serialNumber = IdUtil.simpleUUID();
+        
+            return Thread.currentThread().getName() + " 调用成功，流水号: " + serialNumber;
+        }
+        
+        public String paymentCircuitBreakerFallback(@PathVariable("id") int id){
+            return "id 不能为服务，请稍后再试。 id: " + id;
+        }
+        ```
+
+    * PaymentController
+
+        ```java
+        // SpringCloudDemo02.cloud-provider-hystrix-payment8001.com.joush.controller.PaymentController.java
+        @GetMapping("/payment/circuit/{id}")
+        public String paymentCircuitBreaker(@PathVariable("id") int id){
+            String result = paymentService.paymentCircuitBreaker(id);
+            System.out.println(result);
+            return result;
+        }
+        ```
+
+* 测试
+    * 自测 cloud-provider-hystrix-payment8001
+    * 访问 <http://localhost:8001/payment/circuit/1> 发现正确返回
+    * 访问 <http://localhost:8001/payment/circuit/-1> 发现错误返回，快速访问错误结果，再次访问正确，发现依然返回错误，即表明已经产生熔断
+    * 过一段时间后，再次访问正确，发现已经恢复正常。
 
 #### hystrix 工作流程
 
+* [官网](https://github.com/Netflix/Hystrix/wiki/How-it-Works)
+* 流程图
+
+![image](https://github.com/Netflix/Hystrix/wiki/images/hystrix-command-flow-chart.png)
+
 #### 服务监控 HystrixDashboard
 
+* 简介
+    * 除了隔离依赖服务的调用外，Hystrix 还提供了准实时的调用监控（Hystirx Dashboard），Hystrix 会持续地记录所有通过 Hystrix 发起的请求执行信息，并统计报表以图形的形式展示给用户。
+    * Netfilx 通过 hystrix-metrics-event-stream 项目实现了对以上指标的监控。Spring Cloud 也提供了 Hystrix Dashboard 的整合，对监控内容转换成可视化界面。
 
+* 搭建
 
+    * 新建 module `cloud-consumer-hystrix-dashboard9001`
+
+    * 添加依赖
+
+        ```xml
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+            <version>2.2.9.RELEASE</version>
+        </dependency>
+        ```
+
+    * 添加配置
+
+        ```yml
+        server:
+          port: 9001
+        ```
+
+    * 主启动类添加注解
+
+        ```java
+        // SpringCloudDemo02.cloud-consumer-hystrix-dashboard9001.com.joush.HystrixDashboardMain9001.java
+        @SpringBootApplication
+        @EnableHystrixDashboard
+        public class HystrixDashboardMain9001 {
+            public static void main(String[] args) {
+                SpringApplication.run(HystrixDashboardMain9001.class);
+            }
+        }
+        ```
+
+    * 启动 9001，访问 <http://localhost:9001/hystrix>
+
+* 配置监控面板
+
+    * 修改 8001项目，再主启动类里添加一个 Servlet
+
+        ```java
+        // SpringCloudDemo02.cloud-provider-hystrix-payment8001.com.joush.PaymentHystrixMain8001.java
+        @SpringBootApplication
+        @EnableEurekaClient
+        @EnableCircuitBreaker
+        public class PaymentHystrixMain8001 {
+        
+            public static void main(String[] args) {
+                SpringApplication.run(PaymentHystrixMain8001.class);
+            }
+        
+            /**
+             * 此配置是为了服务监控而配置，与服务容错本身无关，spring cloud 升级后的坑
+             * ServletRegisterBean 因为 spring boot 的默认路径不是 "/hystrix.stream"
+             * 只要在自己的项目配置下面的 servlet 就可以实现了
+             */
+            @Bean
+            public ServletRegistrationBean getServlet(){
+                HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
+                ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
+                registrationBean.setLoadOnStartup(1);
+                registrationBean.addUrlMappings("/hystrix.stream");
+                registrationBean.setName("HystrixMetricsStreamServlet");
+                return registrationBean;
+            }
+        }
+        ```
+
+    * 启动 eureka 集群
+    * 在 9001 的页面上填写 8001 的监控地址 `http://localhost:8001/hystrix.stream`
+
+    * 访问几次服务，正确和错误的均访问几次 <http://localhost:8001/payment/circuit/1>
+
+    * 进入监控页面即可查看到相应的监控信息，如果出现错误 `Unable to connect to Command Metric Stream`，在 9001 的配置文件加入下面配置即可
+
+        ```yml
+        # SpringCloudDemo02.cloud-consumer-hystrix-dashboard9001.resources.application.yml
+        server:
+          port: 9001
+        hystrix:
+          dashboard:
+            proxy-stream-allow-list: localhost
+        ```
+
+# 8.Gateway 网关
+
+## 概述简介
+
+ 
+
+## 三大核心理念
+
+## Gateway 工作流程
