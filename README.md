@@ -513,7 +513,7 @@ My Java Learning Process. © 2020-2021 | Rex Joush
 
 		- [服务消费者](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85)
 
-* 负载均衡
+* 服务调用
 	- Ribbon
 		- [概述](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#%E6%A6%82%E8%BF%B0)
 
@@ -532,9 +532,58 @@ My Java Learning Process. © 2020-2021 | Rex Joush
 
 		- [OpenFeign 日志打印功能](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#openfeign-%E6%97%A5%E5%BF%97%E6%89%93%E5%8D%B0%E5%8A%9F%E8%83%BD)
 
+* 服务降级
+	- Hystrix 断路器
+		- [概述](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#%E6%A6%82%E8%BF%B0-2)
+
+		- [Hystrix 重要概念](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#hystrix-%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5)
+
+		- [Hystrix 案例](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#hystrix-%E6%A1%88%E4%BE%8B)
+
+		- [服务降级](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#%E6%9C%8D%E5%8A%A1%E9%99%8D%E7%BA%A7)
+
+		- [服务熔断](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#%E6%9C%8D%E5%8A%A1%E7%86%94%E6%96%AD)
+
+		- [hystrix 工作流程](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#hystrix-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B)
+
+		- [服务监控 HystrixDashboard](https://github.com/RexJoush/JavaLearning/blob/master/SpringCloud/springcloud.md#%E6%9C%8D%E5%8A%A1%E7%9B%91%E6%8E%A7-hystrixdashboard)
+
+* Gateway 网关
+
+
 ## Spring Security
 
-* [Spring Security](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md)
+* SpringSecurity 简介
+	- [概要](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E6%A6%82%E8%A6%81)
+
+	- [比较](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E6%AF%94%E8%BE%83)
+
+	- [模块划分](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86)
+
+	- [权限管理中的相关概念](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5)
+
+* Spring Security 入门案例
+	- [创建 Spring Boot 项目](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E5%88%9B%E5%BB%BA-spring-boot-%E9%A1%B9%E7%9B%AE)
+
+	- [Spring Security 基本原理](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#spring-security-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86)
+
+* Spring Security Web 认证
+	- [设置登录的用户名密码](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E8%AE%BE%E7%BD%AE%E7%99%BB%E5%BD%95%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81)
+
+	- [自定义登录页面](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2)
+
+* Spring Security Web 授权
+	- [授权访问控制](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6)
+
+	- [角色访问控制](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E8%A7%92%E8%89%B2%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6)
+
+	- [自定义 403 禁止页面](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E8%87%AA%E5%AE%9A%E4%B9%89-403-%E7%A6%81%E6%AD%A2%E9%A1%B5%E9%9D%A2)
+
+* 认证授权的注解使用
+	- [@Secured](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#secured)
+
+	- [@PreAuth](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#preauth)
+
 
 ## TypeScript
 

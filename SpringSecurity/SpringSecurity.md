@@ -1,133 +1,4 @@
-## Introduction
-
-* Spring Security 是针对于 Spring Boot 的安全框架。也是 Spring Boot 底层安全模块默认的技术选型，可以实现强大的 Web 安全控制。 
-* 对于安全控制，仅需引入 `spring-boot-starter-security` 模块，进行少量配置即可
-
-* 一些主要的类
-    - WebSecurityConfigurerAdapter，自定义 Security 策略
-    - AuthenticationManagerBuilder，自定义认证策略
-    - @EnableWebSecurity，开启 WebSecurity 模式
-
-* Spring Security 的两个主要目标是 Authentication(认证) 和 Authorization(授权)
-
-## 使用
-
-#### 准备静态资源
-
-* 引入 thymeleaf
-
-* 建立三个等级的静态页面 level1，level2，level3
-
-    ```text
-    SpringSecurityDemo01 resource 目录下的文件结构
-    resource|
-    		|static|
-    		|	   |qinjiang
-    		|templates|
-    				  |views|
-    				  		|level1|
-    				  		|	   |1.html
-    				  		|	   |2.html
-    				  		|	   |3.html
-    				  		|level2
-    				  		|
-    				  		|levie3
-    						|
-    ```
-
-#### 认证
-
-* 新建配置类，重写方法
-
-    ```java
-    // SpringSecurityDemo01.com.joush.config.SecurityConfig.java
-    import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-    // 添加注解，启用 spring security
-    @EnableWebSecurity
-    public class SecurityConfig extends WebSecurityConfigurerAdapter {
-        
-        @Override
-        protected void configure(HttpSecurity http) throws Exception {
-    
-            // 首页所有人可以访问，功能页只有对应有权限的人才能访问
-            http.authorizeRequests()
-                    .antMatchers("/").permitAll()				// 首页放行所有
-                    .antMatchers("/level1/**").hasRole("vip1")	// level1 vip1才能访问
-                    .antMatchers("/level2/**").hasRole("vip2")	// level2 vip2才能访问
-                    .antMatchers("/level3/**").hasRole("vip3");	// level3 vip3才能访问
-    
-        }
-        
-        // 没有权限默认到 login 页面
-        http.formLogin();
-        
-    }
-    ```
-
-* 此时再访问 level1-1 或者 level2-3 都将提示跳转登陆页面
-
-#### 授权
-
-* 重写 `WebSecurityConfigurerAdapter` 的重载方法
-
-    ```java
-    // SpringSecurityDemo01.com.joush.config.SecurityConfig.java
-    // 添加授权
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    
-        // 授权用户具有那些权限
-        auth.inMemoryAuthentication()
-            .withUser("joush").password("111111").roles("vip2", "vip3")
-            .and()
-            .withUser("root").password("111111").roles("vip1", "vip2", "vip3")
-            .and()
-            .withUser("guest").password("111111").roles("vip1");
-    }
-    ```
-
-* 在 spring boot 2.0 以后，需要添加密码验证后才能实现
-
-    ```java
-    // SpringSecurityDemo01.com.joush.config.SecurityConfig.java
-    // 添加授权
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    
-        // 授权用户具有那些权限
-        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-                    .withUser("joush").password(new BCryptPasswordEncoder().encode("111111")).roles("vip2", "vip3")
-                    .and()
-                    .withUser("root").password(new BCryptPasswordEncoder().encode("111111")).roles("vip1", "vip2", "vip3")
-                    .and()
-                    .withUser("guest").password(new BCryptPasswordEncoder().encode("111111")).roles("vip1");
-        
-    }
-    ```
-
-* 注销
-
-    * 页面添加注销按钮
-
-        ```html
-        <!-- SpringSecurityDemo01.resources.templates.index.html -->
-        <!-- 注销 -->
-        <a class="item" th:href="@{/logout}">
-            <i class="sign-out icon"></i> 注销
-        </a>
-        ```
-
-    * 配置项添加注销功能
-
-        ```java
-        // SpringSecurityDemo01.com.joush.config.SecurityConfig.java
-        // 开启注销功能，并且注销成功后前往主页
-        http.logout().logoutSuccessUrl("/");
-        ```
-
-        
-
-## SpringSecurity 简介
+## Spring Security 简介
 
 #### 概要
 
@@ -140,14 +11,14 @@
 
 * Spring Security
     * [Spring Security 官网](https://spring.io/projects/spring-security)
-    * Spring Security特点
-        * 和Spring无缝整合。
+    * Spring Security 特点
+        * 和 Spring 无缝整合。
         * 全面的权限控制。
-        * 专门为Web开发而设计，新版本对整个框架进行了分层抽取，分成了核心模块和Web模块。单独引入核心模块就可以脱离Web环境。
+        * 专门为 Web 开发而设计，新版本对整个框架进行了分层抽取，分成了核心模块和 Web 模块。单独引入核心模块就可以脱离Web 环境。
         * 重量级
 * Shiro
-    * [Shiro官网](http://shiro.apache.org/)
-    * 轻量级。Shiro主张的理念是把复杂的事情变简单。针对对性能有更高要求的互联网应用有更好表现。
+    * [Shiro 官网](http://shiro.apache.org/)
+    * 轻量级。Shiro 主张的理念是把复杂的事情变简单。针对对性能有更高要求的互联网应用有更好表现。
     * 通用性。
 
 #### 模块划分
@@ -174,7 +45,7 @@
     * 权限管理系统确认一个主体的身份，允许主体进入系统。简单说就是“主体”证明自己是谁。
     * 笼统的认为就是以前所做的登录操作。
 * 授权（authorization）
-    * 将操作系统的“权力”“授予”“主体”，这样主体就具备了操作系统中特定功能的能力。
+    * 将操作系统的“权力”，“授予”，“主体”，这样主体就具备了操作系统中特定功能的能力。
     * 简单来说，授权就是给用户分配权限。
 
 ## Spring Security 入门案例
@@ -219,7 +90,7 @@
 
 #### Spring Security 基本原理
 
-* SpringSecurity 本质是一个过滤器链
+* Spring Security 本质是一个过滤器链
 * 部分过滤器
     * FilterSecurityInterceptor，一个方法级的权限过滤器，基本位于过滤器的最底部
     * ExceptionTranslationFilter，异常过滤器，用来处理在认证授权过程中抛出的异常
@@ -604,17 +475,136 @@
     @RestController
     public class TestController {
         
-        @GetMapping("/index")
-        @Secured({"ROLE_user", "ROLE_admin"}) // 指定 user 和 admin 两个角色可以访问此接口
-        public String index(){
-            return "Hello Index";
+        @GetMapping("/annotation")
+        @Secured({"ROLE_user", "ROLE_admin1"}) // 指定 user 和 admin 两个角色可以访问此接口
+        public String annotation(){
+            return "Hello Annotation";
         }
         
     }
     ```
 
-* 在 `userServiceDetails` 中设置角色
+* 可以在 `userServiceDetails` 中设置角色
 
-#### @PreAuth
+#### @PreAuthorize，@PostAuthorize
 
-* `@PreAuth` 适合进入方法前的权限验证
+* `@PreAuthorize` 适合进入方法前的权限验证，可以将登录用户的 roles/permissions 参数传入到方法中
+
+    ```java
+    // SpringSecurityDemo02.com.joush.controller.TestController.java
+    @RestController
+    public class TestController {
+        
+        @GetMapping("/index")
+        @PreAuthorize("hasAnyAuthority('admin')") // 指定 user 和 admin 两个角色可以访问此接口
+        public String index(){
+            return "Hello Index";
+        }	
+        
+    }
+    ```
+
+* 需要在主启动类开启这两个注解的使用
+
+    ```java
+    // SpringSecurityDemo02.com.joush.controller.TestController.java
+    @SpringBootApplication
+    // 设置prePostEnables = true 即可
+    @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
+    public class SpringSecurityDemo02Application {
+    
+        public static void main(String[] args) {
+            SpringApplication.run(SpringSecurityDemo02Application.class, args);
+        }
+    
+    }
+    ```
+
+* `@PostAuthorize` 注解使用的并不多，在执行方法后在进行权限验证，适合验证带有返回值的权限
+
+    ```java
+    // SpringSecurityDemo02.com.joush.controller.TestController.java
+    @GetMapping("/prePost")
+    @PostAuthorize("hasAnyAuthority('admin')")
+    public String prePostEnabled(){
+        System.out.println("aaa");	// 页面会提示没有权限，但此方法以及执行完毕了，控制台打印输出了
+        return "Hello prePost";
+    }
+    ```
+
+#### @PostFilter，@PreFilter
+
+* `@PostFilter` 权限验证之后对返回数据进行过滤，留下用户名是 admin1 的数据
+
+* `@PreFilter` 对传入的数据进行过滤，只能传入 admin1 的数据
+
+    * 表达式中的 filterObject 引用的是方法返回值 List 中的某一个元素
+
+        ```java
+        // SpringSecurityDemo02.com.joush.controller.TestController.java
+        @GetMapping("/prePostFilter")
+        @PostAuthorize("hasAnyRole('admin')")
+        @PostFilter("filterObject.username == '李一航'")	// 设置只有用户名为 李一航 的 User 才能返回
+        public List<User> prePostFilter() {
+        
+            List<User> users = new ArrayList<>();
+            users.add(new User(12, "李一航", "123456", 12, "aaa"));
+            users.add(new User(13, "陈一然", "123456", 12, "aaa"));
+            return users;
+        }
+        ```
+
+    * 测试，访问 <http://localhost:8080/prePostFilter> 发现返回结果只有第一条，而不是两条都有
+
+#### 注销功能
+
+* 添加登出的配置
+
+    ```java
+    // SpringSecurityDemo02.com.joush.config.SecurityConfig.java
+    @Configuration
+    public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    	@Override
+    	protected void configure(HttpSecurity http) throws Exception {
+    
+        	// 注销
+        	http.logout().logoutUrl("/logout").logoutSuccessUrl("/login").permitAll();
+    	}
+    }
+    ```
+
+* 测试
+
+    * 在成功页面添加注销按钮
+
+        ```html
+        <!-- SpringSecurityDemo02.resources.static.home.html -->
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+        </head>
+        <body>
+        <h1>登陆成功</h1><br>
+        <button>
+            <a href="/logout">登出</a>
+        </button>
+        </body>
+        </html>
+        ```
+
+    * 登录成功后，在成功页面再去访问其他 controller 则不允许
+
+## CSRF
+
+#### CSRF 理解
+
+* 跨站请求伪造（英语：Cross-Site Request Forgery），也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF，
+* CSRF 是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。
+
+* 跨站请求攻击，简单地说，是攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品）。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去运行。这利用了 web 中用户身份验证的一个漏洞：简单的身份验证只能保证请求发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的。
+
+* 通俗理解，在 A 网站进行登陆了后，浏览器不关闭，同时打开 B 网站，在 B 网站即可访问 A 网站中的一些内容，而绕开验证部分。
+
+* 从 Spring Security 4.0 开始，默认情况下会启用 CSRF 保护，以防止 CSRF 攻击应用程序，Spring Security CSRF 会针对 PATCH，POST，PUT 和 DELETE 方法进行防护。

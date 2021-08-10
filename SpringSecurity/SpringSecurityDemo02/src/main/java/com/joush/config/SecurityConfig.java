@@ -35,15 +35,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        // 注销
+        http.logout().logoutUrl("/logout").logoutSuccessUrl("/login.html").permitAll();
+
         // 配置没有访问权限跳转的自定义页面
         http.exceptionHandling().accessDeniedPage("/unauth.html");
 
         http.formLogin() // 自定义表单登录页面
-                .loginPage("/login.html")                           // 登陆页面设置
-                .loginProcessingUrl("/user/login")                  // 登陆成功后交到哪个 controller 中
+                .loginPage("/login.html")                       // 登陆页面设置
+                .loginProcessingUrl("/user/login")              // 登陆成功后交到哪个 controller 中
                 .defaultSuccessUrl("/index").permitAll()        // 登陆成功后跳转的路径
                 .and().authorizeRequests()
-                .antMatchers("/", "/hello", "/user/login").permitAll() // 设置那些路径可以直接访问，不需要认证
+                .antMatchers("/login", "/hello").permitAll() // 设置那些路径可以直接访问，不需要认证
 
                 /*
                     基于授权的权限控制
@@ -60,10 +63,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     基于角色的权限控制，此处在授权的时候需要注意加相关的前缀
                  */
                 // 单角色控制
-                .antMatchers("/index").hasRole("manager")
+                .antMatchers("/index").hasRole("admin")
                 // 多角色控制
-                .antMatchers("/index").hasAnyRole("manager", "user")
-
+//                .antMatchers("/index").hasAnyRole("manager", "user")
                 .anyRequest().authenticated()
                 .and().csrf().disable();                            // 关闭 csrf 的防护
     }
