@@ -582,7 +582,13 @@ My Java Learning Process. © 2020-2021 | Rex Joush
 * 认证授权的注解使用
 	- [@Secured](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#secured)
 
-	- [@PreAuth](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#preauth)
+	- [@PreAuthorize，@PostAuthorize](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#preauthorizepostauthorize)
+
+	- [@PostFilter，@PreFilter](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#postfilterprefilter)
+
+	- [注销功能](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#%E6%B3%A8%E9%94%80%E5%8A%9F%E8%83%BD)
+
+* [CSRF](https://github.com/RexJoush/JavaLearning/blob/master/SpringSecurity/SpringSecurity.md#csrf)
 
 
 ## TypeScript
