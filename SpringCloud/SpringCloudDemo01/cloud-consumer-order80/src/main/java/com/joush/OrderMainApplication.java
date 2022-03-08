@@ -1,10 +1,15 @@
 package com.joush;
 
+<<<<<<< Updated upstream
 import com.joush.config.MySelfRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClients;
+=======
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+>>>>>>> Stashed changes
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
@@ -13,7 +18,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
+<<<<<<< Updated upstream
 // @LoadBalancerClients(defaultConfiguration = MySelfRule.class)
+=======
+>>>>>>> Stashed changes
 public class OrderMainApplication {
 
     public static void main(String[] args) {

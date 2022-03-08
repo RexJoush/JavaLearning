@@ -45,7 +45,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+<<<<<<< Updated upstream
                 <version>2.5.2</version>
+=======
+>>>>>>> Stashed changes
                 <configuration>
                     <excludes>
                         <exclude>
