@@ -537,7 +537,7 @@ class PrintLock {
 
 * AQS全名：AbstractQueuedSynchronizer，是并发容器 J.U.C（java.util.concurrent）下 locks 包内的一个类。它实现了一个**FIFO** (FirstIn、FisrtOut先进先出)的队列。底层实现的数据结构是一个**双向链表**。
 * Sync queue：同步队列，是一个双向链表。包括 head 节点和 tail 节点。head 节点主要用作后续的调度。 
-* Condition queue：非必须，单向链表。当程序中存在 cindition 的时候才会存在此列表。
+* Condition queue：非必须，单向链表。当程序中存在 condition 的时候才会存在此列表。
 * AQS 核心思想是，如果被请求的共享资源空闲，则将当前请求资源的线程设置为有效的工作线程，并且将共享资源设置为锁定状态。如果被请求的共享资源被占用，那么就需要一套线程阻塞等待以及被唤醒时锁分配的机制，这个机制AQS是用 CLH(Craig, Landin, and Hagersten (CLH) locks) 队列锁实现的，即将暂时获取不到锁的线程加入到队列中。
 * AQS使用一个int成员变量来表示同步状态，通过内置的 FIFO 队列来完成获取资源线程的排队工作。AQS 使用 CAS 对该同步状态进行原子操作实现对其值的修改。
 * 状态信息通过protected类型的getState，setState，compareAndSetState进行操作

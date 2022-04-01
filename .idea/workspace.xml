@@ -28,7 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c6f49d0-5bd0-4753-a820-ffa7c809b9c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/SpringBoot/SpringBootDemo01Introduce/SpringBootDemo01Introduce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/SpringBootDemo01Introduce/SpringBootDemo01Introduce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUC/juc.md" beforeDir="false" afterPath="$PROJECT_DIR$/JUC/juc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JVM/jvm.md" beforeDir="false" afterPath="$PROJECT_DIR$/JVM/jvm.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringSecurity/SpringBootSecurityDemo03" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -365,6 +366,7 @@
       <workItem from="1646462739419" duration="1854000" />
       <workItem from="1646702712175" duration="34000" />
       <workItem from="1646702758666" duration="340000" />
+      <workItem from="1648778840384" duration="171000" />
     </task>
     <servers />
   </component>

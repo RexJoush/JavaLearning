@@ -40,4 +40,5 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("guest").password(new BCryptPasswordEncoder().encode("123456")).roles("vip1");
 
     }
+
 }
