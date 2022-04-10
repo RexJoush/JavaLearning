@@ -143,7 +143,7 @@
 
 * Lock 与 synchronized 区别
 
-  * Lock 不是 Java 语言内置的，synchronized 时 Java 语言的关键字，因此时内置特性，Lock 是一个类，通过这个类可以实现同步访问
+  * Lock 不是 Java 语言内置的，synchronized 是 Java 语言的关键字，因此是内置特性，Lock 是一个类，通过这个类可以实现同步访问
   * synchronized 与 Lock 有一个最大的不同，synchronized 不需要用户手动释放锁，当 synchronized 方法或者 synchronized 代码块执行完后，系统会自动让线程释放对锁的占用；而 Lock 则必须用户去手动释放锁，如果没有主动释放锁，则会出现死锁。
   * synchronized 在发生异常时会自动释放锁，因此不会导致死锁；而 Lock 在发生异常时，如果没有主动释放锁，则会发生死锁，因此使用 Lock 时需要在 finally 块中
   * Lock 可以让在等待锁的线程响应中断，而 synchronized 不行，使用 synchronized 时，等待的线程会一直等待，不能响应中断。

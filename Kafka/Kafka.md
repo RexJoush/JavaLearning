@@ -156,4 +156,77 @@ Mode: leader
   8881 Jps
   ```
 
+## Kafka 命令行操作
+
+#### 主题（Topic）命令行操作
+
+* /bin/kafka-topics.sh -argument
+
+    | 参数                                              | 描述                               |
+    | ------------------------------------------------- | ---------------------------------- |
+    | --bootstrap-server <String: server toconnect to>  | 连接 Kafka Broker 主机名称和端口号 |
+    | --topic <String: topic>                           | 操作的 topic 名称                  |
+    | --create                                          | 创建主题                           |
+    | --delete                                          | 删除主题                           |
+    | --alter                                           | 修改主题                           |
+    | --list                                            | 查看所有主题                       |
+    | --describe                                        | 查看主题描述                       |
+    | --pertitions <Integer: # of patitions>            | 设置分区数                         |
+    | --replication-factor<Integer: replication factor> | 设置分区副本                       |
+    | --config <String: name=value>                     | 更改系统默认设置                   |
+
+* 查看系统的主题
+
+    ```shell
+    # 查看所有主题，默认端口是 9092
+    bin/kafka-topics.sh --bootstrap-server 192.168.174.131:9092 --list
+    ```
+
+* 创建主题
+
+  ```shell
+  # 创建一个新的主题，first 为名字，指定分区为 1，创建 3 个副本数，三个参数均需要指定
+  ./kafka-topics.sh --bootstrap-server 192.168.174.131:9092 --topic first --create --partitions 1 --replication-factor 3
+  # 创建成功提示
+  Created topic first.
   
+  # 查看详情
+  ./kafka-topics.sh --bootstrap-server 192.168.174.131:9092 --topic first --describe
+  # 列出了详细信息
+  # 主题 first，主题 id，分区数 1，副本数3，每个分区片的大小，1G
+  Topic: first	TopicId: ddrH_SBsSDuyRUjc1qaoBQ	PartitionCount: 1	ReplicationFactor: 3	Configs: segment.bytes=1073741824
+  # 主题 first，分区数为 0，因为上面设置了1个分区，从0开始，Leader 表示集群领导者的 broker_id 为 1号机，副本的所在机器
+  Topic: first	Partition: 0	Leader: 1	Replicas: 1,0,2	Isr: 1,0,2
+  ```
+
+* 修改主题
+
+  ```shell
+  # 将分区修改为 3，此处需要注意，之前是分区1 ，分区修改只能增加，不能减少，即可以将 1 变为 3，不能反过来
+  ./kafka-topics.sh --bootstrap-server 192.168.174.131:9092 --topic first --alter --partitions 3
+  # 查看结果
+  ./kafka-topics.sh --bootstrap-server 192.168.174.131:9092 --topic first --describe
+  ```
+
+#### 生产者（producer），消费者（consumer）命令行
+
+* ./kafka-console-producer.sh ，./kafka-console-consumer.sh
+
+* 生产数据
+
+  ```shell
+  # 向 first 中生产数据，出现 > 写入数据即可
+  ./kafka-console-producer.sh --bootstrap-server 192.168.174.131:9092 --topic first
+  > 
+  ```
+
+* 消费数据
+
+  ```shell
+  # 向 first 中生产数据，出现 > 写入数据即可
+  ./kafka-console-consumer.sh --bootstrap-server 192.168.174.131:9092 --topic first
+  > 
+  ```
+
+  
+
