@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!-- 1.指定当前服务/应用的名字（同样的服务名字相同，不要和别的服务同名） -->
+    <dubbo:application name="user-service-provider"/>
+
+    <!-- 2.指定注册中心的位置 -->
+    <dubbo:registry address="zookeeper://hadoop01:2181?backup=hadoop02:2181,hadoop03:2181" />
+
+    <!-- 3.指定通信规则（协议？端口）
+        此处支持的协议很多，默认是 dubbo
+    -->
+    <dubbo:protocol name="dubbo" port="20881"/>
+
+    <!-- 4.暴露的服务, ref 指向 服务的真正实现，下面的 bean -->
+    <dubbo:service interface="com.joush.service.UserService" ref="userService"/>
+
+    <!-- 和本地bean一样实现服务 -->
+    <bean id="userService" class="com.joush.service.impl.UserServiceImpl"/>
+</beans>
